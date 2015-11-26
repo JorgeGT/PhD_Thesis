@@ -1,6 +1,12 @@
 
 # Created by https://www.gitignore.io/api/windows,latex
 
+### Otros ###
+
+figures/
+logos/
+Tesis.pdf
+
 ### Windows ###
 # Windows image file caches
 Thumbs.db
