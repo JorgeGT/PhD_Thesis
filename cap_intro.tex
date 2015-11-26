@@ -1,0 +1,106 @@
+%!TEX root = Tesis.tex
+\chapter{Introduction} \label{cap:intro}
+
+% Quote
+\null\vspace{-10mm}
+\begin{flushright}
+\begin{minipage}[t]{0.66\textwidth}
+{\itshape\small``The story is set in the year 1922 and has its main character, Mr Engelbert, moving to Prague from the countryside to live out his retirement years and struggling to cope with the aggressive modernity of the city. The horror is not the power of money or the arrogance of the people, but the noise; not the age-old noise of a thunderstorm or a hammer, but the new noise of engines, especially of automobiles and motor-cycles, the explosive internal combustion monsters.''}\\[-3mm]
+
+{\cabincondensed\small\hfill \textbf{Milan Kundera}, \emph{The Curtain.}}\\[5mm]
+\end{minipage}
+\end{flushright}
+
+% Chapter text
+\noindent As Milan Kundera shows, the noise produced by internal combustion vehicles has radically changed the way we understand cities; even many decades before we understood the dangers that chemical emissions pose to the environment and our health, noise emissions were without a doubt a commotion for city inhabitants worldwide: an horrific, roaring hallmark of accelerated progress.
+
+\begin{figure}[t!]
+\centering
+\includegraphics[width=\textwidth]{figures/cap_intro/cmt_noise6}
+\caption{Global noise levels of the city of Valencia around Universitat Politècnica (upper right), showing the importance of road traffic as source of urban noise pollution. Scale shows normalized levels from quieter (1) to noisier (6). Data courtesy of Valencia City Council.}
+\label{fig:noise_valencia}
+\end{figure}
+
+Nowadays, no one is surprised anymore by the sound of an automobile or a ``motor-cycle''. Even the mere absence of this familiar, background urban sound is unsettling to many. Road traffic is, however, the main source of noise pollution in cities. As an example, Fig \ref{fig:noise_valencia} depicts global noise levels in the city of Valencia.
+
+It can be clearly seen how automotive vehicles define the noise environment in our cities; high-traffic roads appear as higher level sources of noise that propagates towards less travelled areas. The (traffic-restricted) campus of Universitat Politècnica de València, where this thesis has been developed, appears as a blue, quieter island at the upper right part of the figure.
+
+Noise emission by automotive vehicles is, however, a sum of very complex phenomena. One could consider, intuitively, that the dominant factor of this sum must be the the combustion noise itself: several explosions going off every second of operation, their vibration propagating through the metallic engine block and radiating through the air.
+
+However, many of other sources of noise exist in a vehicle: aerodynamic noise produced as air flows around the structures and through the intake and exhaust pipes, friction noise of the tires against the asphalt of the road, mechanical noise of the engine parts working together, auxiliary systems such as fuel injection, pumps and, increasingly important, the noise produced by the turbocharger group.
+
+\section{Turbochargers}
+
+The idea of using a compressor to increase the density of air available in the combustion chamber of an engine is now more than a century old. While Gottlieb Daimler's 1885 patent included a supercharging mechanical pump, and Louis Renault's 1902 patent featured a centrifugal supercharger, the first design for a turbocharger (this is, a supercharging compressor driven by the exhaust gasses) was presented in Alfred Büchi's 1905 patent Nº204630 from the Imperial Patent Office of the German Reich.
+
+While some racing and luxury sport cars had supercharged engines (the popular Mercedes \emph{Kompressor} series started in 1921), most mass produced cars used simpler, naturally aspirating engines.
+
+During the first half of the XX century, the primary area of application of turbocharging where marine and, specially, aviation engines. The addition of turbocharging to aircraft engines allowed them to counter the diminishing air density at high altitude, increasing the available power and operating ceiling. For instance, the first product made by Cliff Garrett's corporation was a supercharged air cooler for the B-17 Flying Fortress.
+
+It was not until the sixties that turbocharging made its appearance into the popular automotive market, with the Chevrolet Corvair Monza and the aptly named Oldsmobile Jetfire. However, technology was still not very reliable, and they were quickly retired from the dealerships.
+
+The scene changed radically during the seventies. Several factors (the oil crisis, enhanced reliability, stringent emission requirements, turbocharged cars winning Formula 1 and Le Mans races) made possible the first successful passenger diesel cars, that grew during the 80s and 90s to dominate the diesel automotive market. 
+
+To illustrate this evolution, Fig. \ref{fig:google_ngram} shows how words like ``turbocharger'' and ``traffic noise'' started to appear in English literature. We can see a sudden bump of ``turbocharger'' mentions following the start of WWII (where turbocharging aircraft quickly became norm), but the peak of popularity appears in the 80s. Concern for ``traffic noise'' on the other hand suddenly boosts from 1965 to 1975.
+
+\begin{figure}[b!]
+\centering
+\includegraphics[width=\textwidth]{figures/cap_intro/google_ngram}
+\caption{Normalized relevance of selected English terms in literature, as indexed by Google Books. Data licensed under CC-BY 3.0 license terms.}
+\label{fig:google_ngram}
+\end{figure}
+
+This figure also shows how from the last years of the XX century, social concern for the nocive effects of pollutant emissions has grown. These include NO${}_\text x$, CO, CO${}_\text 2$, particulate matter (PM) and so on. In a bid to lower emissions, a trend of \emph{downsizing} engines has become popular, aiming to increase efficiency and lower contaminants by reducing the displacement and cylinder count, in both petrol and diesel markets. Upcoming regulations are even more stringent \cite{deBeeck2013upcoming}, so this tendency is only expected to grow.
+
+As power and torque must be maintained in these reduced displacement engines, turbocharging requirements increase, becoming more and more popular in the petrol market as well. Further information on the relationship between stringent emissions policies, downsizing and turbocharging can be found in the work of Schumann et al \cite{schumann2012potential}. 
+
+\section{Noise emissions}
+Another important aspect of increasing concern for both regulators and consumers is the so-called NVH (Noise, Vibration and Harshness) problems that opened this chapter.
+
+While downsizing increases efficiency and allows engines to better meet emission requirements, this strategy has some downsides. For instance, it has been shown \cite{stoffels2003nvh} that at certain operating conditions, a downsized engine will radiate higher noise levels than an equivalent engine of larger displacement. 
+
+Increased turbocharging requirements also imply that the compressor must work near its limiting conditions, such as the \emph{surge} limit \cite{teng2009investigation}, where compressor airflow is so low that it reverses, allowing hot air to escape the compressor upstream instead of downstream. This potentially destructive condition is initiated with flow instabilities that are also linked to increased noise output, as will be further explored along this work.
+
+Another factor that must be taken into account during the analysis of acoustical emissions is that raw noise \emph{quantity} (overall level) is not the only concern, for noise \emph{quality} (for example, its particular frequency distribution) is also an important problem, regarding both the possibilities of sound mitigation and psychoacoustic response by the customer, as shown in \cite{brizon2012combining} and the work of Nor et al \cite{nor2008index}.
+
+\section{State of the art}
+
+These concerns have led to a thriving research effort regarding turbocharging efficiency, usefulness to reduce pollution and contribution to noise emissions.
+
+Several approaches to this problem are being tested. Some researchers conduct experimental analysis of the internal fluid flow of the compressor. Others focus their interest in the externally radiated acoustic field. Computational fluid dynamic (CFD) simulations are carried out in order to visualize the different flow phenomena inside and near the compressor.
+
+Aside from experimental or numerical characterization of the acoustic problem, its mitigation is also being actively investigated. Options range from the modification of inlet or casing geometries, to the addition of different silencers and resonators on the compressor pipes.
+
+Through this research, different acoustical phenomena have been identified. While some like the tonal noise produced by the blade pass (known as Blade Pass Frequency or BPF) have a clear, straightforward explanation, others are not yet fully understood.
+
+For example, a certain wideband noise known as ``whoosh'' in the literature has been lately of interest, with explanations for its generation ranging from turbulent vorticity to fluid interaction with tip clearance (the gap between the wheel blades and the casing wall). Further research is currently ongoing on this particular phenomenon.
+
+%\section{Motivation}
+
+\section{Objectives}
+
+The objective of this thesis is threefold, covering not only the experimental acoustic analysis itself but also its methodological and application aspects. To sum up, the different but related objectives can be enumerated as: 
+
+\begin{itemize}
+	\item Enlarging the corpus of published experimental results of turbocharger compressor acoustic measurements across its different operating conditions: as the literature is still reduced, expanding it will improve not only understanding of known phenomena but will also identify other areas that may be of interest for further research.
+
+	\item Presenting a comprehensive experimental methodology, from instrumentation to measuring procedures and signal processing, in order to consistently and reliably characterize acoustic emissions, ensuring at the same time the robustness of these techniques when faced with real engine conditions.
+
+	\item Exploring how this experimental methodology can be applied not only to the characterization of the internal sound field, but also to the initialization and validation of numerical simulations and the study of the influence of different inlet geometries on noise generated by the compressor.
+\end{itemize}
+
+\section{Thesis outline}
+
+After this introduction that constitutes chapter \ref{cap:intro}, a comprehensive literature review on turbocharger compressor noise research will be carried out in chapter \ref{cap:liter}. This review will introduce relevant developments regarding experimental compressor testing, but also some literature concerning numerical simulations that are of vital importance to improve the understanding of the fluid field causing the acoustical emission.
+
+Chapter \ref{cap:metod} will present the different methodologies used in the experimental campaign performed during this thesis, along with the facilities and equipment used to this effect. These methodologies include procedures for the characterization of the internal sound field, but external radiation is also considered to test for relevant correlations, along with the measurement of relevant thermodynamic variables near the compressor inlet. Theoretical background, limitations and best practices regarding the use of the presented methodologies will be also discussed.
+
+The results of the experimental campaign carried out using the described methodology will constitute chapter \ref{cap:results}. As with the preceding chapter, internal and external noise field will be presented separately. However, the last section of the chapter will introduce correlations between the two results. Detailed measurement of thermodynamic variables next to the compressor wheel will enable further comprehension of the particularities of the fluid field and its relation with the acoustical sources.
+
+Procedures described on chapter \ref{cap:metod} will then be implemented on an engine test cell in order to assess their performance in real engine conditions. This performance will be compared to established methods such as the two-microphone method and the pressure-pressure intensity probe. While external measurements are difficult in a non-anechoic environment such as the engine test cell, an example of the acoustical particle velocity method will be tested to address this limitation.
+
+Chapter \ref{cap:cfd} will explore how the obtained experimental results can be used to initialize and validate numerical simulations. In turn, these simulations can provide insight into particularities of the flow field and suggest further experimental measurements that can be relevant for the understanding of the phenomena involved in the generation of noise.
+
+Particularly, influence of the inlet geometry immediately upstream of the compressor wheel has been proved of significant relevance in both compressor performance and noise emission. Chapter \ref{cap:geom} will present an experimental parametric study of different geometries and their influence on the the compressor behaviour.
+
+Finally, chapter \ref{cap:conclus} will offer the conclusions that have been reached through the experimental campaign and analysis of results, along with suggestions of future works that could be carried out to advance knowledge of this topic.
