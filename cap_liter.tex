@@ -32,16 +32,50 @@ Also, they are affected by the pulsating flow of the alternating engine, which w
 
 In order to address these differences and focus the literature review in the specific issues presented by turbocharger compressors, selected works from the literature will be reviewed in the following subsections, placing special interest in both the measurement techniques and the acoustical results obtained.
 
-\subsection{Measurement methods}
+\subsection{Methods for turbocharger noise characterization}
 
 Although not numerous, acoustical research works on small, centrifugal turbocharger compressors can be found in the literature. Many of them are published by automotive or compressor manufacturers, who are among the most concerned about compressor noise emissions.
 
-Starting from the work of Evans and Ward \cite{evans2005minimizing,evans2006reduction} up to more recent investigations such as those of Åbom, Kabral and Rammal \cite{kabral2013acoustical,kabral2014investigation} at the Swedish Royal Institute of Technology (KTH), several different methodologies for characterising the acoustical emission of automotive turbochargers can be found. 
+Starting from the work of Evans and Ward \cite{evans2005minimizing,evans2006reduction} up to more recent investigations such as those of Åbom, Kabral and Rammal \cite{kabral2013acoustical,kabral2014investigation} at the Swedish Royal Institute of Technology (KTH), several different methodologies for characterising the acoustical emission of automotive turbochargers can be found.
 
-A first division can be made between those studies aiming to measure \emph{internal} flow noise, placing sensors inside the compressor housing or inlet and outlet ducts, and those works based on external measurements of the \emph{radiated} noise. 
+A first division can be made between those studies aiming to measure \emph{internal} flow noise, placing sensors inside the compressor housing or inlet and outlet ducts, and those works based on external measurements of the \emph{radiated} noise.
 
-Evans and Ward \cite{evans2005minimizing,evans2006reduction} opted for a simple setup of four microphones, situated on the same plane and directed to a turbocharger-equipped engine. They were distributed at 90º with a separation of one meter from the engine. From the pressure readings of these four microphones, Sound Pressure Level (SPL) was computed and then averaged among them, in order to get a single signal from which spectrograms and spectra could be derived.
+Evans and Ward \cite{evans2005minimizing,evans2006reduction} opted for a simple setup of four microphones to measure sound radiation. These four microphones were situated on the same plane and directed to a turbocharger-equipped engine. They were distributed at 90º with a separation of one meter from the engine. From the pressure readings of these four microphones, Sound Pressure Level (SPL) was computed and then averaged among them, in order to get a single signal from which spectrograms and sound spectra could be derived.
+
+A similar setup was used by Teng and Homco \cite{teng2009investigation} (see specially Fig. 1) in order to test different countermeasures for whoosh noise mitigation, such as engine calibration, resonators in the compressor inlet/outlet, compressor trim variation and a swirl generation device. 
+
+This kind of averaging four spatially-distributed microphones method was implemented in the anechoic chamber in order to characterize the far-field radiated sound of the turbocharger group during the experimental campaign; further information will provided on subsection \ref{sub:metod_far_field} of chapter \ref{cap:metod}.
+
+Apart from the far-field radiation, another acoustic problem of interest is that of \emph{orifice noise}, this is, the noise created by the ingestion of the air stream into the opening of the turbocharger inlet duct. 
+
+Lee et al \cite{lee2011control} used a Brüel \& Kj\ae r free field type microphone pointed at the compressor inlet as seen of Fig. 8 of the reference. It can also be noted that in order to avoid ``flow effects'', the microphone was located 0.8 away from the inlet.
+
+The setup selected by Guillou et al \cite{guillou2010characterization} to measure ingestion noise was very similar. Here, a single microphone was positioned aligned with the axis of the turbocharger at a distance of 0.4 m, again facing directly to the compressor inlet bell mouth.
+
+Another solution was implemented by Figurella et al in \cite{figurella2012noise}. In this case, a Brüel \& Kj\ae r type 2235 Sound Level Meter was positioned 0.25 m from the inlet duct orifice, at a 45º angle from the inlet axis. In \cite{figurella2014effect} Figurella et al opted instead to rely on a ¼'' microphone affixed at the same position, 0.25 m away from the mouth and 45º from the axis. Both instruments appear in Fig. 1 of \cite{figurella2014effect}.
+
+During the experimental campaign that was carried out for the development of this thesis, two free field microphones were situated at a distance of 10 and 20 cm from the inlet pipe orifice. This will be expanded in detail in subsection \ref{sub:metod_orifice_noise} of chapter \ref{cap:metod}.
+
+Finally, a third approach for the characterization of compressor noise is based on measuring the sound field inside the inlet and outlet ducts, usually by means of fast pressure sensors. This has the advantage of not needing to ensure anechoic conditions in the test cell. Another remarkable advantage is that, by analysing the flow field alone, one can avoid the influence of the radiative properties of the duct material and geometry.
+
+As these advantages make this last approach specially interesting for a research centred on the sources of aero-acoustical generated noise, emphasis has been put in reviewing existing literature dealing with internal flow noise.
+
+Gaudé et al \cite{gaude2008experimental} from Honeywell Turbo Technologies presented a review of different vibro-acoustic sources of turbocharger noise. Both accelerometers and pressure sensors affixed to the pipes were used, and their use to identify some vibro-acoustic phenomena was demonstrated. While this work omits a proper, referenced methodology description, it mentions that acoustic noise intensity is calculated using wave decomposition by means of three sensors, indicating the range of plane wave for the installed ducts.
+
+Raitor and Neise \cite{raitor2008sound} used different methods, taking into account the presence of acoustic modes in the duct. the first one consisted on a ½" microphone equipped with a turbulence screen and mounted in a rotatable section of the duct. This allows the measurement of circumferentially averaged sound pressure level (SPL), in accordance with ISO 5136. This rotatable section can also be fitted with four consecutive rings, each with four flush-mounted condenser microphones for analysis of acoustic modes.
+
+This last technique is similar to that used in the previously mentioned work by Guillou et al \cite{guillou2010characterization}, where four Kulite model XCS-190-5D miniature pressure sensors were mounted on the compressor inlet adaptor, equally separated 90º. A single Kulite model XTEL-160-50G was used on the outlet duct.
+
+A single in-duct fast pressure sensor was also the technique selected by Figurella et al \cite{figurella2012noise,figurella2014effect}. In this case Kistler piezoresistive transducers were used, both in the compressor inlet duct (model 4045A2) and in the outlet duct (model 4045A2 or 4045A5). 
+
+Pai et al \cite{pai2013air,pai2015turbocharger} opted as well for a single sensor (in this case labelled as a microphone) to measure sound pressure level inside the compressor inlet duct. An ambient microphone was present as well, but its readings are not included in their work.
+
+A different approach was taken by Tiijoka et al \cite{tiikoja2011inves}, who describe the use of an array of three pressure transducers in both inlet and outlet pipes of their compressor setup (see Figs. 1-3 of the reference). In order to estimate the strength of the propagating nodes, a cross-spectra averaging technique was used.
 
 \subsection{Relevant results}
+
+After reviewing the different methods available on the literature regarding turbocharger noise, a selection of relevant acoustical results from these works is offered in this subsection. It is worth noting that while some of the referred research was directly aimed at characterizing noise output, other works had different objectives and only used noise measurement as a metric, without discussing its characteristics or generation process.
+
+
 \section{Numerical simulations} 
 \section{Influence of inlet geometry} 

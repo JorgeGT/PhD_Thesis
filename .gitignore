@@ -5,7 +5,7 @@
 
 figures/
 logos/
-Tesis.pdf
+*.pdf
 
 ### Windows ###
 # Windows image file caches
