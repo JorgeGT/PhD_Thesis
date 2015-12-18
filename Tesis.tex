@@ -20,6 +20,9 @@
 \usepackage[defaultlines=3,all]{nowidow}
 \usepackage[bottom]{footmisc}
 \usepackage{marvosym}
+\usepackage{rotating}
+\usepackage{changepage}
+\usepackage{wrapfig}
 
 % Sans serif font
 \usepackage[type1,scaled=1.02,condensed]{cabin}
@@ -189,13 +192,13 @@ The performance of different experimental techniques proposed in the literature 
 % Main pagestyle
 \fancyhf{}
 \fancyhead[RO]{\small\cabincondensed\bfseries \rightmark\quad|\quad\color{black}\thepage}
-\fancyhead[LE]{\small\cabincondensed\bfseries \thepage\quad|\quad\leftmark}
+\fancyhead[LE]{\small\cabincondensed\bfseries \thepage\quad\textcolor{tema}{|}\quad\leftmark}
 \pagestyle{fancy}
 
 % Chapter mark
-\renewcommand{\chaptermark}[1]{\markboth{\color{tema}{\chaptername\ \thechapter. \color{black}\ #1}}{}}
+\renewcommand{\chaptermark}[1]{\markboth{\chaptername\ \color{tema}{\thechapter. \color{black}\itshape\ #1}}{}}
 % Section mark
-\renewcommand{\sectionmark}[1]{\markright{\color{tema}{\thesection.\color{black}\ #1}}}
+\renewcommand{\sectionmark}[1]{\markright{\color{tema}{\thesection.\color{black}\itshape\ #1}}}
 
 \hypersetup{
   linkcolor = tema
