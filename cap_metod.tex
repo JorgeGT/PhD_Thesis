@@ -109,6 +109,8 @@ In order to implement and validate the in-duct acoustical measurement methodolog
 \label{fig:engine_cell_clear}
 \end{figure}
 
+\section{Turbocharger}
+
 \section{In-duct noise measurement \textcolor{red}{[Article expMethod - rewrite]}} % Articulo methodology
 As competition from alternative-powered vehicles and environmental concerns increase, traditional internal combustion engines for automotive applications are facing tougher scrutiny by regulators and consumers.
 
@@ -176,21 +178,21 @@ The approach in this paper is the inverse: by tuning the weights $w_n^*$ that mu
 
 \begin{figure}[b!]
 \centering
-\includegraphics[scale=0.78]{figures/cap_metod/setup_t}
+\includegraphics[scale=0.80]{figures/cap_metod/setup_t}
 \caption{Scheme of the proposed turbocharger instrumentation setup, highlighting in color the three-sensor beamforming arrays and their clearance requirements.}
 \label{fig:setup}
 \end{figure}
 
 \begin{figure*}[t!]
 \centering
-\includegraphics[width=\textwidth]{figures/cap_metod/Decomposition_t}
+\includegraphics[width=0.8\textwidth]{figures/cap_metod/Decomposition_t}
 \caption{Sample result of the decomposed pressure; at the inlet the amplitude of the pressure wave travelling downstream (towards the compressor) is smaller than the one coming from the compressor; the reverse situation occurs at the outlet.}
 \label{fig:decomposition}
 \end{figure*}
 
 \begin{figure*}[t!]
-\centering
-\includegraphics[width=\textwidth]{figures/cap_metod/Spectra}
+%\centering
+\includegraphics[width=0.90\textwidth]{figures/cap_metod/Spectra}
 \caption{Sample of raw inlet and outlet pressure power spectral densities (at 160 krpm and 60 g/s), including frequency limitations described in equations \ref{eq:f_nyquist} and \ref{eq:f_modes}. The characteristic blade pass frequency can also be identified, specially in the outlet spectra.}
 \label{fig:spectra}
 \end{figure*}
@@ -266,7 +268,7 @@ In this case, the calibration is performed in an impulse test rig (described in 
 
 \begin{figure}[t!]
 \centering
-\includegraphics[width=\textwidth]{figures/cap_metod/6031_calibration_t}
+\includegraphics[width=0.85\textwidth]{figures/cap_metod/6031_calibration_t}
 \caption{Results of the calibration of the outlet sensors in an impulse test rig, showing a pressure measurement match in both time and frequency domains.}
 \label{fig:6031_calibration}
 \end{figure}
@@ -290,7 +292,7 @@ Here, $p_{T}$ and $T_{T}$ refer to the compressor inlet total pressure and tempe
 
 \begin{figure}[bth!]
 \centering
-\includegraphics[width=\textwidth]{figures/cap_metod/datapoints_surge.pdf}
+\includegraphics[width=0.85\textwidth]{figures/cap_metod/datapoints_surge.pdf}
 \caption{Operating conditions for each measured data point (right plot), including the precise determination of the deep surge limit: top plot on the left shows the temporal evolution of the raw relative pressure recorded by one piezoelectric sensor; bottom plot on the left depicts the correlation between the frequency content in the 0-20 Hz band and deep surge onset.}
 \label{fig:surge_datapoints}
 \end{figure}
@@ -322,23 +324,16 @@ To obtain the required near-surge data points to be displayed on the map, repres
 
 \begin{figure*}[t!]
 \centering
-\includegraphics[width=\textwidth]{figures/cap_metod/gr_mapa_ruido_dB_1000-3000.pdf}
+\includegraphics[width=0.85\textwidth]{figures/cap_metod/gr_mapa_ruido_dB_1000-3000.pdf}
 \caption{Sample of noise level in the 1 -- 3 kHz band obtained through the processing described in subsection \ref{sub:noise_maps_and_spectrograms}, including the measured data points $(\circ)$ and the paths later expanded as spectrograms shown in figure \ref{fig:spec50-5k}. The left hand side map represents the inlet duct, whereas the right hand side map represents the outlet duct. }
 \label{fig:map1k-3k}
 \end{figure*}
 
 \begin{figure*}[t!]
 \centering
-\includegraphics[width=\textwidth]{figures/cap_metod/gr_spec_ruido_dB_50-5000.pdf}
+\includegraphics[width=0.85\textwidth]{figures/cap_metod/gr_spec_ruido_dB_50-5000.pdf}
 \caption{Sample of spectrograms calculated using the procedure outlined in subsection \ref{sub:noise_maps_and_spectrograms}, following the 160 krpm paths marked in figure \ref{fig:map1k-3k}. The 1--3 kHz band selected for the maps in figure \ref{fig:map1k-3k} is highlighted, along with some particular flow phenomena discussed in section \ref{sec:results_and_discussion}.}
 \label{fig:spec50-5k}
-\end{figure*}
-
-\begin{figure*}[t!]
-\centering
-\includegraphics[width=\textwidth]{figures/cap_metod/mapas_comp}
-\caption{Outlet maps computed at different frequency ranges. From left to right: a general view of the plane wave range global intensity; the characteristic band of the ``whoosh noise'', and a narrow low frequency band that indicates surge onset.}
-\label{fig:mapas_comp}
 \end{figure*}
 
 \subsubsection{Signal postprocessing: maps and spectrograms}
@@ -358,6 +353,13 @@ These ``noise maps'' synthesize the information of the acoustic output of a freq
 Expanding on the necessity of analysing the frequency content evolution as the operating conditions of the compressor change, a different approach can be used, where the measured discrete information can be compiled to estimate a continuous spectrogram.
 
 This is accomplished by sequentially performing the previous map processing for a number $N$ of much smaller frequency bands of width $\Delta f$, resulting in a collection of $N$ interpolation functions $\Phi_{f_j-f_{j+1}}$, where $f_{j+1}-f_j = \Delta f$.
+
+\begin{wrapfigure}[36]{O}[1.6cm]{0.41\textwidth}
+\vspace{-5mm}
+\includegraphics[width=0.42\textwidth,trim={1cm 0 5mm 0},clip]{figures/cap_metod/mapas_comp}
+\caption{\null\\Outlet maps computed at different frequency ranges. From top to bottom: a general view of the plane wave range global intensity; the characteristic band of the ``whoosh noise'', and a narrow low frequency band that indicates surge onset.}
+\label{fig:mapas_comp}
+\end{wrapfigure}
 
 Using these functions, the intensity levels $\mathbf L$ on each small frequency band $k$ are interpolated for a set of $M$ pairs of the compressor map coordinates, such that:
 
@@ -464,8 +466,18 @@ $M$ represents the Mach number, $k=\omega/c$ the acoustic wave number and $\alph
 The radius of the duct is denoted by $r$, $a$ is the speed of sound, $\nu$ the cinematic viscosity, $\omega=2\pi f_k$ the angular frequency and $P_r$ is the Prandtl number.
 
 \section{Local variables}
+
+As seen on section \ref{sec:liter_influence} of the literature review, conditions in the compressor inlet immediately upstream the wheel seem to be highly relevant to the development of surge and broadband noise emission. 
+
+An effort was made during the experimental campaign to allow the measurement of thermodynamic conditions in this region: temperature, pressure and velocity. \textcolor{red}{Comparisons with CFD simulations provided not only validation of the numerical prediction but also further insight as to how the precise geometry of the inlet influenced these conditions.}
+
 \subsection{Temperature}
+
+It is well established on the literature that reversing backflows are one of the most telling phenomena of compressor instability and stall inception. As these backflows are coming from downstream the wheel they are thus at higher temperature, due to the non-isentropic compression process. Consequently, temperature measurement provide a method for characterizing the inception of these backflows and their upstream extent. 
+
 \subsection{Pressure}
+
+
 \subsection{Velocity}
 
 \section{External noise measurements}
@@ -498,7 +510,7 @@ Here, $p^2_\text{rms,i}$ is the root mean squared pressure recorded by microphon
 \subsection{Far field}
 \label{sub:metod_far_field}
 
-\begin{figure*}[b!]
+\begin{figure*}[htb!]
 \centering
 \includegraphics[width=0.95\textwidth]{figures/cap_metod/radiated_jag}
 \caption{Radiated noise microphones installed around a commercial set of compressor inlet and outlet pipes.}
