@@ -109,7 +109,7 @@ In order to implement and validate the in-duct acoustical measurement methodolog
 \label{fig:engine_cell_clear}
 \end{figure}
 
-\section{Turbocharger}
+\section{Test turbochargers}
 
 \section{In-duct noise measurement \textcolor{red}{[Article expMethod - rewrite]}} % Articulo methodology
 As competition from alternative-powered vehicles and environmental concerns increase, traditional internal combustion engines for automotive applications are facing tougher scrutiny by regulators and consumers.
@@ -465,21 +465,6 @@ $M$ represents the Mach number, $k=\omega/c$ the acoustic wave number and $\alph
 
 The radius of the duct is denoted by $r$, $a$ is the speed of sound, $\nu$ the cinematic viscosity, $\omega=2\pi f_k$ the angular frequency and $P_r$ is the Prandtl number.
 
-\section{Local variables}
-
-As seen on section \ref{sec:liter_influence} of the literature review, conditions in the compressor inlet immediately upstream the wheel seem to be highly relevant to the development of surge and broadband noise emission. 
-
-An effort was made during the experimental campaign to allow the measurement of thermodynamic conditions in this region: temperature, pressure and velocity. \textcolor{red}{Comparisons with CFD simulations provided not only validation of the numerical prediction but also further insight as to how the precise geometry of the inlet influenced these conditions.}
-
-\subsection{Temperature}
-
-It is well established on the literature that reversing backflows are one of the most telling phenomena of compressor instability and stall inception. As these backflows are coming from downstream the wheel they are thus at higher temperature, due to the non-isentropic compression process. Consequently, temperature measurement provide a method for characterizing the inception of these backflows and their upstream extent. 
-
-\subsection{Pressure}
-
-
-\subsection{Velocity}
-
 \section{External noise measurements}
 
 While the accurate characterization of the internal sound field is vital to understand the different phenomena, the transmission of the noise to the ambient is also relevant as external acoustic radiation is ultimately the main concern of the automotive industry.
@@ -510,7 +495,7 @@ Here, $p^2_\text{rms,i}$ is the root mean squared pressure recorded by microphon
 \subsection{Far field}
 \label{sub:metod_far_field}
 
-\begin{figure*}[htb!]
+\begin{figure*}[b!]
 \centering
 \includegraphics[width=0.95\textwidth]{figures/cap_metod/radiated_jag}
 \caption{Radiated noise microphones installed around a commercial set of compressor inlet and outlet pipes.}
@@ -527,3 +512,76 @@ In order to provide a global metric to compare against orifice noise, pressure r
 
 
 \subsection{Near field \textcolor{red}{[In case there is data]}}
+
+\section{Local variables}
+
+As seen on section \ref{sec:liter_influence} of the literature review, conditions in the compressor inlet immediately upstream the wheel seem to be highly relevant to the development of surge and broadband noise emission. 
+
+An effort was made during the experimental campaign to allow the measurement of thermodynamic conditions in this region: temperature, pressure and velocity. \textcolor{red}{Comparisons with CFD simulations provided not only validation of the numerical prediction but also further insight as to how the precise geometry of the inlet influenced these conditions.}
+
+\begin{figure}[htb!]
+\centering
+\includegraphics[width=0.65\textwidth]{figures/cap_metod/locales_sin_brida}
+\caption{CAD view of the proposed local temperature and pressure measurement instrumentation, showing the distribution of thermocouple arrays and pressure probes.}
+\label{fig:metod_local_meas}
+\end{figure}
+
+% \begin{wrapfigure}[18]{O}[1.6cm]{0.45\textwidth}
+% \vspace{-4mm}
+% \includegraphics[width=0.45\textwidth]{figures/cap_metod/medidas_locales_corte}
+% \caption{Annotated section view of the local pressure and temperature instrumentation.}
+% \label{fig:metod_local_meas_dimen}
+% \end{wrapfigure}
+
+\begin{figure}[b!]
+\centering
+\includegraphics[width=0.5\textwidth]{figures/cap_metod/medidas_locales_corte}
+\caption{Annotated section view of the pressure probes (purple) and thermocouples (green) location.}
+\label{fig:metod_local_meas_dimen}
+\end{figure}
+
+\subsection{Temperature}
+
+It is well established on the literature that reversing backflows are one of the most telling phenomena of compressor instability and stall inception. As these backflows are coming from downstream the wheel they are thus at higher temperature, due to the non-isentropic compression process. Consequently, temperature measurement provides a method for characterizing the inception of these backflows and their upstream extent.
+
+Two thermocouple arrays were thus installed on the compressor inlet. A circular one covers a section of the pipe just 14 mm from the compressor wheel plane, providing temperature measurements each 45º. The second array is linear, extending in the longitudinal direction of the pipe up to approximately 2 inlet diameters.
+
+The first one is intended to tell if angular variations of temperature distribution exist, and the second one aims to characterize the length of the recirculating backflows at each operating condition of the compressor.
+
+\subsection{Pressure}
+
+While pressure measurements are carried out in both inlet and outlet ducts of the compressor, a further effort has been made to characterize the spectral signature of the pressure in two critical locations: on the inducer, upstream the compressor wheel and on the diffuser, downstream of the wheel. Miniaturized piezoelectric pressure probes from Kistler were used in both locations.
+
+\subsection{Velocity}
+
+\begin{figure}[b!]
+\centering
+\includegraphics[width=0.65\textwidth]{figures/cap_metod/Assembly_PIV_straight_3D}
+\caption{CAD view of the straight transparent duct for PIV measurements with its mounting assembly.}
+\label{fig:metod_local_meas_dimen}
+\end{figure}
+
+Besides punctual measurements of pressure and temperature, the characterization of the whole flow field is also crucial. Not only for understanding how the backflows interact with the downstream flow, but also to validate CFD predictions of macroscopic flow structures.
+
+In order to allow a characterization of these flow field, a Particle Image Velocimetry (PIV) system was installed on the anechoic chamber. This method uses a laser sheet which illuminates seeding particles introduced in the air stream. Capturing snapshots of the distribution of these particles with a very fast camera allows, through a correlation postprocessing technique, to compute how the particles have moved between snapshots and thus, the 2D velocity field in the plane illuminated by the laser sheet.
+
+Specifically in this study a 135 mJ Nd:YAG laser was used to illuminate the desired planes, and the flow was seeded with $\sim 1\mathrm{\mu m}$ oil droplets from a custom-made generator. Seeding control was proven to be critical, especially in the case of the longitudinal measurements that were made through the walls of the glass pipe.
+
+Even during measurements of the longitudinal plane at stable conditions (high mass flow) where the stalled backflow does not reach upstream the leading edge of the blades, oil accumulated in the inner wall of the glass pipe, obstructing the view and introducing reflections that rendered the measurement impossible through the soiled parts.
+
+The issue was aggravated when the backflow generated by the partially stalled compressor blades reached the glass pipe. As there is a zone where the axial velocity is null, oil particles become trapped and start to accumulate, forming a clearly visible fluid ``ring'' that blocks the view. Also, the high transversal velocity forces the particles to impinge onto the inner wall, forming visible helicoidal tracks along the surface.
+
+As a consequence, a test procedure was followed where the turbo was settled at the desired operating conditions, and then seeding particles were introduced during a very brief time. This allowed approximately 10 usable pairs of snapshots, after which the turbo was stopped and the glass pipe cleaned for the next run.
+
+Measurement of the transversal planes was done pointing the camera directly towards the compressor, thereby avoiding the need to record through the glass. This allowed for longer test runs because the soiling of the wall did not affect the measurement. 
+
+However, measuring the transversal planes was not without issues. In this configuration, the rotor blades are illuminated by the scattered light, preventing the seeding particles from contrasting enough to be clearly correlated in some places, and generating bright spots that are misidentified as particles moving.
+
+In order to mitigate this problem, a system was devised to feed the pulse train generated by the Hall effect RPM sensor into the laser and camera trigger controller, so that each pair of snapshots were taken at almost the same blade position.
+
+This enabled a postprocessing technique where the average intensity of several non-seeded snapshots was subtracted from each seeded image, greatly reducing the brightness of the illuminated rotor and providing a better particle correlation. In the case of the longitudinal measurements, this was not deemed necessary since the back of the glass was painted matte and thus provided a good background.
+
+While this resulted in overall enhanced quality of the reconstructed field, small reflections such as that of a small notch at the axis nut could not be removed. Also, in some occasions small glitches in the operation of the sensor resulted in pairs where the two laser pulses were included in the first frame, thereby rendering the pair useless. Fortunately, those cases were easy to identify and remove.
+
+Since apart from the influence of the background the transverse velocity flow was much more chaotic than the longitudinal flow field, the quality of each individual snapshot pair correlation was worse than those of the longitudinal case. However, as the oil soiling of the wall was not as problematic, a greater number of valid pairs could be captured so that the averaged velocity field could be reliable.
+

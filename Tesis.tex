@@ -23,6 +23,7 @@
 \usepackage{rotating}
 \usepackage{changepage}
 \usepackage{wrapfig}
+\usepackage{soul}
 
 % Sans serif font
 \usepackage[type1,scaled=1.02,condensed]{cabin}
@@ -96,7 +97,7 @@
 
 \begin{document}
 
-%-----------------------------------------------------------------------------%
+%-------------------------------------------------------------------%
 % FRONT MATTER
 
 % Cover page
@@ -158,27 +159,27 @@ The performance of different experimental techniques proposed in the literature 
 \cleardoublepage
 
 % Quotes
-% \null\vspace{2cm}
+\null\vspace{2cm}
 
-% \begin{flushright}
-% \begin{minipage}[t]{0.75\textwidth}
+\begin{flushright}
+\begin{minipage}[t]{0.75\textwidth}
 
-% \linespread{0.97}\selectfont
-% {\itshape\small``The story is set in the year 1922 and has its main character, Mr Engelbert, moving to Prague from the countryside to live out his retirement years and struggling to cope with the aggressive modernity of the city. The horror is not the power of money or the arrogance of the people, but the noise; not the age-old noise of a thunderstorm or a hammer, but the new noise of engines, especially of automobiles and motor-cycles, the explosive internal combustion monsters.''}\\[-3mm]
+\linespread{0.97}\selectfont
+{\itshape\small``The story is set in the year 1922 and has its main character, Mr Engelbert, moving to Prague from the countryside to live out his retirement years and struggling to cope with the aggressive modernity of the city. The horror is not the power of money or the arrogance of the people, but the noise; not the age-old noise of a thunderstorm or a hammer, but the new noise of engines, especially of automobiles and motor-cycles, the explosive internal combustion monsters.''}\\[-3mm]
 
-% {\cabincondensed\small\hfill \textbf{Milan Kundera}, \emph{The Curtain.}}\\[10mm]
+{\cabincondensed\small\hfill \textbf{Milan Kundera}, \emph{The Curtain.}}\\[10mm]
 
-% \linespread{0.97}\selectfont
-% {\itshape\small``Hundreds of noises wove themselves into a wiry texture of sound with barbs protruding here and there, smart edges running along it and subsiding again, with clear notes splintering off and dissipating. By this noise alone, whose special quality cannot be captured in words, a man returning after years of absence would have been able to tell with his eyes shut that he was back in the Imperial Capital and Royal City of Vienna.''}\\[-3mm]
+\linespread{0.97}\selectfont
+{\itshape\small``Hundreds of noises wove themselves into a wiry texture of sound with barbs protruding here and there, smart edges running along it and subsiding again, with clear notes splintering off and dissipating. By this noise alone, whose special quality cannot be captured in words, a man returning after years of absence would have been able to tell with his eyes shut that he was back in the Imperial Capital and Royal City of Vienna.''}\\[-3mm]
 
-% {\cabincondensed\small\hfill \textbf{Robert Musil}, \emph{The Man Without Qualities.}}
-% \end{minipage}
-% \end{flushright}
+{\cabincondensed\small\hfill \textbf{Robert Musil}, \emph{The Man Without Qualities.}}
+\end{minipage}
+\end{flushright}
 
-% \cleardoublepage
+\cleardoublepage
 
-%-----------------------------------------------------------------------------%
-% BODY MATTER
+%-------------------------------------------------------------------%
+% BODY MATTER (style)
 
 % Chapter
 \titleformat{\chapter}[hang]{}{}{0mm}{\large\bfseries\cabincondensed\textcolor{tema}{\hspace{0mm}CHAPTER \thechapter}\\[-1mm]\Huge}
@@ -208,48 +209,29 @@ The performance of different experimental techniques proposed in the literature 
 \renewcommand{\labelitemi}{\textcolor{tema}{\scriptsize\raisebox{0.5mm}{\Circsteel}}}
 \renewcommand{\labelitemii}{\textcolor{tema}{\scriptsize\raisebox{0.4mm}{\Squaresteel}}}
 
-%-----------------------------------------------------------------------------%
-% CHAPTERS                                   INDICE
+%-------------------------------------------------------------------%
+% BODY MATTER (include content)
 
-\include{cap_intro} %....................... Introducción
+\include{cap_intro} 
 
-\include{cap_liter} %....................... Revisión bibliográfica (JLR)
+\include{cap_liter} 
 
-\include{cap_metod} %....................... Descripción sistemas de medida
+\include{cap_metod} 
 
-\chapter{Results and analysis} %............ Futuro artículo paramétricos
-\label{cap:results}
-\section{Internal noise field} %................. Ruido interno (conductos)
-\subsection{Acoustic spectra} %....................... Espectros
-\subsection{Maps and spectrograms} %.................. Ruido de tubos, etc
-\subsection{Adimensional numebers} %.................. Adimensionalizar
-\section{External noise radiation} %............. Ruido externo
-\label{sec:external_results}
-\subsection{Mouth noise} %............................ Ruido de boca
-\subsection{Surface radiation} %...................... Ruido de tubos, etc
-\section{Correlations} %......................... Correlaciones
-\label{sec:correlations}
+\include{cap_result}
 
-\include{cap_motor} %....................... Articulo Thiesel/IJER
+\include{cap_motor}
 
-\chapter{Comparison with simulations} %..... Articulos validation y param. CFD
-\label{cap:cfd}
-\section{CFD simulation setup} %................. Breve descripción setup
-\section{Validation methodology} %............... Artículo metodología (res.)
-\section{Fluid field insights} %................. Artículos CFD I y II
+\include{cap_cfd}
 
-\chapter{Influence of inlet geometry} %..... Futuro artículo geometrías
-\label{cap:geom}
-\section{Anechoic test bench} %.................. Resultados anecoica
-\section{Engine test cell} %..................... Resultados motor?
+\include{cap_geom}
 
-\chapter{Conclusions and future works} %.... Conclusiones / trab. futuros
-\label{cap:conclus}
+\include{cap_conclus}
 
-%-----------------------------------------------------------------------------%
+%-------------------------------------------------------------------%
 % BACK MATTER
 
-% REFERENCES
+% References
 % Title format
 \titleformat{\chapter}[hang]{}{}{0mm}{\bfseries\sffamily\Huge}
 % Print bibliography
