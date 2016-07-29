@@ -1,0 +1,103 @@
+%!TEX root = Tesis.tex
+\chapter{Influence of the inlet geometry} 
+\label{cap:geom}
+
+As discussed in the literature review (chapter \ref{cap:liter}) and along the present chapter, different geometric variations of the inlet line near the impeller have been proposed and tested in order to mitigate the negative effect of the flow unstabilities.
+
+While mainly aimed at obtaining a more stable flow to delay deep surge onset to enhance the usable zone of the map and keep compressor thermodynamic efficiency even at low air mass flow operating conditions, the impact of these solutions in the generated and transmitted noise must be also considered.
+
+In this section different experimental measurement campaigns are described, where some of the geometries most commonly proposed in the literature were tested both on the continuous flow test rig and in real engine conditions. 
+
+\section{Simple geometries}
+
+The first of these experimental campaigns was carried by manufacturing a sample of each one of the simplest proposed geometries: a 90º sharp elbow, a tapered duct, and a reservoir. In addition, a short straight pipe was also used as a reference. All of these four geometries can be seen in Fig. \ref{fig:image_simple_geom}.
+
+These simple geometries were installed on the anechoic chamber flow test rig described in chapter \ref{cap:metod}. Both the orifice noise measurement free-field microphone and the radiated noise setup with four equally distributed free-field microphones were kept in order to evaluate the acoustic emission in this preliminary investigation.
+
+In order to simulate more realistic inlet conditions a short straight pipe was added after each of the tested geometries. This short pipe included a three piezoelectric sensor array in order to obtain  validation pressure data for CFD simulations, but no acoustic intensimetry could be performed as the pipes were too short for proper flow development.
+
+\begin{figure}[tb!]
+\centering
+\includegraphics[width=0.9\textwidth]{figures/cap_geom/CAM00038_2}
+\caption{Image of the selected simple geometries during the manufacturing process. The straight pipe at the top was used standalone as a reference and also attached upstream of each geometry in order to measure the instantaneous pressure.}
+\label{fig:image_simple_geom}
+\end{figure}
+
+\subsection{Surge margin}
+
+Furthermore, raw pressure data from one of these fast sensors was used to characterize with high precision the air mass flow at which the compressor entered into deep surge conditions. This way not only the acoustic output of each geometry could be measured but also their influence regarding the stability of the flow and thus the enlargement of the usable operating conditions.
+
+As in the previously described experimental campaigns, this fast pressure data was recorded by a Yokogawa digital oscilloscope, along with the mass flow and shaft speed data. The rest of the ancillary information about the turbocharger operation was recorded by the in-house DAQ system.
+
+Measurements with each inlet geometric variant were carried out at different air mass flow settings and a constant shaft speed of 160 krpm, from higher mass flow to lower mass flow. 
+
+When conditions were judged to be close enough to deep surge, a continuous recording of the variables started where the mass flow was gradually decreased by slowly closing the backpressure valve until the violent oscillations of deep surge began and the valve was opened completely to stabilize the turbocharger.
+
+\begin{figure}[htb!]
+\centering
+\includegraphics[width=0.49\textwidth]{figures/cap_geom/AutoSurge_straightData}
+\includegraphics[width=0.49\textwidth]{figures/cap_geom/AutoSurge_reservoirData}
+\includegraphics[width=0.49\textwidth]{figures/cap_geom/AutoSurge_elbowData}
+\includegraphics[width=0.49\textwidth]{figures/cap_geom/AutoSurge_taperedData}
+\caption{Non-dimensional pressure recording of each geometry when air mass flow was progressively decreased until deep surge condition was reached.}
+\label{fig:autosurge_simple_geom}
+\end{figure}
+
+This pressure recording was then post-processed following a procedure similar to that described in chapter \ref{cap:metod}. In steps of 0.5 s, FFT was applied to obtain the pressure spectra and then a ratio $R$ was computed between the power at 0-50 Hz and the power at 50-100 Hz:
+
+\begin{equation}
+	R=\frac{\sum_{f=0}^{50}|\mathbf{P}(f)|^2}{\sum_{f=50}^{100}|\mathbf{P}(f)|^2}
+	%, \quad \mathbf{P}(f) = \mathcal{F}}\{p(t_i,t_i+0.5)\}
+\end{equation}
+
+When this power ratio reached values over 100, it was considered that deep surge had started at that time. Data was then averaged between the two previous time steps in order to obtain the corresponding value of lowest allowable air mass flow. Time steps and power ratios can be together with non-dimensional pressure tracks in Fig. \ref{fig:autosurge_simple_geom}. The lowest allowable mass flow obtained through this method can be seen in Fig. \ref{fig:minFlow_simple_geom}.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.75\textwidth]{figures/cap_geom/GeomComp_SurgeAMF}
+\caption{Lowest allowable air mass flow for the different simple geometries tested, obtained through the described algorithm.}
+\label{fig:minFlow_simple_geom}
+\end{figure}
+
+As seen in this figure, the straight duct is the first one to reach  deep surge conditions. The tapered duct and the 90º elbow pipe have similar but higher margins until surge, while the reservoir delays this damaging condition even more, allowing approximately 10 g/s of further air mass flow reduction.
+
+\subsection{Noise levels}
+
+In addition to the effect on surge margin, the effect on external noise levels was evaluated. As described in previous chapters, two different measurements systems were available in the anechoic chamber. 
+
+To capture the orifice noise, one free-field omnidirectional microphone was situated at a distance of 10 mm from the inlet opening. In this case the microphone had to be repositioned each time the geometry was changed as they had different lengths and, in the case of the elbow, orientation of the orifice.
+
+The second system for measuring externally radiated noise, consisting in the four equispaced free-field microphones placed at 1 m distance form the center of the inlet assembly was kept in the same place for all the tested geometries. 
+
+In both cases the microphones were calibrated using a Brüel \& Kj\ae r pistonphone prior to the measurements and data was captured using a Pulse DAQ. Fig. \ref{fig:Radiated_Orifice_SPL_simple_geom} shows the result of both measurements at the stable operating point most close to surge as characterized by the aforementioned procedure, since it is the point of maximum noise emission.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.75\textwidth]{figures/cap_geom/GeomComp_Radiated_Orifice_SPL}
+\caption{Comparison of orifice noise and averaged radiated noise measured in the anechoic chamber for each of the simple inlet geometries at the stable operating point most close to surge.}
+\label{fig:Radiated_Orifice_SPL_simple_geom}
+\end{figure}
+
+It can be seen that again there are significant differences between the inlet geometries tested. These differences were higher when measuring the radiated noise through the average of the four microphones, with the reservoir featuring a 3 dB reduction compared to the reference straight duct. 
+
+On the other hand, the 90º elbow inlet reached a 5 dB increase over the straight inlet level, but this particular result could be influenced by the fact that the direction of the orifice was not perpendicular to the plane of the four microphones. Finally, the tapered duct seemed to radiate at the same level that the straight pipe.
+
+Regarding orifice noise, the reservoir featured again a reduction in noise level of 2 dB. However, in this case the elbow featured the same level as the reference straight pipe, being the tapered duct the one with a higher level at 130 dB, 3 dB more than the reference geometry.
+
+In Fig. \ref{fig:GeomComp_OrificeSpectra_ann} the different spectra recorded by the orifice microphone during each geometry test are plotted to look in detail at these level differences. It can be seen how levels for the tapered duct are higher along the whole frequency range, while the inlets featuring the elbow and the reservoir remain closer to the reference straight pipe.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.75\textwidth]{figures/cap_geom/GeomComp_OrificeSpectra_ann}
+\caption{Comparison of orifice noise spectra for each of the simple inlet geometries at the stable operating point most close to surge.}
+\label{fig:GeomComp_OrificeSpectra_ann}
+\end{figure}
+
+The most noticeable difference however, is the resonator effect of the reservoir, that provides an important attenuation at frequencies in the plane wave region of the spectrum. Finally, a small peak can be noticed at 16 kHz, correspondent to the Blade Passing Frequency  associated to the 160 krpm shaft speed that was used during these measurements.
+
+\section{Engine test cell}
+
+
+
+\section{Elbow parametric study}
+\section{Conclusions}
