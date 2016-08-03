@@ -36,7 +36,7 @@ When conditions were judged to be close enough to deep surge, a continuous recor
 \begin{figure}[htb!]
 \centering
 \includegraphics[width=0.49\textwidth]{figures/cap_geom/AutoSurge_straightData}
-\includegraphics[width=0.49\textwidth]{figures/cap_geom/AutoSurge_reservoirData}
+\includegraphics[width=0.49\textwidth]{figures/cap_geom/AutoSurge_reservoirData}\\[3mm]
 \includegraphics[width=0.49\textwidth]{figures/cap_geom/AutoSurge_elbowData}
 \includegraphics[width=0.49\textwidth]{figures/cap_geom/AutoSurge_taperedData}
 \caption{Non-dimensional pressure recording of each geometry when air mass flow was progressively decreased until deep surge condition was reached.}
@@ -95,9 +95,199 @@ In Fig. \ref{fig:GeomComp_OrificeSpectra_ann} the different spectra recorded by 
 
 The most noticeable difference however, is the resonator effect of the reservoir, that provides an important attenuation at frequencies in the plane wave region of the spectrum. Finally, a small peak can be noticed at 16 kHz, correspondent to the Blade Passing Frequency  associated to the 160 krpm shaft speed that was used during these measurements.
 
-\section{Engine test cell}
+\section{On-engine tests}
 
+In the scope of the on-engine tests described in chapter \ref{cap:engine}, a follow-up experimental campaign was carried out in order to characterize the effect that different geometric variations of the turbocharger inlet line had in performance, surge margin and noise emission.
 
+\subsection{Measurement setup}
+
+The selected geometric variations of the inlet line were chosen taking into account realistic packaging size restrictions of commercial vehicles, so in this case the reservoir case was not tested as it was not possible to fit it to the available compressor inlet. 
+
+Similarly, elbow inlets were not tested as they would require to re-route the inlet line, being its design already frozen at the time of the testing. Focus was then put into small changes like tapered ducts, rotation devices and nozzle-like additions to the inlet pipe.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.95\textwidth]{figures/cap_geom/geom_engine}
+\caption{Longitudinal section view of the inlet geometries that were considered for the on-engine experimental campaign.}
+\label{fig:geom_engine}
+\end{figure}
+
+Figure \ref{fig:geom_engine} shows the selected geometry variations based on these selection criteria. On top of the figure the reference geometry is depicted. The turbocharger inducer was milled and substituted by an adaptor to which a straight duct was coupled. At the end of this duct a pipe of the original diameter was then affixed with a tapered transition.
+
+\begin{wrapfigure}{o}[7mm]{0.4\textwidth}
+%\begin{figure}[h!]
+\centering
+\includegraphics[width=0.4\textwidth]{figures/cap_geom/IGV_fitted}
+\caption{Picture of the 3D-printed IGV device fitted to the compressor inlet duct, looking towards the impeller.}
+\label{fig:IGV_fitted}
+%\end{figure}
+\end{wrapfigure}
+
+The simplest inlet geometry tested consisted in a tapered duct situated as close as possible to the compressor impeller leading edge. This can be seen at the center left in the figure. Below, it is shown how this tapered duct was complemented with an inlet guide vane (IGV) device.
+
+This was done in order to increase the swirl of the incoming air flow. The device stators featured 0º leading edge angles and $\sim 70$º trailing edge angles, and it was directly 3D-printed from the CAD design. The device can be seen fitted into the inlet pipe in Fig. \ref{fig:IGV_fitted}.
+
+To analyze how the closeness of the tapered duct to the impeller influenced the behaviour of the compressor, the two following geometric variations (center column of Fig. \ref{fig:geom_engine}) were the same except for the separation between the tapered duct and the impeller, which was increased to 52 mm. Again, one measurement was performed with and IGV and other without it.
+
+Lastly, two nozzles were tested (right column of Fig. \ref{fig:geom_engine}): a convergent-divergent nozzle between the tapered adaptor and the impeller (top) and a convergent nozzle (bottom) just after the tapered duct, with its throat as close as possible to the impeller wheel.
+
+In order to evaluate the influence of these geometric variation on the noise output of the compressor, the acoustic measurement setup used in chapter \ref{cap:engine} was maintained, consisting in the straight inlet extension featuring the pressure decomposition array for in-duct intensimetry and the intensity probe aligned with the inlet orifice.
+
+Measurement operating conditions for the noise characterization campaign were chosen \hl{as to be representative of the most common real-life conditions that the engine would experiment in a commercial vehicle, in order to test if these simple inlet modifications could modify the noise output not only on the most extreme conditions but in more conservative settings.}
+
+\subsection{Results}
+
+\hl{Since the objective of this experimental campaign is the comparison between geometries, in this subsection only the results from the orifice intensity probe will be presented for the sake of brevity.}
+
+In Fig. \ref{fig:geom_mot_comparison_map1} the interpolated intensity level map is presented, indicating the points at which each measurement was made. The interpolation of sound intensity was performed between frequencies of 1 and 3 kHz, which are specially relevant regarding the aforementioned ``whoosh'' issue.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.7\textwidth]{figures/cap_geom/map_engine_geom_config1}
+\caption{Sound intensity level map between 1--3 kHz for the straight inlet used as a reference in the on-engine inlet geometric variation test.}
+\label{fig:geom_mot_comparison_map1}
+\end{figure}
+
+Note as well that because of the particular regulation mechanism of the facility based on the injection of compressed air into the inlet line, the depicted operating conditions do not represent constant shaft speed lines, so no judgement about the slope of these lines should be made.
+
+However, it can be seen in this figure that the noise levels in the selected band behave as results of presented in previous chapters led to expect. Noise levels increase as pressure ratio increases and air mass flow diminishes, with the dependency on air mass flow being much more noticeable at higher pressure ratios that at lower ones.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.45\textwidth]{figures/cap_geom/map_engine_geom_config2}\hspace{0.05\textwidth}
+\includegraphics[width=0.45\textwidth]{figures/cap_geom/map_engine_geom_config3}\\[2mm]
+\includegraphics[width=0.45\textwidth]{figures/cap_geom/map_engine_geom_config4}\hspace{0.05\textwidth}
+\includegraphics[width=0.45\textwidth]{figures/cap_geom/map_engine_geom_config5}\\[2mm]
+\includegraphics[width=0.45\textwidth]{figures/cap_geom/map_engine_geom_config6}\hspace{0.05\textwidth}
+\includegraphics[width=0.45\textwidth]{figures/cap_geom/map_engine_geom_config7}
+\caption{Sound intensity level maps between 1--3 kHz for the different geometries used in the on-engine test.}
+\label{fig:geom_mot_comparison_maps}
+\end{figure}
+
+Figure \ref{fig:geom_mot_comparison_maps} shows the results for the same frequency band when the reference straight duct was substituted by each of the variants described in Fig. \ref{fig:geom_engine}. 
+
+It is apparent from the figure that different operating conditions were measured in each one of the tests, as the goals in this campaign were to characterize the sound emission across the selected map region and to test how each geometry impacted the performance in regards of surge margin and maximum ingested air mass flow.
+
+In this regard, the figure shows how the geometry changes have an impact on surge margin (left frontier of the map), as some of the modified inlet lines increase the range of low flow operating conditions that can be safely used before going into deep surge, specially at higher shaft speeds; compare for instance the highest row of points of the straight inlet in Fig. \ref{fig:geom_mot_comparison_map1} and that of the convergent-divergent nozzle (bottom left plot of Fig. \ref{fig:geom_mot_comparison_maps}).
+
+Impact of the geometry variation on air mass flow was also tested in regards of maximum flow at 160 krpm, as it is not only important to increase surge margin but also to maintain the possibility of operating the turbocharger at high mass flow levels. 
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.95\textwidth]{figures/cap_geom/geom_mot_comparison_AMF}
+\caption{Comparison of mean sound intensity level for each of the inlet geometries across the normal operating range of the engine.}
+\label{fig:geom_mot_comparison_AMF}
+\end{figure}
+
+A comparison of the performance of each geometry in both aspects is presented in Fig. \ref{fig:geom_mot_comparison_AMF} where the percentages of improvement from the straight duct reference inlet are plotted. An inverse correlation between maximum flow and surge margin is apparent, only the tapered duct at 52 mm from the impeller improving both factors at the same time and only the tapered duct closer to the impeller and featuring an IGV worsening both.
+
+Largest amount of surge margin improvement was found with the convergent nozzle, but at the cost of an equally large air mass flow reduction at $PR = 2$ and 160 krpm of shaft speed, so in order to implement this solution in real-life applications it should be necessary to mechanically open the nozzle throat at these high flow conditions.
+
+To similarly quantify the influence of the geometries in noise emission at the selected frequency band, in Fig. \ref{fig:geom_mot_comparison_meanSIL} an average sound intensity level (SIL) is presented, as measured by the Brüel \& Kj\ae r intensity probe located pointing directly to the inlet orifice.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.95\textwidth]{figures/cap_geom/geom_mot_comparison_meanSIL}
+\caption{Comparison of mean sound intensity level for each of the inlet geometries across the normal operating range of the engine.}
+\label{fig:geom_mot_comparison_meanSIL}
+\end{figure}
+
+Intensity level of the tapered duct is very similar to that of the reference straight pipe; both when located as close as possible to the compressor wheel and when separated 52 mm from it. The addition of the described IGV to those tapered inlets notably reduces noise levels by 3 and 4 dB respectively. 
+
+Regarding the nozzle configurations, it can be seen that the convergent-divergent nozzle reduces noise output in the selected frequency band by 1 dB, whereas the convergent nozzle features a notable reduction of approximately 3 dB compared to the reference.
 
 \section{Elbow parametric study}
+
+\subsection{Setup}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.9\textwidth]{figures/cap_geom/codo075D}
+\caption{Mechanical drawing of the 0.75D elbow inlet designed to fit into the compressor inlet adaptor.}
+\label{fig:codo075D}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.95\textwidth]{figures/cap_geom/Comp_codos}
+\caption{CAD model of the compressor assembly featuring the 0.75D elbow inlet attached to the common adaptor, including the pressure and temperature instrumentation and the mounting system.}
+\label{fig:Comp_codos}
+\end{figure}
+
+\begin{table}[htbp]
+  \centering
+  \caption{Specifications of the aluminium-filled polyamide used for the laser-synthesis of the elbow inlet prototypes.}
+    \begin{tabular}{lcc}
+    \addlinespace
+    \toprule
+    \bf Property & \bf Units & \bf Value \\
+    \midrule
+    Tensile Modulus & MPa   & 3800 $\pm$ 150 \\
+    Tensile Strength & MPa   & 48 $\pm$ 3 \\
+    Elongation at Break & \%    & 3.5 $\pm$ 1 \\
+    Flexural Modulus & N/mm² & 3600 $\pm$ 150 \\
+    Charpy – Impact strength & MPa   & 29 $\pm$ 2 \\
+    Charpy – Notched Impact Strength & MPa   & 4.6 $\pm$ 0.3 \\
+    Shore D/ A-hardness &       & D 76 $\pm$ 2 \\
+    Heat Deflection Temp & °C    & 130 \\
+    Vicat Softening Temperature B/50 & °C    & 169 \\
+    Density & g/cm³ & 1.36 $\pm$ 0.05 \\
+    \bottomrule
+    \end{tabular}
+  \label{tab:alumide_data}
+\end{table}
+
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.95\textwidth]{figures/cap_geom/elbow_075D_assembled}
+\caption{CAD model of the compressor assembly featuring the 0.75D elbow inlet attached to the common adaptor, including the pressure and temperature instrumentation and the mounting system.}
+\label{fig:elbow_075D_assembled}
+\end{figure}
+
+\subsection{Results}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.65\textwidth]{figures/cap_geom/map_elbows}
+\caption{CAD model of the compressor assembly featuring the 0.75D elbow inlet attached to the common adaptor, including the pressure and temperature instrumentation and the mounting system.}
+\label{fig:map_elbows}
+\end{figure}
+
+\subsubsection{Sound intensity}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.65\textwidth]{figures/cap_geom/map_diff_15d}
+\includegraphics[width=0.65\textwidth]{figures/cap_geom/map_diff_1d}
+\includegraphics[width=0.65\textwidth]{figures/cap_geom/map_diff_075d}
+\caption{Difference map of sound intensity levels for each of the selected inlet elbows compared against the reference straight duct. From top to bottom: 1.5D, 1D \& 0.75D.}
+\label{fig:map_diff_075d}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.95\textwidth]{figures/cap_geom/distribution_diff}
+\caption{CAD model of the compressor assembly featuring the 0.75D elbow inlet attached to the common adaptor, including the pressure and temperature instrumentation and the mounting system.}
+\label{fig:distribution_diff}
+\end{figure}
+
+\subsubsection{Temperature}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.65\textwidth]{figures/cap_geom/map_diff_Tstd_15d}
+\includegraphics[width=0.65\textwidth]{figures/cap_geom/map_diff_Tstd_1d}
+\includegraphics[width=0.65\textwidth]{figures/cap_geom/map_diff_Tstd_075d}
+\caption{Difference map of sound intensity levels for each of the selected inlet elbows compared against the reference straight duct. From top to bottom: 1.5D, 1D \& 0.75D.}
+\label{fig:map_diff_075d}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.95\textwidth,trim={3cm 11cm 3cm 11cm},clip]{figures/cap_geom/distribution_diff_Tstd}
+\caption{CAD model of the compressor assembly featuring the 0.75D elbow inlet attached to the common adaptor, including the pressure and temperature instrumentation and the mounting system.}
+\label{fig:distribution_diff}
+\end{figure}
+
 \section{Conclusions}
