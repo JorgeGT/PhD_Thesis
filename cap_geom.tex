@@ -198,14 +198,32 @@ Regarding the nozzle configurations, it can be seen that the convergent-divergen
 
 \section{Elbow parametric study}
 
-\subsection{Setup}
+Having attested the influence of the inlet geometries not only in surge margin and maximum flow but also regarding acoustic performance, it was decided to use the turbocharger test rig used for the inlet local flow measurements described in chapter \ref{cap:inlet} to study the effect of these geometric variations not only in the global aspects of sound intensity and air mass flow but also regarding local aspects like temperature distribution, skewness, etc.
+
+\hl{The gathering of local flow experimental data will also be useful if CFD simulations of these kind of inlet modifications are undertaken, in order to provide a validation reference to check for the correct solving of not only global values but also local flow field characteristics.}
+
+Since neither during the previously described on-engine experimental campaign nor during the preliminary testing described at the beginning of the present chapter was it possible to properly measure the sound intensity caused by elbow geometries, it was decided that the study should start with this kind of geometry variation.
+
+Another reason to consider this geometry is that it introduces non-uniformities in the flow field that completely axisymmetric geometries such as tapered ducts and nozzles do not, so it would provide a good contrast to check the influence on circumferential temperature distribution skewness and correlation with noise generation.
+
+In order to increase the available data on the relation between inlet-induced flow distortion, temperature skewness and noise output, it was decided that a parametric campaign should be carried out where three 90º elbows of different radius would be designed, manufactured and tested.
+
+\subsection{Geometry design}
 
 \begin{figure}[h!]
 \centering
 \includegraphics[width=0.9\textwidth]{figures/cap_geom/codo075D}
-\caption{Mechanical drawing of the 0.75D elbow inlet designed to fit into the compressor inlet adaptor.}
+\caption{Mechanical drawing of the 0.75D elbow inlet designed to fit into the compressor inlet adaptor and house the linear thermocouple array.}
 \label{fig:codo075D}
 \end{figure}
+
+Requirements for the design of the elbow inlets were such that they could be easily installed into the existing setup used for local measurements, coupling to the adaptor piece and existent measurement pipe featuring the in-duct intensity sensor array.
+
+In addition, they needed to house the available linear thermocouple arrays in order to measure the high temperature reversed flow (it should be noted that the circumferential thermocouple array was installed into the adaptor piece) approximately keeping the distance that was selected for the straight pipe study.
+
+Finally, to assess the influence of the flow distortion, the three selected variants were as follows: a very tight elbow with a central radius of 0.75 inlet diameters, a medium elbow with 1 inlet diameter of radius and finally an elbow with a central radius of 1.5 inlet diameters that would provide a smoother transition and less distorted flow.
+
+To fulfil these design requirements, a decision was made to manufacture the elbow prototypes using 3D printing instead of traditional workshop means. This way, the guiding slots for the thermocouples and retention screws could be directly embedded in the piece, along with the slots for the sealing O-rings. Fig. \ref{fig:codo075D} shows the mechanical drawing of the most abrupt elbow with 0.75D of radius.
 
 \begin{figure}[h!]
 \centering
@@ -214,29 +232,42 @@ Regarding the nozzle configurations, it can be seen that the convergent-divergen
 \label{fig:Comp_codos}
 \end{figure}
 
+This design was implemented in a parametric CAD model to easily modify the central radius. Also, a locking system was put into place so the elbow could be affixed tightly to the compressor adaptor using a flange and a set of threaded rods, similarly to the procedure performed for the local flow characterization. The three prototypes generated in this way are shown in Fig. \ref{fig:Comp_codos}.
+
+Once that the the three CAD models were generated, they were sent to a commercial partner for verification and manufacturing. It should be noted that the elbow prototypes were expected to withstand the high temperature backflow coming from the compressor in unstable operating conditions close to deep surge, without undertaking deformations that would have misaligned the thermocouple array.
+
+Taking into account these concerns, it was decided to manufacture the elbow prototypes using an aluminium-filled polyamide through a process known as Selective Laser Sintering (SLS), a technique in which a laser beam is focused onto the surface of a tray containing the powdered material, binding it together in layers to create the desired shape. 
+
 \begin{table}[htbp]
   \centering
-  \caption{Specifications of the aluminium-filled polyamide used for the laser-synthesis of the elbow inlet prototypes.}
-    \begin{tabular}{lcc}
+  \caption{Specifications of the aluminium-filled polyamide used for the laser-sintering of the elbow inlet prototypes.}
+  	\footnotesize
+    \begin{tabular}{llcc}
     \addlinespace
     \toprule
-    \bf Property & \bf Units & \bf Value \\
+    \bf Property & \bf Normative & \bf Unit & \bf Value \\
     \midrule
-    Tensile Modulus & MPa   & 3800 $\pm$ 150 \\
-    Tensile Strength & MPa   & 48 $\pm$ 3 \\
-    Elongation at Break & \%    & 3.5 $\pm$ 1 \\
-    Flexural Modulus & N/mm² & 3600 $\pm$ 150 \\
-    Charpy – Impact strength & MPa   & 29 $\pm$ 2 \\
-    Charpy – Notched Impact Strength & MPa   & 4.6 $\pm$ 0.3 \\
-    Shore D/ A-hardness &       & D 76 $\pm$ 2 \\
-    Heat Deflection Temp & °C    & 130 \\
-    Vicat Softening Temperature B/50 & °C    & 169 \\
-    Density & g/cm³ & 1.36 $\pm$ 0.05 \\
+    Tensile Modulus & DIN EN ISO 527 & MPa   & 3800 $\pm$ 150 \\
+    Tensile Strength & DIN EN ISO 527 & MPa   & 48 $\pm$ 3 \\
+    Elongation at Break & DIN EN ISO 527 & \%    & 3.5 $\pm$ 1 \\
+    Flexural Modulus & DIN EN ISO 178 & N/mm² & 3600 $\pm$ 150 \\
+    Charpy – Impact strength & DIN EN ISO 179 & MPa   & 29 $\pm$ 2 \\
+    Charpy – Notched Impact Strength & DIN EN ISO 179 & MPa   & 4.6 $\pm$ 0.3 \\
+    Shore D/ A-hardness & DIN 53505 &   -   & D 76 $\pm$ 2 \\
+    Heat Deflection Temp & ASTM D648
+(1.82MPa) & °C    & 130 \\
+    Vicat Softening Temperature B/50 & DIN EN ISO 306 & °C    & 169 \\
+    Density &   N/A    & g/cm³ & 1.36 $\pm$ 0.05 \\
     \bottomrule
     \end{tabular}
   \label{tab:alumide_data}
 \end{table}
 
+Specifications of the selected material can be found in table \ref{tab:alumide_data}. Of special relevance is the heat deflection temperature, also called sometimes heat distortion temperature. It is defined as the temperature at which a sample, under a defined load of 1.82 MPa, will start to deflect at least 0.25 mm. Since in this case the inlet line is approximately at ambient pressure no problem is expected until more elevated temperatures.
+
+\subsection{Setup}
+
+After SLS manufacturing and delivery, the prototype elbows were instrumented with thermocouples and installed into the anechoic chamber test rig. Fig. \ref{fig:elbow_075D_assembled} shows the assembly of the narrower elbow variant.
 
 \begin{figure}[h!]
 \centering
@@ -245,40 +276,99 @@ Regarding the nozzle configurations, it can be seen that the convergent-divergen
 \label{fig:elbow_075D_assembled}
 \end{figure}
 
+It should be noted that the narrow holes for the thermocouple alignment became filled with residual dust during the sintering process, and had to be finished with a manual drill. This presented no problem as the chosen material is easily mechanized.
+
+As it can be seen in Fig. \ref{fig:elbow_075D_assembled} the previously used adaptor piece housing the circumferential temperature array, the inducer miniature pressure probe and a sealing O-ring was kept in place, and the holes in the plane surface added to the elbow were used to align the elbow parallel to the outlet and tighten it using the threaded rods depicted in blue.
+
 \subsection{Results}
 
-\begin{figure}[h!]
+During this experimental campaign, operating conditions were selected to mirror those used in the local flow characterization chapter that featured a straight inlet pipe, in order to allow the reconstruction of interpolated maps that were as close as possible to the original reference map.
+
+\begin{figure}[bh!]
 \centering
-\includegraphics[width=0.65\textwidth]{figures/cap_geom/map_elbows}
-\caption{CAD model of the compressor assembly featuring the 0.75D elbow inlet attached to the common adaptor, including the pressure and temperature instrumentation and the mounting system.}
+\includegraphics[width=0.6\textwidth]{figures/cap_geom/map_elbows}
+\caption{Operating conditions at which data was recorded during the inlet flow characterization tests with a straight duct (as reference) and during the parametric elbow campaign.}
 \label{fig:map_elbows}
 \end{figure}
 
+Fig. \ref{fig:map_elbows} shows the operating conditions of each measured data point, for both the straight inlet pipe used as reference, and for the three described elbow prototypes. It can be seen that repeatability was achieved in most conditions up to a few g/s of air mass flow and 100's of corrected rpm. 
+
+The most adverse conditions were those of maximum allowable flow, specially at higher pressure ratios where the flow distortion and pressure loss caused by the elbows made difficult to achieve exactly the same conditions.
+
 \subsubsection{Sound intensity}
 
-\begin{figure}[h!]
+Using the in-duct piezoelectric sensor arrays, sound intensity level was computed through the wave decomposition method outlined in chapter \ref{cap:metod} for each operating conditions. In order to focus into the previously described ``whoosh'' noise problem sound intensity level was averaged between 0.7 and 3 kHz. and then the interpolating procedure was used in order to reconstruct noise maps for each geometry.
+
+\begin{figure}[thb!]
 \centering
-\includegraphics[width=0.65\textwidth]{figures/cap_geom/map_diff_15d}
-\includegraphics[width=0.65\textwidth]{figures/cap_geom/map_diff_1d}
-\includegraphics[width=0.65\textwidth]{figures/cap_geom/map_diff_075d}
-\caption{Difference map of sound intensity levels for each of the selected inlet elbows compared against the reference straight duct. From top to bottom: 1.5D, 1D \& 0.75D.}
-\label{fig:map_diff_075d}
+
+\includegraphics[width=0.47\textwidth]{figures/cap_geom/map_diff_mapIin_030316_Inlet}\hspace{4mm}
+\includegraphics[width=0.47\textwidth]{figures/cap_geom/map_diff_mapIout_030316_Outlet}\\[4mm]
+
+\includegraphics[width=0.47\textwidth]{figures/cap_geom/map_diff_mapIin_260216_Inlet}\hspace{4mm}
+\includegraphics[width=0.47\textwidth]{figures/cap_geom/map_diff_mapIout_260216_Outlet}\\[4mm]
+
+\includegraphics[width=0.47\textwidth]{figures/cap_geom/map_diff_mapIin_150216_Inlet}\hspace{4mm}
+\includegraphics[width=0.47\textwidth]{figures/cap_geom/map_diff_mapIout_150216_Outlet}\\[4mm]
+
+\caption{Difference map of inlet (left) and outlet (right) in-duct sound intensity levels for each of the selected inlet elbows compared against the reference straight duct. From top to bottom: 1.5D, 1D \& 0.75D.}
+\label{fig:map_diff_in_out}
 \end{figure}
+
+To highlight the differences between the reference straight duct noise map and the result obtained for each elbow prototype, and taking into account the aforementioned slight differences between operating conditions at higher air mass flow settings, difference maps were produced by subtracting the reference levels to each one of the newly obtained elbow maps.
+
+It should be remarked that this subtraction procedure was not performed between the raw levels at each measurement setting but between each interpolated data point, and only where such interpolated data existed in both noise maps (elbow and reference), as to avoid erroneous differences due to the different operating conditions. 
+
+The results of this procedure can be seen in Fig. \ref{fig:map_diff_in_out}, where the difference maps for the three elbow configurations regarding inlet and outlet in-duct intensity are presented. Color scale has been kept constant in order to allow a meaningful comparison between each map.
+
+Regarding the issue of the small differences at higher air mass flow and higher shaft speed settings it can be seen in the maps, examining for instance the highest mass flow point of the second to last higher shaft speed (160 krpm), that some information is missing around the black dot that indicated the original reference measurement point. 
+
+As for the evolution of level difference with the variation of the elbow radius, the figure shows how in the case of the inlet sound intensity differences appear to be higher than in the case of the outlet. This increase is specially evident at lower flow conditions and medium-low shaft speeds, reaching up to 6 dB in level increase. 
+
+There also appears to be a particular point with an small increase in level for both inlet and outlet ducts, at medium air mass flow and medium to hight shaft speeds, its relevance diminishing along with the reduction of the elbow radius.
+
+Finally, some operating conditions in both the inlet and outlet present reduced noise output in the selected frequency band, specially at medium-higher mass flows and lower shaft speeds. As with the case of the increases, these reductions are more significant in the inlet duct, whereas positive and negative variations are of smaller magnitude in the outlet duct.
+
+In order to better quantify the SIL differences that these maps reveal, histograms that represent the distribution of the differences have been computed and presented in Fig. \ref{fig:elbow_intens_histog} for both inlet (top) and outlet (bottom) sound intensity results.
+
+It can be seen in the figure how the different elbow configurations affect the distribution of the intensity level differences. In the case of the inlet, the less narrow elbow (1.5D) and the medium elbow (1D) present a similar, almost symmetric distribution with a mean around -1 dB.
+
+\begin{figure}[htb!]
+\centering
+\includegraphics[width=0.95\textwidth,trim={3cm 11cm 3cm 11cm},clip]{figures/cap_geom/distribution_diff_mapIin}
+\includegraphics[width=0.95\textwidth,trim={3cm 11cm 3cm 11cm},clip]{figures/cap_geom/distribution_diff_mapIout}
+\caption{Histograms of inlet (top) and outlet (bottom) sound intensity level differences between each one of the tested elbow variants and the reference straight inlet pipe. Y axis indicates the percentage of the interpolated compressor map at which each difference level occurred. A dashed line indicates the average of each configuration.}
+\label{fig:elbow_intens_histog}
+\end{figure}
+
+The distribution of the most narrow elbow (0.75D) appears to feature a marked skewness towards positive differences of up to 6 dB that correspond with the low flow, medium-low speed region identified in the aforementioned intensity maps. These points shift the mean up to approximately 0.2 dB of increased level.
+
+Regarding the outlet difference distributions, the situation appears to reverse, with the narrower elbow now featuring the most symmetric distribution and the other two variations presenting a marked skewness towards intensity reduction values, again up to a mean of around 2 dB in the most favorable case (1.5D elbow).
 
 \begin{figure}[h!]
 \centering
-\includegraphics[width=0.95\textwidth]{figures/cap_geom/distribution_diff}
-\caption{CAD model of the compressor assembly featuring the 0.75D elbow inlet attached to the common adaptor, including the pressure and temperature instrumentation and the mounting system.}
-\label{fig:distribution_diff}
+\includegraphics[width=0.88\textwidth]{figures/cap_geom/elbow_comp_1sens}
+\caption{Comparison of plane wave range spectra from both inlet and outlet, highlighting the differences between the straight reference duct and each elbow configuration.}
+\label{fig:elbow_comp_1sens}
 \end{figure}
+
+Focusing now into the detailed aspects of the sound level variation, it is possible to compare the pressure spectra in different points to assess the frequency distribution of the level variation. For instance in Fig. \ref{fig:elbow_comp_1sens} the PSD recorded by inlet and outlet piezoelectric sensors is shown for the different inlet geometries, in the plane wave region.
+
+In the case of the outlet duct, spectra are very similar up to a cut-off point at approximately 1.3 kHz, below which the straight duct presents higher levels than all of the elbows.
+
+On the other hand, spectra on the plane wave region of the inlet duct shows higher differences, consistent with the data already presented in the maps and histograms. 
+
+It is interesting to note however that this increase is not homogeneous in frequency; it can be seen how the small peak at 1.7 kHz present in the straight duct gradually increases with elbow radius reduction, up to a clearly visible broadband between 1.5 and 2.5 kHz.
+
+These are flanked by another two smaller broadband elevations at 0.75 and 3.6 kHz that are also visible in the case of the outlet spectra, and were also very clearly present in the pressure spectra recorded by the diffuser pressure probe, shown for instance in \hl{[fig]}.
 
 \subsubsection{Temperature}
 
 \begin{figure}[h!]
 \centering
-\includegraphics[width=0.65\textwidth]{figures/cap_geom/map_diff_Tstd_15d}
-\includegraphics[width=0.65\textwidth]{figures/cap_geom/map_diff_Tstd_1d}
-\includegraphics[width=0.65\textwidth]{figures/cap_geom/map_diff_Tstd_075d}
+\includegraphics[width=0.48\textwidth]{figures/cap_geom/map_diff_Tstd_15d}
+\includegraphics[width=0.48\textwidth]{figures/cap_geom/map_diff_Tstd_1d}
+\includegraphics[width=0.48\textwidth]{figures/cap_geom/map_diff_Tstd_075d}
 \caption{Difference map of sound intensity levels for each of the selected inlet elbows compared against the reference straight duct. From top to bottom: 1.5D, 1D \& 0.75D.}
 \label{fig:map_diff_075d}
 \end{figure}
