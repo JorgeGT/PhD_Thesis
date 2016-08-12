@@ -362,22 +362,98 @@ It is interesting to note however that this increase is not homogeneous in frequ
 
 These are flanked by another two smaller broadband elevations at 0.75 and 3.6 kHz that are also visible in the case of the outlet spectra, and were also very clearly present in the pressure spectra recorded by the diffuser pressure probe, shown for instance in \hl{[fig]}.
 
+It should be noted as well that, while levels for the detected broadband in the inlet show an increase up to 5 dB, at these frequencies all of the outlet spectra plotted in the lower graph remain at the same levels, indicating that while changes in the inlet configuration seem to boost the upstream transmission of the so-called ``whoosh'' broadband noise, no influence on the outlet duct spectra is detected at these frequencies.
+
 \subsubsection{Temperature}
+
+\hl{[Thermographic camera results]}
+
+Besides the described differences in terms of acoustic intensity produced by the different inlet configurations, it is possible to follow a similar processing procedure in order to assess the differences in terms of temperatures in the inlet section that are related to the hot reversed flow coming from after the compressor impeller.
+
+As in the previous experimental campaign, data from the two thermocouple arrays (longitudinal and circumferential) was processed in order to compile maps of the backflow length and flow temperature skewness, respectively.
+
+These maps were then compared with the original reference map measured with a straight inlet duct, and difference maps were produced for each elbow variant. The resulting difference maps can be seen in Fig. \ref{fig:map_diff_std}. The same color scale has been kept in all of them to provide a suitable comparison.
 
 \begin{figure}[h!]
 \centering
-\includegraphics[width=0.48\textwidth]{figures/cap_geom/map_diff_Tstd_15d}
-\includegraphics[width=0.48\textwidth]{figures/cap_geom/map_diff_Tstd_1d}
-\includegraphics[width=0.48\textwidth]{figures/cap_geom/map_diff_Tstd_075d}
-\caption{Difference map of sound intensity levels for each of the selected inlet elbows compared against the reference straight duct. From top to bottom: 1.5D, 1D \& 0.75D.}
-\label{fig:map_diff_075d}
+\includegraphics[width=0.47\textwidth]{figures/cap_geom/map_diff_mapTcorStdDev_030316_}\hspace{4mm}
+\includegraphics[width=0.47\textwidth]{figures/cap_geom/map_diff_mapTcorStdDev_260216_}\\[3mm]
+\includegraphics[width=0.47\textwidth]{figures/cap_geom/map_diff_mapTcorStdDev_150216_}\hspace{4mm}
+\caption{Difference maps of temperature circumferential standard deviation for each of the selected inlet elbows compared against the reference straight duct.}
+\label{fig:map_diff_std}
 \end{figure}
+
+It can be seen that for the three cases a similar patters appears. An increase in temperature skewness is consistently detected at the lower air mass flow settings, specially at medium shaft speed operating conditions.
+
+At higher air mass flow settings however, a slight reduction in flow temperature skewness is apparent, being much more pronounced in the less narrow elbow configuration (1.5D, top left map). 
+
+This reduction area spans approximately the same conditions for the 1D elbow, but the magnitude of the temperature skewness difference is lower than in the previous case, becoming nearly zero in the case of the most reduced elbow variant (0.75D).
 
 \begin{figure}[h!]
 \centering
 \includegraphics[width=0.95\textwidth,trim={3cm 11cm 3cm 11cm},clip]{figures/cap_geom/distribution_diff_Tstd}
-\caption{CAD model of the compressor assembly featuring the 0.75D elbow inlet attached to the common adaptor, including the pressure and temperature instrumentation and the mounting system.}
-\label{fig:distribution_diff}
+\caption{Histograms of temperature standard deviation differences between each one of the tested elbow variants and the reference straight inlet pipe. Y axis indicates the percentage of the interpolated compressor map at which each difference level occurred. A dashed line indicates the average of each configuration.}
+\label{fig:distribution_diff_std}
 \end{figure}
 
+As in the case of sound intensity level differences, it is possible to combine these maps in the form of histograms in order to better quantify the distribution of these differences. These histograms can be seen plotted in Fig. \ref{fig:distribution_diff_std}.
+
+Distributions shown in this figure appear similar in shape, but shifted in mean value. In all three cases the right tail of the distribution is longer but less populated, indicating that the difference increase happens abruptly in a small region of the compressor map. 
+
+On the contrary, the left tails are more populated but shorter, meaning that more regions of the compressor map feature points with slightly lower differences than the average. These averages reach up to 1ºC in the case of the most narrow elbow configuration (0.75D), while the average is almost zero for the case of the less narrow elbow (1.5D).
+
+As mentioned earlier, by processing the temperature profiles measured by the longitudinal thermocouple array that was added to the design of each elbow prototype, it is also possible to estimate the length of the hot reversed backflow that travels upstream of the impeller and into the inlet in unstable operating conditions.
+
+When designing the prototypes, care was put to ensure that the separation between the thermocouples remained equal to that of the straight inlet duct, taking into account their inserted length of half a radius and the varying radius of each elbow pipe.
+
+In Fig. \ref{fig:map_diff_backL} the estimated length along the exterior edge of the elbow (where the thermocouple array was installed, as shown in Fig. \ref{fig:codo075D}) is mapped for the three elbow configurations.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.47\textwidth]{figures/cap_geom/map_diff_mapBackLen_030316_}\hspace{4mm}
+\includegraphics[width=0.47\textwidth]{figures/cap_geom/map_diff_mapBackLen_260216_}\\[3mm]
+\includegraphics[width=0.47\textwidth]{figures/cap_geom/map_diff_mapBackLen_150216_}\hspace{4mm}
+\caption{Difference maps of high temperature backflow extent for each of the selected inlet elbows compared against the reference straight duct.}
+\label{fig:map_diff_backL}
+\end{figure}
+
+In this case differences range from minus half a diameter up to plus a diameter when compared with the reference straight pipe. The patters of these differences along the compressor map appears to be similar for the three geometric variations: a slight reduction at lower mass flow conditions and a slight increase at higher mass flow conditions for all shaft speeds.
+
+Exceptions to this pattern are some of the lowest air mass flow data points at 100 and 120 krpm for the two narrower elbows (0.75D and 1D), where the backflow length appears to feature a large increase. However it is possible that those are spurious results from the interpolation procedure, since the increase region is very small.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.95\textwidth,trim={3cm 11cm 3cm 11cm},clip]{figures/cap_geom/distribution_diff_mapBackLen}
+\caption{Histograms of high temperature backflow extent differences between each one of the tested elbow variants and the reference straight inlet pipe. Y axis indicates the percentage of the interpolated compressor map at which each difference level occurred. A dashed line indicates the average of each configuration.}
+\label{fig:distribution_diff_backL}
+\end{figure}
+
+These low count extreme points are best shown when the data is put into histogram form as seen in Fig. \ref{fig:distribution_diff_backL}. In this figure it can be seen how the three backflow length difference distributions are quite similar in shape and values.
+
+The three distributions feature approximately the same mean (around 0.1 diameters or of backflow length reduction from the straight inlet case) although for the higher number of the points (that is, the mode) the difference is practically zero.
+
+\subsubsection{Correlations}
+
+\hl{[Correlation figures for the three elbows]}
+
 \section{Conclusions}
+
+Through this chapter, three different experimental campaigns aimed to assess the influence of the inlet geometry in the turbocharger acoustic output have been presented. While different in scope and means, the results shown in this chapter allow some global conclusions to be drawn.
+
+First, a series of tests was carried out where simple geometric variants were added to the compressor inlet, with a straight duct of the same diameter than the compressor inducer being as a reference. This reference was maintained for the three experimental campaign described. Both orifice noise recorded with a free-field microphone and orifice noise averaged between four microphones were recorded.
+
+Results of this first test series showed that, apart from an effect in the turbocharger surge margin that had been previously pointed out by \hl{[cites]}, influence of the geometries on both orifice and radiated noise could be found. The tapered duct appeared to increase the orifice noise, while the reservoir acted as a resonator and not only increased surge margin but lowered both orifice (2 dB) and radiated noise (3 dB). Meanwhile, the elbow increased kept the same orifice noise levels.
+
+Another series of geometry tests were carried out in an engine cell and introduced more complex geometry combinations, with tapered ducts featuring an IGV device and the addition of two nozzles to the inlet line, besides the reference straight pipe. In this case noise output was measured by a commercial intensity probe aligned with the inlet orifice and with the in-duct intensimetry method based on beamforming wave decomposition described in chapter \ref{cap:metod}.
+
+Acoustic data from this on-engine campaign confirmed that the selected tapered duct, while demonstrating an improvement in surge margin and maximum flow when located at a certain distance from the impeller, did not demonstrate a significative effect in orifice noise intensity and in any case these differences were harmful with a slight increase in levels, albeit of less than 0.5 dB.
+
+The addition of an IGV device to boost incoming flow swirl proved interesting as it decreased the acoustic intensity recorded by the orifice probe by 3-4 dB depending on the position of the tapered duct. However this device negatively impacted the maximum flow and, depending in the position of the downstream tapered section, surge margin. 
+
+In the case of the inlet geometries equipped with a nozzle, a decrease of orifice noise was found ranging from 1 dB (converge-divergent nozzle) to 3 dB (convergent nozzle). These nozzles also improved surge margin up to 20\%, but, specially the convergent one, decreased the maximum available air mass flow.
+
+Finally, a more through experimental campaign was carried out where a family of 90º elbow inlets with different radii (that were not tested on the engine due to packaging constraints) were installed on the anechoic test ring and instrumented to measure not only in-duct noise but also temperature distribution through the thermocouple arrays described in chapter \ref{cap:inlet}.
+
+Results from this campaign provided higher in-depth insight into the influence of the elbow radius; as in the aforementioned first testing campaign the very sharp elbow showed equal or slightly higher mean sound intensity in the inlet. However, this increase was not uniformly distributed across the compressor map but concentrated on the lowest allowable air mass setting for each shaft speed. This pattern was shared among the three tested elbow configurations, although as the radius grew sound intensity levels in both inlet and outlet reduced up to 1 dB in average.
+
+Regarding the influence of the inlet elbow variants on the temperature distribution, a similar pattern of circumferential skewness increase towards the lowest allowable flow conditions for each shaft speed can be reconstructed. However, reversed flow length appears similar in all cases, with differences of less than 0.5 inlet diameters.
