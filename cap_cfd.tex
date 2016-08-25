@@ -2,10 +2,205 @@
 \chapter{Validation of numerical simulations}
 \label{cap:cfd}
 
-\noindent
+% Quote
+\null\vspace{-10mm}
+\begin{flushright}
+\begin{minipage}[t]{0.66\textwidth}
+{\itshape\small``As is evident to all, fire and earth and water and air are bodies. And every sort of body possesses solidity, and every solid must necessarily be contained in planes; and every plane rectilinear figure is composed of triangles.''}\\[-3mm]
+
+{\cabincondensed\small\hfill \textbf{Plato}, \emph{Timaeus.}}\\[5mm]
+\end{minipage}
+\end{flushright}
+
+% More than two millenia ago, Plato expressed in the \textit{Timaeus} the belief that all physical matter was in fact composed by infinitesimal bodies: earth was made of tiny cubes; water, of icosahedrons; air, of octahedrons; fire, the last classical element, of tetrahedrons. This would explain how fire feels like stabbing and how water flows endlessly while earth stays put. Furthermore, all of them could be made of triangles, the simplest polygon.
+
+\noindent Numerical simulations of physical problems have been demonstrated to be a valuable tool for the analysis and understanding of phenomena that may be difficult to directly measure or characterize exclusively by experimental means.
+
+These kind of simulations are also very valuable in the development stage of engineering applications, where different prototype variations or operating conditions can be simulated simultaneously without the cost and risks of traditional experimental setups. 
+
+However, it is of the utmost importance to properly validate these numerical tools in order to ensure that the results that are being obtained through their use correspond accurately enough with the physical reality, as small changes in the geometrical model, boundary conditions or numerical algorithms for solving the problem can have a great influence on the outcome of the simulation.
+
+In this chapter the use of experimental data and signal processing techniques to validate a numerical model of a turbocharger compressor is presented, including the validation in terms of global variables, local flow field, acoustic results and different operating conditions of the system. 
 
 \section{CFD simulation setup} %..... Breve descripción setup
 
-\section{Validation methodology} %.... Artículo metodología (res.)
-\section{Selected results}
-\section{Fluid field insights} %.... Artículos CFD I y II
+The development of this numerical model, including the assessment of the influence of spatial and temporal discretization, turbulence models, boundary conditions, tip clearance, etc. was performed in the framework of the doctoral thesis of R. Navarro \cite{navarro2014numerical}, where full details about the model can be found.
+
+In consequence, in this section only a brief description of the numerical model will be provided, covering only the most relevant details for the validation discussion and the use of simulation results in the analysis of the physical problem.
+
+\subsection{Computational domain}
+
+\begin{wrapfigure}[16]{I}[0cm]{0.4\textwidth}
+\raggedleft
+\vspace{-4mm}
+\includegraphics[width=0.4\textwidth]{figures/cap_cfd/mesh3}
+\caption{Polyhedral mesh of the rotor walls (grey) and the surrounding fluid (blue) used in the CFD model.}
+\label{fig:cfd_mesh}
+\end{wrapfigure}
+
+The first step in any numerical model is the decision on the extent at which the real setup will be included in the computational domain. In this case the real setup is the one described in chapter \ref{cap:metod} section \textcolor{red}{X}, this is, the turbocharger that was installed in the anechoic chamber test rig. 
+
+In order to ensure the fidelity of the simulated geometry to the real one was kept, a real compressor of the same exact model of the one installed in the experimental test rig was disassembled and digitized. A structured-light 3D scanner was used to obtain a point cloud, which was interpolated into a smooth CAD model through software post-processing.
+
+To avoid the influence of manufacturing differences that the real compressor could have had, only one main blade and one splitter blade were digitized, the rest of them being cloned into the final model. Tip clearance and backplate gap were also included in the digitized CAD model. The fluid domain was extracted by considering the spaces between the reconstructed surfaces. A sample of the resulting mesh can be seen in Fig. \ref{fig:cfd_mesh}.
+
+This non-structured mesh consisted of 9.5 million polyhedral cells arranged as to obtain $y^+$ values\footnote{The so-called $y^+$ is a dimensionless parameter used in boundary layer theory. Some turbulence models work best when it is close to 1 in the first cell adjacent to the wall.} close to 1 near the impeller walls. Inflation cell layers were used near the walls to enhance these values, with the size of the polyhedral cells being enlarged farther from the walls to reduce the total size of the mesh. \hl{[Mesh frequency cut-off]}
+
+Once that the turbocharger compressor fluid volumes were obtained and meshed, inlet and outlet sections of the digitized compressor were used to create short inlet and outlet pipes by extruding these cross sections up to a distance of five of their diameters. Only these short pipes were considered, as simulating the full piping described in chapter \ref{cap:metod} was considered too computationally expensive. 
+
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{figures/cap_cfd/piping_plan_2}
+\caption{Dimensional drawing of the real compressor inlet and outlet pipes, including the piezoelectric sensor arrays for the experimental wave decomposition and highlighting the CFD simulation domain.}
+\label{fig:cfd_piping_plan}
+\end{figure}
+
+In Fig. \ref{fig:cfd_piping_plan} these short inlet and outlet ducts considered in the numerical simulations are compared with the real experimental setup as installed in the anechoic chamber test rig. It can be seen in the figure that the real pipes were much longer than the simulated ones. 
+
+There was also a change in diameter in the inlet pipe \hl{mandated by the available measurement pipes and flow meter diameter}. As this figure evidences, extending the CFD domain up to the limit of these ducts would have notably increased the simulation time.
+
+\subsection{Case setup}
+
+Once that the mesh was built, the case was solved using a segregated solver in the commercial CFD software package Star-CCM+. A DES (Detached Eddy Simulation) simulation was performed, using an SST $k-\omega$ turbulence model. This hybrid strategy uses a combination of Large Eddy Simulation where possible taking into account grid size, and Reynolds-averaged equations where not, and should be helpful to resolve the finer flow structures that may be involved in noise generation.
+
+Outlet pressure and inlet mass flow rate were chosen as boundary conditions for the simulations, with values for them taken from the experimental campaign described in previous chapters. Specific operating conditions for the reference simulation can be found in table \ref{tab:operatingConditions}.
+
+\begin{table}
+\centering
+\caption{Boundary conditions of the CFD simulation as taken from the experimental data measured in the anechoic chamber test rig.}
+\begin{tabular}{rl}
+\toprule
+Inlet boundary condition & $\dot{m}=77$ g/s, $T_0=293$ K\\
+Outlet boundary condition &  $p=223$ kPa \\
+Rotational speed & $N=158763$ rpm \\ \bottomrule
+\end{tabular}
+\label{tab:operatingConditions}
+\end{table}
+
+Rigid body motion simulation was chosen for the transient setup, with the time step adjusted to so that the impeller mesh turned 1º per time step at the selected shaft speed. This imposed a certain maximum frequency according to the Nyquist criterion of
+
+\hl{Regarding heat transfer the problem is considered adiabatic}. Surface roughness, coupled mechanical deformations and shaft eccentricity that dynamically affected the tip clearance were also disregarded for simplicity.
+
+\subsection{Solution monitors}\label{sub:cfd_sol_monitors}
+
+Besides other monitors dedicated to general fluid field visualization, some additional pressure monitors were added to the simulated inlet and outlet ducts in order to gather data for the specific purpose of acoustic validation of the numerical solution.
+
+Three different kinds of specific solution monitors were considered: a single-point pressure recording flush to the wall of the ducts, a similar single-point monitor in the centre of the duct, and finally an area-averaged pressure recording comprising the whole duct cross section. 
+
+Wall-flush pressure monitors were intended to replicate the position of the piezoelectric transducer used in the experimental campaign. Centerline monitors were used to assess differences between data recorded at this location, which could not be measured experimentally without perturbing the flow, and the data gathered by the wall-flush sensors. 
+
+As cross section area-averaged pressure monitors should produce the same results than the other two at the plane wave frequency range, they were introduced to test if the averaging of the pressure introduced differences.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.65\textwidth]{figures/cap_cfd/cfd_monitors}
+\caption{Dimensional drawing of the real compressor inlet and outlet pipes, including the piezoelectric sensor arrays for the experimental wave decomposition and highlighting the CFD simulation domain.}
+\label{fig:cfd_monitors}
+\end{figure}
+
+The monitors can be seen in Fig. \ref{fig:cfd_monitors}. It can be seen that all three types of monitors were replicated at three different cross sections in both inlet and outlet duct, in order to mimic the array installed in the real setup and also to assess the influence of the longitudinal distance to the compressor on the results. 
+
+\section{Validation methodology} %.... Artículo metodología 
+
+Once that enough iterations of the simulation solution were performed so that frequency resolution of the simulated pressure signal spectra \hl{was acceptable} for comparison, a validation effort was carried out in order to ascertain if the numerical model reproduced the compressor behaviour with enough accuracy as to use the simulation results to obtain extract information about flow features that are difficult to visualize experimentally.   
+
+\subsection{Global variables}
+
+A first step of this validation methodology consisted in comparing global results of the variables that are normally used to characterize the performance of the compressor since if these simple checks were not good, the particular simulation setup should be  further refined.
+
+For instance, specific work $W_u$ and isentropic efficiency $\eta_s$ are two relevant parameters of the compressor operation, defined from the basic thermodynamic variables as follows:
+
+\begin{align}\label{eq:powerAndEfficiency}
+W_u&=\frac{\dot{W}}{\dot{m}}=\frac{\Omega\tau}{\dot{m}}=c_p(T_{out,0}-T_{in,0}) \nonumber \\
+\eta_s &= \frac{\dot{W}_{is}}{\dot{W}}=\frac{T_{in,0}\left(\varPi^\frac{\gamma-1}{\gamma}-1\right)}{T_{out,0}-T_{in,0}}
+\end{align}
+
+Here, $\Omega$ is the rotation speed in rad/s, $\tau$ is the torque as computed by the integration of simulated forces, $c_p$ is the specific heat of air, $\varPi$ is the total-to-total pressure ratio, $\gamma$ is the heat capacity ratio and the subscript 0 refers to total conditions in either inlet or outlet.
+
+Furthermore, this total-to-total pressure ratio $\varPi$ is also a result of the simulation that must be validated. Since mass flow rate, outlet pressure and shaft speed were selected as boundary conditions, inlet pressure of the solution will give a pressure ratio that must be compared against the experimental data. 
+
+To avoid small variations in time, both experimental and CFD simulation variables such as pressures, temperatures and velocities were averaged in a 5 seconds window, before applying equations \ref{eq:powerAndEfficiency}. Table \ref{tab:cfd_globalVariables} shows the results of the computed global variables in both cases, including the relative error between them, defined for each variable $\varphi$ as:
+
+\begin{equation}
+	\varepsilon_R\;[\%]=\frac{\left| \varphi_{CFD}-\varphi_{exp} \right|}{\varphi_{exp}}.
+\end{equation}
+
+\begin{table}[htb]
+\centering
+\caption{Comparison between compressor global variables as measured in the experimental test rig and as predicted by the CFD solution.}
+	\begin{tabular}{rccc}
+	\toprule
+	 & $\varPi$ [-] & $W_u$ [kJ/kg] & $\eta_s$ [$\%$] \\\midrule
+	Exp. & 2.240 & 112.27 & 67.82  \\
+	CFD & 2.221 & 111.32 & 67.62  \\\midrule
+	$\varepsilon_R$ [\%] & 0.87 & 0.84 & 0.30  \\ \bottomrule
+	\end{tabular}
+\label{tab:cfd_globalVariables}
+\end{table}
+
+It can be seen in this table that accuracy of global parameter prediction is good, with less than 1\% of relative error between the CFD and experimental results, even taking into account the simplifying hypothesis considered for the numerical simulation.
+
+This shows that the numerical model of the compressor is successfully reproducing the operating conditions of the real system so that averaged variables such as mean Mach number, temperatures and pressures that are needed for the acoustic analysis are well reproduced.
+
+\subsection{Acoustic results}
+
+However, the fact that these global time-averaged parameters are in good agreement does not guarantee that the simulation setup is precise enough to reproduce the kind of transient flow phenomena that are related to the acoustic behaviour of the compressor.
+
+In a subsequent step of the validation analysis, the spectral content of the simulated pressure data gathered by the monitors described above was compared with the experimental data gathered by the fast piezoelectric sensors.
+
+\subsubsection{Total pressure spectra}
+
+First, comparison between experimental and numerical results was performed using the spectral content of the total pressure, this is, without applying the wave decomposition algorithm to any of the signals. In Fig. \ref{fig:cfd_Spec_Inlet_Tot} this comparison is shown taking into account the three types of CFD monitors described in subsection \ref{sub:cfd_sol_monitors}.
+
+\begin{figure}[htb!]
+\centering
+\includegraphics[width=0.88\textwidth]{figures/cap_cfd/Spec_Inlet_Tot}\\[5mm]
+\includegraphics[width=0.88\textwidth]{figures/cap_cfd/Spec_Outlet_Tot}
+\caption{Comparison of total spectral content between the experimental data recorded by one piezoelectric sensor and the simulation results for each type of monitor.}
+\label{fig:cfd_Spec_Inlet_Tot}
+\end{figure}
+
+It can be seen in this figure that as theoretically predicted,  spectral content measured by the three different CFD monitors collapses in the plane wave frequency range for both inlet and outlet as pressure varies evenly in time across the cross-section.
+
+This collapse of the signals ends when the wall monitor starts to show different spectral content after a certain frequency. This cut-off frequency almost exactly matches the theoretically predicted frequency at which the first asymmetric mode starts propagating.
+
+Axis and surface monitor spectra remain collapsed until the a higher frequency when another separation happens, again matching almost exactly the cut-off frequency of the first radial mode.
+
+Explanation of how these different kind of monitors are affected by these two higher order modes can be found by considering Fig. \ref{fig:cfd_modes_monitors}. As the first asymmetric mode starts propagating, the axial monitor is located in its modal line, thus is not influenced by cross-section pressure fluctuations. The area average monitor evens out these fluctuations, thereby the only monitors being influenced being those located at the wall.
+
+\begin{figure}[htb!]
+\centering
+\includegraphics[width=\textwidth]{figures/cap_cfd/modes_monitors}
+\caption{Schematic of modal lines of the two relevant acoustic modes in relation to the different types of CFD monitors considered in the model.}
+\label{fig:cfd_modes_monitors}
+\end{figure}
+
+When the first radial mode starts propagating at a higher frequency, the axial monitor is not in the modal line any more, and thus its pressure spectral content separates from the surface monitor which continues to average the cross-sectional fluctuations.
+
+Thereby it can be concluded that the CFD model is accurately predicting the cut-off frequencies at which higher order acoustic modes start propagating through the duct.
+
+It can also be seen that BPF tonal noise peak is captured by the numerical model, although more clear in the outlet results that in the inlet ones. The pressure monitor located at the wall features the clearest BPF peak, even showing a small peak in the inlet case at the correct frequency of 16 kHz.
+
+However, agreement between the CFD predicted signals and the experimental results is not so good in terms of PSD level and trend in the spectra, specially above the plane wave frequency range. Also, numerical spectra are more \hl{``jagged''} than experimental ones. The outlet pipe simulated spectra seems to feature an standing wave pattern, related to the short length of the pipe \hl{and lack of non-reflecting boundary conditions}.
+
+\subsubsection{Decomposed spectra}
+
+As shown in chapter \ref{cap:results} the use of pressure wave decomposition can offer clearer spectra as the components coming from the compressor are more isolated from the reflections coming from the duct endings. 
+
+\begin{figure}[htb!]
+\centering
+\includegraphics[width=0.88\textwidth]{figures/cap_cfd/Spec_Inlet_Dec}\\[5mm]
+\includegraphics[width=0.88\textwidth]{figures/cap_cfd/Spec_Outlet_Dec}
+\caption{Comparison of decomposed pressure spectral content between the experimental data using beamforming and the simulation results using the surface monitor and method of characteristics.}
+\label{fig:cfd_Spec_Inlet_Dec}
+\end{figure}
+
+\section{Operating conditions study} %.... Art. op. conditions CFD
+\subsection{Acoustic spectra}
+\subsection{Flow field results}
+
+\section{Other CFD results}
+\subsection{Inlet flow field}
+\subsection{Temperature}
+
+\section{Conclusions}
