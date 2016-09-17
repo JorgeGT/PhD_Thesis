@@ -38,15 +38,15 @@ In consequence, in this section only a brief description of the numerical model 
 \label{fig:cfd_mesh}
 \end{wrapfigure}
 
-The first step in any numerical model is the decision on the extent at which the real setup will be included in the computational domain. In this case the real setup is the one described in chapter \ref{cap:metod} section \textcolor{red}{X}, this is, the turbocharger that was installed in the anechoic chamber test rig. 
+The first step in any numerical model is the decision on the extent at which the real setup will be included in the computational domain. In this case the real setup is the one described in chapter~\ref{cap:metod} section \textcolor{red}{X}, this is, the turbocharger that was installed in the anechoic chamber test rig. 
 
 In order to ensure the fidelity of the simulated geometry to the real one was kept, a real compressor of the same exact model of the one installed in the experimental test rig was disassembled and digitized. A structured-light 3D scanner was used to obtain a point cloud, which was interpolated into a smooth CAD model through software post-processing.
 
-To avoid the influence of manufacturing differences that the real compressor could have had, only one main blade and one splitter blade were digitized, the rest of them being cloned into the final model. Tip clearance and backplate gap were also included in the digitized CAD model. The fluid domain was extracted by considering the spaces between the reconstructed surfaces. A sample of the resulting mesh can be seen in Fig. \ref{fig:cfd_mesh}.
+To avoid the influence of manufacturing differences that the real compressor could have had, only one main blade and one splitter blade were digitized, the rest of them being cloned into the final model. Tip clearance and backplate gap were also included in the digitized CAD model. The fluid domain was extracted by considering the spaces between the reconstructed surfaces. A sample of the resulting mesh can be seen in Fig.~\ref{fig:cfd_mesh}.
 
 This non-structured mesh consisted of 9.5 million polyhedral cells arranged as to obtain $y^+$ values\footnote{The so-called $y^+$ is a dimensionless parameter used in boundary layer theory. Some turbulence models work best when it is close to 1 in the first cell adjacent to the wall.} close to 1 near the impeller walls. Inflation cell layers were used near the walls to enhance these values, with the size of the polyhedral cells being enlarged farther from the walls to reduce the total size of the mesh. \hl{[Mesh frequency cut-off]}
 
-Once that the turbocharger compressor fluid volumes were obtained and meshed, inlet and outlet sections of the digitized compressor were used to create short inlet and outlet pipes by extruding these cross sections up to a distance of five of their diameters. Only these short pipes were considered, as simulating the full piping described in chapter \ref{cap:metod} was considered too computationally expensive. 
+Once that the turbocharger compressor fluid volumes were obtained and meshed, inlet and outlet sections of the digitized compressor were used to create short inlet and outlet pipes by extruding these cross sections up to a distance of five of their diameters. Only these short pipes were considered, as simulating the full piping described in chapter~\ref{cap:metod} was considered too computationally expensive. 
 
 \begin{figure}
 \centering
@@ -55,7 +55,7 @@ Once that the turbocharger compressor fluid volumes were obtained and meshed, in
 \label{fig:cfd_piping_plan}
 \end{figure}
 
-In Fig. \ref{fig:cfd_piping_plan} these short inlet and outlet ducts considered in the numerical simulations are compared with the real experimental setup as installed in the anechoic chamber test rig. It can be seen in the figure that the real pipes were much longer than the simulated ones. 
+In Fig.~\ref{fig:cfd_piping_plan} these short inlet and outlet ducts considered in the numerical simulations are compared with the real experimental setup as installed in the anechoic chamber test rig. It can be seen in the figure that the real pipes were much longer than the simulated ones. 
 
 There was also a change in diameter in the inlet pipe \hl{mandated by the available measurement pipes and flow meter diameter}. As this figure evidences, extending the CFD domain up to the limit of these ducts would have notably increased the simulation time.
 
@@ -63,11 +63,12 @@ There was also a change in diameter in the inlet pipe \hl{mandated by the availa
 
 Once that the mesh was built, the case was solved using a segregated solver in the commercial CFD software package Star-CCM+. A DES (Detached Eddy Simulation) simulation was performed, using an SST $k-\omega$ turbulence model. This hybrid strategy uses a combination of Large Eddy Simulation where possible taking into account grid size, and Reynolds-averaged equations where not, and should be helpful to resolve the finer flow structures that may be involved in noise generation.
 
-Outlet pressure and inlet mass flow rate were chosen as boundary conditions for the simulations, with values for them taken from the experimental campaign described in previous chapters. Specific operating conditions for the reference simulation can be found in table \ref{tab:operatingConditions}.
+Outlet pressure and inlet mass flow rate were chosen as boundary conditions for the simulations, with values for them taken from the experimental campaign described in previous chapters. Specific operating conditions for the reference simulation can be found in table~\ref{tab:operatingConditions}.
 
 \begin{table}
 \centering
 \caption{Boundary conditions of the CFD simulation as taken from the experimental data measured in the anechoic chamber test rig.}
+\footnotesize
 \begin{tabular}{rl}
 \toprule
 Inlet boundary condition & $\dot{m}=77$ g/s, $T_0=293$ K\\
@@ -77,7 +78,7 @@ Rotational speed & $N=158763$ rpm \\ \bottomrule
 \label{tab:operatingConditions}
 \end{table}
 
-Rigid body motion simulation was chosen for the transient setup, with the time step adjusted to so that the impeller mesh turned 1º per time step at the selected shaft speed. This imposed a certain maximum frequency according to the Nyquist criterion of
+Rigid body motion simulation was chosen for the transient setup, with the time step adjusted to so that the impeller mesh turned 1º per time step at the selected shaft speed. This imposed a certain maximum frequency according to the Nyquist criterion of \hl{what?}
 
 \hl{Regarding heat transfer the problem is considered adiabatic}. Surface roughness, coupled mechanical deformations and shaft eccentricity that dynamically affected the tip clearance were also disregarded for simplicity.
 
@@ -98,7 +99,7 @@ As cross section area-averaged pressure monitors should produce the same results
 \label{fig:cfd_monitors}
 \end{figure}
 
-The monitors can be seen in Fig. \ref{fig:cfd_monitors}. It can be seen that all three types of monitors were replicated at three different cross sections in both inlet and outlet duct, in order to mimic the array installed in the real setup and also to assess the influence of the longitudinal distance to the compressor on the results. 
+The monitors can be seen in Fig.~\ref{fig:cfd_monitors}. It can be seen that all three types of monitors were replicated at three different cross sections in both inlet and outlet duct, in order to mimic the array installed in the real setup and also to assess the influence of the longitudinal distance to the compressor on the results. 
 
 \section{Validation methodology} %.... Artículo metodología 
 
@@ -119,15 +120,16 @@ Here, $\Omega$ is the rotation speed in rad/s, $\tau$ is the torque as computed 
 
 Furthermore, this total-to-total pressure ratio $\varPi$ is also a result of the simulation that must be validated. Since mass flow rate, outlet pressure and shaft speed were selected as boundary conditions, inlet pressure of the solution will give a pressure ratio that must be compared against the experimental data. 
 
-To avoid small variations in time, both experimental and CFD simulation variables such as pressures, temperatures and velocities were averaged in a 5 seconds window, before applying equations \ref{eq:powerAndEfficiency}. Table \ref{tab:cfd_globalVariables} shows the results of the computed global variables in both cases, including the relative error between them, defined for each variable $\varphi$ as:
+To avoid small variations in time, both experimental and CFD simulation variables such as pressures, temperatures and velocities were averaged in a 5 seconds window, before applying equations~\ref{eq:powerAndEfficiency}. Table~\ref{tab:cfd_globalVariables} shows the results of the computed global variables in both cases, including the relative error between them, defined for each variable $\varphi$ as:
 
-\begin{equation}
+\begin{equation}\label{eq:relative_error_cfd}
 	\varepsilon_R\;[\%]=\frac{\left| \varphi_{CFD}-\varphi_{exp} \right|}{\varphi_{exp}}.
 \end{equation}
 
 \begin{table}[htb]
 \centering
 \caption{Comparison between compressor global variables as measured in the experimental test rig and as predicted by the CFD solution.}
+\footnotesize
 	\begin{tabular}{rccc}
 	\toprule
 	 & $\varPi$ [-] & $W_u$ [kJ/kg] & $\eta_s$ [$\%$] \\\midrule
@@ -150,7 +152,7 @@ In a subsequent step of the validation analysis, the spectral content of the sim
 
 \subsubsection{Total pressure spectra}
 
-First, comparison between experimental and numerical results was performed using the spectral content of the total pressure, this is, without applying the wave decomposition algorithm to any of the signals. In Fig. \ref{fig:cfd_Spec_Inlet_Tot} this comparison is shown taking into account the three types of CFD monitors described in subsection \ref{sub:cfd_sol_monitors}.
+First, comparison between experimental and numerical results was performed using the spectral content of the total pressure, this is, without applying the wave decomposition algorithm to any of the signals. In Fig.~\ref{fig:cfd_Spec_Inlet_Tot} this comparison is shown taking into account the three types of CFD monitors described in subsection~\ref{sub:cfd_sol_monitors}.
 
 \begin{figure}[htb!]
 \centering
@@ -166,7 +168,7 @@ This collapse of the signals ends when the wall monitor starts to show different
 
 Axis and surface monitor spectra remain collapsed until the a higher frequency when another separation happens, again matching almost exactly the cut-off frequency of the first radial mode.
 
-Explanation of how these different kind of monitors are affected by these two higher order modes can be found by considering Fig. \ref{fig:cfd_modes_monitors}. As the first asymmetric mode starts propagating, the axial monitor is located in its modal line, thus is not influenced by cross-section pressure fluctuations. The area average monitor evens out these fluctuations, thereby the only monitors being influenced being those located at the wall.
+Explanation of how these different kind of monitors are affected by these two higher order modes can be found by considering Fig.~\ref{fig:cfd_modes_monitors}. As the first asymmetric mode starts propagating, the axial monitor is located in its modal line, thus is not influenced by cross-section pressure fluctuations. The area average monitor evens out these fluctuations, thereby the only monitors being influenced being those located at the wall.
 
 \begin{figure}[htb!]
 \centering
@@ -185,22 +187,386 @@ However, agreement between the CFD predicted signals and the experimental result
 
 \subsubsection{Decomposed spectra}
 
-As shown in chapter \ref{cap:results} the use of pressure wave decomposition can offer clearer spectra as the components coming from the compressor are more isolated from the reflections coming from the duct endings. 
+As shown in chapter~\ref{cap:results} the use of pressure wave decomposition can offer clearer spectra as the components coming from the compressor are more isolated from the reflections coming from the duct endings. 
+
+In the case of the experimental data, the decomposition was performed according to the three-sensor LCMV beamformer described in section \hl{X} of chapter~\ref{cap:metod}. However, as CFD allows unfettered access to all of the flow variables at any point of the simulated domain, other pressure wave decomposition methods are available, such as the Method of Characteristic (MoC) that was implemented following the formulation proposed in \cite{payri1995acoustic,torregrosa2012development,galindo2010coupling}: 
+\begin{eqnarray}\label{eq:descomposicion}
+p_\text{forw}=p_\text{ref}\left[ \frac{1}{2}\left(1+\left(\frac{p}{p_\text{ref}}\right)^{\frac{\gamma-1}{2\gamma}}\left(1+\frac{\gamma-1}{2}\frac{u}{a}\right)\right) \right]^{\frac{2\gamma}{\gamma-1}}\\
+p_\text{back}=p_\text{ref}\left[ \frac{1}{2}\left(1+\left(\frac{p}{p_\text{ref}}\right)^{\frac{\gamma-1}{2\gamma}}\left(1-\frac{\gamma-1}{2}\frac{u}{a}\right)\right) \right]^{\frac{2\gamma}{\gamma-1}}\nonumber
+\end{eqnarray}
+
+Here, advantage is taken of the CFD ability to obtain instantaneous local values for sound speed $a$ and flow speed $u$. Again, $\gamma$ is the heat capacity ratio and $p_\text{ref}$ is a suitable reference pressure. Fig.~\ref{fig:cfd_Spec_Outlet_Tot_Moc_Wall} shows the result of applying this algorithm to the wall CFD monitor.
+
+\begin{figure}[htb!]
+\centering
+\includegraphics[width=0.88\textwidth]{figures/cap_cfd/Spec_Outlet_Tot_MoC_Wall}
+\caption{Comparison of experimental and simulated total pressure against simulated decomposed pressure in the outlet case, using the Method of Characteristics and the wall monitor. Black lines indicate mode onset.}
+\label{fig:cfd_Spec_Outlet_Tot_Moc_Wall}
+\end{figure}
+
+As shown in the figure, the decomposed pressure spectra show a better agreement with the experimental data as the periodic oscillations present in the simulated pressure spectra are alleviated. The trend of both reference and simulated spectra are similar overall, although discrepancies can be observed, specially at lower frequencies below 2 kHz. 
+
+While the numerically simulated spectra is able to capture the characteristic peak of the Blade Passing Frequency (BPF) tonal noise at 160 kHz, the broadband noise that is visible in the experimental data between approximately 13 and 17 kHz is not reproduced by the CFD model, suggesting that the source mechanism of this particular phenomena is not being correctly considered in the simulation.
+
+\begin{figure}[htb!]
+\centering
+\includegraphics[width=0.88\textwidth]{figures/cap_cfd/Spec_Outlet_Tot_MoC_Area}
+\caption{Comparison of experimental and simulated total pressure against simulated decomposed pressure in the outlet case, using the Method of Characteristics and the section monitor. Black lines indicate mode onset.}
+\label{fig:cfd_Spec_Outlet_Tot_Moc_Area}
+\end{figure}
+
+In Fig.~\ref{fig:cfd_Spec_Outlet_Tot_Moc_Area} a similar comparison is made, using this time the section monitor (area-averaged pressure). In this case the Method Of Characteristics decomposition procedure allows for a better match between experimental and simulated spectral content at the plane wave range, below the first asymmetrical acoustic mode onset at 7.4 kHz.
+
+However, using this monitor type, higher frequency content after the acoustic modes start propagating does not feature a good agreement with the reference experimental data. Blade Passing Frequency (BPF) tonal noise is not captured as clearly as with the single-point wall monitor, and neither is the broadband centred around 15 kHz. 
+
+Specially in the case of the BPF tonal noise, this could be due to the fact that the area-averaging process is neglecting the pressure differences across the cross-section, that are still picked up by the single-point CFD monitor.
+
+Regarding the plane wave frequency range where the agreement between CFD and experimental data is better, Fig.~\ref{fig:cfd_Spec_PlaneW_Dec} shows the comparison of decomposed pressure wave spectra in both inlet and outlet. 
 
 \begin{figure}[htb!]
 \centering
 \includegraphics[width=0.88\textwidth]{figures/cap_cfd/Spec_Inlet_Dec}\\[5mm]
 \includegraphics[width=0.88\textwidth]{figures/cap_cfd/Spec_Outlet_Dec}
-\caption{Comparison of decomposed pressure spectral content between the experimental data using beamforming and the simulation results using the surface monitor and method of characteristics.}
-\label{fig:cfd_Spec_Inlet_Dec}
+\caption{Comparison of decomposed pressure spectral content between the experimental data (through beamforming) and the simulation results using the surface monitor (through the method of characteristics).}
+\label{fig:cfd_Spec_PlaneW_Dec}
 \end{figure}
 
-\section{Operating conditions study} %.... Art. op. conditions CFD
-\subsection{Acoustic spectra}
-\subsection{Flow field results}
+Data from the decomposed signals is shown both at the highest frequency resolution available in the CFD calculation ($\sim$16 Hz) and smoothed through a moving average filter in order to better show the shape of the spectra. As the experimental data is decomposed though the beamforming procedure described in chapter~\ref{cap:metod}, frequency is limited not only but the onset of the first acoustic mode but also by the spatial Nyquist-like criterion.
 
-\section{Other CFD results}
-\subsection{Inlet flow field}
-\subsection{Temperature}
+In can be seen in this figure that the match between the simulated and experimentally measured pressure waves coming back through the inlet from the compressor is not so good. While the experimental signal features an approximately plane spectra with only a slight ``hump'' of $\sim$4 dB at the ``whoosh'' noise frequency between 1.5 and 2.5 kHz, the simulated pressure wave features an oscillatory behaviour.
+
+In the case of the outlet spectra however, a better agreement between the numerical prediction and the experimental data is found. The CFD simulation result appears to accurately follow the trend of the measurements, including the broadband between 1 and 2.5 kHz that is commonly associated with the ``whoosh'' noise phenomenon.
+
+\hl{This ability of the numerical model to predict the whoosh noise phenomenon in the outlet duct while not completely matching the experimental inlet results seems to point to the primary source of whoosh noise not being located in the inlet flow structures but rather in a downstream point where simulations are more accurate.}
+
+Nevertheless, it is shown in Fig.~\ref{fig:cfd_Spec_PlaneW_Dec} that the CFD model appears to contain a source of broadband noise between 1 and 2.5 kHz that matches the experimental results. Thereby, post-processing of the CFD simulation data could be useful to locate the source mechanism of this phenomenon and, furthermore, the effect on whoosh noise of mitigating solutions could be simulated using this model before its physical implementation. 
+
+\section{Operating conditions study} %.... Art. op. conditions CFD
+
+After performing the validation and optimization of the CFD model at the reference operating conditions (160 krpm of shaft speed and 77 g/s of \hl{corrected} air mass flow), a further study was performed where two additional operating settings of the compressor were simulated by modifying the boundary conditions according to the experimentally measured data points, keeping the rest of the model parameters unchanged.
+
+\begin{wrapfigure}[27]{l}[0.8cm]{0.45\textwidth}
+\vspace{-4mm}
+\centering
+\includegraphics[width=0.45\textwidth]{figures/cap_cfd/cfd_ops_globalPressureRatio}\\[4mm]
+\includegraphics[width=0.45\textwidth]{figures/cap_cfd/cfd_ops_globalSpecificWork}\\[4mm]
+\includegraphics[width=0.44\textwidth]{figures/cap_cfd/cfd_ops_globalEfficiency}\\[2mm]
+\caption{Global compressor variables as measured experimentally and as simulated by CFD in the three selected operating conditions.}
+\label{fig:cfd_ops_globals}
+\end{wrapfigure}
+
+In order to analyze the differences in terms of pressure spectra and and fluid field behaviour at different degrees of unstable operating conditions, the two additional simulations were performed at the same shaft speed of 160 krpm, in one case at a higher air mass flow  ($\sim$109 g/s) and in the other case at a lower air mass flow ($\sim$60 g/s).
+
+\subsection{Global variables}
+
+While the original operating condition selected for the CFD study was chosen so that it matched the point at which the experimental measurements showed that the slope of the speed line reached zero, marking the start of the low-flow, marginal surge map zone, in this additional study the new operating conditions were chosen so that the lower flow one was well into this unstable zone and close to the deep surge limit, and the other was in the stable operating zone near the maximum efficiency point.
+
+This would enable a comparison between the flow field of a stable point, the flow field at the point of the instability inception, and that of a point in which the unstable flow structures such as the inlet backflow would be already well developed. 
+
+Simulations carried out in this campaign were also performed using an unsteady RANS turbulence model in addition to the DES model that was considered for the reference study, to assess the influence that the turbulence model could have in the numerical results.
+
+Again, the first step of the validation process involved checking the same global parameters of the compressor performance that were analyzed for the reference case. In Fig.~\ref{fig:cfd_ops_globals} the comparison of the numerical predictions for these parameters is shown against the previously measured experimental values.  
+
+It can be seen in this figure that while the prediction of isentropic efficiency (bottom plot) and specific work (middle plot) is in good agreement with the experimental data, in the case of the total-to-total pressure ratio (top plot) the agreement is not so good.
+
+The least accurate prediction is that of the highest flow case, where the difference in terms of pressure ratio is larger. It should be noted as well that in this case, \hl{small variations in the predicted temperature and pressure} resulted in a slight change in \textit{corrected} air mass flow.
+
+Regarding the differences between the two considered turbulence models, predictions in terms of isentropic efficiency and specific work are quite similar, with the larger differences in the case of the total-to-total pressure ratio. 
+
+This last difference between the two models is large enough so that it changes the slope of the speed line, with the DES model correctly predicting a decrease in pressure ratio at lower mass flow and the RANS model failing to do so. 
+
+\begin{table}[htb!]
+\centering
+\caption{Relative error between the compressor global variables measured in the experimental test rig and those predicted by the numerical model.}
+\footnotesize
+\begin{tabular}{lcccc}
+\toprule
+Model & $\dot{m}$ & $\varepsilon_{\varPi_{t,t}}$ [\%] & $\varepsilon_{W_u}$ [\%] & $\varepsilon_{\eta_s}$ [\%] \\ \midrule
+
+\multirow{3}{*}{RANS} & 60 & -0.5 & 0.7 & 0.1  \\ 
+					& 77 & -0.8 & -0.6 & -0.5  \\
+					& 109 & -2.3 & -2.1 & -1.3  \\ \midrule
+					
+\multirow{3}{*}{DES} & 60 & 0.4 & 0.6 & 1.6  \\
+					& 77 & -0.9 & -0.8 & -0.4  \\
+					& 109 & -2.8 & -2.6 & -1.5  \\ \bottomrule
+\end{tabular}
+\label{tab:ops_globalVariables}
+\end{table}
+
+Differences quantified in terms of relative error as defined by expression~\ref{eq:relative_error_cfd} are provided in table~\ref{tab:ops_globalVariables}. It can be seen how, although larger that in the reference case of 77 g/s on which the setup was developed, relative errors are still smaller than 3\% in the two additional operating settings as calculated with both DES and RANS turbulence models.
+
+While this table shows how the use of an unsteady RANS model resulted in less relative error overall, specially in terms of isentropic efficiency at the lower flow operating point, it should be remarked that only the DES model correctly predicted the decrease in pressure ratio as flow was near surge conditions and impeller blades began stalling, suggesting that these unstable flow phenomena are better modelled using DES. 
+
+\subsection{Pressure spectra}
+
+In addition to the validation of global variables, it is necessary to assess if the spectral content of the pressure signal simulated by the model at these new operating conditions still matches the trends observed during the corresponding experimental measurements. In this subsection only the data obtained using a DES model is presented.
+
+\begin{figure}[htb!]
+\centering
+\includegraphics[width=0.48\textwidth]{figures/cap_cfd/spec_ops_60gs_inlet}
+\includegraphics[width=0.48\textwidth]{figures/cap_cfd/spec_ops_60gs_outlet}\\[4mm]
+\includegraphics[width=0.48\textwidth]{figures/cap_cfd/spec_ops_77gs_inlet}
+\includegraphics[width=0.48\textwidth]{figures/cap_cfd/spec_ops_77gs_outlet}\\[4mm]
+\includegraphics[width=0.48\textwidth]{figures/cap_cfd/spec_ops_109gs_inlet}
+\includegraphics[width=0.48\textwidth]{figures/cap_cfd/spec_ops_109gs_outlet}
+\caption{Comparison of decomposed spectra in the plane wave range for all three operating conditions and both ducts against experimental results.}
+\label{fig:cfd_ops_spec_all_PW}
+\end{figure}
+
+In Fig.~\ref{fig:cfd_ops_spec_all_PW} a comparison is made in the same fashion as in Fig.~\ref{fig:cfd_Spec_PlaneW_Dec} where decomposed experimental and numerical signals are compared, selecting the surface CFD monitor. The frequency range is thus limited by the experimental spatial criterion, not the first acoustical mode onset. It can be seen that, although not featuring as good match as in the 77 g/s case, the new simulations show a similar trend in spectral content compared against experimental results. 
+
+\begin{figure}[htb!]
+\centering
+\includegraphics[width=0.48\textwidth]{figures/cap_cfd/spec_ops_60gs_inlet_full}
+\includegraphics[width=0.48\textwidth]{figures/cap_cfd/spec_ops_60gs_outlet_full}\\[4mm]
+\includegraphics[width=0.48\textwidth]{figures/cap_cfd/spec_ops_77gs_inlet_full}
+\includegraphics[width=0.48\textwidth]{figures/cap_cfd/spec_ops_77gs_outlet_full}\\[4mm]
+\includegraphics[width=0.48\textwidth]{figures/cap_cfd/spec_ops_109gs_inlet_full}
+\includegraphics[width=0.48\textwidth]{figures/cap_cfd/spec_ops_109gs_outlet_full}
+\caption{Comparison of pressure spectra for all three operating conditions and both ducts against experimental results. Only simulated spectra are computed from decomposed pressure waves.}
+\label{fig:cfd_ops_spec_all_full}
+\end{figure}
+
+Regarding the whole audible range of the spectrum, in Fig.~\ref{fig:cfd_ops_spec_all_full} a comparison is presented where the decomposed signal of the wall monitor, which was shown previously to result in better prediction of higher frequency spectral content, is compared to the experimental pressure spectra from a single sensor. The plane wave range of each plot is shown enlarged in Fig.~\ref{fig:cfd_ops_spec_all_decT}.
+
+\begin{figure}[htb!]
+\centering
+\includegraphics[width=0.48\textwidth]{figures/cap_cfd/spec_ops_60gs_inlet_decT}
+\includegraphics[width=0.48\textwidth]{figures/cap_cfd/spec_ops_60gs_outlet_decT}\\[4mm]
+\includegraphics[width=0.48\textwidth]{figures/cap_cfd/spec_ops_77gs_inlet_decT}
+\includegraphics[width=0.48\textwidth]{figures/cap_cfd/spec_ops_77gs_outlet_decT}\\[4mm]
+\includegraphics[width=0.48\textwidth]{figures/cap_cfd/spec_ops_109gs_inlet_decT}
+\includegraphics[width=0.48\textwidth]{figures/cap_cfd/spec_ops_109gs_outlet_decT}
+\caption{Comparison of pressure spectra for all three operating conditions and both ducts against experimental results in the plane wave range. Only simulated spectra are computed from decomposed pressure waves.}
+\label{fig:cfd_ops_spec_all_decT}
+\end{figure}
+
+Analysis of these last two figures shows that the prediction capability of the model in the higher frequencies is similar in the two new simulations that in the reference one of 77 g/s. The higher frequency broadband seen in both inlet and outlet ducts is still not reproduced by the CFD results, and the level of the high frequency content in the inlet duct is still over-predicted.
+
+Inspecting the plane wave range seen in Fig.~\ref{fig:cfd_ops_spec_all_decT} it is apparent that in the case of the inlet, while still not a perfect match the trends of each flow rate operating point feature good agreement to the experimental data. 
+
+In the case of the outlet results, while the trend at the lowest flow condition is well predicted, for the two higher flow points of 77 and 109 g/s the simulated spectral content captured by the wall monitor does not reproduce correctly the ``whoosh'' noise hump between 1 and 2.5 kHz, over-predicting the level of the lowest frequencies.
+
+\subsection{Selected CFD results}
+
+While the prediction of spectral content is not totally accurate yet, specially in terms of levels, and thus more research should be devoted to enhance the numerical model of the compressor, it has been shown that the model is precise enough to reproduce the trends in spectral content, allowing some selected results to be presented in order to provide better insight into the flow conditions in the compressor.
+
+\begin{figure}[htb!]
+\centering
+\includegraphics[width=1.04\textwidth]{figures/cap_cfd/vel_spec_diffuser}
+\caption{Combination of selected CFD results for the lowest mass flow rate operating condition (60 g/s), including pressure and velocity field and diffuser frequency spectrum.}
+\label{fig:vel_spec_diffuser}
+\end{figure}
+
+The kind of results that can be extracted from the CFD simulation are exemplified in Fig.~\ref{fig:vel_spec_diffuser}, which combines the 3D model of the compressor wheel with plane views of the pressure and velocity fields, and frequency information extracted from the time record of a particular position in the diffuser.
+
+Pressure information is presented in two planes, at the top of the inducer and at the leading edge plane. 3D isosurfaces of $P = 85 kPa$ are also shown, forming ``bubbles'' that move from one channel to the next at a frequency lower than that imposed by the wheel rotation. \hl{[These recirculation ``bubbles'' are sometimes linked to sub-synchronous acoustic phenomena, such as whoosh noise.]}
+
+The radial velocity field is shown in the diffuser and the volute, revealing an asymmetrical field and the presence of a higher speed zone near the volute tongue. Time data was extracted from a point monitor in the diffuser, and its frequency signature is shown in the figure, peaking at 2.9 kHz \hl{and presenting two sidelobes. This pulsation could also be related to whoosh noise generation}.
+
+Taking advantage of the three simulated flow rate conditions. in Fig.~\ref{fig:cfd_isospan_all} the meridional velocity magnitude across the compressor wheel has been plotted into an extended isospan surface. Data to build this surface has been extracted from the inducer, the wheel, the diffuser and the volute, as shown in the accompanying graphic. 
+
+This allows to compare how the velocity field changes across the compressor in all three of the selected operating conditions. Differences are easily noticed between the point of higher flow and higher isentropic efficiency \hl{(bottom)} and the other two points. 
+
+\begin{figure}[htb!]
+\centering
+\includegraphics[height=0.9\textheight]{figures/cap_cfd/isospan_all_small2}
+\caption{Comparison of meridional velocity field in a blade-to-blade isospan surface, for the three selected operating conditions of the CFD model.}
+\label{fig:cfd_isospan_all}
+\end{figure}
+
+In the 109 g/s simulation the velocity field is more axisymmetric, with all blades and channels presenting a similar distribution. Flow in the inducer is very regular, being attached to the blades in all cases. Flow distribution in the diffuser and volute is no longer axisymmetric, featuring instead a wake trail for each blade. Also, vortex shedding can be appreciated even in these conditions close to the maximum efficiency point.
+
+As mass flow rate of the CFD boundary condition was reduced to 77 g/s, a more irregular velocity field is shown in the middle plot of the figure. Flow in the inducer is not so regular as before, with some main blades featuring reversed flow at the suction side near the leading edge creating flow detachment. In the diffuser, a zone featuring increased velocity can be seen near the tongue, where the volute is smaller, with the wake of the blades not being so apparent as before.
+
+For the lowest flow rate condition at 60 g/s, the flow field in the inducer became highly irregular, featuring some zone with reversed flow. Severe detachment of the flow can be appreciated in most of the blades, accompanied by a similar high velocity zone in the diffuser near the volute tongue. 
+
+The presence of this high velocity zone (which by continuity also affects pressure) can be seen by attaching a moving pressure monitor to the \hl{pressure side} of one of the blades (marked with a black dot in Fig.~\ref{fig:cfd_isospan_all} and plotting the measured spectra, as seen in Fig.~\ref{fig:cfd_spec_blade_p}. A peak is shown at the frequency of the rotating order $RO$ as the structure is seen by the blade once each revolution. A secondary peak appears also at $2\cdot RO$. 
+
+\begin{figure}[htb!]
+\centering
+\includegraphics[width=0.88\textwidth]{figures/cap_cfd/spec_blade_PS_p}\\[5mm]
+%\includegraphics[width=0.88\textwidth]{figures/cap_cfd/spec_blade_SS_p}
+\caption{Comparison of pressure spectral content recorded at the pressure XXX sides of the trailing edge of an impeller blade between the three simulated operating conditions.}
+\label{fig:cfd_spec_blade_p}
+\end{figure}
+
+These peaks are much more pronounced for the two cases of lower mass flow rate where this zone was more easily identified, but still appears for the 109 g/s case, indicating that still some influence of the volute restriction affects the blades when they pass through this particular angular position.
+
+Of particular interest among the different results that can be extracted from the CFD simulation is the opportunity to analyze the complex flow field that develops in the inducer and final part of the inlet duct as operating conditions reach the mild surge area of the compressor map and flow is reversed in direction. 
+
+\begin{figure}[htb!]
+\centering
+\includegraphics[width=0.80\textwidth]{figures/cap_cfd/backflow_isosurface}
+\caption{Isosurfaces of null axial velocity in the compressor inducer/inlet showing the reversed flow extent and distribution, including isosurfaces of low pressure ``bubbles'' in the same region.}
+\label{fig:cfd_backflow_isosurfaces}
+\end{figure}
+
+In Fig.~\ref{fig:cfd_backflow_isosurfaces} this backflow is characterized for the 60 g/s condition (which is well inside the marginal surge area as demonstrated by the slope of the speed line) by plotting the isosurfaces where $V_z = 0$ m/s. At this operating condition some low pressure ``bubbles'' of stalled flow are also present in the inducer and are also plotted as isosurfaces, as in the previously seen Fig.~\ref{fig:vel_spec_diffuser}. 
+
+The same data is also shown in an inset plot for the 77 g/s operating condition, which is the point that both experimental data and DES CFD simulations identify as the one where the slope of the speed line reaches zero and the marginal surge zone starts.
+
+This 3D view of the pressure and velocity information shows how the low pressure bubbles extend up to the limit of the reversed flow, in both operating conditions. However, these low pressure zones are much more axisymmetric in the 77 g/s point, whereas in the lower flow rate case the become isolated and elongated. Time data shows also how they rotate inside the backflow-affected area in a tornado-like fashion.
+
+Regarding the backflow itself as characterized by the null vertical velocity in the inlet, the figure shows the drastic evolution from an incipient recirculation at 77 g/s very close to the wheel, to the fully developed backflow at 60 g/s, reaching upstream up to 1.2 inducer diameters. It is also shown in the 77 g/s view how this backflow will start appearing close to the inducer walls, leaving  the core flow still unperturbed.
+
+\hl{[Temperature results]}
+
+% \begin{figure}[htb!]
+% \centering
+% \includegraphics[width=0.98\textwidth]{figures/cap_cfd/4M_temp.pdf}
+% \caption{Isosurfaces of null axial velocity in the compressor inducer/inlet showing the reversed flow extent and distribution, including isosurfaces of low pressure ``bubbles'' in the same region.}
+% \label{fig:4M_temp}
+% \end{figure}
+
+\section{Acoustic source location}
+
+While the analysis of raw pressure and velocity \hl{[and temp?]} monitors can shed light into the behaviour of the compressor from the fluid dynamics point of view by identifying flow structures and spectral content at selected points of the domain, other data post-processing techniques can be used to obtain further insight into the acoustic behaviour of the system.   
+
+\subsection{Fourier analysis}
+
+A way to explore the spatial distribution of the acoustic sources for different frequencies of interest is to perform the Fourier transform at each cell of different surfaces like walls and planes. Then, the amplitude of the transformed signal at the frequency of interest is used to color each cell the selected surfaces, be it directly or through a smoothing interpolation.
+
+\begin{figure}[htb!]
+\centering
+\includegraphics[width=0.90\textwidth]{figures/cap_cfd/pressure_fft_walls}
+\caption{Selected domain walls colored by the amplitude of the 3 kHz component of the simulated pressure signal at 160 krpm and 77 g/s.}
+\label{fig:pressure_fft_walls}
+\end{figure}
+
+These kind of results are shown in Fig.~\ref{fig:pressure_fft_walls} for some selected wall boundaries of the numerical domain. Simulated operating conditions are those of the medium flow rate point at 77 g/s. The chosen frequency component has been 3 kHz, as it is relevant in the phenomenon of whoosh noise.
+
+
+
+From the figure it can be surmised that the pressure signal exhibits its stronger 3 kHz component at the diffuser and the downstream half of the blade chords, towards the trailing edges. Color scale needs to be magnified in order to appreciate the distribution in the volute, which is stronger at its narrower part near the tongue. The scale needs to be restricted again to see the pattern at the inlet and outlet ducts, \hl{in the form of a standing wave.}
+
+% \begin{wrapfigure}[16]{O}[0cm]{0.5\textwidth}
+% \raggedleft
+% \vspace{-4mm}
+% \includegraphics[width=0.5\textwidth]{figures/cap_cfd/pressure_fft_walls_circ2}
+% \caption{Polyhedral mesh of the rotor walls (grey) and the surrounding fluid (blue) used in the CFD model.}
+% \label{fig:pressure_fft_walls_circ2}
+% \end{wrapfigure}
+
+\begin{figure}[htb!]
+\centering
+\includegraphics[width=0.95\textwidth]{figures/cap_cfd/pressure_fft_walls_circ}
+\caption{Selected domain walls colored by the amplitude of the 3 kHz component of the simulated pressure signal at 160 krpm and 77 g/s.}
+\label{fig:pressure_fft_walls_circ}
+\end{figure}
+
+Focusing in the diffuser and the wheel, Fig.~\ref{fig:pressure_fft_walls_circ} shows a perpendicular view of the diffuser plane. As it is apparent from the plot, distribution of the content amplitude is not axisymmetric neither in the diffuser nor in the wheel, with two opposite zones of the rotor appear to feature higher content at the selected frequency.
+
+\hl{[Detalles acerca del punto, implementacion, etc.]}
+
+\subsection{Modal decomposition}
+
+While the Fourier analysis method allows the obtaining of interesting results in a simple, straightforward way which moreover can be found already implemented in some commercial CFD codes, it is not without disadvantages.
+
+Among them is the need to manually select both the surfaces and the frequencies of interest, thereby having the risk of missing relevant regions or frequencies, which are not known beforehand. Also, in more complex geometries or flow structures it could be difficult to pinpoint exactly relevant features, requiring the placement of multiple planes in the domain to reconstruct these structures.
+
+\subsubsection{Proper Orthogonal Decomposition}
+
+In order to address these limitations, more sophisticated analysis can be carried out in the form of modal decomposition of the flow field. One of the most used among these is probably the Proper Orthogonal Decomposition (POD) or Karhunen--Loève expansion, which originated in the field of probability theory and was first applied to the analysis of turbulent flow in 1967 \cite{lumley1967structure} . As poetically put in by Aubry in the aptly named paper \emph{``On the Hidden Beauty of the Proper Orthogonal Decomposition''} \cite{aubry1991hidden}, the objective of this technique is that:\\
+
+\emph{``The flow is decomposed into both spatial and temporal orthogonal modes which are coupled: each space component is associated with a time component partner. The latter is the time evolution of the former and the former is the spatial configuration of the latter.''}\\
+
+In this way, this decomposition allows the identification of which spatial structures comprise the most energy of the flow field, which is understood as the superposition of all modes. The ordering of the contribution of each mode however, allows in principle a simplified yet meaningful reconstruction of the flow field. This is realized by diagonalizing the time-averaged spatial correlation matrix assembled with temporal ``snapshots'' of the flow, obtained either numerically or experimentally \cite{schmid2010dynamic,bagheri2013koopman}.
+
+Principal drawbacks of this method include that in some cases energy may not be the most relevant metric in characterizing the relevance of flow structures \cite{schmid2010dynamic}, and that the use of second-order flow statistics can result in a loss of information such as phase \cite{aubry1991hidden}, failing to capture the dynamics of the coherent structures of the flow \cite{schmid2011applications}.
+
+Moreover, while modes resulting from POD exhibit spatial orthogonality, they are can contain multi-frequency temporal content \cite{jovanovic2014sparsity,sakowitz2014flow}. This means that a particular flow structure can be excited by different phenomena and at different frequencies, yet remain spatially coherent in time and thus result in a higher frequency POD mode. 
+
+Linking the spatial structures with a specific phenomena requires, as a consequence, some guesswork based on prior knowledge of the excitation mechanisms. A good example of this is the application of POD to the CFD simulation of an engine manifold presented by Sakowitz \cite{sakowitz2014flow}, where it can be seen how the first POD mode contains different frequency content originated from both the engine firing and the valve opening.
+
+\subsubsection{Dynamic Mode Decomposition}
+
+An alternative decomposition technique known as Dynamic Mode Decomposition (DMD) that addresses this shortcoming is also presented in the same work. A relatively recent technique for modal flow decomposition \cite{rowley2009spectral,schmid2010dynamic,chen2012variants}, DMD is a \textit{data-based} procedure that aims to extract dynamic information from only the snapshots of a non-linear system while avoiding any need for previous knowledge \cite{schmid2010dynamic}. 
+
+This is done by computing the eigenvalues and eigenvectors of a linear model which approximates the underlying dynamics of a system, which may not be necessarily linear \cite{chen2012variants}. The DMD modes (eigenvectors) calculated using this technique represent again coherent spatial structures of the flow, in this case not necessarily orthogonal but each one featuring a single temporal frequency \cite{jovanovic2014sparsity}, in contrast with POD modes. DMD eigenvalues represent the rates of decay and growth of these modes, along with their associated frequency.
+
+Evaluation of the relevance of each mode to the dynamics of the system is usually performed by computing the norm of the mode, although Dahan et al. reported \cite{dahan2014aero} that in some cases it may be preferable to order the modes attending to their frequency rather that their norm, as some modes may feature a growth rate of less than the unity, and thus they may be damped over time.
+
+Furthermore, another advantage of the DMD and POD techniques is that it can be proved \cite{schmid2010dynamic,schmid2011applications} that processing only subdomain data is possible, be it this subdomain a small region of the domain or even a projection of the 3D field into a 2D plane, as no spatial arrangement is assumed by either method. This is convenient as post-processing can be restricted to an area of the flow where relevant phenomena are expected, saving computational effort.
+
+\subsubsection{DMD implementation}
+
+As several variations for implementing a DMD strategy already exist in the literature only the basic concept originally proposed by Schmid \cite{schmid2010dynamic} will be shown in this section. Generally, information on the flow field evolution coming from either numerical simulations or experimental measurements\footnote{For instance, from experimental Particle Image Velocimetry (PIV) measurements that capture a sequence of velocity field snapshots.} will be naturally presented in a sequence of $N$ vectors $\mathbf v_i$ representing temporal snapshots that can be gathered in a matrix $\mathbf V$:
+\begin{equation}\label{eq:dmd_snaps}
+	\mathbf V_1^N = \{\mathbf v_1, \mathbf v_2, \dots, \mathbf v_N\}
+\end{equation}
+
+Each snapshot contains a quantity $M$ of scalar flow magnitudes which in the case of experimental results usually represent the velocity information. In the case of numerical simulations these snapshots may represent other useful information such as pressure, species, etc. These snapshots should be separated by a constant time step $\Delta t$, and are assumed to be linearly related through a certain matrix $\mathbf A$, which is assumed to remain approximately constant during the time $N\Delta t$ spanned by the sequence:
+\begin{equation}\label{eq:dmd_linear}
+	\mathbf v_{i+1} = \mathbf A \mathbf v_i
+\end{equation}
+
+Even if the flow field is non-linear, matrix $\mathbf A$ will provide a linear tangent approximation of the dynamic characteristics of the flow. The objective is now to extract its eigenvalues and eigenvectors which, will be the DMD eigenvalues and the DMD modes of the flow. Combining both expressions in matrix form we can write that:
+\begin{equation}\label{eq:dmd_mat}
+	 \mathbf V_{2}^{N}=\mathbf A \mathbf V_{1}^{N-1}
+\end{equation}
+
+Where $V_{2}^{N}$ contains snapshots 2 to $N$ and $V_{1}^{N-1}$ contains snapshots 1 to $N-1$. As $M$ for CFD simulations is usually in the order of $10^6$ and $N$ must comprise a sensible amount of time steps in order to ensure that the dynamic characteristics are well captured, directly performing the eigendecomposition of $\mathbf A$ is usually too computationally expensive.
+
+In order to overcome this problem different strategies exist, such as reformulating \ref{eq:dmd_mat} into a companion matrix that can be solved through a QR decomposition \cite{schmid2011applications,rowley2009spectral,bagheri2013koopman}. A more numerically stable method however is to make use of the SVD decomposition \cite{schmid2010dynamic,jovanovic2014sparsity,sakowitz2014flow,chen2012variants} to obtain $\mathbf V_1^{N-1} = \mathbf U \Sigma\mathbf W^T$. Then, \ref{eq:dmd_mat} becomes:
+\begin{equation}
+	\mathbf V_2^N = \mathbf A \mathbf U \bm\Sigma \mathbf W^T
+\end{equation}
+
+From this expression it is now possible to manipulate the terms that are already known in order to define a new matrix $\widetilde{\mathbf{S}}$, which will be thus related to $\mathbf A$ in the following way:
+\begin{equation}
+	\widetilde{\mathbf{S}} \triangleq \mathbf U^T \mathbf V_2^N \mathbf W \bm\Sigma^{-1} = \mathbf U^T \mathbf A \mathbf U
+\end{equation}
+
+It can be seen that this relationship between $\widetilde{\mathbf{S}}$ and $\mathbf A$ matches the definition of \emph{matrix similarity}. Thus, $\widetilde{\mathbf{S}}$ is similar to $\mathbf A$ and as a consequence their eigenvalues $\lambda_i$ are the same, with the advantage that $\widetilde{\mathbf{S}}$ is of \hl{reduced size} and easier to solve. The DMD modes $\Phi_i$ can finally be calculated from the eigenvectors $y_i$ of $\widetilde{\mathbf{S}}$ as:
+\begin{equation}
+	\Phi_i = \mathbf U y_i
+\end{equation}
+
+The frequency associated with each spatial mode can be recovered by evaluating the imaginary part of each complex eigenvalue, and taking into account the time step $\Delta t$ between snapshots:
+\begin{equation}
+	f_i = \frac{\omega_i}{2\pi} = \frac{\Im\{\ln(\lambda_i)\}}{2\pi\Delta t}
+\end{equation}
+
+As for ranking the contribution of each mode to the total flow field, several approaches can be followed. Since many eigendecomposition routines normalize the eigenvectors \cite{futrzynski2015dymode}, simply computing their $\ell_2$ norm is not always reliable. 
+
+The energy of the modes can be recovered by solving a linear system in which the DMD-reconstructed field multiplied by unknown amplitudes is compared against a selected snapshot \cite{futrzynski2015dymode}. It is also possible to optimize these amplitudes to promote a more sparse reconstruction of the field with fewer modes \cite{jovanovic2014sparsity}. 
+
+Another ranking metric was considered by Schmid \cite{schmid2010dynamic} in his original DMD formulation, based on the computation of the modes' coherence in time. This can be done by first calculating matrix $\mathbf G$ \cite{delorne2014dynamic}:
+\begin{equation}
+	\mathbf G=\mathbf V_1^{N-1}\bm\Sigma^{-1} \mathbf Y
+\end{equation}
+
+Where $\mathbf Y$ is the matrix that gathers the eigenmodes $y_i$ of $\widetilde{\mathbf{S}}$. Then for each column $\mathbf g_{*,i}$ of $\mathbf G$, the coherence $E_i$ of each DMD mode $\Phi_i$ can be obtained as the inverse of its norm:
+\begin{equation}
+	E_i = ||\mathbf g_{*,i}||^{-1}
+\end{equation}
+
+A disadvantage of this solution for ranking the modes is that the true magnitudes of the vectors for flow reconstruction purposes remain unknown. If flow reconstruction is desired, for instance aiming to simplify the application of the Ffowcs Williams-Hawkings acoustical propagation procedure \cite{williams1969sound} as done by Dahan et al. \cite{dahan2014aero}, solving the amplitudes in a reference snapshot as done by the \texttt{dymode} code \cite{futrzynski2015dymode} or the use of the sparsity-promoting procedure by Jovanovi{\'c} et al. \cite{jovanovic2014sparsity} are recommended instead.
+
+\subsubsection{Sample DMD results}
+
+In order to provide an example of application of DMD to the CFD simulation considered in this chapter, preliminary work was done by implementing the original SVD-based DMD procedure with coherence ranking and applying it to a limited subset of the available data, specifically to the dynamic pressure information at cells near the outlet wall.
 
 \section{Conclusions}
+
+\subsection{Comparison with CFD}
+
+\hl{[To the inlet flow chapter]}
+
+
+
+\begin{figure}[htb!]
+\centering
+\includegraphics[width=0.88\textwidth]{figures/cap_cfd/cfd_circumf_comparison}
+\caption{Isosurfaces of null axial velocity in the compressor inducer/inlet showing the reversed flow extent and distribution, including isosurfaces of low pressure ``bubbles'' in the same region.}
+\label{fig:cfd_circumf_comparison}
+\end{figure}
+
+\begin{figure}[htb!]
+\centering
+\includegraphics[width=0.88\textwidth]{figures/cap_cfd/cfd_longit_temp_comp}
+\caption{Isosurfaces of null axial velocity in the compressor inducer/inlet showing the reversed flow extent and distribution, including isosurfaces of low pressure ``bubbles'' in the same region.}
+\label{fig:cfd_longit_temp_comp}
+\end{figure}
