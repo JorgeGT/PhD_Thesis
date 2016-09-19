@@ -33,7 +33,7 @@ In consequence, in this section only a brief description of the numerical model 
 \begin{wrapfigure}[16]{I}[0cm]{0.4\textwidth}
 \raggedleft
 \vspace{-4mm}
-\includegraphics[width=0.4\textwidth]{figures/cap_cfd/mesh3}
+\includegraphics[width=0.4\textwidth]{figures/cap_cfd/mesh4.pdf}
 \caption{Polyhedral mesh of the rotor walls (grey) and the surrounding fluid (blue) used in the CFD model.}
 \label{fig:cfd_mesh}
 \end{wrapfigure}
@@ -547,26 +547,81 @@ A disadvantage of this solution for ranking the modes is that the true magnitude
 
 \subsubsection{Sample DMD results}
 
-In order to provide an example of application of DMD to the CFD simulation considered in this chapter, preliminary work was done by implementing the original SVD-based DMD procedure with coherence ranking and applying it to a limited subset of the available data, specifically to the dynamic pressure information at cells near the outlet wall.
+In order to provide an example of application of DMD to the CFD simulation considered in this chapter, preliminary work was done by implementing the original SVD-based DMD procedure with coherence ranking, and applying it to a limited subset of the available data, specifically to the dynamic pressure information at cells near the outlet wall.
+
+\begin{figure}[htb!]
+\centering
+\includegraphics[width=0.88\textwidth]{figures/cap_cfd/dmd_modes_coher}
+\caption{Normalized coherence of the outlet surface DMD modes, highlighting the top 10 and comparing against the normalized magnitude of the average PSD.}
+\label{fig:dmd_modes_coher}
+\end{figure}
+
+This was done by taking advantage of the POD/DMD property that allows the selection of a subdomain instead of the whole domain. Furthermore, data downsampling was performed both spatially and temporally by considering one in ten cells and one in ten snapshots, resulting in a spatial length of $M\sim 7\times 10^3$ and a temporal length of $N\sim 10^3$.
+
+In Fig.~\ref{fig:dmd_modes_coher} the normalized coherence $E_i/E_\text{max}$ of each DMD mode $\Phi_i$ has been plotted, highlighting the top 10 modes with the higher coherence. An average PSD of the pressure content is also presented, showing a good agreement with the mode coherence. In both cases the maximum is located at a frequency $f_i\sim 16$ kHz, which in the computed modal space corresponds to mode $\Phi_{323}$ and is related to the blade passing frequency (BPF).
+
+Besides the BPF tonal noise, another relevant DMD mode appears at approximately half of this frequency (7.6 kHz). Coincidentally, this specific frequency is similar to the onset frequency of the first asymmetric acoustic mode (7.4 kHz). At lower frequency (<3Khz) several coherent modes appear, demonstrating the relevance of this particular frequency band.
+
+\begin{figure}[htb!]
+\centering
+\includegraphics[width=0.98\textwidth]{figures/cap_cfd/dmd_modes}
+\caption{Normalized amplitude (lower values in blue, higher values in red) of some selected outlet surface DMD modes featuring a higher temporal coherence.}
+\label{fig:dmd_modes}
+\end{figure}
+
+The spatial distribution of some DMD modes is plotted in Fig.~\ref{fig:dmd_modes}. It can be seen in this figure how the content of the spatial modes is distributed along the outlet duct. The first three modes of lower frequency ($\Phi_\text{0.8 kHz}$, $\Phi_\text{1.6 kHz}$ and $\Phi_\text{2.1 kHz}$) feature a distribution that is related to the plane wave propagation, with the modes at higher frequency showing a more complex distribution as a result of the onset of the different acoustic modes.
+ 
+\begin{figure}[htb!]
+\centering
+\includegraphics[width=0.98\textwidth]{figures/cap_cfd/dmd_modes_freqs}
+\caption{Normalized amplitude (lower values in blue, higher values in red) of some selected outlet surface DMD modes showcasing the effect of acoustic mode propagation.}
+\label{fig:dmd_modes_freqs}
+\end{figure}
+
+The influence of mode frequency and acoustic mode propagation in the distribution of the spatial content of the DMD modes can be seen in Fig.~\ref{fig:dmd_modes_freqs}, where some DMD modes are selected to showcase this evolution. 
+
+In the leftmost plot the mode corresponding to the 0 kHz frequency has been selected, with the result showing the expected uniform distribution along the outlet duct (save for some small regions that are probably the result of numerical error).
+
+As frequency increases a pattern \hl{typical of a standing wave} starts to appear in the simulated duct. Note specially the similarity between the distribution of the $\Phi_\text{3 kHz}$ mode and the magnitude of the FFT in the compressor outlet duct shown in Fig.~\ref{fig:pressure_fft_walls}. 
+
+When higher order acoustic modes start propagating in the CFD simulation, the pattern changes. $\Phi_\text{11.5 kHz}$ shows the effect of the first asymmetrical mode, denoted as (0,1) in Eriksson's notation \cite{eriksson1980higher}. $\Phi_\text{11.5 kHz}$ features a very complex pattern as modes (0,1), (0,2), (0,3), (1,0) and (1,1) are propagating at these frequencies.
 
 \section{Conclusions}
 
-\subsection{Comparison with CFD}
+In this chapter a numerical simulation of the compressor characterized in chapter \ref{cap:results} has been validated regarding not only the global operating variables but specifically taking into account the acoustic point of view, which is usually not addressed in detail in many works regarding the simulation of automotive compressors.
 
-\hl{[To the inlet flow chapter]}
+It has been shown how the definition of the domain and boundary conditions has a large influence on the spectral information that can be recovered from the simulation results, by creating spurious reflections and standing waves that are not present in the experimental setup.
 
+To address this issue while keeping the CFD domain and mesh within the limits of usual computational capacity the use of pressure wave decomposition has been shown both in numerical and experimental results, allowing enhanced isolation and recovery of the spectral information coming from the compressor and filtering spurious interferences.
 
+Selection of the monitor type and location is also crucial from the acoustic point of view, as it is taking into account the propagation of higher order modes that may render results that are dissimilar from experimental reference data. Wall-flush pressure monitors demonstrated better agreement overall with the experimental measurements, although the area-averaged type of monitor showed better agreement in the outlet at plane wave frequencies, specially regarding the prediction of a ``whoosh'' frequency broadband at the operating condition of higher pressure ratio which signals the onset of marginal surge conditions and the appearance of reversed flow.
 
-\begin{figure}[htb!]
-\centering
-\includegraphics[width=0.88\textwidth]{figures/cap_cfd/cfd_circumf_comparison}
-\caption{Isosurfaces of null axial velocity in the compressor inducer/inlet showing the reversed flow extent and distribution, including isosurfaces of low pressure ``bubbles'' in the same region.}
-\label{fig:cfd_circumf_comparison}
-\end{figure}
+Analysis of the pressure and velocity fields simulated by the CFD models has been shown, in order to identify flow phenomena that may be related to the increased acoustic output at these unstable operating conditions. Contours of velocity and pressure at selected planes and surfaces show rotating low pressure ``bubbles'' that are linked to the zone of reversed flow, visualized through null axial velocity isosurfaces.
 
-\begin{figure}[htb!]
-\centering
-\includegraphics[width=0.88\textwidth]{figures/cap_cfd/cfd_longit_temp_comp}
-\caption{Isosurfaces of null axial velocity in the compressor inducer/inlet showing the reversed flow extent and distribution, including isosurfaces of low pressure ``bubbles'' in the same region.}
-\label{fig:cfd_longit_temp_comp}
-\end{figure}
+Inspection of these velocity isosurfaces offers a way of predicting the evolution of the backflow as operating conditions change. The point of maximum pressure ratio shows the inception of these backflows in the periphery of the wheel. At the same time, velocity information from a 50\% isospan surface shows areas of increased velocity in the diffuser near the volute tongue, except for the case of the higher mass flow case. PSD from the velocity signal in the diffuser shows a peak at 2.9 kHz accompanied by two side peaks, \hl{which may be related} to the ``whoosh'' phenomenon.
+
+Moreover, vortex shedding from the compressor blades however is detected in the three simulated conditions, which may be linked to the acoustic emission as they induce a pressure fluctuation in the channels that is rotating with the shaft speed.
+
+Further postprocessing techniques to inspect the location of acoustically-relevant flow features includes the use of the FFT of the pressure signal at selected spatial locations and frequencies of interest. An example has been presented regarding the 3 kHz frequency, showing special prominence of this frequency at the compressor wheel and diffuser.
+
+Finally, in order to avoid the necessity of guessing which are the relevant frequencies and spatial locations use of modal decompositions of the flow field has been proposed, discussing advantages and disadvantages of different techniques. A limited-scope example of the formulation and implementation of the Dynamic Mode Decomposition has been shown, with the coherence of the model identifying relevant frequencies of the flow and their associated spatial distribution on the outlet duct wall cells.
+
+While implementation of the DMD technique over the full numerical domain is outside of the scope of this work, as it requires the implementation of computational tools to link Star-CCM+ snapshots with outside libraries that allow the manipulation of data in the order of Gigabytes, it has been shown that further research in this topic could lead to a better identification of the spatial location of the most relevant frequency components of the flow field.
+
+% \subsection{Comparison with CFD}
+
+% \hl{[To the inlet flow chapter]}
+
+% \begin{figure}[htb!]
+% \centering
+% \includegraphics[width=0.88\textwidth]{figures/cap_cfd/cfd_circumf_comparison}
+% \caption{Isosurfaces of null axial velocity in the compressor inducer/inlet showing the reversed flow extent and distribution, including isosurfaces of low pressure ``bubbles'' in the same region.}
+% \label{fig:cfd_circumf_comparison}
+% \end{figure}
+
+% \begin{figure}[htb!]
+% \centering
+% \includegraphics[width=0.88\textwidth]{figures/cap_cfd/cfd_longit_temp_comp}
+% \caption{Isosurfaces of null axial velocity in the compressor inducer/inlet showing the reversed flow extent and distribution, including isosurfaces of low pressure ``bubbles'' in the same region.}
+% \label{fig:cfd_longit_temp_comp}
+% \end{figure}
