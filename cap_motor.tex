@@ -1,5 +1,5 @@
 %!TEX root = Tesis.tex
-\chapter{Validation on real engine conditions\textcolor{red}{[Article expMethod - rewrite]}}
+\chapter{Validation on real engine conditions}
 \label{cap:engine}
 % Quote
 % \null\vspace{-10mm}
@@ -53,6 +53,8 @@ The experimental installation includes thus an array of piezoelectric pressure s
 
 A commercial intensity probe (B\&K Type 4197) consisting of two phase-matched \nicefrac{1}{2}'' microphones was also installed at the inlet mouth as a reference, surrounded by acoustic insulation mats in order to avoid reflections from the walls or other components of the engine cell.  Fig. \ref{fig:setup} shows an schematic view of this  experimental setup.
 
+The engine used in this study was a 2L, 4-cylinder Diesel engine, very representative of common engines for automotive application, rated at a maximum power of 120 kW and maximum torque of 340 Nm. It featured a 16 valve system and a variable geometry turbine turbocharger. The inlet duct of this turbocharger was modified and enlarged with an additional straight section in order to install the pressure transducer array and ensure proper development of the flow. In Fig.~\ref{fig:setup_photo} some images of the modified inlet duct can be seen.
+
 \begin{figure}[hbt!]
 \centering
 \includegraphics[width=1\textwidth]{figures/cap_motor/setup_photo}
@@ -60,15 +62,13 @@ A commercial intensity probe (B\&K Type 4197) consisting of two phase-matched \n
 \label{fig:setup_photo}
 \end{figure}
 
-The engine used in this study was a 2L, 4-cylinder Diesel engine, very representative of common engines for automotive application, rated at a maximum power of 120 kW and maximum torque of 340 Nm. It featured a 16 valve system and a variable geometry turbine turbocharger. The inlet duct of this turbocharger was modified and enlarged with an additional straight section in order to install the pressure transducer array and ensure proper development of the flow. In Fig.~\ref{fig:setup_photo} some images of the modified inlet duct can be seen.
-
 Also visible in this figure is the dynamo-metric brake that was used to control the power and torque of the engine, allowing the selection of the desired operating conditions of the engine. Due to the presence of this brake, the enlarged inlet duct had to be provided with a flexible section so it could be angled slightly.
 
-A particular feature of this engine test cell is that it allows the use of compressed air injection into the inlet manifold, after the intercooler. More details and schematics about this particular aspect of the setup can be found on \cite{galindo2013engine,galindo2011measurement}. A reservoir is added to smooth out irregularities that could be present in the injected flow. This reservoir can be seen in the bottom-right corner of Fig.~\ref{fig:setup_photo}.
+A particular feature of this engine test cell is that it allows the use of compressed air injection into the inlet manifold, after the intercooler. More details and schematics about this particular aspect of the setup can be found in \cite{galindo2013engine,galindo2011measurement}. A reservoir is added to smooth out irregularities that could be present in the injected flow. This reservoir can be seen in the bottom-right corner of Fig.~\ref{fig:setup_photo}.
 
 In essence, by regulating the pressure and mass rate of this compressed airflow the engine cylinders are provided with additional air and as a result, less air is ingested by the compressor by effect of the variable geometry turbine.
 
-This allows an additional degree of freedom in order to change the operating condition of the compressor without affecting the operation of the Diesel engine. A drawback of this method however, is that in this way constant pressure ratio lines are measured, not the characteristic, constant shaft speed lines.
+This allows an additional degree of freedom in order to change the operating condition of the compressor without affecting the operation of the Diesel engine. A drawback of this method however, is that in this way constant pressure ratio lines are measured, not the characteristic, constant shaft speed lines that are usually plotted in the compressor map.
 
 As done in the previous measurement campaigns, it is necessary to evaluate the restrictions that the chosen acoustic characterization methods impose in the frequency domain. While SPL is only limited by the frequency response of the particular sensor, the decomposition algorithms of both the two-microphone method and the beamforming method present some common additional restrictions which were discussed in chapter \ref{cap:metod}.
 
@@ -76,47 +76,71 @@ The first one is that both methods are formulated considering plane wave propaga
 
 Another restriction is the one related to the spatial resolution of the consecutive sensors \cite{seybert1988two}, which imposes a cut-off frequency similar in concept to a Nyquist limit for spatial (rather than temporal) sampling, based on the separation $d_s$ of the sensors. It is important to take into account that above this frequency limit, spurious spatial aliasing effects will be introduced.
 
-\section{Experimental results}
+\section{In-duct measurement results}
 
-Using the setup described above
+Using the setup described a measurement campaign was carried out where the region of the compressor map closer to surge was characterized by varying the injected additional air mass at different pressure ratios.
 
-\subsection{In-duct and orifice noise}
+\begin{figure}[b!]
+\centering
+\vspace{-5mm}
+\includegraphics[width=0.77\textwidth]{figures/cap_motor/map_engine_geom_config1}
+\vspace{-5mm}
+\caption{Inlet in-duct sound intensity level map in the ``whoosh'' noise frequency band (1 -- 3 kHz) as measured through the LCMV beamforming procedure in the engine test cell.}
+\label{fig:mot_map_engine_geom_config1}
+\end{figure}
+
+The interpolating procedure described in chapter \ref{cap:metod} was used to build a noise level map between 1 and 3 kHz equivalent to those obtained in the anechoic chamber test rig, which is shown in Fig.~\ref{fig:mot_map_engine_geom_config1}.
+
+In this figure, it can be seen how the intensity level distribution is similar to that obtained in the continuous flow test rig. Noise increase in this particularly concerning band is again located at higher shaft speeds and low mass flow rate, and again the contours are not parallel to the deep surge limit as it is the case with lower frequency content but grouped towards the upper left corner of the map.
+
+As due to the different measurement procedure each line of data points is recorded at iso-pressure rather than iso-speed, it is not possible to judge whether the increase is again linked to the point of maximum pressure ratio. Still, it can be concluded that results in terms of noise level distribution are in line with those obtained in previous observations.
+
+\begin{figure}[htb!]
+\centering
+\includegraphics[width=0.98\textwidth]{figures/cap_motor/motor_160_piezoA_all+LF}
+\caption{Inlet in-duct SPL spectra for the different mass flow rates measured at 2.2 pressure ratio, including a low frequency zoomed view.}
+\label{fig:motor_160_piezoA_all+LF}
+\end{figure}
+
+Influence of the engine in the recorded in-duct spectral content can be seen in Fig.~\ref{fig:motor_160_piezoA_all+LF} where the raw sound pressure level measured by one of the array sensors is shown for the 2.2 pressure ratio data points. While the overall distribution is similar to those observed in the continuous flow test rig, featuring a slope in the plane wave range and a broadband at higher frequencies\footnote{Although in this particular case BPF is not being observed upstream of the compressor.}, a zoom at the lower part of the spectra shows a very clear peak at the cylinder firing frequency, accompanied by harmonics and other tonal noise phenomena produced by the engine, which could be related for instance with the air management system.
+
+\section{Methodology validation}
 \label{sub:in_duct_noise_measurements}
 
-\begin{figure*}[tb!]
+\begin{figure}[b!]
 \centering
-\includegraphics[width=0.95\textwidth]{figures/cap_motor/espectros}
+\includegraphics[width=0.95\textwidth]{figures/cap_motor/motor_single_point_1800_42}
 \caption{Inlet in-duct sound spectra estimated by the three considered methods (SPL, beamforming and two-microphone) and orifice sound intensity spectrum as measured by the B\&K intensity probe.}
 \label{fig:espectros}
-\end{figure*}
+\end{figure}
 
-Fig. \ref{fig:espectros} shows the in-duct sound spectra computed with the three proposed methods: SPL with one sensor, two-microphone approach, and beamforming with three probes. The spectra measured at the orifice by the reference probe is superimposed in black. In this region, the beamforming method appears to follow the reference more closely.
+Fig. \ref{fig:espectros} shows the in-duct sound spectra computed with the three discussed methods: SPL with one sensor, two-microphone approach, and LCMV beamforming. The spectra measured at the orifice by the reference probe is superimposed in blue. In this region, the beamforming method appears to follow the reference more closely.
 
-It is also shown how spurious aliasing peaks occur at the frequency predicted by Eq. \ref{eq:alias} when more than one sensor is used and how the onset of the 1st radial mode predicted by Eq. \ref{eq:modes} marks a clear difference between the in-duct sound field and the sound field radiated by the inlet orifice.
+It is also shown how spurious aliasing peaks occur at the frequency predicted by expression \ref{eq:f_nyquist} when more than one sensor is used and how the onset of the ${1}^\text{st}$ radial mode predicted by expression \ref{eq:f_modes} marks the start of a clear difference between the in-duct sound field and the sound field radiated by the inlet orifice.
 
 \begin{figure*}[b!]
-\centering
-\includegraphics[width=0.95\textwidth]{figures/cap_motor/mapasSIL_250-2650}
-\caption{In duct SIL maps of the compressor noise estimated by the beamforming method (top left), twomicrophone method (top right) and SIL map of orifice noise as measured by the probe (top center), including correlations between the three measurements (bottom).}
+\hspace{-0.06\textwidth}
+\includegraphics[width=1.1\textwidth]{figures/cap_motor/mapasSIL_250-2650_2}
+\caption{In duct SIL maps of the compressor noise estimated by the beamforming method (top left), two microphone method (top right) and SIL map of orifice noise as measured by the probe (top center), including correlations between the three measurements (bottom).}
 \label{fig:mapasSIL_250-2650}
 \end{figure*}
 
-The results of applying Eq. \ref{eq:intensity} to compute SIL in the plane wave region of the spectra at different operating conditions of the compressor are shown in Fig. \ref{fig:mapasSIL_250-2650}. Absolute levels at each working point were interpolated in order to get a continuous map. The beamforming and the two-microphone methods were used for in-duct SIL estimation and the intensity probe for measuring the reference orifice SIL. Correlations of these measurements are also provided, showing that in the plane wave range the beamforming method appears to perform up to 30\% better in terms of $R^2$.
+The results of applying the intensity equation \ref{eq:intensity} to compute SIL in the plane wave region of the spectra at different operating conditions of the compressor are shown in Fig. \ref{fig:mapasSIL_250-2650}. Absolute levels at each working point were interpolated in order to get a continuous map. The beamforming and the two-microphone methods were used for in-duct SIL estimation and the intensity probe for measuring the reference orifice SIL. Correlations of these measurements are also provided, showing that in the plane wave range the beamforming method appears to perform up to 30\% better in terms of $R^2$.
 
 Fig. \ref{fig:mapasSPL_250-2650} shows a comparison between the SPL computed by selecting only one sensor of the array and the reference SIL of the probe. The correlation of these two measurements is better in terms of $R^2$ than the two-microphone method but still worse than the beamforming method.
 
 \begin{figure*}[tb!]
 \centering
-\includegraphics[width=0.95\textwidth]{figures/cap_motor/mapasSPL_250-2650}
+\includegraphics[width=1\textwidth]{figures/cap_motor/mapasSPL_250-2650_2}
 \caption{Comparison of compressor sound maps (plane wave region) obtained through interpolation of SPL at the inlet 1st sensor and SIL at the probe, including a correlation between both.}
 \label{fig:mapasSPL_250-2650}
 \end{figure*}
 
 However, it should be noted that simple sound pressure level measurements can be influenced by the complex geometry of actual production pipes, which are remarkably more complex than the straight pipe used in this study. Also, it can be seen in Fig. \ref{fig:mapasSPL_250-2650} that, while at low pressure the sound maps are quite similar, SPL of one probe predicts a high sound level at high pressure ratio and high mass flow conditions, which is not the case for the intensity probe.
 
-These high sound level points at high pressure ratio can be clearly seen as points lying out-side the 95\% observation confidence bounds of the correlation in Fig. \ref{fig:mapasSPL_250-2650}. A similar problem can be seen in the correlation of the two-microphone method in Fig. \ref{fig:mapasSIL_250-2650}, in which some outliers appear to dis-tort the map at some operation zones. The beamforming method, however, appears to be more robust.
+These high sound level points at high pressure ratio can be clearly seen as points lying out-side the 95\% observation confidence bounds of the correlation in Fig. \ref{fig:mapasSPL_250-2650}. A similar problem can be seen in the correlation of the two-microphone method in Fig. \ref{fig:mapasSIL_250-2650}, in which some outliers appear to distort the map at some operation zones. The beamforming method, however, appears to be more robust.
 
-\subsection{Radiated noise}
+\section{Radiated noise}
 \label{sub:radiated_noise_measurement}
 
 Besides in-duct measurements, another acoustic characterization approach consists in the measurement of noise radiated by the turbocharger and its pipes, in most cases using free field microphones at a given distance from the setup.
@@ -125,18 +149,26 @@ This method has the advantage of allowing measurements with the real geometry, w
 
 As testing the whole engine setup requires a large and expensive anechoic chamber, the setup is sometimes reduced to just the turbocharger group, which is powered by an external compressor or electric motor, losing in this way the possibility of performing on-engine tests.
 
+\begin{figure}[b!]
+\centering
+\includegraphics[width=0.98\textwidth]{figures/cap_motor/PVL}
+\caption{Near field noise holograms (800--2000 Hz) obtained through SPL (top) and PVL (bottom), including detail of the spectra of two regions of interest: turbocharger group (blue) and compressor inlet (red).}
+\label{fig:PVL}
+\end{figure}
+
 However, a novel procedure based on measuring acoustic particle velocity level (PVL) may solve these issues \cite{jacobsen2005comparison} and enable on-engine testing in non-anechoic environments. This method makes use of two microscopic filaments acting as hot-wire flowmeters. Measuring the small voltage drop between the two, it is possible to derivate the acoustic particle velocity in the plane of the sensor.
 
 Such a method, in this case a commercial solution providing acoustic holography-like maps of radiated noise level \cite{comesana2013scan}, has been tested on the (non-anechoic) engine test cell. The measuring probe of this device houses the two filaments on a MEMS chip and a traditional microphone, allowing the comparison of the performance of acoustic particle velocity measurements against traditional free-field sound pressure level (SPL) measurements.
 
-\begin{figure*}[tb!]
+\begin{figure}[tb!]
 \centering
-\includegraphics[width=0.95\textwidth]{figures/cap_motor/PVL}
+\includegraphics[width=0.88\textwidth]{figures/cap_motor/motor_spl_ext_spec}\\[5mm]
+\includegraphics[width=0.88\textwidth]{figures/cap_motor/motor_pvl_ext_spec}
 \caption{Near field noise holograms (800--2000 Hz) obtained through SPL (top) and PVL (bottom), including detail of the spectra of two regions of interest: turbocharger group (blue) and compressor inlet (red).}
-\label{fig:PVL}
-\end{figure*}
+\label{fig:PVL_spec_ext}
+\end{figure}
 
-Fig. \ref{fig:PVL} shows this comparison. SPL (top) and PVL (bottom) maps of the measured engine environment are provided by tracking the probe along the near field of the surfaces of interest. The frequencies considered in these maps have been restricted to the 800--2000 Hz range, where it is common that a broadband emission known as ``whoosh noise'' is produced by the turbocharger \cite{evans2005minimizing}. For two particular regions (turbocharger group and inlet duct, marked on the maps) the full pressure (top) and particle velocity (bottom) spectra are also provided.
+Fig. \ref{fig:PVL} shows this comparison. SPL (left) and PVL (right) maps of the measured engine environment are provided by tracking the probe along the near field of the surfaces of interest. The frequencies considered in these maps have been restricted to the 800--2000 Hz range, where it is common that a broadband emission known as ``whoosh noise'' is produced by the turbocharger \cite{evans2005minimizing}. For two particular regions (turbocharger group and inlet duct, marked on the maps) the full pressure (top) and particle velocity (bottom) spectra are also provided in Fig.~\ref{fig:PVL_spec_ext}.
 
 The particle velocity technique clearly distinguishes the turbocharger as the source of an 800--2000 Hz broadband noise at this particular operating condition, identified as whoosh noise. The pressure method also appears to identify the turbocharger as the source, but the contrast with the surrounding areas is much less pronounced. This can be clearly seen in the SPL spectra, in which the level of this frequency band is similar in both zones (turbocharger and inlet in this case). In the case of the PVL spectra the turbocharger contribution is visibly higher.
 
@@ -149,12 +181,12 @@ Characterization of the acoustic performance of a given compressor under engine 
 
 In order to quantify the compressor noise emission, an intensity probe can be located at the inlet orifice. However, intensity probes are quite expensive, and sufficient acoustic insulation is necessary to prevent reflections. Also, characteristics of the internal field that are not externally propagated will be lost.
 
-In-duct noise measurements offer a cost-effective way to characterize the sound field generated by the compressor, if the ducts can be modified so as to include straight measurement sections. Single-sensor SPL may be used to investigate the upper frequency bands, but generally sound intensity is a better and more meaningful metric of the acoustic power output of the source.
+In this chapter it has been show that in-duct noise measurements offer a cost-effective way to characterize the sound field generated by the compressor, if the ducts can be modified so as to include straight measurement sections. Single-sensor SPL may be used to investigate the upper frequency bands, but generally sound intensity is a better and more meaningful metric of the acoustic power output of the source.
 
 Calculation of in-duct sound intensity can be achieved by using an additional consecutive sensor and decomposing the waves through the two-microphone method. However, the addition of a third sensor and the decomposition through the beamforming method appears to be more reliable along the full plane wave range, and especially in the lower frequencies (250--1000 Hz).
 
-However, the restrictions of these intensity-based methods must be carefully considered, specially the influence of higher order modes and the aliasing frequency limit introduced by the spatial sampling imposed by the sensor spacing.
+As shown in previous chapters however, the restrictions of these intensity-based methods must be carefully considered, specially the influence of higher order modes and the aliasing frequency limit introduced by the spatial sampling imposed by the sensor spacing. In addition in this on-engine situation, the pulsation intrinsically imposed by the operation of the reciprocating engine must be taken into account as not only its main firing frequency but also its harmonics are present in the lower frequency part of the spectrum of the turbocharger inlet.
 
 Regarding the external radiated noise, the particle velocity method has been able to provide more contrast than the pressure method and to correctly identify the turbocharger as the source of noise radiation at that particular ``whoosh noise'' band, in accordance with previous experience.
 
-The particle velocity method could therefore be useful to reconstruct noise maps similar to those obtained using in-duct measurements, isolating the signal from the acoustic near field of the area of interest at different working conditions, without the need of modifying the original duct geometry or ensuring anechoic conditions. More research is being carried out on this topic.
+The particle velocity method could therefore be useful to reconstruct noise maps similar to those obtained using in-duct measurements, isolating the signal from the acoustic near field of the area of interest at different working conditions, without the need of modifying the original duct geometry or ensuring anechoic conditions.
