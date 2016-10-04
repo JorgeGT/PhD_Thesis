@@ -6,8 +6,10 @@
 
 \section{Local measurements methodology}
 
+
+
 \subsection{Turbocharger modification}
-For this investigation, a production automotive turbocharger was chosen. However, prior to its installation in the gas stand, modifications were made to accommodate the required local temperature and pressure sensors.
+For this chapter and prior to its installation in the gas stand, modifications were made to the compressor in order to accommodate the required local temperature and pressure sensors.
 
 The compressor housing was modified by removing the original inducer up to the plane of the blade leading edges and substituting it by a removable adaptor piece which incorporates guides for a circumferential array of thermocouples and a miniaturized pressure probe. This adaptor is depicted in red in Figs. \ref{fig:metod_local_meas} and \ref{fig:metod_local_meas_dimen}.
 
@@ -54,24 +56,33 @@ The inducer probe was mounted flush to the wall, at a distance of 6 mm from the 
 
 \subsection{Velocity}
 
-The turbocharger selected for the experimental campaign was a mid-sized automotive turbocharger. It was installed in the anechoic chamber of CMT--Motores Térmicos laboratories and powered from a nearby flow bench which is described in detail in \cite{galindo2006surge}. Operating conditions of the turbocharger were regulated with the pressure of the air fed to the turbine and the operation of a back-pressure electro-pneumatic valve at the compressor outlet duct.
+Besides isolated measurements of pressure and temperature, the characterization of the whole flow field is also crucial. Not only for understanding how the backflows interact with the downstream flow, but also to validate CFD predictions of macroscopic flow structures.
 
-The pressure of the feeding line was adjusted using a screw compressor, powered by an asynchronous electric machine. Once the test turbocharger was working at the desired shaft speed, the back-pressure valve was used to restrict the airflow being ingested by the compressor.
-
-Conditions were monitored through the in-house measurement and control system, which included outlet in-duct pressure and temperature and a Hall effect compressor shaft velocity sensor that detects each individual blade passing by their correspondent magnetic field disturbance.
+\begin{figure}[htb!]
+\centering
+\includegraphics[width=0.65\textwidth]{figures/cap_metod/Assembly_PIV_straight_3D}
+\caption{CAD view of the proposed installation for PIV measurements, showing the adaptor piece, the glass tube and the mounting flange.}
+\label{fig:assembly_piv}
+\end{figure}
 
 \subsubsection{Laser PIV measurements}\label{sub:setup_piv}
 
-Besides isolated measurements of pressure and temperature, the characterization of the whole flow field is also crucial. Not only for understanding how the backflows interact with the downstream flow, but also to validate CFD predictions of macroscopic flow structures.
-
-In order to allow a characterization of these flow fields, a Particle Image Velocimetry (PIV) system was installed on the anechoic chamber. For PIV measurements, a laser sheet illuminates the measurement region, previously seeded with particles, by means of two consecutive laser shots of a Q-switched Nd:YAG laser. These two laser shots, produced at a user-defined time interval, illuminate the same flow field, so that light scattered by the particles is collected by a straddle CCD camera in two consecutive frames. Based in these two frames particle position can be determined using cross-correlation algorithms. Hence, instantaneous two-dimensional velocity fields can be computed based on the displacement of particle groups within a given interrogation area of the image and the time step between frames. 
+In order to allow a characterization of these flow fields, a Particle Image Velocimetry (PIV) system was installed on the anechoic chamber. For PIV measurements, a laser sheet illuminates the measurement region, previously seeded with particles, by means of two consecutive laser shots of a Q-switched Nd:YAG laser. These two laser shots, produced at a user-defined time interval, illuminate the same flow field, so that light scattered by the particles is collected by a straddle CCD camera in two consecutive frames. Based in these two frames particle position can be determined using cross-correlation algorithms. Hence, instantaneous two-dimensional velocity fields can be computed based on the displacement of particle groups within a given interrogation area of the image and the time step between frames.
 
 Specifically in this study a standard 2D PIV system by TSI has been used for the measurement of the instantaneous two-dimensional velocity fields. If consists of a double-head 15Hz Nd: YAG laser with 135 mJ/pulse @ 532 nm, a set of mirrors and lenses to drive the laser into the measurement plane and change the laser output 5mm circular beam into a laser sheet with around 1 mm thickness at the measurement section, a 4Mpixel, 12-bit straddle CCD camera (PowerView Plus 4MP) and a synchronization device. 
-The air flow was seeded with ~1 $\mu$m oil droplets from an atomiser using the Laskin nozzle principle (TSI 9306A Six-jet atomizer).
+The air flow was seeded with ~1 µm oil droplets from an atomiser using the Laskin nozzle principle (TSI 9306A Six-jet atomizer).
+
+\begin{wrapfigure}{O}[1.5cm]{0.4\textwidth}
+\centering
+%\vspace{-5mm}
+\includegraphics[width=0.4\textwidth]{figures/cap_inlet/piv_3}
+\caption{Image of the laser sheet illuminating the glass duct in the transversal PIV setup.}
+\label{fig:piv_transv_photo}
+\end{wrapfigure}
 
 Images were processed with selected algorithms and validation criteria of the TSI Insight 3G software options. Post-processing, graphical output and analysis tools were complemented with new processing routines developed in Matlab for the specific purposes of this work. 
 
-The magnification of the images taken was around 30 pixel/mm (in fact, between 28 and 32 pixel/mm depending on the arrangement) and the size of the interrogation area for calculation of the cross-correlations was set to $64\times 64$ pixels. This leads to the measurement of velocity fields with vectors separated a distance of 32 pixels, i.e. $\sim$1 mm. Time elapsed between the two laser shots was set to a value between 2 and 10µs depending on the flow velocities at each test point in the experimental test matrix.
+The magnification of the images taken was around 30 pixel/mm (in fact, between 28 and 32 pixel/mm depending on the arrangement) and the size of the interrogation area for calculation of the cross-correlations was set to $64\times 64$ pixels. This leads to the measurement of velocity fields with vectors separated a distance of 32 pixels, i.e. $\sim$1 mm. Time elapsed between the two laser shots was set to a value between 2 and 10 µs depending on the flow velocities at each test point in the experimental test matrix.
 
 Seeding control was proven to be critical, especially in the case of the longitudinal measurements that were made through the walls of the glass pipe.
 
@@ -113,7 +124,7 @@ However, as the oil soiling of the wall was not as problematic, a larger number 
 
 \section{Results \& discussion}
 
-Using this setup, data was captured at several turbocharger operating conditions. Different shaft speeds were kept constant while air mass flow was progressively reduced, from a stable operating point close to the compressor maximum efficiency region to an unstable point very close to the compressor deep surge limit. Figure \ref{fig:map_straight} shows the recorded points.
+Using both setups, data was captured at several turbocharger operating conditions. Different shaft speeds were kept constant while air mass flow was progressively reduced, from a stable operating point close to the compressor maximum efficiency region to an unstable point very close to the compressor deep surge limit. Figure \ref{fig:map_straight} shows the recorded points for temperature and pressure measurements. PIV recording points had to be limited due to the time-consuming procedure required to extract valid data.
 
 \begin{figure}[b!]
 \centering
@@ -245,7 +256,7 @@ Lastly, an estimation of the backflow upstream extent is provided in the rightmo
 
 Starting from the thermocouple closer to the impeller, each thermocouple reading of the linear array is compared with the ambient temperature; the first that reads less than 3ºC above is selected as the backflow extent.
 
-\begin{figure}[b!]
+\begin{figure}[tb!]
 \centering
 \includegraphics[width=0.75\textwidth]{figures/cap_inlet/temp_backlength_sample_ann}
 \caption{Temperature readings at the inlet linear array for a constant shaft speed (80krpm) and different mass flows. Circles indicate the estimated limit of the backflow for each mass flow using the proposed criterion.}
@@ -267,7 +278,7 @@ As shown in Figs. \ref{fig:metod_local_meas} and \ref{fig:metod_local_meas_dimen
 
 \begin{figure}[thb!]
 %\centering
-\includegraphics[width=0.98\textwidth]{figures/cap_inlet/probes_in_and_out_line-160-100216}
+\includegraphics[width=0.98\textwidth]{figures/cap_inlet/probes_in_and_out_line-160-100216}\\[3mm]
 \includegraphics[width=0.98\textwidth]{figures/cap_inlet/pres_in_and_out_line-160-100216}
 %\includegraphics[width=0.98\textwidth]{figures/cap_inlet/probes_in_and_out_line_5k-160-100216}
 \caption{Top row: pressure spectra at the inducer (left) and diffuser (right) measured by the local pressure probes at different air mass flows while the shaft speed was kept constant. Bottom row: pressure spectra at the inlet (left) and outlet (right) ducts, including the onset of the first and second acoustic modes.}
@@ -353,8 +364,8 @@ This band was chosen as it is associated with an unpleasant broadband noise some
 
 \begin{figure}[thb!]
 \centering
-\includegraphics[width=0.77\textwidth]{figures/cap_inlet/probes_in_and_out_line_5k-160-100216_2}
-\caption{Top row: pressure spectra at the inducer (left) and diffuser (right) measured by the local pressure probes at different air mass flows while the shaft speed was kept constant.}
+\includegraphics[width=0.77\textwidth]{figures/cap_inlet/probes_in_and_out_line_5k-160-100216}
+\caption{Lower frequency pressure spectra at the inducer (top) and diffuser (bottom) measured by the local pressure probes at different air mass flows while the shaft speed was kept constant.}
 \label{fig:probes_5K}
 \end{figure}
 
@@ -393,16 +404,9 @@ At the higher mass flow, it can be seen that the velocity field is approximately
 \begin{figure}[t!]
 \centering
 \includegraphics[width=0.75\textwidth]{figures/cap_inlet/line_comparison_longCent}
-\caption{Velocity magnitude over the centreline of the longitudinal plane at high and low flow. Solid line indicates the mean and points correspond to individual snapshot pairs. Pair 8 is presented separately as it starts showing the effect of the oil fouling. Note that distances below 10 mm are obscured by the adaptor piece.}
+\caption{Velocity magnitude over the centreline of the longitudinal plane at high and low flow. Solid line indicates the mean and points correspond to individual snapshot pairs. Pair 18 is presented separately as it starts showing the effect of the oil fouling. Note that distances below 10 mm are obscured by the adaptor piece.}
 \label{fig:line_comp_long}
 \end{figure} 
-
-% \begin{figure}[b!]
-% \centering
-% \includegraphics[width=0.93\textwidth]{figures/cap_inlet/profileLong_vel_mov_avg}
-% \caption{Velocity magnitude over the centreline of the longitudinal plane at high and low flow. Solid line indicates the mean and points correspond to individual snapshot pairs. Note that distances below 10 mm are obscured by the adaptor piece.}
-% \label{fig:line_comp_long}
-% \end{figure} 
 
 This apparent reduction in velocity magnitude is probably caused by  the highly transversal velocity of the backflow, that makes the transit time of the particles through the laser sheet too small to be captured in consecutive snapshots and thus makes the correlation impossible so no velocity is detected.
 
@@ -412,11 +416,24 @@ It can also be seen in Fig. \ref{fig:longitudinal} how this reduction in the use
 
 A similar constriction and acceleration of the flow is correctly predicted by the compressor numerical model developed by Lang \cite{lang2011contribucion}.
 
-To better quantify the increase in speed in the core flow, velocity data along the turbocharger axis line (marked with dashed line in Fig. \ref{fig:longitudinal}) from each valid snapshot has been plotted in Fig. \ref{fig:line_comp_long} for both operating conditions. \hl{The first invalid snapshot pair has also been plotted (black dots) to show how the oil film accumulating in the pipe wall due to the backflow starts to affect the measurements.}
+To better quantify the increase in speed in the core flow, velocity data along the turbocharger axis line (marked with dashed line in Fig. \ref{fig:longitudinal}) from each valid snapshot has been plotted in Fig. \ref{fig:line_comp_long} for both operating conditions. The first invalid snapshot pair has also been plotted (black dots) to show how the oil film accumulating in the pipe wall due to the backflow starts to affect the measurements.
 
-While at the high flow operating point the flow exhibits an approximately constant velocity along the line, only decreasing adjacent to the axis nut, at the lower flow condition it can be seen how after a steady initial segment the velocity increases to a top average speed of 91.7 m/s. The average speed at the initial segment between 80 and 90 mm was found to be 43.7 m/s.
+In order to assess if the flow field is stationary enough so that this approximate number of snapshot pairs accurately reflects the velocity profile, in Fig.~\ref{fig:line_comp_long_mov_avg} the profiles shown in Fig.~\ref{fig:line_comp_long} have been recreated for different consecutive snapshot sets taken during the same measurement run. Note that pairs 0-10 are omitted as seeding particles have not yet fully reached the laser sheet in those.
 
-Using this data it is possible to draw a simple correlation between the area constriction and the increase of speed. Using the mass conservation equation between the initial segment \hl{(denoted by the subscript 1) and the top speed point (denoted by the subscript 2):}
+\begin{figure}[thb!]
+\centering
+\includegraphics[width=1\textwidth]{figures/cap_inlet/profileLong_vel_mov_avg}
+\caption{Velocity magnitude averages over the centreline of the longitudinal plane at high and low flow, considering different consecutive sets of snapshots.}
+\label{fig:line_comp_long_mov_avg}
+\end{figure} 
+
+It can be seen that for the higher flow rate case (right) where conditions are stable, the calculated velocity profile is approximately the same for any snapshot range, showing that the flow field is not changing from one set to the next. In the case of the unstable conditions however, this coherence only holds true for the part of the pipe which is upstream of the backflow stagnation point. 
+
+As oil starts accumulating (in snapshot pair 18 as seen in Fig.~\ref{fig:line_comp_long}) velocity readings diminish until the point that almost no velocity can be measured (last two sets of snapshots). Further downstream of the oil ring velocity readings tend to recover to the same point.
+
+Looking then at the selected pairs (10-17) in Fig.~\ref{fig:line_comp_long} it can be observed how, while at higher flow rate the flow exhibits an approximately constant velocity along the line (which only decreases adjacent to the axis nut) at the lower flow condition and after a steady initial segment the velocity increases to a top average speed of 91.7 m/s. The average speed at the initial segment between 80 and 90 mm was found to be 43.7 m/s.
+
+Using this data it is possible to draw a simple correlation between the area constriction and the increase of speed. By applying the mass conservation equation between the initial segment (denoted by the subscript 1) and the top speed point (denoted by the subscript 2):
 
 \begin{equation}
   \dot{m}_1 = \dot{m_2} = \rho_1 V_1 \pi r_1^2 = \rho_2 V_2 \pi r_2^2
@@ -460,7 +477,7 @@ Approximately 90 valid snapshots pairs were captured for both the low flow and t
 
 In this figure, the two operating conditions are marked on a compressor map that estimates the length of the hot backflow. As expected, the transversal velocity at the high flow case is low, albeit some reflections from the impeller blades are showing up in the correlation.
 
-For the \hl{low mass flow} case, which makes the compressor operate at a condition where a high backflow is expected, a clearly different flow field can be observed. 
+For the low flow rate case, which makes the compressor operate at a condition where a high backflow is expected, a clearly different flow field can be observed. 
 
 In this case there was a highly rotational field near the walls that diminishes in the direction of the core flow, coherent with the backflow coming back through the stalled tips of the impeller blades and through the tip clearance itself.
 
@@ -477,9 +494,9 @@ The selected operating condition was again at 100 krpm of shaft speed and a low 
 \label{fig:slices_3}
 \end{figure}
 
-In this figure, two of the slices (left and center) are inside the backflow as expected, while the third one (on the right) is clearly situated outside the backflow as the rotational velocity is almost null. 
+In this figure, two of the slices (left and center) are inside the backflow as expected by the temperature measurements discussed before, while the third one (on the right) is clearly situated outside the backflow as the rotational velocity is almost null. 
 
-It is also apparent that the slice closest to the impeller (20 mm) exhibits a \hl{thicker zone with stronger rotational velocity}, starting from the wall and diminishing towards the centre. A reflection coming from a dent in the axis nut (probably for balance) and some slight reflections from the blades are also visible.
+It is also apparent that the slice closest to the impeller (20 mm) exhibits a thicker zone of stronger rotational velocity, starting from the wall and diminishing towards the centre. A reflection coming from a dent in the axis nut (probably for balance) and some slight reflections from the blades are also visible.
 
 The second slice at 45 mm from the leading edges features a similar velocity field, albeit a slight reduction in both the speed and the thickness of the backflow is appreciable. The effect of erroneous reflections from the blades is also stronger in the core flow section.
 
@@ -499,6 +516,8 @@ In the case of the 85 mm slice which as predicted was located outside of the bac
 Core rotation velocity appears to be similar in the three measured slices, at least at radius of less than 8 mm, although the reflections of the blades and the axis nut introduce some perturbations in the 20 and 45 mm slices. On the other side, velocity could not be resolved at locations with radius greater than 20 mm, leaving a gap of missing data of about 1.5 mm from the pipe wall.
 
 \subsection{Correlations}
+
+As all the captured temperature, pressure and velocity data has been gathered using the same compressor and equivalent straight inlet ducts, some correlations of interest can be drawn between the different variables.
 
 \subsubsection{Backflow and sound intensity}
 
@@ -534,7 +553,7 @@ Another linear correlation was performed between circumferential standard deviat
 
 Besides using the thermocouples described in section \ref{sub:setup_temp} for estimating the backflow extent across the different operating conditions, a comparison was performed between the recorded temperature profiles and the velocity profiles obtained through PIV.
 
-First a velocity profile was extracted from the longitudinal plane at a line  separated 1/2 radius from the wall, which was the distance at which the thermocouples were installed. This \hl{velocity magnitude} profile was then normalized between 0 and 1, and the same was done with the thermocouple array data that most closely matched the operating point at which the PIV test was performed. The results can be seen in the left plot of Fig. \ref{fig:profiles_temp_vs_vel}.
+First a velocity profile was extracted from the longitudinal plane at a line  separated 1/2 radius from the wall, which was the distance at which the thermocouples were installed. This velocity magnitude profile was then normalized between 0 and 1, and the same was done with the thermocouple array data that most closely matched the operating point at which the PIV test was performed. The results can be seen in the left plot of Fig. \ref{fig:profiles_temp_vs_vel}.
 
 \begin{figure}[tb!]
 \centering
@@ -562,9 +581,9 @@ In this case the match between temperature and transversal velocity profiles is 
 
 When instead of focusing into the average velocity values the standard deviation (represented with bars in Fig. \ref{fig:profiles_temp_vs_vel}) of velocity between the selected snapshot datasets is compared, other interesting findings emerge.
 
-In the case of the transversal velocity field the deviation remains quite high along the entire profile except for a reduction near the center, since as previously explained perturbations from the blades in the background and \hl{seeding particles lumping together} have a higher impact on each individual snapshot. Averaging a large number of them correctly \hl{estimates} the average velocity but the deviation remains high.
+In the case of the transversal velocity field the deviation remains quite high along the entire profile except for a reduction near the center, since as previously explained perturbations from the blades in the background and seeding particles lumping together have a higher impact on each individual snapshot. Averaging a large number of them correctly estimates the average velocity but the deviation remains high.
 
-On the other hand, the evolution of the velocity deviation in the case of the longitudinal profile shows a clear difference between a very low deviation upstream and a signiiicant increase in deviation downstream and towards the impeller, which seems \hl{well correlated} with the increase in temperature caused by the backflow.
+On the other hand, the evolution of the velocity deviation in the case of the longitudinal profile shows a clear difference between a very low deviation upstream and a significant increase in deviation downstream and towards the impeller, which seems well correlated with the increase in temperature caused by the backflow.
 
 In Fig. \ref{fig:comp_std_field_temp} the spatial distribution of standard deviation has been plotted, showing how its increase is related to the backflow-affected zone. The location of the linear array thermocouples has been added, along with the path of the standard deviation profile selected.
 
@@ -577,6 +596,56 @@ In Fig. \ref{fig:profiles_temp_vs_vel_long_SD}, the same longitudinal temperatur
 \label{fig:profiles_temp_vs_vel_long_SD}
 \end{figure}
 
-This conclusion is in line with the results of Liu et al. \cite{liu2013methods} who successfully showed how the standard deviation of temperature, pressure and mass flow measured at selected locations abruptly increased near deep surge conditions. 
+This conclusion is in line with the results of Liu et al. \cite{liu2013methods} who successfully showed how the standard deviation of temperature, pressure and mass flow measured at selected locations abruptly increased near deep surge conditions. Now, it is possible to link these increases to the properties of the velocity field measured by PIV, showing how the backflow extends the deviation as it progresses further upstream.
 
 \section{Conclusions}
+
+In this chapter, an experimental study is described with the objective of accurately characterizing the behaviour of the inlet flow instability of a turbocharger compressor when marginal surge conditions are reached. Specifically, focus has been put on the high-temperature compressed flow that reverses direction and extends upstream of the impeller and into the final section of the inlet duct when marginal surge conditions are reached.
+
+The rotation, vortex shedding and reintegration of this back-flow into the main flow coming through the core of the inlet duct have been regarded as possible sources of acoustic noise and several methods such as ported shrouds and different casing treatments have been proposed to alleviate its occurrence and extension \cite{chen2012casing,ding2013experimental}.
+
+During this investigation the setup described in section \ref{sec:setup} has been used to measure the distribution of temperature associated with marginal surge, this is, conditions with low air mass flow but not as low as to cause that the compressor goes into deep surge. 
+
+By using the two thermocouple arrays installed into the compressor inlet, both axial and circumferential temperature measurements were obtained for several operating conditions. A test was also performed in order to characterize the radial distribution of temperature caused by the hot back-flow. The robustness of these internal flow measurements against radiation from the inlet pipe walls was verified through external thermographic imaging.
+
+The analysis of these temperature distribution allowed the identification of the back-flow length along the compressor chart, together with the maximum temperature rise in the inlet and also the skewness of the circumferential temperature distribution of the flow.
+
+Mass flow rate has been shown to be the most influencing factor when predicting how far the hot back-flow extends upstream of the compressor impeller. At high rotational speeds, where surge occurs at high mass flows, the back-flow temperature is higher (due to higher compression ratio) but the length of the back-flow is shorter. As for circumferential skewness, it has been shown to increase linearly with back-flow temperature, while it appears to be similar in relative terms for all the different operating conditions considered.
+
+In order to gain further understanding of the generation and evolution of the local flow behaviour, miniaturized pressure probes where placed in the compressor inducer and diffuser. Analysis of the data provided by these two probes, and specially by the former, showed that the pressure spectral information in the inducer abruptly changed when the back-flow reached the upstream side of the impeller and the probe, as predicted with the aforementioned temperature data.
+
+Furthermore, a correlation of sound intensity in the ``whoosh'' characteristic frequency band that was analyzed in previous chapters and the increase in temperature skewness due to the backflow was found. Comparison of inlet and outlet sound intensity charts shows a more smooth evolution in the outlet and a more sudden rise in the inlet, linked to conditions where the back-flow starts to appear.
+
+In conjunction with the analysis of inlet temperature and pressure data, this suggests that whoosh noise in the inlet is boosted by the convective effect of the reversed flow structures at the inlet in marginal surge conditions, but it is not caused by them. Still, strategies aiming at the control of these back-flow structures could influence noise transmission to the downstream side and potentially alleviate its adverse effects on vehicle NVH perception.
+
+A following experimental effort was carried out with the objective of measuring the reversed flow the turbocharger compressor in unstable conditions when this backflow is confined and fully developed in a straight duct. In order to do this, the straight duct containing the thermocouples was substituted with a transparent glass pipe in order to allow the illumination of the seeded flow with a laser sheet and the imaging of the particles with a camera.
+
+First, an attempt was made to measure the axial velocity field by imaging a longitudinal plane introducing the laser sheet aligned with the turbocharger axis and positioning the camera in a perpendicular way so that images would be captured through the glass duct.
+
+This proved difficult as the oil particles deposited into the walls of the duct, obstructing the view of the camera and enhancing the detrimental reflections that made the correlation difficult or even impossible in some areas. The effect was found to be even worse when conditions close to surge were reached, as the highly rotational backflow forced the oil particles into the walls and also created an stagnation zone where particles formed a liquid film ring.
+
+As a result of these issues, few valid snapshots of the longitudinal plane could be captured, leading to the conclusion that further research of other seeding mechanisms (such as the alumina dispersion used by Wernet \cite{wernet2000development} or the fluorescent particles used by Wu et al. \cite{wu2011piv}) or other coating of the pipe (such as the fluorescent coating used by Gancedo et al. \cite{gancedo2016piv}) is required if a larger number of snapshots is required. 
+
+In any case, the increase of core speed resulting of the reversed flow along the periphery predicted by Lang's simulations \cite{lang2011contribucion} was observed, and shown to be coherent with the apparent reduction in useful diameter and also with prior temperature measurements. 
+
+Comparison with higher mass flow rate conditions allows the authors to conclude that the difference between an stable axial flow field and the unstable one caused by reversed flow in a confined pipe can be characterized through PIV, albeit with difficulty.
+
+A similar comparison between unstable and stable working conditions was performed in the transversal plane, keeping the distance to the impeller equal in both cases. Again a clear difference was observed with a highly rotational flow appearing at unstable conditions. 
+
+To test that transversal plane measurements can be used as well to estimate the length that the backflow reaches when confined in a straight pipe, an experiment was performed measuring three ``slices'' of the flow field: two inside the predicted length of the backflow and one outside.
+
+This experiment successfully showed a clear difference between the transversal flow field directly caused by the highly rotating backflow and the relatively unaffected field upstream, allowing the conclusion that this slicing method can be successfully used to externally characterize the length and radial distribution of a confined backflow without perturbation as long as images can be captured from the inlet.
+
+Regarding difficulty, measurements in this transversal planes were easier as the images could be captured directly through the inlet pipe mouth instead of through the glass, thereby avoiding the oil fouling problem. However, a higher ensemble of snapshot pairs was needed since the seeding particles tended to lump together and leave gaps in each snapshot. 
+
+Finally, a comparison between the PIV results and the previous temperature measurements was performed in order to ensure that both methods were in agreement. Measurements were normalized in order to meaningfully compare the profiles. 
+
+Comparison of the radial profile was done extracting data from the slice closer to the compressor, and the closer thermocouple was introduced step by step into the flow until the inlet duct axis. A good agreement between the two results was found, reinforcing the conclusion that the high transversal speed profile measured by PIV is caused by the hot reversed flow and it is accurately capturing its velocity distribution.
+
+Comparison in terms of axial velocity profile was also performed. While the non-disturbed upstream flow and the maximum length of the backflow appeared to match, profiles inside the backflow were more different than in the transversal case, probably due to the aforementioned difficulties regarding the PIV measurement through the glass in the presence confined backflow.
+
+However if the standard deviation of the recorded snapshots is analyzed, a good agreement can be found between the rising in deviation and the raising in temperature.
+
+In conclusion, it has been shown that PIV measurements can be used to successfully characterize the flow field in the presence of a confined backflow in the compressor inlet, with the added advantage of avoiding the disturbances that thermocouples or other sensors can introduce. Temperature measurements with thermocouple arrays can be used to measure the extent of this backflow and also characterize its circumferential distribution, which presents good correlation with the increase in whoosh noise levels.
+
+Future works using the flow field characterization techniques presented in this chapter would be useful in order to visualize the effect of different inlet configurations designed to mitigate unstable flow issues such as guiding vanes, tapered ducts, nozzles, etc. and to provide better validation of CFD simulations. 

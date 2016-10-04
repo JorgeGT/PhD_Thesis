@@ -24,7 +24,7 @@ Special care will be put in considering the different theoretical and practical 
 
 Most of the experimental work presented in this thesis has been carried out at laboratory 5K of Universitat Politècnica de València. This facility is equipped with two main installations.
 
-The first one is a flow bench powered by a Diesel engine linked to an asynchronous brake and a screw compressor. This flow bench can be configured to function as a turbocharger test stand or to provide air flow to other facilities. Subsection \ref{sub:flow_bench} will be dedicated to an extended description of this installation.
+The first one is a flow bench powered by a Diesel engine linked to an asynchronous \hl{dyno} and a screw compressor. This flow bench can be configured to function as a turbocharger test stand or to provide air flow to other facilities. Subsection \ref{sub:flow_bench} will be dedicated to an extended description of this installation.
 
 Next to the flow bench, there is a large anechoic chamber that can be configured to either receive external air flow from the flow bench or to host a standalone engine by itself. For this project, air was provided by the flow bench when the turbocharger test stand was installed inside the chamber. This arrangement is illustrated by Fig. \ref{fig:floorplan}, while subsection \ref{sub:anec_chamber} will describe in detail this particular chamber.
 
@@ -43,12 +43,12 @@ Other facilities included an impulse test bench that was used for sensor calibra
 
 The flow test rig has been used as flow provider to power the turbocharger turbine both directly, with the turbocharger installed in the flow rig cell itself and, as shown in Fig. \ref{fig:floorplan}, with the turbocharger mounted in a supporting frame inside the anechoic chamber.
 
-At the core of the rig there is a heavy duty MIDR 06.20.45 Diesel engine able to provide up to 260 kW of power. This engine is linked to an asynchronous electromagnetic brake and, through a coupling gear, to an Atlas Copco ZA 110-3.5 volumetric screw compressor. An overview of the whole installation can be seen on Fig. \ref{fig:flowrig_render}.
+At the core of the rig there is a heavy duty MIDR 06.20.45 Diesel engine able to provide up to 260 kW of power. This engine is linked to an asynchronous dyno and, through a coupling gear, to an Atlas Copco ZA 110-3.5 volumetric screw compressor. An overview of the whole installation can be seen in Fig. \ref{fig:flowrig_render}.
 
 \begin{figure}[b!]
 \centering
 \includegraphics[width=\textwidth]{figures/cap_metod/flow_rig2}
-\caption{Render of the flow rig showing the engine core, asynchronous brake with its support cabinet, screw compressor and air distribution system, including control valves and reservoirs.}
+\caption{Render of the flow rig showing the engine core, asynchronous dyno with its support cabinet, screw compressor and air distribution system, including control valves and reservoirs.}
 \label{fig:flowrig_render}
 \end{figure}
 
@@ -63,7 +63,7 @@ As for the flow control, another reservoir equipped with a discharging valve can
 
 If cold flow is desired, a water intercooler can be used to lower the temperature produced by the compression process. This temperature, along with the rest of flow properties like mass flows, pressures and other temperatures, are recorded through a dedicated control system.
 
-Engine and brake are controlled though their own independent instrumentation, while the instantaneous test turbocharger variables, including those needed for acoustical characterization, are recorded through a dedicated high speed Yokogawa DAQ.
+Engine and brake are controlled though their own independent instrumentation, while the instantaneous turbocharger variables, including those needed for acoustical characterization, are recorded through a dedicated high speed Yokogawa DAQ.
 
 \subsection{Anechoic chamber} \label{sub:anec_chamber}
 
@@ -82,7 +82,7 @@ A lightweight, acoustically-transparent, grated metallic floor is situated over 
 \label{fig:anechoic_chamber}
 \end{figure}
 
-During the work described in this thesis, the load-bearing pillars were unused, since the turbocharger frame was lightweight enough to be supported by the grated floor. Figure \ref{fig:anechoic_chamber} shows the test turbocharger installed on this frame.
+During the work described in this thesis, the load-bearing pillars were unused, since the turbocharger frame was lightweight enough to be supported by the grated floor. Figure \ref{fig:anechoic_chamber} shows the tested turbocharger installed in this frame.
 
 In order to allow the operation of the turbocharger, compressed air flow is fed to the turbine from the flow rig described in the prior subsection. The turbine discharges to a reservoir equipped with a conical nozzle that decreases velocity and acoustic emissions.
 
@@ -92,13 +92,13 @@ A control system similar to that of the flow rig monitors the operation of the s
 
 \subsection{Engine test cell} \label{sub:engine_cell}
 
-As mentioned early in the chapter, while most of the experimental work was carried out using the two facilities described already, the measurement methodology was later put to the test on an engine test cell to ensure its robustness and consistency on real engine conditions.
+As mentioned early in the chapter, while most of the experimental work was carried out using the two facilities described already, the measurement methodology was later put to the test on an engine test cell to verify its reliability on real engine conditions.
 
 The test cell is equipped with an asynchronous electromagnetic brake that allows both steady and transient automatic testing. Operative parameters and control for the engine and brake are integrated into a custom system, including gravimetric fuel consumption sensors, hot plate anemometers, emission measurements and temperature and pressure control of the air pipes and coolant flows.
 
-Access and online control of the engine ECU is also available, and a special pneumatic system can be used to inject compressed air into the inlet manifold downstream the compressor.
+Access and online control of the engine ECU is also available, and a special pneumatic system can be used to inject compressed air into the inlet manifold downstream of the compressor.
 
-This air injection reduces the air that the compressor needs to ingest, thus lowering compressor air flow and allowing the control of this relevant parameter independently of the engine necessities. The system was used to bring the compressor to surge and near-surge conditions during our research.
+This air injection reduces the air that the compressor ingests, thus lowering compressor air flow and allowing the control of this relevant parameter independently of the engine necessities. The system was used to bring the compressor to surge and near-surge conditions during our research.
 
 In order to implement and validate the in-duct acoustical measurement methodology presented in this chapter, additional sensors and equipment were fitted into the test cell, including a Yokogawa high speed DAQ and a Brüel \& Kjær PULSE DAQ system with a pressure-pressure sound intensity probe used as reference.
 
@@ -109,7 +109,7 @@ In order to implement and validate the in-duct acoustical measurement methodolog
 \label{fig:engine_cell_clear}
 \end{figure}
 
-\section{Test turbochargers}
+\section{Tested turbochargers}
 
 Different turbochargers have been used in the development of the investigation, as dictated by the requirements of the different projects and facilities that this thesis comprises. All of them are however similar, small to medium sized automotive turbochargers. The most relevant model is the \hl{Garrett G-17} that was used in chapters \ref{cap:metod}, \ref{cap:results}, \ref{cap:cfd} and part of chapter \ref{cap:geom}. 
 
@@ -120,13 +120,13 @@ Different turbochargers have been used in the development of the investigation, 
 \label{fig:comp_dimens}
 \end{figure}
 
-This particular model was digitized to obtain its detailed geometry, which is shown in Fig.~\ref{fig:comp_dimens} along with the most relevant dimensions.
+This particular model was digitized to obtain its detailed geometry, which is shown in Fig.~\ref{fig:comp_dimens} along with the most relevant dimensions. \hl{[More data]}
 
 \section{In-duct noise measurement} % Articulo methodology
 
-In this chapter, a methodology is proposed to evaluate the noise emission of the compressor through its inlet and outlet pipes across selected zones of the compressor map of operating conditions. It allows a simple and clear visualization of noise phenomena and their frequency distributions at all  possible operation points of the turbocharger system.
+In this section, a methodology is proposed to evaluate the noise emission of the compressor through its inlet and outlet pipes across selected zones of the compressor map of operating conditions. It allows a simple and clear visualization of noise phenomena and their frequency distributions at all possible operation points of the turbocharger system.
 
-Although compressor manufacturers sometimes provide these noise maps \cite{gaude2008experimental}, they usually refrain from providing an adequately referenced and step-by-step methodology to reproduce them.
+Although compressor manufacturers sometimes provide these kind of ``noise maps'' \cite{gaude2008experimental}, they usually refrain from providing an adequately referenced and step-by-step methodology to reproduce them.
 
 Reviewing the existing literature on turbocompressor noise a variety of very different measurement techniques can be found, from the two-sensor, in-duct approach of Tiikoja et al \cite{tiikoja2011inves} to simple single-sensor pressure levels and external commercial noise-meters \cite{figurella2012noise}.
 
@@ -142,13 +142,7 @@ In order to provide some illustrative results, the methodology proposed in this 
 \subsubsection{Sound intensity in flow ducts}
 \label{sub:sound_intensity_in_flow_ducts}
 
-\begin{figure}[h!]
-\centering
-\includegraphics[scale=0.85]{figures/cap_metod/NB_Beamformer}
-\caption{Diagram of a narrowband beamformer with three elements tuned to a Direction of Arrival (DOA) of $\theta$.}
-\label{fig:schematic}
-\end{figure}
-
+While it is possible \cite{figurella2012noise} to rely on a single sensor to measure the scalar \emph{sound pressure level} (SPL) of the flow at a certain location of a duct, more sophisticated approaches are needed to estimate the \emph{sound intensity level} (SIL) that is propagating through the duct.
 
 It is important to consider that the scalar magnitude of sound pressure level at a point can be influenced by the precise geometry of that section and by nodes and reflections that may occur in the duct, whereas sound intensity is a vectorial magnitude that remains almost constant along the duct (except for small dissipation losses), making it a more robust indicator of noise emission.
 
@@ -158,44 +152,42 @@ The basis of such intensity measurement methods is to consider that the pressure
   x(t)=x^+(t)+x^-(t)
 \end{equation}
 
-Comparing the pressure information at two or moWhile it is possible \cite{figurella2012noise} to rely on a single sensor to measure the scalar \emph{sound pressure level} (SPL) of the flow at a certain location of a duct, more sophisticated approaches are needed to estimate the \emph{sound intensity level} (SIL) that is propagating through the duct.
-re spatial positions it is thus possible to infer how the waves are propagating along the duct in each direction, a possibility unavailable by means of a single sensor.
+Comparing the pressure information at two or more spatial positions it is thus possible to infer how the waves are propagating along the duct in each direction, a possibility unavailable by means of a single sensor.
 
 When using this wave decomposition approach, the sound intensity can be estimated following the expression proposed by Morfey \cite{morfey1971sound} and successfully derived by Dokumaci \cite{dokumaci2000calculation} from physical principles:
 
-\begin{equation}\label{eq:intensity}
+\begin{equation}\label{eq:metod_intensity}
     I=\frac{1}{\rho a}\left(|\mathbf X^+ |^2(1+M)^2-|\mathbf X^- |^2(1-M)^2\right)
 \end{equation}
 
 Here $\mathbf X^+$ and $\mathbf X^-$ are, respectively, the complex spectra of the downstream and upstream pressure waves, $\rho$ is the mean density, $a$ the mean sound speed, and $M$ the mean Mach number of the flow.
 
-
-\subsubsection{Wave decomposition}
+\subsubsection{Beamforming wave decomposition}
 For a more intuitive comprehension of the beamformer, one can consider its transmitting equivalent: a phased array emitter where the same signal $x(t)$, with its phase shifted by a quantity $w_n^*$, is fed to an $n$-element linear array of fixed transmitters, forming a plane wave emitted in the $\theta$ direction which can be steered at will adjusting each $w_n^*$.
 The beamforming method provides a way to mathematically tune the sensitivity of the overall system in order to isolate the downstream and upstream information of the acquired signal. A scheme for a narrowband beamformer can be found in Fig. \ref{fig:schematic}.
 
-The approach in this paper is the inverse: by tuning the weights $w_n^*$ that multiply each recorded pressure signal $x_n(t)$ the pressure wave coming from the direction of arrival (DOA) $\theta$ that we are interested in may be resolved. Details can be found in \cite{van1988beamforming}.
-
 \begin{figure}[b!]
 \centering
-\includegraphics[scale=0.80]{figures/cap_metod/setup_t}
-\caption{Scheme of the proposed turbocharger instrumentation setup, highlighting in color the three-sensor beamforming arrays and their clearance requirements.}
-\label{fig:setup}
+\includegraphics[scale=0.85]{figures/cap_metod/NB_Beamformer}
+\caption{Diagram of a narrowband beamformer with three elements tuned to a Direction of Arrival (DOA) of $\theta$.}
+\label{fig:schematic}
 \end{figure}
 
-\begin{figure*}[t!]
+The approach in this caase is the inverse: by tuning the weights $w_n^*$ that multiply each recorded pressure signal $x_n(t)$ the pressure wave coming from the direction of arrival (DOA) $\theta$ that we are interested in may be resolved. Details can be found in \cite{van1988beamforming}.
+
+\begin{figure}[t!]
 \centering
 \includegraphics[width=0.8\textwidth]{figures/cap_metod/Decomposition_t}
 \caption{Sample result of the decomposed pressure; at the inlet the amplitude of the pressure wave travelling downstream (towards the compressor) is smaller than the one coming from the compressor; the reverse situation occurs at the outlet.}
 \label{fig:decomposition}
-\end{figure*}
+\end{figure}
 
-\begin{figure*}[t!]
+\begin{figure}[t!]
 %\centering
 \includegraphics[width=0.90\textwidth]{figures/cap_metod/Spectra}
 \caption{Sample of raw inlet and outlet pressure power spectral densities (at 160 krpm and 60 g/s), including frequency limitations described in equations \ref{eq:f_nyquist} and \ref{eq:f_modes}. The characteristic blade pass frequency can also be identified, specially in the outlet spectra.}
 \label{fig:spectra}
-\end{figure*}
+\end{figure}
 
 The extension to a wideband beamformer is relatively straightforward \cite{piper2011broadband}. First the Fast Fourier Transform (FFT, denoted by $\mathcal F$) of the recorded pressure signals is computed:
 
@@ -215,7 +207,7 @@ For this study a Linearly Constrained Minimum Variance (LCMV) beamformer was  us
 
 While several beamforming strategies and implementations are available, \ref{ann:beamformer} offers a simple guide on how to compute $\mathbf w^H(f_k)$ and thus $\mathbf X^+$ and $\mathbf X^-$ using this particular approach. Figure \ref{fig:decomposition} shows the result of this decomposition in the time domain.
 
-Further information on its application, including a comparison of various of these schemes against simulated and experimental data is available in \cite{pinero2000estimation}.
+Further information on its application, including a comparison of various of these schemes against simulated and experimental data is available in the work of Piñero et al. \cite{pinero2000estimation}.
 
 \subsection{Experimental procedure}
 \label{sec:experimental_procedure}
@@ -223,12 +215,18 @@ Further information on its application, including a comparison of various of the
 \subsubsection{Turbocharger instrumentation}
 \label{sub:turbocharger_instrumentation}
 
-The correct design and installation of the fast pressure sensor arrays
-is a critical part of the experimental setup.
+The correct design and installation of the fast pressure sensor arrays is a critical part of the experimental setup.
 
 Ideally, the sensors should be mounted flush (with water-cooled adapters if necessary) in straight pipes, with diameters adjusted to preserve the cross sectional area of the adjacent duct in order to avoid complex structures caused by singularities.
 
-As a further measure, enough straight clearance should be left before and after the array (as shown on figure \ref{fig:setup}), to ensure essentially plane wave flow at the measurement section \cite{holland2000measurement}. There should be a minimum of 6 diameters upstream of the array and a further 4 diameters downstream, as recommended in \cite{torregrosa2005exp}.
+\begin{figure}[b!]
+\centering
+\includegraphics[scale=0.80]{figures/cap_metod/setup_t}
+\caption{Scheme of the proposed turbocharger instrumentation setup, highlighting in color the three-sensor beamforming arrays and their clearance requirements.}
+\label{fig:setup_schem}
+\end{figure}
+
+As a further measure, enough straight clearance should be left before and after the array (as shown on figure \ref{fig:setup_schem}), to ensure essentially plane wave flow at the measurement section \cite{holland2000measurement}. There should be a minimum of 6 diameters upstream of the array and a further 4 diameters downstream, as recommended in \cite{torregrosa2005exp}.
 
 When placing the transducers, it is important that the 1/5 and 1/3 nodes of the established standing wave pattern are avoided \cite{dowling1983sound}. Also, a compromise in the spacing $d_s$ between them must be reached, taking into consideration errors in the  low-frequency \cite{aabom1988error} and high-frequency \cite{seybert1988two} bands.
 
@@ -255,7 +253,7 @@ Special care should be taken when computing limiting frequencies $f_n$ and $f_a$
 
 As the figure shows, the Nyquist criterion accurately pinpoints where differences between sensors start to grow, and it is clearly a more restrictive criterion than the acoustic mode onset. This limit should be properly computed for each condition when multi-sensor decomposition techniques are used.
 
-Also, figure \ref{fig:spectra} shows other phenomena, for instance the peak related to the passing of each rotor blade, usually known as Blade Passing Frequency (BPF) in the literature \cite{raitor2008sound}, which is marked as such in the figure:
+Also, figure \ref{fig:spectra} shows other phenomena, for instance the Blade Passing Frequency (BPF) tonal noise that is identified in many of the works presented in chapter \ref{cap:liter}. As shown in table \ref{tab:lit_gaude_sources}, the main BPF can be estimated by taking into account the shaft speed and the number of main blades:
 \begin{equation}
   \text{BPF} \sim 160\,\text{krpm}\,/\,60\,\frac{\text{s}}{\text{min}} \times 6\,\text{main blades} \sim 16\,\text{kHz}
 \end{equation}
@@ -278,9 +276,9 @@ In addition to the fast pressure sensors data, more information is required to c
 \subsubsection{Steady state measurements}
 \label{sub:steady_state_measurements}
 
-The usual approach for measuring the operating points of the compressor map involves reducing the air flow by progressively closing the back-pressure valve (shown in figure \ref{fig:setup}) until the desired air mass flow is reached, while the turbine power is adjusted to preserve a given corrected compressor speed $(N^*)$ and to achieve stable operation conditions.
+The usual approach for measuring the operating points of the compressor map involves reducing the air flow by progressively closing the back-pressure valve (shown in figure \ref{fig:setup_schem}) until the desired air mass flow is reached, while the turbine power is adjusted to preserve a given corrected compressor speed $(N^*)$ and to achieve stable operation conditions.
 
-Eventually the compressor blades will begin to stall, until a deep surge condition is reached, as shown in the left plot of figure \ref{fig:surge_datapoints}. In order to avoid this destructive condition, the valve will be opened again and another constant corrected regime line will be measured, until the desired region of the compressor map is completely covered.
+Eventually the compressor blades will begin to stall, until a deep surge condition is reached, as shown in the top plot of figure \ref{fig:surge_datapoints}. In order to avoid this destructive condition, the valve will be opened again and another constant corrected regime line will be measured, until the desired region of the compressor map is completely covered.
 
 Several reference conditions can be selected when correcting the speed and the air mass flow; in this study the mean sea level standard day (defined as one of 15ºC of temperature and 1 atm of pressure) of the International Standard Atmosphere will be used:
 \begin{equation}
@@ -288,7 +286,7 @@ Several reference conditions can be selected when correcting the speed and the a
     \qquad N^*=N\sqrt{\frac{288.15}{T_{T}}}
 \end{equation}
 
-Here, $p_{T}$ and $T_{T}$ refer to the compressor inlet total pressure and temperature, respectively. These are calculated with the air mass flow and the cross sectional area of the inlet duct, using the continuity and ideal gas relations and assuming adiabatic flow.
+Here, $p_{T}$ and $T_{T}$ refer to the compressor inlet total pressure and temperature, respectively. These are calculated with the air mass flow and the cross sectional area of the inlet duct, using the continuity and ideal gas relations and assuming adiabatic flow:
 
 \begin{figure}[bth!]
 \centering
@@ -297,7 +295,6 @@ Here, $p_{T}$ and $T_{T}$ refer to the compressor inlet total pressure and tempe
 \label{fig:surge_datapoints}
 \end{figure}
 
-Here $R$ denotes the air-specific ideal gas constant and $\rho,P,T$ and $V$ the density, pressure, temperature and flow speed in the duct, respectively. With $A$ denoting the cross sectional area, and $c_p$ the air-specific heat capacity, it follows that for both ducts:
 \begin{equation}
     \rho =\cfrac{p}{RT} \quad
     V =\cfrac{\dot m}{\rho A} \quad
@@ -305,7 +302,9 @@ Here $R$ denotes the air-specific ideal gas constant and $\rho,P,T$ and $V$ the 
     p_{T}=p\left(\cfrac{T_{T}}{T}\right)^\frac{\gamma}{\gamma-1}
 \end{equation}
 
-Figure \ref{fig:surge_datapoints} (right) shows the recorded data points of the compressor map, after computing the total-to-total pressure ratio and
+In this case $R$ denotes the air-specific ideal gas constant and $\rho,P,T$ and $V$ the density, pressure, temperature and flow speed in the duct, respectively. Also, $A$ denotes the cross sectional area, and $c_p$ the air-specific heat capacity.
+
+Figure \ref{fig:surge_datapoints} (bottom) shows the recorded data points of the compressor map, after computing the total-to-total pressure ratio and
 applying the standard day correction.
 
 \subsubsection{Surge limit characterization}
@@ -315,25 +314,19 @@ When measuring a turbocharger operation map, it is particularly important to  ch
 
 In order to measure different mass flows, the back-pressure valve is usually closed slowly until a certain surge criterion is met, and then opened to avoid damaging the turbocharger. Several surge criteria for centrifugal turbomachinery have been proposed in the literature, for tests on flow benches \cite{galindo2006surge} and on engine test rigs \cite{galindo2013engine}.
 
-An average of power spectrum of a single pressure sensor in the 0 to 20 Hz range, shown by Galindo et al \cite{galindo2006surge} to be a good surge indicator, was computed once for discrete time steps $T$ of 0.5 seconds, providing a clear indication of deep surge onset, as marked in figure \ref{fig:surge_datapoints} (left) with a solid line.
+An average of power spectrum of a single pressure sensor in the 0 to 20 Hz range, shown by Galindo et al \cite{galindo2006surge} to be a good surge indicator, was computed once for discrete time steps $T$ of 0.5 seconds, providing a clear indication of deep surge onset, as marked in figure \ref{fig:surge_datapoints} (top) with a solid line.
+
 \begin{equation}
  \mathbf X_T=\left|\mathcal F\{x(t)\}\right|^2,\; t\in[t_T,t_{T+1}]
 \end{equation}
 
-To obtain the required near-surge data points to be displayed on the map, represented by $\blacksquare$ in the right plot of figure \ref{fig:surge_datapoints}, a 1 second average of all recorded data was computed 1 second before surge as indicated by the dashed lines of the left plot, in order to calculate the map coordinates of the point.
+To obtain the required near-surge data points to be displayed on the map, represented by $\blacksquare$ in the bottom plot of figure \ref{fig:surge_datapoints}, a 1 second average of all recorded data was computed 1 second before surge as indicated by the dashed lines of the left plot, in order to calculate the map coordinates of the point.
 
 \begin{figure*}[t!]
 \centering
 \includegraphics[width=0.85\textwidth]{figures/cap_metod/gr_mapa_ruido_dB_1000-3000.pdf}
 \caption{Sample of noise level in the 1 -- 3 kHz band obtained through the processing described in subsection \ref{sub:noise_maps_and_spectrograms}, including the measured data points $(\circ)$ and the paths later expanded as spectrograms shown in figure \ref{fig:spec50-5k}. The left hand side map represents the inlet duct, whereas the right hand side map represents the outlet duct. }
 \label{fig:map1k-3k}
-\end{figure*}
-
-\begin{figure*}[t!]
-\centering
-\includegraphics[width=0.85\textwidth]{figures/cap_metod/gr_spec_ruido_dB_50-5000.pdf}
-\caption{Sample of spectrograms calculated using the procedure outlined in subsection \ref{sub:noise_maps_and_spectrograms}, following the 160 krpm paths marked in figure \ref{fig:map1k-3k}. The 1--3 kHz band selected for the maps in figure \ref{fig:map1k-3k} is highlighted, along with some particular flow phenomena discussed in section \ref{sec:results_and_discussion}.}
-\label{fig:spec50-5k}
 \end{figure*}
 
 \subsubsection{Signal postprocessing: maps and spectrograms}
@@ -354,20 +347,13 @@ Expanding on the necessity of analysing the frequency content evolution as the o
 
 This is accomplished by sequentially performing the previous map processing for a number $N$ of much smaller frequency bands of width $\Delta f$, resulting in a collection of $N$ interpolation functions $\Phi_{f_j-f_{j+1}}$, where $f_{j+1}-f_j = \Delta f$.
 
-\begin{wrapfigure}[36]{O}[1.6cm]{0.41\textwidth}
-\vspace{-5mm}
-\includegraphics[width=0.42\textwidth,trim={1cm 0 5mm 0},clip]{figures/cap_metod/mapas_comp}
-\caption{\null\\Outlet maps computed at different frequency ranges. From top to bottom: a general view of the plane wave range global intensity; the characteristic band of the ``whoosh noise'', and a narrow low frequency band that indicates surge onset.}
-\label{fig:mapas_comp}
-\end{wrapfigure}
-
 Using these functions, the intensity levels $\mathbf L$ on each small frequency band $k$ are interpolated for a set of $M$ pairs of the compressor map coordinates, such that:
 
 \begin{equation}
- \mathbf L_j=\Phi_{f_j-f_{j+1}}(\mathbf{\dot m^*},\mathbf{\Pi_\text{TT}})
+ \mathbf L_j=\Phi_{f_j-f_{j+1}}(\bm{\dot m^*},\bm{\Pi_\text{TT}})
 \end{equation}
 
-An estimation of the spectrogram $\mathbf S$ that would be obtained in a quasi-stationary measurement by following the set of operation conditions $(\mathbf{\dot m^*},\mathbf{\Pi_\text{TT}})$ pairs can then be compiled gathering the levels $\mathbf L_j$. Choosing one coordinate of the set of pairs (in this case $\dot m^*$) as reference for the X axis:
+An estimation of the spectrogram $\mathbf S$ that would be obtained in a quasi-stationary measurement by following the set of operation conditions $(\bm{\dot m^*},\bm{\Pi_\text{TT}})$ pairs can then be compiled gathering the levels $\mathbf L_j$. Choosing one coordinate of the set of pairs (in this case $\dot m^*$) as reference for the X axis:
 
 \begin{equation}
   \mathbf S(f_j,\dot m^*)=\begin{bmatrix}
@@ -377,58 +363,128 @@ An estimation of the spectrogram $\mathbf S$ that would be obtained in a quasi-s
   \end{bmatrix}
 \end{equation}
 
-Thus the sound intensity level value $\mathbf S$ for each $m^*$ and each frequency band $j$ can be plotted. An example of this processing for frequencies between 50 and 5000 Hz binned with $\Delta f = 50$ Hz is presented on figure \ref{fig:spec50-5k}, where coordinates $(\mathbf{\dot m^*},\mathbf{\Pi_\text{TT}})$ correspond to the 160 krpm iso-speed line highlighted in figure \ref{fig:map1k-3k}.
+Thus the sound intensity level value $\mathbf S$ for each $\dot m^*$ and each frequency band $j$ can be plotted. An example of this processing for frequencies between 50 and 5000 Hz binned with $\Delta f = 50$ Hz is presented on figure \ref{fig:spec50-5k}, where coordinates $(\bm{\dot{m}^*},\bm{\Pi_\text{TT}})$ correspond to the 160 krpm iso-speed line highlighted in figure \ref{fig:map1k-3k}.
 
-\subsection{Results and discussion}
-\label{sec:results_and_discussion}
+\begin{figure*}[t!]
+\centering
+\includegraphics[width=0.85\textwidth]{figures/cap_metod/gr_spec_ruido_dB_50-5000.pdf}
+\caption{Sample of spectrograms calculated using the procedure outlined in subsection \ref{sub:noise_maps_and_spectrograms}, following the 160 krpm paths marked in figure \ref{fig:map1k-3k}. The 1--3 kHz band selected for the maps in figure \ref{fig:map1k-3k} is highlighted, along with some particular flow phenomena discussed in section \ref{sec:results_and_discussion}.}
+\label{fig:spec50-5k}
+\end{figure*}
 
-In order to illustrate the methodology presented in this paper, the evaluation of a small automotive turbocompressor was carried out in a flow bench, configured as shown in figure \ref{fig:setup}.
+\subsection{Sample results}
+
+\hl{[Quitar?]}
+
+In order to illustrate the methodology presented in this section, a measurement of the tested turbocharger was first carried out in the flow bench that is used to provide flow to the anechoic chamber, configured as shown in figure \ref{fig:setup_schem}. Since in this case the only concern was the validation of the in-duct methodology, installation in the anechoic was not required. 
 
 Kistler type 7031 piezoelectric transducers were used for the inlet duct; the outlet duct was fit with type 6031 transducers due to available stock. An array spacing $d_s=32$ mm for the outlet and $d_s=50$ mm for the inlet was selected, allowing for a safe upper limit in terms of the spatial Nyquist criterion $f_n$ of $\sim$6000 and $\sim$3500 Hz respectively (precise values depend on the conditions of each point).
 
-The variables needed in order to characterize the map point (mass flow, speed, temperatures and pressures) were averaged during 30 seconds, while the six piezoelectric sensors acquired $10^5$ pressure samples during 1 second using a Yokogawa digital recorder.
+The variables needed in order to characterize the map point (mass flow, speed, temperatures and pressures) were averaged during 30 seconds using the in-house DAQ system, while the six piezoelectric sensors acquired $10^5$ pressure samples during 1 second using a Yokogawa digital recorder.
 
 Pressure signals on recorded points (shown in figure \ref{fig:surge_datapoints}) were then processed according to the proposed methodology. Samples of the final results are presented in figures \ref{fig:map1k-3k} and \ref{fig:spec50-5k}.
 
-Figure \ref{fig:map1k-3k} shows the 1 -- 3 kHz sound intensity level distribution across selected operating conditions, approximately between maximum efficiency and the measured surge limit.
-
-Noise in this frequency band is sometimes designated as ``whoosh'' noise in the literature, and is of particular concern for automotive manufacturers, as the user may perceive negatively this particular frequency. Indeed, the  user expects a low frequency engine sound instead of a high-pitched one.
+Figure \ref{fig:map1k-3k} shows the 1 -- 3 kHz sound intensity level distribution across selected operating conditions, approximately between maximum efficiency and the measured surge limit. As shown in chapter \ref{cap:liter}, noise in this subsynchronous frquency is often known as ``whoosh''.
 
 Another point of concern that has been identified in the results is that the relevance of this particular phenomenon extends far from the surge region and well into the expected engine operation region.
 
-In fact, looking at either the 160 krpm line on figure \ref{fig:map1k-3k} or at the expanded spectrograms of this line in figure \ref{fig:spec50-5k} where this band has been marked, there is a local maximum in this band between 60 and 70 g/s. For the 180 krpm points on the map of figure \ref{fig:map1k-3k}, the ``whoosh'' noise may be heard even for up to 80 g/s mass flow rate.
+Looking at either the 160 krpm line on figure \ref{fig:map1k-3k} or at the expanded spectrograms of this line in figure \ref{fig:spec50-5k} where this band has been marked, there is a local maximum in this band between 60 and 70 g/s. For the 180 krpm points on the map of figure \ref{fig:map1k-3k}, the ``whoosh'' noise may be heard even for up to 80 g/s mass flow rate.
 
 Apart from ``whoosh'', both spectrograms show a clear rise in low frequency content when the mass flow is reduced and surge conditions start to appear, even if deep surge conditions have not yet been reached. This is consistent with spectrograms measured experimentally by Galindo et al \cite{galindo2009effect}.
 
-Furthermore, this kind of low frequency band may be plotted and its distribution compared with other bands, as shown in figure \ref{fig:mapas_comp} where three different frequency limits have been applied to equation \ref{eq:point_level} during signal processing.
+% \begin{wrapfigure}[36]{O}[1.6cm]{0.41\textwidth}
+% \vspace{-5mm}
+% \includegraphics[width=0.42\textwidth,trim={1cm 0 5mm 0},clip]{figures/cap_metod/mapas_comp}
+% \caption{\null\\Outlet maps computed at different frequency ranges. From top to bottom: a general view of the plane wave range global intensity; the characteristic band of the ``whoosh noise'', and a narrow low frequency band that indicates surge onset.}
+% \label{fig:mapas_comp}
+% \end{wrapfigure}
 
-Compared with the global distribution of sound intensity in the plane wave range (left plot), the ``whoosh noise'' band (central plot) appears to be more prevalent at higher pressure ratios, while the low frequency content (right plot) is characteristic of surge onset.
+% Furthermore, this kind of low frequency band may be plotted and its distribution compared with other bands, as shown in figure \ref{fig:mapas_comp} where three different frequency limits have been applied to equation \ref{eq:point_level} during signal processing.
 
-These observations match the trends observed in the literature \cite{evans2005minimizing,evans2006reduction,sevginer2007investigation}. Other frequency bands could be mapped in a similar manner, and spectrograms estimated for different map paths with no need to repeat the experimental measurements, in order to investigate other phenomena of interest or to test several candidates for actual engine operating lines.
+% Compared with the global distribution of sound intensity in the plane wave range (left plot), the ``whoosh noise'' band (central plot) appears to be more prevalent at higher pressure ratios, while the low frequency content (right plot) is characteristic of surge onset.
 
-\subsection{Conclusions}
+% These observations match the trends observed in the literature \cite{evans2005minimizing,evans2006reduction,sevginer2007investigation}. Other frequency bands could be mapped in a similar manner, and spectrograms estimated for different map paths with no need to repeat the experimental measurements, in order to investigate other phenomena of interest or to test several candidates for actual engine operating lines.
+
+\section{External noise measurements}
+
+While the accurate characterization of the internal sound field is crucial to understand the different phenomena, the transmission of the noise to the ambient is also relevant as external acoustic radiation is ultimately the main concern of the automotive industry.
+
+To that extent, different external measurements have been carried out as part of the experimental campaign. Noise data has been captured in the orifice of the compressor inlet, around the far field of the turbocharger, and along the radiating surfaces near field.
+
+This section will describe how these measurement were made, while results and discussion will be presented in section \ref{sec:external_results} of chapter \ref{cap:results}. Section \ref{sec:correlations} of the same chapter will show how this data correlates with internal noise field measurements.
+
+\subsection{Orifice noise}
+\label{sub:metod_orifice_noise}
+
+The noise emitted by the open end of the compressor inlet duct is of special concern, as it is the point where the internal sound field meets the exterior ambient. Furthermore, the compressor may not act as the only source of noise in this case, as the noise produced by the flow interaction with the duct orifice during the aspiration process can be relevant as well.
+
+However, when measuring external noise care should be taken to avoid reflections and perturbations that may interfere with the results. This is why it was decided to install the turbocharger inside the anechoic chamber, so that free-field conditions could be recreated and external noise measurements could be taken and compared against in-duct results.
+
+\begin{wrapfigure}[20]{r}[1.5cm]{0.4\textwidth}
+\centering
+\vspace{-3mm}
+\includegraphics[width=0.4\textwidth]{figures/cap_inlet/mics_photo}
+\caption{Image of the two free-field microphones placed at 10 mm (mic 1) and 20 mm (mic 2) from the orifice of the compressor inlet duct.}
+\label{fig:mics_photo}
+\end{wrapfigure}
+
+In this chamber, instrumentation consisted of two free-field Brüel \& Kjær \textcolor{red}{[model]} microphones placed next to the compressor inlet orifice and separated 10 cm and 20 cm from the aperture, respectively. 
+
+These microphones were calibrated before the measurements with a Brüel \& Kjær \textcolor{red}{[model]} pistonphone. Both the calibration and the data acquisition were performed with a Brüel \& Kjær PULSE system.
+
+As the conditions inside the anechoic chamber can be regarded as being equivalent to those of an acoustic free field, we can estimate the magnitude of the sound intensity at each microphone $i$ as:
+
+\begin{equation}
+	|I_i| = \frac{p^2_\text{rms,i}}{\rho c}
+\end{equation}
+
+Here, $p^2_\text{rms,i}$ is the root mean squared pressure recorded by microphone $i$, $\rho$ is the ambient density and $c$ the ambient sound speed. These are calculated from pressure and temperature sensors available in the anechoic chamber.
+
+\subsection{Far field}
+\label{sub:metod_far_field}
+
+Taking advantage of the free field conditions of the chamber, ambient microphones were installed around the turbocharger group to estimate the far field sound radiation.
+
+To obtain a better estimation of the sound field, four omnidirectional microphones were distributed around the the central point of the installation, at a radial distance of 1 m from it, as shows Fig. \ref{fig:radiated_jag}.
+
+\begin{figure*}[tb!]
+\centering
+\includegraphics[width=0.95\textwidth]{figures/cap_metod/radiated_jag}
+\caption{Radiated noise microphones installed around a commercial set of compressor inlet and outlet pipes.}
+\label{fig:radiated_jag}
+\end{figure*}
+
+Data from these four microphones was captured using a Brüel \& Kjær PULSE system, and their calibration was also performed using a Brüel \& Kjær \textcolor{red}{[model]} pistonphone prior to the measurements.
+
+In order to provide a global metric to compare against orifice noise, results for the four microphones was averaged to compute the final sound pressure level.
+
+\subsection{Near field}
+
+\hl{[Informacion sobre velocidad de particula?]}
+
+\section{Conclusions}
 \label{sec:conclusions}
 
-In this paper a detailed experimental methodology for the noise evaluation of turbocharger compressors in flow benches \cite{broatch2015simulations} or engine test cells \cite{torregrosa2014aco} is proposed and demonstrated.
+In this chapter a detailed experimental methodology for the noise evaluation of turbocharger compressors in flow benches \cite{broatch2015simulations} or engine test cells \cite{torregrosa2014aco} has been proposed.
 
 It is based on a robust in-duct acoustical beamforming technique that resolves the plane wave range sound intensity, by decomposing the total pressure signal into its upstream and downstream components.
 
-In addition to resolving intensity, another advantage of the wave decomposition technique is the possibility of isolating the pressure data coming from the compressor, in order to simulate an anechoic duct termination in situations where actual anechoic setups are not feasible (due to valves, filters, and other elements).
+In addition to resolving intensity, another advantage of the wave decomposition technique is the possibility of isolating the pressure data coming from the compressor, in order to enhance the spectral content of interest in situations where actual anechoic setups are not feasible, due to valves, filters, and other elements.
 
-This isolated pressure information is also useful to validate or initialize CFD simulations where the model boundary conditions have to be defined as anechoic because simulating accessories (valves, flexible ducts, etc.) is not worthy or desirable. Such a validation methodology is presented in \cite{broatch2014methodology}.
+This isolated pressure information is also useful to validate or initialize CFD simulations where the model boundary conditions have to be defined as anechoic because simulating accessories (valves, flexible ducts, etc.) is not worthy or desirable. Such a validation methodology was presented in \cite{broatch2014methodology} and is discussed in chapter \ref{cap:cfd} of this work.
 
-When used to evaluate the acoustic intensity of the noise generated by the compressor, the proposed signal processing allows easily to understand visual representations in the form of noise maps of selected frequency bands of interest and estimated spectrograms of operating paths. This can provide guidelines for the evaluation of strategies to counter or avoid certain adverse noise phenomena.
+When used to evaluate the acoustic intensity of the noise generated by the compressor, the proposed signal processing allows to easily  understand visual representations in the form of noise maps of selected frequency bands of interest and estimated spectrograms of operating paths. This can provide guidelines for the evaluation of strategies to counter or avoid certain adverse noise phenomena.
 
-The examples presented above illustrate how this technique allows detecting known acoustical phenomena of a  centrifugal compressor, such as medium frequency ``whoosh noise'' and low frequency surge onset, as well as mapping its distribution and relevance across different operating conditions of the turbocharger.
+The examples presented above illustrate how this technique allows detecting known acoustical phenomena of a centrifugal compressor, such as medium frequency ``whoosh noise'' and low frequency surge onset, as well as mapping its distribution and relevance across different operating conditions of the turbocharger.
 
-In addition to offering the detailed measurement and signal processing steps, this paper stresses the importance of taking into account restrictive factors such as calibration, sensor setup clearances and locations, frequency aliasing effects and ranges in which theoretical assumptions hold in order to obtain robust and reproducible results.
+In addition to offering the detailed measurement and signal processing steps, this chapter stresses the importance of taking into account restrictive factors such as calibration, sensor setup clearances and locations, frequency aliasing effects and ranges in which theoretical assumptions hold in order to obtain robust and reproducible results.
 
-The technique presented here should provide researchers who need to evaluate turbocharger compressor noise emission with a means to focus their efforts on the acoustical phenomena instead of on the measurement itself, thus allowing to further advance knowledge on this topic.
-
-\subsection{LCMV beamforming procedure}
+\subsection{Appendix: LCMV beamforming procedure}
 \label{ann:beamformer}
 
-This appendix proposes a step by step guide to compute the desired $\mathbf X^+$ and $\mathbf X^-$ decomposed pressure spectra required in equation \ref{eq:intensity} of subsection \ref{sub:sound_intensity_in_flow_ducts}, using a LCMV (Linearly Restricted Minimum Covariance) strategy as presented by Verdú \cite{verdu2003contribucion}.
+\hl{[Donde poner esto?]}
+
+This appendix proposes a step by step guide to compute the desired $\mathbf X^+$ and $\mathbf X^-$ decomposed pressure spectra required in equation \ref{eq:metod_intensity}, using a LCMV (Linearly Restricted Minimum Covariance) strategy as presented by Verdú \cite{verdu2003contribucion}.
 
 Recall that decomposed signals for each frequency $f_k$ are obtained by weighting the transformed measurement matrix $\mathbf X(f_k)=[X_1 X_2 X_3]=\mathcal F\{[x_1 x_2 x_3]\}$ as follows:
 \begin{align}
@@ -464,53 +520,3 @@ $M$ represents the Mach number, $k=\omega/c$ the acoustic wave number and $\alph
 \end{equation}
 
 The radius of the duct is denoted by $r$, $a$ is the speed of sound, $\nu$ the cinematic viscosity, $\omega=2\pi f_k$ the angular frequency and $P_r$ is the Prandtl number.
-
-\section{External noise measurements}
-
-While the accurate characterization of the internal sound field is vital to understand the different phenomena, the transmission of the noise to the ambient is also relevant as external acoustic radiation is ultimately the main concern of the automotive industry.
-
-To that extent, different external measurements have been carried out as part of the experimental campaign. Noise data has been captured in the orifice of the compressor inlet, around the far field of the turbocharger, and along the radiating surfaces near field.
-
-This section will describe how these measurement were made, while results and discussion will be presented in section \ref{sec:external_results} of chapter \ref{cap:results}. Section \ref{sec:correlations} of the same chapter will show how this data correlates with internal noise field measurements.
-
-\subsection{Orifice noise}
-\label{sub:metod_orifice_noise}
-
-Noise emitted by the open end of the compressor inlet duct is of special concern, as it is the point where the internal sound field meets the exterior ambient. Still, noise produced by the compressor travelling upstream the inlet duct is not the only source in this case, as the flow noise produced by the flow interaction produced by the aspiration process can be relevant as well.
-
-However, when measuring external noise care should be taken to avoid reflections and perturbations that may interfere with the results. This is why it was decided to install the turbocharger inside the anechoic chamber, so that free field conditions could be recreated.
-
-In this chamber, instrumentation consisted in two omnidirectional Brüel \& Kjær \textcolor{red}{[model]} microphones placed in front of the compressor inlet orifice, both aligned with its axis and separated 10 cm and 20 cm from the aperture, respectively.
-
-These microphones were calibrated before the measurements with a Brüel \& Kjær \textcolor{red}{[model]} pistonphone. Both the calibration and the data acquisition were performed with a Brüel \& Kjær PULSE system.
-
-As the conditions inside the anechoic chamber can be regarded as being equivalent to those of an acoustic free field, we can estimate the magnitude of the sound intensity at each microphone $i$ as:
-
-\begin{equation}
-	|I_i| = \frac{p^2_\text{rms,i}}{\rho c}
-\end{equation}
-
-Here, $p^2_\text{rms,i}$ is the root mean squared pressure recorded by microphone $i$, $\rho$ is the ambient density and $c$ the ambient sound speed. These are calculated from pressure and temperature sensors available in the anechoic chamber.
-
-\subsection{Far field}
-\label{sub:metod_far_field}
-
-\begin{figure*}[b!]
-\centering
-\includegraphics[width=0.95\textwidth]{figures/cap_metod/radiated_jag}
-\caption{Radiated noise microphones installed around a commercial set of compressor inlet and outlet pipes.}
-\label{fig:radiated_jag}
-\end{figure*}
-
-Taking advantage of the free field conditions of the chamber, ambient microphones were installed around the turbocharger group to estimate the far field sound radiation.
-
-To obtain a better estimation of the sound field, four omnidirectional microphones were distributed around the the central point of the installation, at a radial distance of 1 m from it, as shown on Fig. \ref{fig:radiated_jag}.
-
-Data from these four microphones was captured using a Brüel \& Kjær PULSE system, and their calibration was also performed using a Brüel \& Kjær \textcolor{red}{[model]} pistonphone prior to the measurements.
-
-In order to provide a global metric to compare against orifice noise, pressure recording for the four microphones was averaged.
-
-
-\subsection{Near field}
-
-\hl{[Informacion sobre velocidad de particula?]}
