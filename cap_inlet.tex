@@ -4,12 +4,17 @@
 
 \section{Introduction}
 
+As it was seen in the literature review of chapter \ref{cap:liter}, the inlet flow field immediately upstream of the compressor wheel has demonstrated a significant influence on parameters such as efficiency, maximum mass flow and characteristics of the noise output. CFD simulation results have show a complex flow field when the turbocharger operates in unstable conditions at the marginal surge region of the map.
+
+While some measurements of flow variables have been performed in these conditions, they are often limited to a single sensor such as a thermocouple or pressure transducer, in order to use the reading as a metric for surge prediction. However, in order to validate CFD results and obtain a deeper knowledge of this unstable, reversed flow, in this chapter a measurement campaign is described where the spatial resolution of this phenomenon is taken into account.
+
 \section{Local measurements methodology}
 
-
+In this section the methodology used to characterize the reversed flow is presented, by measuring variables such as temperature, pressure and velocity at different locations. 
 
 \subsection{Turbocharger modification}
-For this chapter and prior to its installation in the gas stand, modifications were made to the compressor in order to accommodate the required local temperature and pressure sensors.
+
+Prior to its installation in the gas stand, modifications were made to the compressor in order to accommodate the required local temperature and pressure sensors used to measure these variables.
 
 The compressor housing was modified by removing the original inducer up to the plane of the blade leading edges and substituting it by a removable adaptor piece which incorporates guides for a circumferential array of thermocouples and a miniaturized pressure probe. This adaptor is depicted in red in Figs. \ref{fig:metod_local_meas} and \ref{fig:metod_local_meas_dimen}.
 
@@ -67,18 +72,20 @@ Besides isolated measurements of pressure and temperature, the characterization 
 
 \subsubsection{Laser PIV measurements}\label{sub:setup_piv}
 
-In order to allow a characterization of these flow fields, a Particle Image Velocimetry (PIV) system was installed on the anechoic chamber. For PIV measurements, a laser sheet illuminates the measurement region, previously seeded with particles, by means of two consecutive laser shots of a Q-switched Nd:YAG laser. These two laser shots, produced at a user-defined time interval, illuminate the same flow field, so that light scattered by the particles is collected by a straddle CCD camera in two consecutive frames. Based in these two frames particle position can be determined using cross-correlation algorithms. Hence, instantaneous two-dimensional velocity fields can be computed based on the displacement of particle groups within a given interrogation area of the image and the time step between frames.
+In order to allow a characterization of these flow fields, a Particle Image Velocimetry (PIV) system was installed on the anechoic chamber. For PIV measurements, a laser sheet illuminates the measurement region, previously seeded with particles, by means of two consecutive laser shots of a Q-switched Nd:YAG laser. These two laser shots, produced at a user-defined time interval, illuminate the same flow field, so that light scattered by the particles is collected by a straddle CCD camera in two consecutive frames. 
 
-Specifically in this study a standard 2D PIV system by TSI has been used for the measurement of the instantaneous two-dimensional velocity fields. If consists of a double-head 15Hz Nd: YAG laser with 135 mJ/pulse @ 532 nm, a set of mirrors and lenses to drive the laser into the measurement plane and change the laser output 5mm circular beam into a laser sheet with around 1 mm thickness at the measurement section, a 4Mpixel, 12-bit straddle CCD camera (PowerView Plus 4MP) and a synchronization device. 
-The air flow was seeded with ~1 µm oil droplets from an atomiser using the Laskin nozzle principle (TSI 9306A Six-jet atomizer).
-
-\begin{wrapfigure}{O}[1.5cm]{0.4\textwidth}
+\begin{wrapfigure}{I}[0.5cm]{0.4\textwidth}
 \centering
 %\vspace{-5mm}
 \includegraphics[width=0.4\textwidth]{figures/cap_inlet/piv_3}
 \caption{Image of the laser sheet illuminating the glass duct in the transversal PIV setup.}
 \label{fig:piv_transv_photo}
 \end{wrapfigure}
+
+Based in these two frames particle position can be determined using cross-correlation algorithms. Hence, instantaneous two-dimensional velocity fields can be computed based on the displacement of particle groups within a given interrogation area of the image and the time step between frames.
+
+Specifically in this study a standard 2D PIV system by TSI has been used for the measurement of the instantaneous two-dimensional velocity fields. If consists of a double-head 15Hz Nd: YAG laser with 135 mJ/pulse @ 532 nm, a set of mirrors and lenses to drive the laser into the measurement plane and change the laser output 5mm circular beam into a laser sheet with around 1 mm thickness at the measurement section, a 4Mpixel, 12-bit straddle CCD camera (PowerView Plus 4MP) and a synchronization device. 
+The air flow was seeded with ~1 µm oil droplets from an atomiser using the Laskin nozzle principle (TSI 9306A Six-jet atomizer).
 
 Images were processed with selected algorithms and validation criteria of the TSI Insight 3G software options. Post-processing, graphical output and analysis tools were complemented with new processing routines developed in Matlab for the specific purposes of this work. 
 
@@ -126,7 +133,7 @@ However, as the oil soiling of the wall was not as problematic, a larger number 
 
 Using both setups, data was captured at several turbocharger operating conditions. Different shaft speeds were kept constant while air mass flow was progressively reduced, from a stable operating point close to the compressor maximum efficiency region to an unstable point very close to the compressor deep surge limit. Figure \ref{fig:map_straight} shows the recorded points for temperature and pressure measurements. PIV recording points had to be limited due to the time-consuming procedure required to extract valid data.
 
-\begin{figure}[b!]
+\begin{figure}[htb!]
 \centering
 \includegraphics[width=0.63\textwidth]{figures/cap_inlet/map}
 \caption{Compressor map showing the operating conditions covered during the measurement campaign. From top to bottom, shaft speeds were 160, 140, 120, 100 and 80 krpm.}
@@ -137,6 +144,8 @@ In order to prevent the appearance of deep surge, with its inherent danger to th
 
 \subsection{Temperature}
 \label{sub:temperature}
+
+Different measurements of temperature were performed in this study: a radial profile at two selected locations at a single unstable condition, and a characterization of the circumferential and longitudinal temperature profiles across the selected region of the compressor map.
 
 \subsubsection{Radial profile}
 
@@ -272,6 +281,8 @@ The resulting map plotted in Fig. \ref{fig:temp_maps} shows that no backflow is 
 \subsection{Pressure}
 \label{sub:pressure}
 
+Two sets of pressure information were recorded during this experimental campaign. Local pressure in both inducer and diffuser was acquired in order to provide more insight into the flow conditions at those areas of interest and to validate CFD results. In addition, in-duct pressure as recorded by the piezoelectric arrays in order to compare with this local pressure and to compute sound intensity by means of the beamforming wave decomposition procedure.
+
 \subsubsection{Local pressure}
 
 As shown in Figs. \ref{fig:metod_local_meas} and \ref{fig:metod_local_meas_dimen}, miniature pressure probes were fitted in both the inducer and the diffuser of the compressor in order to characterize the behaviour of the pressure as the operating conditions changed.
@@ -284,8 +295,6 @@ As shown in Figs. \ref{fig:metod_local_meas} and \ref{fig:metod_local_meas_dimen
 \caption{Top row: pressure spectra at the inducer (left) and diffuser (right) measured by the local pressure probes at different air mass flows while the shaft speed was kept constant. Bottom row: pressure spectra at the inlet (left) and outlet (right) ducts, including the onset of the first and second acoustic modes.}
 \label{fig:probes_all}
 \end{figure}
-
-\hl{[Fig. plane wave freq.?]}
 
 In figure \ref{fig:probes_all}, the top row shows the sound pressure levels spectra for both inducer and diffuser probes at a certain constant shaft speed of 160 krpm and different air mass flows. The frequency range is 0 to 35 kHz, an upper bound which is well beyond human hearing range but nonetheless shows relevant information. As the behaviour at the rest of the tested shaft speeds was similar, the discussion will be presented only for this condition.
 
@@ -380,9 +389,11 @@ This suggest that the whoosh broadband noise naturally propagates downstream but
 \subsection{Velocity}
 \label{sub:velocity}
 
+Once that temperature data was processed to estimate the backflow extent across the area of interest of the compressor map, the experimental setup of the turbocharger was modified to fit the glass pipe that confined this backflow and the laser optics were installed in order to proceed with the PIV measurements.
+
 \subsubsection{Longitudinal plane}
 
-As described in the previous section, longitudinal plane measurements were the most difficult since the seeding oil particles blocked the line of sight of the camera. However with the right combination of seeding flow, oil dilution and quick operation of the system, valid snapshot pairs were obtained.
+As described in the methodology section, longitudinal plane measurements were the most difficult since the seeding oil particles blocked the line of sight of the camera. However with the right combination of seeding flow, oil dilution and quick operation of the system, valid snapshot pairs were obtained.
 
 In order to capture the difference between stable and partially stalled conditions (also called mild surge or marginal surge conditions) two back-pressure valve positions were tested, while maintaining the same shaft speed of 140 krpm.
 
