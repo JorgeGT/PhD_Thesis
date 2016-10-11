@@ -2,10 +2,84 @@
 \chapter{Conclusions and future works}
 \label{cap:conclus}
 
+In this chapter the concluding remarks of this doctoral thesis are presented, gathering together the main findings that have been obtained during the research described in the previous chapters and the global contributions that have been made to the state of the art in the field of the acoustic characterization of turbocharger compressors, specially focusing on the different methodological procedures and the results that their application has offered.
+
+To conclude, some future works of interest are suggested, that could be pursued in order to expand the knowledge obtained during this investigation applying both the experimental techniques that have been described in the previous chapters and the numerical tools that have been validated as part of this thesis.
+
 \section{Conclusions}
+
+The main conclusions of the work performed during the development this doctoral thesis can be globally categorized by the point of view of methodology procedures that have been presented, validated and discussed and, on the other hand, by the results about the acoustic output of the compressor that the application of these procedures has provided.
+
+These conclusions fulfil the objectives that were outlined for this work, increasing the available knowledge on the acoustic behaviour of turbocharger compressors and the methodologies that are useful in its characterization.
+
+It is hoped that this knowledge aids in the development of better turbocharger designs and implementations, thereby contributing to the mitigation of the concerns raised by noise emission caused by automotive applications with quieter and more efficient engines.
+
+\subsection{Methodology}
+
+Along the different chapters of this doctoral thesis several techniques have been described that are useful to characterize the noise emission of turbocharger compressors, mainly experimentally but also by analyzing the results of numerical simulations. The main findings, contributions and conclusions about these methodologies can be summarized as follows: 
+
+\begin{itemize}
+
+	\item Beamforming wave decomposition has been proved to be a useful technique to obtain experimental measurements of in-duct sound intensity in turbocharger compressor inlet and outlet pipes. A methodology has been presented in order to use this information to build noise maps and spectrograms that characterize the acoustic performance of the compressor along the region of interest of its operating conditions map.
+
+	\item Comparisons made with inlet orifice noise measurements performed on an anechoic chamber show that in-duct sound intensity results are well correlated with orifice noise information, which is a metric of interest in automotive applications. External acoustic radiation measurements were also performed, coupled with sequential insulation in order to assess the contribution of each part of the turbocharger system. 
+
+	\item Further validation of this methodology in an engine test cell equipped for turbocharger characterization including an orifice intensity probe has shown that the technique is robust even in the case where pulsations from the reciprocating internal combustion engine are present in the spectral content of the compressor duct pressure, leading to more coherent results that other wave decomposition techniques. External near field measurements performed with an Acoustic Particle Velocity probe demonstrated promising potential to isolate the specific acoustic contribution of the turbocharger.
+
+	\item Usefulness of beamforming wave decomposition has also been shown regarding the validation of results coming from CFD simulations of the compressor. In conjunction with numerical MoC decomposition, validation of simulated pressure spectra against experimental data has been shown. Other post-processing techniques such as Fourier analysis and Dynamic Mode Decomposition have also been demonstrated to offer valuable information regarding the identification of acoustical sources, specially concerning complex flow phenomena in the compressor inlet, inducer and diffuser at unstable operating conditions.
+
+	\item In order to investigate these complex flow features a methodology for experimental measurements of local temperature, pressure and velocity has been developed and presented, showing how these unstable phenomena evolve as air mass flow rate is reduced. Specifically, processing of the temperature readings were used to characterize the growth of the reversed flow in order to perform Particle Image Velocimetry in selected operating conditions. 
+
+	\item Different approaches to successfully apply the PIV procedure to longitudinal and transversal planes of the glass pipe confining the reversed flow were found and described. Results from these velocity field characterization were found to be in good agreement with data measured by thermocouple arrays, with the growth of this backflow also correlated with increased  sound intensity propagation in the whoosh frequency band.
+
+	\item A methodology for accurate assessment of the influence that different inlet geometries have on the compressor performance regarding not only surge margin but also regarding acoustic output has been presented, including the implementation of an experimental installation that allows the fast acoustic testing of custom 3D-printed inlet geometries up to 1/3 diameters from the compressor wheel.
+
+\end{itemize}
+
+\subsection{Results}
+
+During the development and application of the aforementioned methodological procedures, valuable results regarding the acoustic behaviour of turbocharger compressors were found, being the most relevant among them as follows:
+
+\begin{itemize}
+	\item Analysis of the in-duct decomposed pressure spectra correctly identified acoustic features that were described in the literature review performed as starting point of the doctoral thesis, such as broadband noise at super-synchronous frequencies, tonal noise caused by the blade passing and narrower sub-synchronous whoosh noise. \hl{Non-dimensional analysis of these phenomena suggested the first being related to propagation effects and the later ascribed to flow effects.}
+
+	\item Sound intensity level maps measured in the anechoic chamber flow rig were compiled for different frequency bands, reproducing for instance the relation between very low frequency content and deep surge onset. In contrast, whoosh noise level iso-contours were not parallel to deep surge onset but more related to the inception of mild surge at the maximum pressure ratio condition for each constant speed characteristic line.
+
+	\item Inspection of selected spectra and specially the spectrograms reconstructed from the interpolated map results clearly demonstrated however the presence of typical whoosh noise content even at conditions close to the maximum efficiency region of the compressor map and well before the inception of mild surge, pointing to the source flow mechanism of whoosh noise not being rotating stall or large reversed flow vortices  that only appear after mild surge onset.
+
+	\item Once that validation of CFD simulations attested that numerical data correctly followed experimental results, specially regarding the presence of the whoosh noise band in simulated pressure spectra, post-processing of CFD results at different operating conditions (that were simulated using experimentally-measured boundary conditions) indicated that reversed flow did not appear until the maximum pressure ratio point, although vortex shedding in the diffuser was present for all conditions. \hl{Fourier analysis also showed that for a typical whoosh band frequency, amplitude was much higher at the diffuser than at the ducts.} DMD analysis of the outlet wall cells identified modes related to BPF and whoosh noise frequencies as the most relevant in terms of coherence.
+
+	\item Experimental results from the local variable characterization provided experimental data on the backflow growth across the compressor map through the analysis of temperature evolution, confirming that stable, high flow rate conditions where no backflow was detected through temperature nor through velocity measurements still presented whoosh noise content, measured not only through the beamforming arrays but also through the inducer and diffuser probes, where the characteristic hump was detected even for the higher flow rate condition, thereby pointing to an origin for this noise phenomenon not related to reversed or stalled inlet flow.
+
+	\item Analysis of the influence of inlet geometry demonstrated that the acoustic performance of the compressor can be modified with the addition of different elements such as 90º elbows, tapered ducts, reservoirs, nozzles, etc. Effect of the elbow radius was specifically investigated, showing how sound intensity level and circumferential temperature skewness differences were particularly significant at the lower mass flow rates where inlet flow carries less momentum, something which was hinted by the preliminary results as nozzles and IGVs which highly affect the flow presentation have the larger effect on noise in the whoosh band. \hl{Coupled with the correlation analysis and the conclusions from previous chapters, this seems to reinforce the hypothesis of whoosh noise being generated by flow interaction in the diffuser, its level at unstable conditions being raised by convection effects as the reversed backflow carries its spectral content upstream.}
+\end{itemize}
 
 \section{Future works}
 
+In order to confirm these hypotheses and gain further information on the influence of geometry and flow presentation on the different acoustic phenomena that are of concern regarding turbocharger compressors, some future works are suggested in this section, from the point of view of both experimental research and numerical simulations.
+
 \subsection{Experimental research}
 
+By taking advantage of the experimental techniques and the facilities developed in the framework of this doctoral thesis, a follow up investigation could be envisaged where the following points could be of interest:
+
+\begin{itemize}
+	\item An exploratory analysis of different simple geometries could be performed, taking special interest in how the inlet flow is affected at unstable conditions in the mild surge region and how the modification of this flow pattern, as described with the aid of the presented local measurement techniques, influences the transmission of whoosh noise and other concerning acoustic emissions.
+
+	\item Acoustic Particle Velocity measurements could be used to characterise the detailed spatial distribution of the near-field noise radiated by the turbocharger assembly, thus assisting in locating the most relevant sources for each acoustic phenomena identified in the already obtained spectral content.
+
+	\item The turbocharger facilities could be modified with the addition of compression drivers\footnote{Essentially, special loudspeakers featuring a strong titanium diaphragm capable of withstanding the high pressure levels of the compressor ducts.} in order to provide external excitations which could be used to measure acoustical properties of the compressor assembly such as the full scattering matrix, with the aim of building realistic acoustic models of the compressor at different operating settings.
+\end{itemize}
+
 \subsection{Numerical simulations}
+
+These experimental works could also provide valuable information to initialize and validate further numerical simulations that could provide a deeper insight in how the flow field interacts inside the compressor and how it evolves with the different working conditions, such as:
+
+\begin{itemize}
+	\item Modification of the initial CFD model with more realistic inlet and outlet ducts and improved boundary conditions that could be useful to enhance the identification of spectral content generated by the turbocharger compressor.
+
+	\item Use of this improved model to analyze the effect of different inlet geometries and how the flow pattern is affected by these additions. This study would be specially relevant if carried out conjunction with experimental measurements performed using the setup presented in this work.
+
+	\item Implementation of advanced post-processing routines such as the Dynamic Mode Decomposition technique outlined in chapter \ref{cap:cfd}, mainly if coupling with existing solvers could be achieved by use of streaming DMD algorithms that avoid the need for large data storage and processing. These techniques would allow easier matching between relevant flow structures and their corresponding frequency contribution.
+
+	\item Extension of the numerical setup beyond uncoupled internal flow, encompassing vibro-acoustic and noise radiation simulations by means of one-way or fully coupled fluid/solid interaction modelling. This extended setup could be validated through near- and far-field experimental measurements as described in this work, thereby developing a comprehensive model of the turbocharger compressor acoustics that would be useful for faster CAE-based design cycles.
+\end{itemize}
