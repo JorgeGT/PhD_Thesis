@@ -13,6 +13,7 @@ While some measurements of flow variables have been performed in these condition
 In this section the methodology used to characterize the reversed flow is presented, by measuring variables such as temperature, pressure and velocity at different locations. 
 
 \subsection{Turbocharger modification}
+\label{sub:inlet_setup}
 
 Prior to its installation in the gas stand, modifications were made to the compressor in order to accommodate the required local temperature and pressure sensors used to measure these variables.
 
@@ -249,14 +250,6 @@ In order to visualize how the previously presented temperature results varied wi
 \label{fig:temp_maps}
 \end{figure}
 
-% \begin{wrapfigure}{O}[1.5cm]{0.4\textwidth}
-% \centering
-% \vspace{-5mm}
-% \includegraphics[width=0.35\textwidth]{./figures/cap_liter/freq_whoosh_lit}
-% \caption{Frequency amplitude of broadband noise found in selected turbocharger compressor literature, by principal author.}
-% \label{fig:freq_whoosh_lit}
-% \end{wrapfigure}
-
 The leftmost map shows how the skewness of the circumferential temperature distribution varies along the different operating conditions. Standard deviation has been chosen as a metric to quantify the magnitude of the skewness. It can be shown in the leftmost map of Fig. \ref{fig:temp_maps} how skewness rises with higher shaft speed and instability caused by lower air mass flows.
 
 Center map of Fig. \ref{fig:temp_maps} shows the overall maximum temperature measured by the thermocouples. The distribution along the map is similar to that of the skewness albeit less pronounced at higher speeds. Temperatures remain close to the ambient temperature ($\sim 20$ºC) at higher mass flow and increase after the isospeed slope approaches zero. This increased temperature can reach up to 80ºC at 160 krpm and conditions close to surge.
@@ -314,7 +307,7 @@ The following two operating points where air mass flow was still reduced (to 78 
 
 As it was the case with the measurement from the diffuser pressure probe, the Blade Passing Frequency peak at 16 kHz and its lower and higher frequency harmonics can be clearly distinguished at all operating points. 
 
-Lastly, the lower frequency broadband at around 1--3 kHz that is usually associated with whoosh noise can be clearly distinguished at all mass flow conditions specially in the inducer spectra, even at the higher flow point were the backflow still has not reached the probe location. This could be related to the phenomena observed by Li\'skiewicz \cite{liskiewicz2014identification} where some frequencies characteristic of unstable fluid structures were shown to be present in damped form even at stable conditions.
+Lastly, the lower frequency broadband at around 1--3 kHz that is usually associated with whoosh noise can be clearly distinguished at all mass flow conditions specially in the inducer spectra, even at the higher flow point were the backflow still has not reached the probe location. This could be related to the phenomena observed by Li\'skiewicz \cite{liskiewicz2014id} where some frequencies characteristic of unstable fluid structures were shown to be present in damped form even at stable conditions.
 
 \subsubsection{In-duct pressure}
 
@@ -324,7 +317,7 @@ Comparing the pressure spectra measured in the outlet duct (bottom right plot) w
 
 Contrasting with the notable differences between the spectra at different air mass flow conditions that were captured by the inducer probe, the inlet sensor shows an evolution similar to that of the outlet. A clear increase in levels can be seen for frequencies lower than 5 kHz as mass flow is reduced, whereas the levels at higher frequencies remain similar or even diminishing slightly.
 
-The broadband in this case appears to be centered around 7 kHz, but most interestingly, in all the spectra this broadband collapses with a deep decrease in level at 5 kHz. Again, by using the expression proposed by Eriksson \cite{eriksson1980higher} for the onset of the first and second symmetric acoustic modes in ducts with flow:
+The broadband in this case appears to be centered around 7 kHz, but most interestingly, in all the spectra this broadband collapses with a deep decrease in level at 5 kHz. Again, by using the expressions proposed by Eriksson \cite{eriksson1980higher} for the onset of the first and second symmetric acoustic modes in ducts with flow:
 \begin{equation}
   f_{1} = 1.84 \frac{a}{\pi D}\sqrt{1-M^2}\qquad f_{2} = 3.05 \frac{a}{\pi D}\sqrt{1-M^2}
 \end{equation}
@@ -421,7 +414,7 @@ At the higher mass flow, it can be seen that the velocity field is approximately
 
 This apparent reduction in velocity magnitude is probably caused by  the highly transversal velocity of the backflow, that makes the transit time of the particles through the laser sheet too small to be captured in consecutive snapshots and thus makes the correlation impossible so no velocity is detected.
 
-The reduction in diameter extends to approximately $\sim 55\,$mm, this is, approximately half of the transparent glass length. This distance is consistent with the prediction made through temperature measurements as shown in Fig. \ref{fig:map_backflow}, which is included for convenience.
+The reduction in diameter extends to approximately $\sim 55\,$mm, this is, approximately half of the transparent glass length. This distance is consistent with the prediction made through temperature measurements as shown in the backflow lenght map of Fig. \ref{fig:temp_maps}, which is included for convenience.
 
 It can also be seen in Fig. \ref{fig:longitudinal} how this reduction in the useful diameter appears to be paired with an increase in the flow velocity. A similar but lower increase can be seen in the work of Fike et al. \cite{fike2014visualisation} in a single channel of an axial flow fan.
 
@@ -562,7 +555,7 @@ Another linear correlation was performed between circumferential standard deviat
 
 \subsubsection{Velocity and temperature profiles}
 
-Besides using the thermocouples described in section \ref{sub:setup_temp} for estimating the backflow extent across the different operating conditions, a comparison was performed between the recorded temperature profiles and the velocity profiles obtained through PIV.
+Besides using the thermocouples described in section \ref{sub:inlet_setup} for estimating the backflow extent across the different operating conditions, a comparison was performed between the recorded temperature profiles and the velocity profiles obtained through PIV.
 
 First a velocity profile was extracted from the longitudinal plane at a line  separated 1/2 radius from the wall, which was the distance at which the thermocouples were installed. This velocity magnitude profile was then normalized between 0 and 1, and the same was done with the thermocouple array data that most closely matched the operating point at which the PIV test was performed. The results can be seen in the left plot of Fig. \ref{fig:profiles_temp_vs_vel}.
 
@@ -615,7 +608,7 @@ In this chapter, an experimental study is described with the objective of accura
 
 The rotation, vortex shedding and reintegration of this back-flow into the main flow coming through the core of the inlet duct have been regarded as possible sources of acoustic noise and several methods such as ported shrouds and different casing treatments have been proposed to alleviate its occurrence and extension \cite{chen2012casing,ding2013experimental}.
 
-During this investigation the setup described in section \ref{sec:setup} has been used to measure the distribution of temperature associated with marginal surge, this is, conditions with low air mass flow but not as low as to cause that the compressor goes into deep surge. 
+During this investigation the setup described in section \ref{sub:inlet_setup} has been used to measure the distribution of temperature associated with marginal surge, this is, conditions with low air mass flow but not as low as to cause that the compressor goes into deep surge. 
 
 By using the two thermocouple arrays installed into the compressor inlet, both axial and circumferential temperature measurements were obtained for several operating conditions. A test was also performed in order to characterize the radial distribution of temperature caused by the hot back-flow. The robustness of these internal flow measurements against radiation from the inlet pipe walls was verified through external thermographic imaging.
 
