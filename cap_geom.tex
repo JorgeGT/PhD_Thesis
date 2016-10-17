@@ -18,8 +18,8 @@ In order to simulate more realistic inlet conditions a short straight pipe was a
 
 \begin{figure}[tb!]
 \centering
-\includegraphics[width=0.9\textwidth]{figures/cap_geom/CAM00038_2}
-\caption{Image of the selected simple geometries during the manufacturing process. The straight pipe at the top was used standalone as a reference and also attached upstream of each geometry in order to measure the instantaneous pressure.}
+\includegraphics[width=\textwidth]{figures/cap_geom/geom_anechoic}
+\caption{Drawing of the selected simple geometries during the manufacturing process. The straight pipe at the top was used standalone as a reference and also attached upstream of each geometry in order to measure the instantaneous pressure.}
 \label{fig:image_simple_geom}
 \end{figure}
 
@@ -431,17 +431,29 @@ These low count extreme points are best shown when the data is put into histogra
 
 The three distributions feature approximately the same mean (around 0.1 diameters or of backflow length reduction from the straight inlet case) although for the higher number of the points (that is, the mode) the difference is practically zero.
 
-\subsubsection{Correlations}
+\subsubsection{Correlations between SIL and temperature}
 
-\hl{[Correlation figures for the three elbows]}
+In Fig.~\ref{fig:comp_corrs_skew_sil} the correlation between sound intensity level and circumferential temperature skewness has been performed again for the three elbow inlet cases as it was made in chapter \ref{cap:inlet} for the case of the straight pipe, which has been included as a reference keeping the same axis limits of the elbow cases.
 
-\section{Commercial ducts}
+It can be seen in this figure how for the straight pipe and the more straight elbow (that with an inner radius equal to 1.5 diameters), both pictured on the top plots, a clear separation is mantained between higher flow rate conditions (indicated as blue circles) which exhibit higher noise levels even when no skewness is detected, and those of lower flow rate where skewness is well correlated with the increase in noise levels.
 
-\hl{[Comparisons of in-duct \& external noise between straight, Jag and LR commercial inlets?]}
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.45\textwidth]{figures/cap_geom/corr_int_skew_elbow0}\hspace{4mm}
+\includegraphics[width=0.45\textwidth]{figures/cap_geom/corr_int_skew_elbow3}\\[4mm]
+\includegraphics[width=0.45\textwidth]{figures/cap_geom/corr_int_skew_elbow2}\hspace{4mm}
+\includegraphics[width=0.45\textwidth]{figures/cap_geom/corr_int_skew_elbow1}
+\caption{Correlations between standard deviation $\sigma$ at the circumferential thermocouple array and inlet sound intensity level in the 1--3 kHz band for the straight pipe and the three elbow inlets. Size indicates shaft speed from low to high and color indicates mass flow from higher (blues) to lower (reds).}
+\label{fig:comp_corrs_skew_sil}
+\end{figure}
+
+In the case of the more narrow elbows, pictured in the bottom plots of the figure, the difference between the higher and lower flow rate cases becomes blurred, as even points of the higher flow rate demonstrate measurable temperature skewness as the elbow radius decreases. 
+
+By comparing the four plots of the figure. it can also be seen how the maximum values of temperature skewness increase as the radius of the pipe decreases, with the same trend being followed by the sound intensity level in the selected frequency band, as was clearly seen previously in Fig.~\ref{fig:elbow_intens_histog} where the characteristic ``hump'' of whoosh noise becomes more pronunced as the radius of the elbow gets narrower (while a similar influence is not observed in the outlet spectra).
 
 \section{Conclusions}
 
-Through this chapter, three different experimental campaigns aimed to assess the influence of the inlet geometry in the turbocharger acoustic output have been presented. While different in scope and means, the results shown in this chapter allow some global conclusions to be drawn.
+Through this chapter, three different experimental campaigns aimed at assessing the influence of the inlet geometry in the turbocharger acoustic output have been presented. While different in scope and means, the results shown in this chapter allow some global conclusions to be drawn.
 
 First, a series of tests was carried out where simple geometric variants were added to the compressor inlet, with a straight duct of the same diameter than the compressor inducer being as a reference. This reference was maintained for the three experimental campaign described. Both orifice noise recorded with a free-field microphone and orifice noise averaged between four microphones were recorded.
 
@@ -460,3 +472,9 @@ Finally, a more through experimental campaign was carried out where a family of 
 Results from this campaign provided higher in-depth insight into the influence of the elbow radius; as in the aforementioned first testing campaign the very sharp elbow showed equal or slightly higher mean sound intensity in the inlet. However, this increase was not uniformly distributed across the compressor map but concentrated on the lowest allowable air mass setting for each shaft speed. This pattern was shared among the three tested elbow configurations, although as the radius grew sound intensity levels in both inlet and outlet reduced up to 1 dB in average.
 
 Regarding the influence of the inlet elbow variants on the temperature distribution, a similar pattern of circumferential skewness increase towards the lowest allowable flow conditions for each shaft speed could be reconstructed. However, reversed flow length appears similar in all cases, with differences of less than 0.5 inlet diameters.
+
+Correlations of whoosh noise content and temperature skewness demonstrated and increase of both variables as the elbow radius became narrower. Reasons for these correlated increases could be related to the uneven presentation of the air flow caused by the progressively narrow 90º elbows\footnote{See the work of Kalpakli et al. \cite{kalpakli2013vortical,kalpakli2013turbulent} for an in-depth numerical analysis of the particular flow field caused by these kind of 90º elbows, including its POD decomposition.}, which could create a region of lower pressure that facilitated the upstream propagation of reversed flow and thus enhanced the convection of whoosh noise content from the diffuser to the inlet duct, while also increasing the differences in temperature across the different zones.
+
+This would explain why elbow radius shows a clear effect on the whoosh noise content in the inlet spectra shown in Fig.~\ref{fig:elbow_comp_1sens} but not in the outlet, and also why this effect is restricted to the lower mass flow rate zones of the compressor map (see Fig.~\ref{fig:map_diff_in_out} for the effect on sound intensity and Fig.~\ref{fig:map_diff_std} for the effect on temperature skewness) where reversed flow is more prominent, as instabilities grow while inflow momentum diminishes. 
+
+%In any case, further research, specially if performed together with CFD simulations, is needed to characterize the effect of the inlet flow field at unstable conditions and its relation to coherent flow structures acting as noise sources.

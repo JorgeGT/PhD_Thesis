@@ -15,6 +15,12 @@
 % More than two millenia ago, Plato expressed in the \textit{Timaeus} the belief that all physical matter was in fact composed by infinitesimal bodies: earth was made of tiny cubes; water, of icosahedrons; air, of octahedrons; fire, the last classical element, of tetrahedrons. This would explain how fire feels like stabbing and how water flows endlessly while earth stays put. Furthermore, all of them could be made of triangles, the simplest polygon.
 
 \noindent Numerical simulations of physical problems have been demonstrated to be a valuable tool for the analysis and understanding of phenomena that may be difficult to directly measure or characterize exclusively by experimental means.
+\blfootnote{Work on this chapter has been partly published in the following papers:
+\begin{itemize}
+\item\emph{Methodology for experimental validation of a CFD model for predicting noise generation in centrifugal compressors}~\cite{broatch2014methodology}
+\item\emph{Numerical and experimental analysis of automotive turbocharger compressor aeroacoustics at different operating conditions}~\cite{broatch2016numerical}
+\end{itemize}
+}
 
 These kind of simulations are also very valuable in the development stage of engineering applications, where different prototype variations or operating conditions can be simulated simultaneously without the cost and risks of traditional experimental setups. 
 
@@ -359,7 +365,7 @@ While the prediction of spectral content is not totally accurate yet, specially 
 \label{fig:vel_spec_diffuser}
 \end{figure}
 
-The kind of results that can be extracted from the CFD simulation are exemplified in Fig.~\ref{fig:vel_spec_diffuser}, which combines the 3D model of the compressor wheel with plane views of the pressure and velocity fields, and frequency information extracted from the time record of a particular position in the diffuser.
+The kind of results that can be extracted from the CFD simulation are exemplified in Fig.~\ref{fig:vel_spec_diffuser}, which combines the 3D model of the compressor wheel with plane views of the pressure and velocity fields, and frequency information extracted from the time record of a particular position in the diffuser. \hl{[Note that in this particular setup the diffuser is rotating along with the wheel so this monitor is moving.]}
 
 Pressure information is presented in two planes, at the top of the inducer and at the leading edge plane. 3D isosurfaces of $P = 85 kPa$ are also shown, forming ``bubbles'' that move from one channel to the next at a frequency lower than that imposed by the wheel rotation. \hl{[These recirculation ``bubbles'' are sometimes linked to sub-synchronous acoustic phenomena, such as whoosh noise.]}
 
@@ -382,7 +388,7 @@ As mass flow rate of the CFD boundary condition was reduced to 77 g/s, a more ir
 
 For the lowest flow rate condition at 60 g/s, the flow field in the inducer became highly irregular, featuring some zone with reversed flow. Severe detachment of the flow can be appreciated in most of the blades, accompanied by a similar high velocity zone in the diffuser near the volute tongue. 
 
-The presence of this high velocity zone (which by continuity also affects pressure) can be seen by attaching a moving pressure monitor to the \hl{pressure side} of one of the blades (marked with a black dot in Fig.~\ref{fig:cfd_isospan_all} and plotting the measured spectra, as seen in Fig.~\ref{fig:cfd_spec_blade_p}. A peak is shown at the frequency of the rotating order $RO$ as the structure is seen by the blade once each revolution. A secondary peak appears also at $2\cdot RO$. 
+The presence of this high velocity zone (which by continuity also affects pressure) can be seen by attaching a moving pressure monitor to the pressure side of one of the blades (marked with a black dot in Fig.~\ref{fig:cfd_isospan_all} and plotting the measured spectra, as seen in Fig.~\ref{fig:cfd_spec_blade_p}. A peak is shown at the frequency of the rotating order $RO$ as the structure is seen by the blade once each revolution. A secondary peak appears also at $2\cdot RO$. 
 
 \begin{figure}[htb!]
 \centering
@@ -409,9 +415,7 @@ The same data is also shown in an inset plot for the 77 g/s operating condition,
 
 This 3D view of the pressure and velocity information shows how the low pressure bubbles extend up to the limit of the reversed flow, in both operating conditions. However, these low pressure zones are much more axisymmetric in the 77 g/s point, whereas in the lower flow rate case the become isolated and elongated. Time data shows also how they rotate inside the backflow-affected area in a tornado-like fashion.
 
-Regarding the backflow itself as characterized by the null vertical velocity in the inlet, the figure shows the drastic evolution from an incipient recirculation at 77 g/s very close to the wheel, to the fully developed backflow at 60 g/s, reaching upstream up to 1.2 inducer diameters. It is also shown in the 77 g/s view how this backflow will start appearing close to the inducer walls, leaving  the core flow still unperturbed.
-
-\hl{[Temperature results]}
+Regarding the backflow itself as characterized by the null vertical velocity in the inlet, the figure shows the drastic evolution from an incipient recirculation at 77 g/s very close to the wheel, to the fully developed backflow at 60 g/s, reaching upstream up to 1.2 inducer diameters. It is also shown in the 77 g/s view how this backflow will start appearing close to the inducer walls, leaving  the core flow still unperturbed. \hl{[Temperature results?]}
 
 % \begin{figure}[htb!]
 % \centering
@@ -424,51 +428,39 @@ Regarding the backflow itself as characterized by the null vertical velocity in 
 
 While the analysis of raw pressure and velocity \hl{[and temp?]} monitors can shed light into the behaviour of the compressor from the fluid dynamics point of view by identifying flow structures and spectral content at selected points of the domain, other data post-processing techniques can be used to obtain further insight into the acoustic behaviour of the system.   
 
-\subsection{Fourier analysis}
-
-A way to explore the spatial distribution of the acoustic sources for different frequencies of interest is to perform the Fourier transform at each cell of different surfaces like walls and planes. Then, the amplitude of the transformed signal at the frequency of interest is used to color each cell the selected surfaces, be it directly or through a smoothing interpolation.
-
 \begin{figure}[htb!]
-\centering
-\includegraphics[width=0.90\textwidth]{figures/cap_cfd/pressure_fft_walls}
+\hspace{-0.05\textwidth}
+\includegraphics[width=1.1\textwidth]{figures/cap_cfd/pressure_fft_walls}
 \caption{Selected domain walls colored by the amplitude of the 3 kHz component of the simulated pressure signal at 160 krpm and 77 g/s.}
 \label{fig:pressure_fft_walls}
 \end{figure}
 
+\subsection{Fourier analysis}
+
+A way to explore the spatial distribution of the acoustic sources for different frequencies of interest is to perform the Fourier transform at each cell of different surfaces like walls and planes. Then, the amplitude of the transformed signal at the frequency of interest is used to color each cell the selected surfaces, be it directly or through a smoothing interpolation.
+
 These kind of results are shown in Fig.~\ref{fig:pressure_fft_walls} for some selected wall boundaries of the numerical domain. Simulated operating conditions are those of the medium flow rate point at 77 g/s. The chosen frequency component has been 3 kHz, as it is relevant in the phenomenon of whoosh noise.
-
-
 
 From the figure it can be surmised that the pressure signal exhibits its stronger 3 kHz component at the diffuser and the downstream half of the blade chords, towards the trailing edges. Color scale needs to be magnified in order to appreciate the distribution in the volute, which is stronger at its narrower part near the tongue. The scale needs to be restricted again to see the pattern at the inlet and outlet ducts, \hl{in the form of a standing wave.}
 
-% \begin{wrapfigure}[16]{O}[0cm]{0.5\textwidth}
-% \raggedleft
-% \vspace{-4mm}
-% \includegraphics[width=0.5\textwidth]{figures/cap_cfd/pressure_fft_walls_circ2}
-% \caption{Polyhedral mesh of the rotor walls (grey) and the surrounding fluid (blue) used in the CFD model.}
-% \label{fig:pressure_fft_walls_circ2}
-% \end{wrapfigure}
-
-\begin{figure}[htb!]
+\begin{figure}[h!]
 \centering
-\includegraphics[width=0.95\textwidth]{figures/cap_cfd/pressure_fft_walls_circ}
-\caption{Selected domain walls colored by the amplitude of the 3 kHz component of the simulated pressure signal at 160 krpm and 77 g/s.}
+\includegraphics[width=0.9\textwidth]{figures/cap_cfd/pressure_fft_walls_circ}
+\caption{Volute, wheel and diffuser walls colored by the amplitude of the 3 kHz component of the simulated pressure signal at 160 krpm and 77 g/s.}
 \label{fig:pressure_fft_walls_circ}
 \end{figure}
 
-Focusing in the diffuser and the wheel, Fig.~\ref{fig:pressure_fft_walls_circ} shows a perpendicular view of the diffuser plane. As it is apparent from the plot, distribution of the content amplitude is not axisymmetric neither in the diffuser nor in the wheel, with two opposite zones of the rotor appear to feature higher content at the selected frequency.
-
-\hl{[Detalles acerca del punto, implementacion, etc.]}
+Focusing in the diffuser and the wheel, Fig.~\ref{fig:pressure_fft_walls_circ} shows a perpendicular view of the diffuser plane. As it is apparent from the plot, distribution of the content amplitude is not axisymmetric neither in the diffuser nor in the wheel, with two opposite zones of the rotor appear to feature higher content at the selected frequency. \hl{[Detalles acerca de implementacion?]}
 
 \subsection{Modal decomposition}
 
-While the Fourier analysis method allows the obtaining of interesting results in a simple, straightforward way which moreover can be found already implemented in some commercial CFD codes, it is not without disadvantages.
+However, while the Fourier analysis method allows the obtaining of interesting results in a simple, straightforward way which moreover can be found already implemented in some commercial CFD codes, it is not without disadvantages.
 
 Among them is the need to manually select both the surfaces and the frequencies of interest, thereby having the risk of missing relevant regions or frequencies, which are not known beforehand. Also, in more complex geometries or flow structures it could be difficult to pinpoint exactly relevant features, requiring the placement of multiple planes in the domain to reconstruct these structures.
 
 \subsubsection{Proper Orthogonal Decomposition}
 
-In order to address these limitations, more sophisticated analysis can be carried out in the form of modal decomposition of the flow field. One of the most used among these is probably the Proper Orthogonal Decomposition (POD) or Karhunen--Loève expansion, which originated in the field of probability theory and was first applied to the analysis of turbulent flow in 1967 \cite{lumley1967structure} . As poetically put in by Aubry in the aptly named paper \emph{``On the Hidden Beauty of the Proper Orthogonal Decomposition''} \cite{aubry1991hidden}, the objective of this technique is that:\\
+In order to address these limitations, more sophisticated analysis can be carried out in the form of modal decomposition of the flow field. One of the most used among these is probably the Proper Orthogonal Decomposition (POD) or Karhunen--Loève expansion, which originated in the field of probability theory and was first applied to the analysis of turbulent flow in 1967 \cite{lumley1967structure} . As (rather poetically) put by Aubry in the aptly named paper \emph{``On the Hidden Beauty of the Proper Orthogonal Decomposition''} \cite{aubry1991hidden}, the objective of this technique is that:\\
 
 \emph{``The flow is decomposed into both spatial and temporal orthogonal modes which are coupled: each space component is associated with a time component partner. The latter is the time evolution of the former and the former is the spatial configuration of the latter.''}\\
 
@@ -547,20 +539,18 @@ A disadvantage of this solution for ranking the modes is that the true magnitude
 
 \subsubsection{Sample DMD results}
 
-In order to provide an example of application of DMD to the CFD simulation considered in this chapter, preliminary work was done by implementing the original SVD-based DMD procedure with coherence ranking, and applying it to a limited subset of the available data, specifically to the dynamic pressure information at cells near the outlet wall.
-
-\begin{figure}[htb!]
+\begin{figure}[b!]
 \centering
 \includegraphics[width=0.88\textwidth]{figures/cap_cfd/dmd_modes_coher}
 \caption{Normalized coherence of the outlet surface DMD modes, highlighting the top 10 and comparing against the normalized magnitude of the average PSD.}
 \label{fig:dmd_modes_coher}
 \end{figure}
 
+In order to provide an example of application of DMD to the CFD simulation considered in this chapter, preliminary work was done by implementing the original SVD-based DMD procedure with coherence ranking, and applying it to a limited subset of the available data, specifically to the dynamic pressure information at cells near the outlet wall.
+
 This was done by taking advantage of the POD/DMD property that allows the selection of a subdomain instead of the whole domain. Furthermore, data downsampling was performed both spatially and temporally by considering one in ten cells and one in ten snapshots, resulting in a spatial length of $M\sim 7\times 10^3$ and a temporal length of $N\sim 10^3$.
 
 In Fig.~\ref{fig:dmd_modes_coher} the normalized coherence $E_i/E_\text{max}$ of each DMD mode $\Phi_i$ has been plotted, highlighting the top 10 modes with the higher coherence. An average PSD of the pressure content is also presented, showing a good agreement with the mode coherence. In both cases the maximum is located at a frequency $f_i\sim 16$ kHz, which in the computed modal space corresponds to mode $\Phi_{323}$ and is related to the blade passing frequency (BPF).
-
-Besides the BPF tonal noise, another relevant DMD mode appears at approximately half of this frequency (7.6 kHz). Coincidentally, this specific frequency is similar to the onset frequency of the first asymmetric acoustic mode (7.4 kHz). At lower frequency (<3Khz) several coherent modes appear, demonstrating the relevance of this particular frequency band.
 
 \begin{figure}[htb!]
 \centering
@@ -568,6 +558,8 @@ Besides the BPF tonal noise, another relevant DMD mode appears at approximately 
 \caption{Normalized amplitude (lower values in blue, higher values in red) of some selected outlet surface DMD modes featuring a higher temporal coherence.}
 \label{fig:dmd_modes}
 \end{figure}
+
+Besides the BPF tonal noise, another relevant DMD mode appears at approximately half of this frequency (7.6 kHz). Coincidentally, this specific frequency is similar to the onset frequency of the first asymmetric acoustic mode (7.4 kHz). At lower frequency (<3Khz) several coherent modes appear, demonstrating the relevance of this particular frequency band.
 
 The spatial distribution of some DMD modes is plotted in Fig.~\ref{fig:dmd_modes}. It can be seen in this figure how the content of the spatial modes is distributed along the outlet duct. The first three modes of lower frequency ($\Phi_\text{0.8 kHz}$, $\Phi_\text{1.6 kHz}$ and $\Phi_\text{2.1 kHz}$) feature a distribution that is related to the plane wave propagation, with the modes at higher frequency showing a more complex distribution as a result of the onset of the different acoustic modes.
  

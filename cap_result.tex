@@ -1,9 +1,14 @@
 %!TEX root = Tesis.tex
 
-\chapter{Noise measurement results \& analysis} \label{cap:results}
+\chapter{Noise measurement results} \label{cap:results}
 
 % Chapter text
 \noindent In this chapter, the results of applying the described acoustic measurement methodology to the turbochargers considered in this investigation will be presented and analyzed. The measurements described in this chapter have been carried out in the turbocharger test rig installed in the anechoic chamber of the Institute.
+\blfootnote{Work on this chapter has been partly published in the following paper:
+\begin{itemize}
+\item\emph{Simulations and measurements of automotive turbocharger compressor whoosh noise}~\cite{broatch2015simulations}
+\end{itemize}
+}
 
 A first section of the chapter will deal with the in-duct results, both regarding the full spectrum of the turbocharger noise output and the plane wave frequency range, which will be analyzed in detail with the help of the wave decomposition technique to calculate the sound intensity.
 
@@ -70,9 +75,7 @@ However, the spatial Nyquist-like criterion related to the separation of the sen
 \label{fig:result_spectra_LugLine_PW}
 \end{figure}
 
-In Fig. \ref{fig:result_spectra_LugLine_PW} the Power Spectral Density (PSD) of the raw pressure signals captured by one piezoelectric sensor of each array is shown. For both inlet and outlet ducts, spectra are plotted at different shaft speeds along the working line depicted in Fig. \ref{fig:result_map_comp}.
-
-\hl{[Description of the straight inlet results]}
+In Fig. \ref{fig:result_spectra_LugLine_PW} the Power Spectral Density (PSD) of the raw pressure signals captured by one piezoelectric sensor of each array is shown. For both inlet and outlet ducts, spectra are plotted at different shaft speeds along the working line depicted in Fig. \ref{fig:result_map_comp}. It can be seen in this figure how, generally, spectra on the plane wave range feature higher levels at lower frequencies. Higher speed points in the outlet feature a distinctive sub-synchronous broadband between 1 and 2.5 kHz, described as whoosh noise in the literature.
 
 \begin{figure}[tbh!]
 \centering
@@ -83,9 +86,9 @@ In Fig. \ref{fig:result_spectra_LugLine_PW} the Power Spectral Density (PSD) of 
 
 In Fig. \ref{fig:result_spectra_60_PW} the same procedure has been carried out for the 160 krpm shaft speed line marked with a dashed line in Fig. \ref{fig:result_map_comp}, in order to evaluate the evolution of spectral content as air mass flow is reduced through the mild surge conditions. 
 
-\hl{Again, it is in the outlet where a broadband phenomenon can be seen between 1 kHz or less and up to 3 kHz. The frequency boundaries of this broadband vary with the air mass flow setting, from X-X at higher flow to Y-Y at lower flow.} 
+In the outlet where the whoosh phenomenon can be seen between 1 kHz or less and up to 3 kHz with greater clarity. Again, spectral content below approximately 3 kHz appear more ``jagged'' that at higher frequencies.
 
-It is also apparent, specially examining the spectra \hl{at X g/s and Y g/s} that the broadband is not so apparent at the lowest flow conditions not because it decreases in level but because of the increase in the surrounding frequency content that matches the broadband level, thereby masking it. 
+It is also apparent, specially examining the spectra at 60 g/s and 55 g/s that the broadband is not so apparent at the lowest flow conditions not because it decreases in level but because of the increase in the surrounding frequency content that matches the broadband level, thereby masking it. 
 
 Moreover, it should be remarked that this broadband phenomena at typical ``whoosh'' noise frequencies can be identified even at the operating point with higher air mass flow, which is located near the maximum efficiency region of the compressor map; a zone which is presumed to be stable.
 
@@ -102,7 +105,7 @@ In order to better isolate the spectral content coming from the compressor from 
 
 Fig. \ref{fig:result_spectra_LugLine_DOPA} shows the PSD of this decomposed pressure signal. In the case of the top plot that contains the information from the inlet duct, PSD from the backward travelling wave is presented, since it is the one coming from the compressor. Conversely, the forward travelling wave PSD is plotted in the case of the bottom plot depicting outlet duct data.
 
-It can thus be seen in Fig. \ref{fig:result_spectra_LugLine_DOPA} that the decomposition algorithm \hl{allows a clearer representation of the signal, since it is not affected by the buzzsaw effect at lower frequencies (lower than 2 kHz), specially visible in the inlet spectra [comparison figure?]}.
+It can thus be seen in Fig. \ref{fig:result_spectra_LugLine_DOPA} that the decomposition algorithm allows a clearer representation of the signal, since it is not affected by the buzz-saw effect at lower frequencies (lower than 3 kHz), specially visible in the inlet spectra (see also Fig.~\ref{fig:result_spectra_DOPA_tot_comp} for a comparison).
 
 \begin{figure}[tbh!]
 \centering
