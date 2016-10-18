@@ -44,7 +44,7 @@ In consequence, in this section only a brief description of the numerical model 
 \label{fig:cfd_mesh}
 \end{wrapfigure}
 
-The first step in any numerical model is the decision on the extent at which the real setup will be included in the computational domain. In this case the real setup is the one described in chapter~\ref{cap:metod} section \textcolor{red}{X}, this is, the turbocharger that was installed in the anechoic chamber test rig. 
+The first step in any numerical model is the decision on the extent at which the real setup will be included in the computational domain. In this case the real setup is the one described in section \ref{sec:method_induct}, this is, the turbocharger and pipes that were installed in the anechoic chamber test rig. 
 
 In order to ensure the fidelity of the simulated geometry to the real one was kept, a real compressor of the same exact model of the one installed in the experimental test rig was disassembled and digitized. A structured-light 3D scanner was used to obtain a point cloud, which was interpolated into a smooth CAD model through software post-processing.
 
@@ -84,7 +84,7 @@ Rotational speed & $N=158763$ rpm \\ \bottomrule
 \label{tab:operatingConditions}
 \end{table}
 
-Rigid body motion simulation was chosen for the transient setup, with the time step adjusted to so that the impeller mesh turned 1º per time step at the selected shaft speed. This imposed a certain maximum frequency according to the Nyquist criterion of \hl{what?}
+Rigid body motion simulation was chosen for the transient setup, with the time step adjusted to so that the impeller mesh turned 1º per time step at the selected shaft speed. which imposed a sufficient maximum frequency according to the Nyquist criterion, well above hearing range.
 
 \hl{Regarding heat transfer the problem is considered adiabatic}. Surface roughness, coupled mechanical deformations and shaft eccentricity that dynamically affected the tip clearance were also disregarded for simplicity.
 
@@ -195,7 +195,7 @@ However, agreement between the CFD predicted signals and the experimental result
 
 As shown in chapter~\ref{cap:results} the use of pressure wave decomposition can offer clearer spectra as the components coming from the compressor are more isolated from the reflections coming from the duct endings. 
 
-In the case of the experimental data, the decomposition was performed according to the three-sensor LCMV beamformer described in section \hl{X} of chapter~\ref{cap:metod}. However, as CFD allows unfettered access to all of the flow variables at any point of the simulated domain, other pressure wave decomposition methods are available, such as the Method of Characteristic (MoC) that was implemented following the formulation proposed in \cite{payri1995acoustic,torregrosa2012development,galindo2010coupling}: 
+In the case of the experimental data, the decomposition was performed according to the three-sensor LCMV beamformer described in section \ref{sub:method_beamformer}. However, as CFD allows unfettered access to all of the flow variables at any point of the simulated domain, other pressure wave decomposition methods are available, such as the Method of Characteristic (MoC) that was implemented following the formulation proposed in \cite{payri1995acoustic,torregrosa2012development,galindo2010coupling}: 
 \begin{eqnarray}\label{eq:descomposicion}
 p_\text{forw}=p_\text{ref}\left[ \frac{1}{2}\left(1+\left(\frac{p}{p_\text{ref}}\right)^{\frac{\gamma-1}{2\gamma}}\left(1+\frac{\gamma-1}{2}\frac{u}{a}\right)\right) \right]^{\frac{2\gamma}{\gamma-1}}\\
 p_\text{back}=p_\text{ref}\left[ \frac{1}{2}\left(1+\left(\frac{p}{p_\text{ref}}\right)^{\frac{\gamma-1}{2\gamma}}\left(1-\frac{\gamma-1}{2}\frac{u}{a}\right)\right) \right]^{\frac{2\gamma}{\gamma-1}}\nonumber
@@ -373,7 +373,7 @@ The radial velocity field is shown in the diffuser and the volute, revealing an 
 
 Taking advantage of the three simulated flow rate conditions. in Fig.~\ref{fig:cfd_isospan_all} the meridional velocity magnitude across the compressor wheel has been plotted into an extended isospan surface. Data to build this surface has been extracted from the inducer, the wheel, the diffuser and the volute, as shown in the accompanying graphic. 
 
-This allows to compare how the velocity field changes across the compressor in all three of the selected operating conditions. Differences are easily noticed between the point of higher flow and higher isentropic efficiency \hl{(bottom)} and the other two points. 
+This allows to compare how the velocity field changes across the compressor in all three of the selected operating conditions. Differences are easily noticed between the point of higher flow and higher isentropic efficiency (bottom) and the other two points. 
 
 \begin{figure}[htb!]
 \centering

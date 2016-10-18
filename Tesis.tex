@@ -29,8 +29,6 @@
 
 % Serif font
 \usepackage[bitstream-charter]{mathdesign}
-%\usepackage[scaled=0.98]{XCharter}
-%\usepackage[scaled=0.92]{PTSerif}\linespread{1.01}
 
 % Monospaced font
 \usepackage[scaled]{beramono}
@@ -44,8 +42,8 @@
 \captionsetup{margin=12pt,font={small,sl},labelfont={cabin,bf},parskip=5mm}
 
 % Colors
-%\definecolor{tema}{RGB}{80,86,91}
-\definecolor{tema}{rgb}{0.45,0.45,0.45}
+% \definecolor{tema}{RGB}{80,86,91}
+% \definecolor{tema}{rgb}{0.45,0.45,0.45}
 \definecolor{tema}{RGB}{0,50,150}
 \definecolor{BLACK}{RGB}{0,0,0}
 \hypersetup{
@@ -90,20 +88,21 @@
 \renewcommand{\headrulewidth}{0pt}
 \fancypagestyle{plain}{
   \fancyhf{}
+  \fancyfoot[C]{\small\cabincondensed\bfseries\color{black}\thepage}
 }
 \fancypagestyle{empty}{
   \fancyhf{}
 }
-\pagestyle{empty}
+\pagestyle{plain}
 
 % Clear double page style
-\makeatletter
-  \def\cleardoublepage{\clearpage\if@twoside \ifodd\c@page\else
-  \hbox{}
-  \thispagestyle{empty}
-  \newpage
-  \if@twocolumn\hbox{}\newpage\fi\fi\fi}
-\makeatother
+% \makeatletter
+%   \def\cleardoublepage{\clearpage\if@twoside \ifodd\c@page\else
+%   \hbox{}
+%   \thispagestyle{empty}
+%   \newpage
+%   \if@twocolumn\hbox{}\newpage\fi\fi\fi}
+% \makeatother
 
 % Solve a problem with transparent PDF figures
 \pdfpageattr{/Group << /S /Transparency /I true /CS /DeviceRGB>>}
@@ -112,12 +111,14 @@
 \renewcommand{\labelitemi}{\textcolor{tema}{\scriptsize\raisebox{0.5mm}{\Circsteel}}}
 \renewcommand{\labelitemii}{\textcolor{tema}{\scriptsize\raisebox{0.4mm}{\Squaresteel}}}
 
-%\includeonly{cap_inlet}
+% Select only a chapter for faster compilation
+% \includeonly{cap_result}
 
 \begin{document}
 
 %-------------------------------------------------------------------%
 % FRONT MATTER
+\frontmatter
 
 % Cover page
 %\includepdf[pagecommand={}]{../test_portada3}
@@ -125,6 +126,7 @@
 
 % Inside cover
 \enlargethispage{5cm}
+\thispagestyle{empty}
 \begin{center}
 \Large\cabin\textbf{UNIVERSITAT POLITÈCNICA DE VALÈNCIA}\\[1mm]
 \large DEPARTAMENTO DE MÁQUINAS Y MOTORES TÉRMICOS\\
@@ -146,14 +148,14 @@
 {\normalsize\bfseries\cabincondensed PRESENTED BY}\\
 \rm\Large D. Jorge García Tíscar\\[4mm]
 {\normalsize\bfseries\cabincondensed SUPERVISED BY}\\
-\rm\Large Dr. D. Alberto Broatch Jacobi\\[10mm]
+\rm\Large Dr. D. Alberto Broatch Jacobi\\[8mm]
 
 {\normalsize\bfseries\cabincondensed IN FULFILLMENT OF THE REQUIREMENTS FOR THE DEGREE OF}\\[2mm]
 \it\Large Doctor of Philosophy
 
 \vspace{1.2cm}
 
-\footnotesize\rm\cabin SEPTEMBER 2016
+\footnotesize\rm\cabin \hl{JANUARY 2017}
 \end{center}
 \cleardoublepage
 
@@ -199,7 +201,21 @@ Dr. D. John Doe\\[1cm]
 \titleformat{\chapter}[hang]{}{}{0mm}{\large\bfseries\sffamily\Huge}
 \chapter*{Abstract}
 
+\hl{As turbocharging requirements raise to face an increasingly stricter environmental regulation of internal combustion engines, concerns regarding their acoustic emission become more pressing. Since downsized engines require higher boost pressures and lower mass flow rates, the turbocharger compressor is forced to work at more unstable regimes, where flow patterns become more complex and noise levels rise.}
 
+This thesis aims to investigate these issues, proposing methodologies to characterize the acoustic emission of turbocharger compressors and implementing them in different experiments with a special focus on the the link between acoustic emission and flow behaviour at unstable conditions.
+
+A literature review is carried out in order to assess the state of the art regarding specially experimental techniques related to this issue but also including the latest developments in terms of understanding the flow characteristics through numerical simulations. Different methodologies are consequently proposed and implemented into a custom flow rig inside an anechoic chamber as to experimentally measure and post-process the acoustic output of the compressor.
+
+From this measurement campaign a characterization of the noise spectral content across the compressor map is obtained and described, identifying different acoustical phenomena such as blade passing tonal noise, low frequency content associated to deep surge, and a sub-synchronous broadband noise known as ``whoosh'' in the literature, of special concern for automotive manufacturers. This particular phenomenon is detected even at more stable conditions at higher flow rate, and rising in level as flow rate is diminished to the point of being masked by lower frequency content.
+
+After a validation of the selected procedure in realistic engine conditions, experimental data is compared against a numerical model of the compressor developed in a parallel work to assess its validity and propose different post-processing techniques to extract additional insights about the behaviour of the flow at different conditions, hinting at the main generation mechanism for ``whoosh'' being located at the compressor diffuser.
+
+Since numerical simulations predict a reduced amount of reversed unstable flow at conditions where ``whoosh'' noise is still measured, an experimental campaign is performed were detailed measures of local temperature near the compressor wheel are used to determine the evolution of reversed flow, with supplemental readings through pressure probes in the inducer and diffuser being used to link this evolution with the fluctuation of spectral content. Temperature measurements are also correlated with measurements of the velocity field through particle imaging. Results show that even inducer content being highly affected by the onset of reversed flow, ``whoosh'' noise is detected at all tested conditions
+
+Different experimental campaigns are then described were modifications of the inlet geometry immediately upstream the compressor are performed in order to assess how the air flow presentation can influence acoustic performance. Geometries featuring reservoirs, nozzles and guide vanes are shown to potentially reduce noise levels. A 90º elbow parametric study is performed, demonstrating how the inner radius of the elbow influences circumferential temperature differences and noise levels, leading to the hypothesis of geometry influence on ``whoosh'' noise being related to air presentation changes that promote lower or higher growth of reversed backflow, which in turns carries upstream the spectral content being generated in the compressor diffuser. 
+
+Lastly, additional experimental and numerical studies are proposed to further explore these issues, in order to provide a better understanding of how inlet designs may delay and mitigate the appearance and transmission of these adverse acoustical phenomena.
 
 \cleardoublepage
 
@@ -286,12 +302,13 @@ this thesis is based, with author signatures being in order of seniority in the 
 \cleardoublepage
 
 % List of symbols
-% \input{listofsymbols}
+\input{listofsymbols}
 
 \cleardoublepage
 
 %-------------------------------------------------------------------%
-% BODY MATTER (style)
+% MAIN MATTER (style)
+\mainmatter
 
 % Chapter
 \titleformat{\chapter}[hang]{}{}{0mm}{\large\bfseries\cabincondensed\textcolor{tema}{\hspace{0mm}CHAPTER \thechapter}\\[-1mm]\Huge}
@@ -340,6 +357,7 @@ this thesis is based, with author signatures being in order of seniority in the 
 
 %-------------------------------------------------------------------%
 % BACK MATTER
+\backmatter 
 
 % References
 % Title format

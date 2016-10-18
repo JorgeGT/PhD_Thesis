@@ -68,7 +68,7 @@ As for the flow control, another reservoir equipped with a discharging valve can
 
 If cold flow is desired, a water intercooler can be used to lower the temperature produced by the compression process. This temperature, along with the rest of flow properties like mass flows, pressures and other temperatures, are recorded through a dedicated control system.
 
-Engine and brake are controlled though their own independent instrumentation, while the instantaneous turbocharger variables, including those needed for acoustical characterization, are recorded through a dedicated high speed Yokogawa DAQ.
+Engine and brake are controlled though their own independent instrumentation, while the instantaneous turbocharger variables, including those needed for acoustical characterization, are recorded through the dedicated high speed Yokogawa DL716 DAQ.
 
 \subsection{Anechoic chamber} \label{sub:anec_chamber}
 
@@ -80,7 +80,7 @@ Such free field conditions, where no acoustic reflection of the walls occurs, ar
 
 A lightweight, acoustically-transparent, grated metallic floor is situated over the floor wedges, supporting personnel and light equipment. Four round steel pillars affixed to the concrete floor are available to support heavy loads such as engines.
 
-\begin{figure}[h!]
+\begin{figure}[t!]
 \centering
 \includegraphics[width=\textwidth]{figures/cap_metod/anechoic}
 \caption{View of the inside of the anechoic chamber, showing the turbocharger setup with the mounting frame and the pipes required to operate the installation.}
@@ -93,7 +93,7 @@ In order to allow the operation of the turbocharger, compressed air flow is fed 
 
 Meanwhile, the compressor takes ambient air from the chamber, while its exhaust is redirected to the adjacent auxiliary room for discharging, as seen in Fig \ref{fig:floorplan}. A closed-loop lubricating oil system is also present. Water is also provided to the cooling jackets of the sensors that require it, specially those located on the turbine pipes and the compressor outlet.
 
-A control system similar to that of the flow rig monitors the operation of the system and gathers operational data (pipe temperatures, pressures, mass flow, compressor speed, etc.), allowing regulation of oil temperature, and compressor operation settings (speed and mass flow). Scientific data (mainly dynamic pressure) is recorded with a Yokogawa high speed DAQ.
+A control system similar to that of the flow rig monitors the operation of the system and gathers operational data (pipe temperatures, pressures, mass flow, compressor speed, etc.), allowing regulation of oil temperature, and compressor operation settings (speed and mass flow). Scientific data (mainly dynamic pressure) is recorded with a Yokogawa DL716 DAQ.
 
 \subsection{Engine test cell} \label{sub:engine_cell}
 
@@ -105,7 +105,7 @@ Access and online control of the engine ECU is also available, and a special pne
 
 This air injection reduces the air that the compressor ingests, thus lowering compressor air flow and allowing the control of this relevant parameter independently of the engine necessities. The system was used to bring the compressor to surge and near-surge conditions during our research.
 
-In order to implement and validate the in-duct acoustical measurement methodology presented in this chapter, additional sensors and equipment were fitted into the test cell, including a Yokogawa high speed DAQ and a Brüel \& Kjær PULSE DAQ system with a pressure-pressure sound intensity probe used as reference.
+In order to implement and validate the in-duct acoustical measurement methodology presented in this chapter, additional sensors and equipment were fitted into the test cell, including a Yokogawa DL716 high speed DAQ and a Brüel \& Kjær PULSE\textsuperscript{TM} DAQ system with a type 4197 pressure-pressure sound intensity probe used as reference.
 
 \begin{figure}[b!]
 \centering
@@ -128,6 +128,7 @@ Different turbochargers have been used in the development of the investigation, 
 This particular model was digitized to obtain its detailed geometry, which is shown in Fig.~\ref{fig:comp_dimens} along with the most relevant dimensions. \hl{[More data]}
 
 \section{In-duct noise measurement} % Articulo methodology
+\label{sec:method_induct}
 
 In this section, a methodology is proposed to evaluate the noise emission of the compressor through its inlet and outlet pipes across selected zones of the compressor map of operating conditions. It allows a simple and clear visualization of noise phenomena and their frequency distributions at all possible operation points of the turbocharger system.
 
@@ -167,7 +168,7 @@ When using this wave decomposition approach, the sound intensity can be estimate
 
 Here $\mathbf X^+$ and $\mathbf X^-$ are, respectively, the complex spectra of the downstream and upstream pressure waves, $\rho$ is the mean density, $a$ the mean sound speed, and $M$ the mean Mach number of the flow.
 
-\subsubsection{Beamforming wave decomposition}
+\subsubsection{Beamforming wave decomposition}\label{sub:method_beamformer}
 For a more intuitive comprehension of the beamformer, one can consider its transmitting equivalent: a phased array emitter where the same signal $x(t)$, with its phase shifted by a quantity $w_n^*$, is fed to an $n$-element linear array of fixed transmitters, forming a plane wave emitted in the $\theta$ direction which can be steered at will adjusting each $w_n^*$.
 The beamforming method provides a way to mathematically tune the sensitivity of the overall system in order to isolate the downstream and upstream information of the acquired signal. A scheme for a narrowband beamformer can be found in Fig. \ref{fig:schematic}.
 
@@ -252,9 +253,12 @@ According to Eriksson \cite{eriksson1980higher}, it may be assumed that waves in
 f_a = 1.84 \frac{a}{\pi D}\sqrt{1-M^2}
 \end{equation}
 
-Here, $a$ is the sound speed, $D$ the duct diameter and $M$ the mean Mach number. At higher frequencies, the so-called first asymmetric mode will start to propagate, thus rendering the assumption of one-dimensional propagation invalid.
+Here, $a$ is the sound speed, $D$ the duct diameter and $M$ the mean Mach number. At higher frequencies, the so-called first asymmetric mode will start to propagate, thus rendering the assumption of one-dimensional propagation invalid. The first circular mode will in turn propagate beyond a cut-off frequency of:
+\begin{equation}\label{eq:f_modes_circ}
+f_c = 3.83 \frac{a}{\pi D}\sqrt{1-M^2}
+\end{equation}
 
-Special care should be taken when computing limiting frequencies $f_n$ and $f_a$ as they are not constant but dependent on the operating condition, since some of their components vary with temperature and mass flow. Figure \ref{fig:spectra} shows both limits for a certain operating point.
+Special care should be taken when computing limiting frequencies $f_n$, $f_a$ as they are not constant but dependent on the operating condition, since some of their components vary with temperature and mass flow. Figure \ref{fig:spectra} shows both limits for a certain operating point.
 
 As the figure shows, the Nyquist criterion accurately pinpoints where differences between sensors start to grow, and it is clearly a more restrictive criterion than the acoustic mode onset. This limit should be properly computed for each condition when multi-sensor decomposition techniques are used.
 
@@ -341,7 +345,7 @@ In addition to the intensity spectra determined for each operating point, furthe
 
 For instance, it is possible to calculate the overall level of sound intensity for a given frequency range at each operating point $i$ of the compressor operating map. The sound intensity level at a characteristic band (between $f_1$ and $f_2$) can be calculated for each point as:
 \begin{equation}\label{eq:point_level}
-  L_i=10\log_{10}\left(10^{12}\sum_{f=f_1}^{f_2}I^2(f)\right)
+  L_i=10\log_{10}\left(10^{12}\sum_{f=f_1}^{f_2}I(f)\right)
 \end{equation}
 
 Once that several $L_i$ levels have been measured for different conditions of a selected map region, a cubic spline interpolation function $\Phi_{f_1-f_2}$ is used to project the data onto a much more fine and regularly spaced grid, allowing the representation of a map of noise intensity across the measured region of the compressor map, as shown in figure \ref{fig:map1k-3k}.
@@ -412,6 +416,7 @@ Apart from ``whoosh'', both spectrograms show a clear rise in low frequency cont
 % These observations match the trends observed in the literature \cite{evans2005minimizing,evans2006reduction,sevginer2007investigation}. Other frequency bands could be mapped in a similar manner, and spectrograms estimated for different map paths with no need to repeat the experimental measurements, in order to investigate other phenomena of interest or to test several candidates for actual engine operating lines.
 
 \section{External noise measurements}
+\label{sec:method_external}
 
 While the accurate characterization of the internal sound field is crucial to understand the different phenomena, the transmission of the noise to the ambient is also relevant as external acoustic radiation is ultimately the main concern of the automotive industry.
 
@@ -426,17 +431,17 @@ The noise emitted by the open end of the compressor inlet duct is of special con
 
 However, when measuring external noise care should be taken to avoid reflections and perturbations that may interfere with the results. This is why it was decided to install the turbocharger inside the anechoic chamber, so that free-field conditions could be recreated and external noise measurements could be taken and compared against in-duct results.
 
-\begin{wrapfigure}[21]{r}[1.5cm]{0.4\textwidth}
+\begin{wrapfigure}[22]{r}[1.5cm]{0.4\textwidth}
 \centering
-\vspace{-3mm}
+\vspace{6mm}
 \includegraphics[width=0.4\textwidth]{figures/cap_metod/mics_photo}
 \caption{Image of the two free-field microphones placed at 10 mm (mic 1) and 20 mm (mic 2) from the orifice of the compressor inlet duct.}
 \label{fig:mics_photo}
 \end{wrapfigure}
 
-In this chamber, instrumentation consisted of two free-field Brüel \& Kjær \textcolor{red}{[model]} microphones placed next to the compressor inlet orifice, separated 10 cm and 20 cm, respectively. These are shown as ``Mic 1'' and ``Mic 2'' in Fig.~\ref{fig:mics_photo}.
+In this chamber, instrumentation consisted of two \nicefrac{1}{2}'' Brüel \& Kjær type 4190 free-field microphones, fitted with type 2669C pre-amplifiers and placed next to the compressor inlet orifice, separated 10 cm and 20 cm, respectively. These are shown as ``Mic 1'' and ``Mic 2'' in Fig.~\ref{fig:mics_photo}.
 
-These microphones were calibrated before the measurements with a Brüel \& Kjær \textcolor{red}{[model]} pistonphone. Both the calibration and the data acquisition were performed with a Brüel \& Kjær PULSE system.
+These microphones were calibrated before the measurements with a Brüel \& Kjær type 4228 pistonphone. Both the calibration and the data acquisition were performed with a Brüel \& Kjær PULSE system.
 
 As the conditions inside the anechoic chamber can be regarded as being equivalent to those of an acoustic free field, we can estimate the magnitude of the sound intensity at each microphone $i$ as:
 
@@ -449,9 +454,9 @@ Here, $p^2_\text{rms,i}$ is the root mean squared pressure recorded by microphon
 \subsection{Far field}
 \label{sub:metod_far_field}
 
-Taking advantage of the free field conditions of the chamber, ambient microphones were installed around the turbocharger group to estimate the far field sound radiation.
+Taking advantage of the free-field conditions of the chamber, additional microphones were installed around the turbocharger group to estimate the far field sound radiation, in a manner similar of the setup used by Teng and Homco \cite{teng2009investigation} for engine measurements.
 
-To obtain a better estimation of the sound field, four omnidirectional microphones were distributed around the the central point of the installation, at a radial distance of 1 m from it, as shows Fig. \ref{fig:radiated_jag}.
+To obtain a better estimation of the sound field, four free-field microphones of the same type 4190 were distributed around the the central point of the installation, at a radial distance of 1 m from it, as Fig.~\ref{fig:radiated_jag} shows.
 
 \begin{figure*}[tb!]
 \centering
@@ -460,9 +465,7 @@ To obtain a better estimation of the sound field, four omnidirectional microphon
 \label{fig:radiated_jag}
 \end{figure*}
 
-Data from these four microphones was captured using a Brüel \& Kjær PULSE system, and their calibration was also performed using a Brüel \& Kjær \textcolor{red}{[model]} pistonphone prior to the measurements.
-
-In order to provide a global metric to compare against orifice noise, results for the four microphones was averaged to compute the final sound pressure level.
+Data from all microphones was captured using a Brüel \& Kjær PULSE\textsuperscript{TM} DAQ system, composed by types 3560 D, 7536, 2826 and $2\times 3032$A (hardware) and types 7700, 7702, 7705 and 7755 B (software). In order to provide a global metric to compare against orifice noise, results for the four far-field microphones were averaged to compute the overall sound pressure level radiated by the turbocharger system.
 
 \subsection{Near field}
 
