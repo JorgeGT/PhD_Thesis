@@ -1,171 +1,118 @@
+%!TEX root = Tesis.tex
+
 \chapter*{List of symbols}
-
+\small
+\vspace{-1cm}
 \begin{tabular}{lll}
-\multicolumn{2}{l} {\sffamily\bfseries\Large {Symbols}} \\[3mm]%\vspace{0.05 in}
-$A$ & area & $m^2$ \\
-$a$ & speed of sound & $m\cdot s^{-1}$ \\
-% $a$ & equation coefficient\\
-% $a_p$ & diagonal coefficients of momentum equation & $kg\cdot m^{-3}\cdot s^{-1}$\\
-% $A(f)$ & Amplitude of the complex part of the incident pulse & $-$ \\
-% $C(f)$ & Amplitude of the complex part of the transmitted pulse & $-$ \\
-% $C$ & Characteristic line & $-$ \\
-$c_p$ & specific heat capacity at constant pressure & $J\cdot kg^{-1}\cdot K^{-1}$ \\
-% $c_v$ & specific heat capacity at constant volume & $J\cdot kg^{-1}\cdot K^{-1}$ \\
-% $D$ & hydraulic diameter & $m$ \\
-$D$ & duct diameter & $m$ \\
-% $f$ & friction coefficient & $-$ \\
-$f$ & frequency & $Hz$ \\
-% $f_c$ & cut-off frequency & $Hz$ \\
-% $G$ & specific momentum loss due to friction & $m\cdot s^{-2} $ \\
-% $h$ & specific enthalpy & $m^{2} \cdot s^{-2}$ \\
-% $H(\vec v)$ & off-diagonal part of the momentum equation matrix\\
-% &and source terms excluding pressure gradient & $ kg\cdot m^{-2}\cdot s^{-2} $\\
-% $k$ & thermal conductivity & $kg \cdot m \cdot s^{-3} \cdot K^{-1}$ \\
-% $k$ & turbulent kinetic energy & $m^{2} \cdot s^{-2}$ \\
-$L$ & sensor separation & $m$ \\
-$\dot{m}$ & mass flow rate & $kg\cdot s^{-1}$ \\
+\multicolumn{2}{l} {\sffamily\bfseries\Large {Latin and Greek}} \\[3mm]
+$A$ & Area & \si{m^2} \\
+$a$ & Speed of sound & \si{m.s^{-1}} \\
+$c_p$ & Specific heat capacity at constant pressure & \si{J.kg^{-1}.K^{-1}} \\
+$D$ & Duct diameter & m \\
+$d_s$ & Sensor separation & m \\
+$f$ & Frequency & Hz \\
+\textit{Re} & Helmholtz number & $-$\\
+$I$ & Sound Intensity & \si{W.m^{-2}} \\
+%$k$ & Turbulent kinetic energy & \si{m^2.s^{-2}} \\
+$L$ & Level (SPL, SIL or PVL) & dB \\
+$\dot{m}$ & Mass flow rate & \si{kg.s^{-1}} \\
 $M$ & Mach number & $-$ \\
-$N$ & compressor rotational speed   &  rpm \\
-$p$ & pressure & $Pa$ \\
-% $P$ & point in the space-time plane & $-$ \\
-% $q$ & specific heat transfer rate & $W \cdot kg^{-1}$ \\
-% $S$ & cross sectional area & $m^2$\\
-% $\vec r$ & position vector & $m$ \\
-% $r$ & radial coordinate & $m$ \\
-% $R$ & specific gas constant & $J\cdot kg^{-1}\cdot K^{-1}$ \\
-% $Re_D$ & Reynolds number based on D& $-$ \\
-% $S$ & source term \\
-% $d\vec S$ & differential surface vector & $m^{2}$ \\ 
-$t$ & time & $s$ \\
-$T$ & temperature & $K$ \\
-% $TL$ & Transmission Loss & dB \\
-% $U$ & velocity vector & $m \cdot s^{-1}$ \\
-% $u$ & velocity in x-direction & $m \cdot s^{-1}$ \\
-$u$ & axial velocity & $m \cdot s^{-1}$ \\
-% $\vec v$ & velocity & $m \cdot s^{-1}$ \\
-% $v_\theta $ & tangential velocity & $m \cdot s^{-1}$ \\
-% $\dot{W}$ & compressor absorbed power & $kg\cdot m^{2}\cdot s^{-3}$ \\
-$W_u$ & compressor specific work & $m^{2} \cdot s^{-2}$ \\
-% $x$ & coordinate in dominant direction & $m$ \\
-% $\alpha$ & under-relaxation factor\\
-$\beta$ & ... & ...\\
-% $\lambda$ & forward Riemann Invariant & $m \cdot s^{-1}$\\
-% $A_a$ & entropy level & $m \cdot s^{-1}$\\
-%$\beta$ & velocity gradient & $s^{-1}$ \\
-$\Delta t$& time-step & $s$ \\
-$\eta$& efficiency & $\%$ \\
-% $\epsilon$& difference or error & $\%$ \\
-% $\epsilon$ & relative difference & $\%$ \\
-% $\epsilon$& roughness height & $m$ \\
-$\varepsilon_R$ & relative error & $\%$ \\
-$\gamma$& ratio of specific heats & $-$ \\
-% $\kappa$ &thermal conductivity & $kg \cdot m \cdot s^{-3} \cdot K^{-1}$ \\
-%$\mu$ & dynamic viscosity & kg (ms)$^{-1}$\\
-$\phi$ & generic variable \\
-$\varPi_{t,t}$ & total-to-total pressure ratio & $-$ \\
-% $\phi_d$ & pseudo-flux & $m^{-1} \cdot s$ \\
-% $\psi$ & compressibility & $m^{-2} \cdot s^{2}$ \\
-$\rho$ & density & $kg \cdot m^{-3}$ \\
-%$\sigma$ & standard deviation & -\\
-% $\overline{\overline{\tau}}$ & viscous stress tensor & $Pa$ \\
-% $\tau_w$ & wall shear stress & $Pa$ \\
-$\tau$ & compressor torque & $kg\cdot m^{2}\cdot s^{-2}$ \\
-$\vec \omega$ & rotational speed & $rad \cdot s^{-1}$ \\
+$N$ & Compressor rotational speed & rpm \\
+$p$ & Pressure & Pa \\
+$R$ & Specific gas constant & \si{J.kg^{-1}.K^{-1}} \\
+\textit{Re} & Reynolds number & $-$ \\
+\textit{St} & Strouhal number & $-$ \\
+$t$ & Time & s \\
+$T$ & Temperature & K \\
+$U$ & Mean velocity & \si{im.s^{-1}} \\
+$W_u$ & Compressor specific work & \si{m^2.s^{-2}} \\
+$\Delta f,t$& Frequency or time step & Hz or s\\
+$\gamma$& Ratio of specific heats & $-$ \\
+$\varepsilon_R$ & Relative error & \% \\
+$\eta_s$ & Isentropic efficiency & \% \\
+$\theta$ & Direction of arrival & rad\\
+$\lambda$ & DMD eigenvalue & $-$ \\
+$\varPi$ & Pressure ratio & $-$ \\
+$\rho$ & Density & \si{kg.m^{-3}} \\
+$\tau$ & Compressor torque & \si{kg.m^{2}.s^{-2}} \\
+$\Phi$ & DMD mode & $-$\\
+$\varphi$ & Flow coefficient & $-$ \\
+$\psi$ & Generic variable & $-$ \\ 
+$\Omega$ & Rotational speed & \si{rad.s^{-1}} \\
+%$\omega$ & Specific turbulence dissipation rate& \si{s^{-1}}
 \end{tabular}
 
 \vspace{5mm}
 
 \begin{tabular}{ll}
-\multicolumn{2}{l} {\sffamily\bfseries\Large {Sub- and superscripts}} \\[3mm]%\vspace{0.05 in}
-${+}$ & forward  \\
-${-}$ & backward  \\
-${*}$ & corrected variable  \\
-% $\widetilde{} $ & computed value\\
-% ${0}$ & flow \\
-${0}$ & stagnation variable \\
-${1,2,3}$ & $1^{st}, 2^{nd}$ or $3^{rd}$ probe in the array,\\
- & respectively, numbered in downstream order\\
-% 1/3, 2/3, 3/3 & related to one third, two thirds or\\
-%       & three thirds of original clearance, respectively\\
-% $_d$ & downstream  \\
-${a}$ & related to asymmetric mode\\
-${back}$ & backward traveling wave\\
-$c$ & cut-off (frequency) \\
-${CFD}$ & related to simulation\\
-% ${eff}$ & effective value \\
-${exp}$ & related to experimental measurement \\
-% ${\infty}$ & value at infinity \\
-% ${in}$ & reaching the BC \\
-${in}$ & inlet duct \\
-% $_{inc}$ & incident (pressure)\\
-% ${f}$ & friction \\
-% ${f}$ & values at faces of control volumes \\
-${forw}$ & forward traveling wave\\
-$i$ & intrinsic (of the array)\\
-% ${n}$ & value at $n^{th}$ iteration \\
-% ${N}$ & value at $N^{th}$ time-step \\
-${out}$ & outlet duct \\
-% ${p}$ & value for generic point $P$ \\
-% ${nb}$ & values for neighbors of point $P$ \\
-% $_{Q}$ & heat transfer \\
-% ${r}$ & relative\\
-${r}$ & related to radial mode\\
-${s}$ & isentropic\\
-% ${U,p}$ & under-relaxation factor for velocity and pressure, respectively \\
-${ref}$ & reference value \\
-% $_{refl}$ & reflected \\
-% $_{S}$ & entropy \\
-% $_u$ & upstream \\
-${W,A,S}$ & wall, axis or cross-section monitor, respectively\\
+\multicolumn{2}{l} {\sffamily\bfseries\Large {Sub- and superscripts}} \\[3mm]
+${+}$ & Forward-travelling variable  \\
+${-}$ & Backward-travelling variable   \\
+${*}$ & Corrected variable  \\
+${1,2,3}$ & Related to $1\textsuperscript{st}, 2\textsuperscript{nd}$ or $3\textsuperscript{rd}$ downstream sensor\\
+a & (Freq.) related to an asymmetric acoustic mode\\
+back & Backward travelling wave\\
+CFD & Variable simulated through CFD\\
+c & (Freq.) related to a circular acoustic mode\\
+d & Related to sensor spacing \\
+exp & Variable measured experimentally \\
+in & Related to the inlet duct \\
+k & Discrete time step \\
+forw & Forward-travelling wave\\
+n & (Freq.) related to the spatial Nyquist criterion\\
+out & Related to the outlet duct \\
+s & Isentropic\\
+ref & Reference value \\
+rms & Root mean squared \\
+T & Total (or stagnation) variable \\
+TT & Total to total ratio \\
+tip & Related to the blade tip \\
+W, A, S & Wall, axis or cross-section monitor, respectively\\
 \end{tabular}
 
 \vspace{5mm}
 
 \begin{tabular}{ll}
-\multicolumn{2}{l} {\sffamily\bfseries\Large {Abbreviations}} \\[3mm]%\vspace{0.05 in}
-% 1.5dev & 1.5 development version of OpenFOAM \\
-% 1.6ext & 1.6 extended version of OpenFOAM \\
-% 2.0.x & 2.0 standard version of OpenFOAM, with bug fixes \\
-% 1D & one dimensional \\
-% 2D & two dimensional \\
-% 3D & three dimensional \\
-% $BC$ & boundary condition \\
-% BEM & boundary element method\\
-BPF & blade passing frequency\\
-CAD & computer-aided design \\
-CFD & computational fluid dynamics \\
-DDES & delayed detached eddy simulation\\
-% DES & detached eddy simulation\\
-DMD & dynamic mode decomposition \\
-% ECP & Ercoftac Centrifugal Pump\\
-% EOS & equation of state\\
-% FEM & finite element method \\
-% GGI & general grid interface\\
-% ICE & internal combustion engine \\
-IDDES & improved delayed DES \\
-LDV & Laser Doppler velocimetry \\
-LES & large eddy simulation \\
-% LIC & line integral convolution \\
+\multicolumn{2}{l} {\sffamily\bfseries\Large {Abbreviations}} \\[3mm]
+2D & Two dimensional \\
+3D & Three dimensional \\
+BPF & Blade Pass Frequency\\
+CAD & Computer-Aided Design \\
+CCD & Charge-coupled device \\
+CFD & Computational Fluid Dynamics \\
+DAQ & Data Acquisition \\
+DES & Detached Eddy Simulation\\
+DMD & Dynamic Mode Decomposition \\
+DOA & Direction Of Arrival \\
+ECU & Engine Control Unit\\
+FFT & Fast Fourier Transform \\
+HWA & How Wire Anemometry \\
+IGV & Inlet Guide Vanes \\
+LDA & Laser Doppler Anemometry \\
+LCMV & Linearly-Constrained Minimum Variance \\
+LES & Large Eddy Simulation \\
+MEMS & Micro Electro-Mechanical System \\
 MoC & Method of Characteristics \\
-% MRF & multiple reference frame \\
-NRBC & non-reflecting boundary condition \\
-% ODE & ordinary differential equation \\
-% p-v coupling & pressure-velocity coupling\\
-% PDE & partial differential equation \\
-PIV & particle image velocimetry \\
-POD & proper orthogonal decomposition \\
-PS & (blade) pressure side \\
-PSD & power spectral density \\
-RANS & Reynolds-averaged Navier-Stokes \\
-TCN & tip clearance noise \\
-% TCR & tip clearance ratio \\
-% SM & sliding mesh \\
-SPL & sound pressure level \\
-SS & (blade) suction side \\
-% URF & under-relaxation factor\\
-% WMLES & wall-modeled LES\\
-
-% nNonOrthCorr & number of non orthogonal correctors performed by the pressure equation\\
-% nCorr & number of inner loops performed by the pressure-velocity coupling\\
-% nOuterCorr & number of outer loops performed by the solver\\
+Nd:YAG & Neodymium-doped Yttrium Aluminium Garnet\\
+NRBC & Non-Reflecting Boundary Condition \\
+NVH & Noise, Vibration \& Harshness \\
+PIV & Particle Image Velocimetry \\
+POD & Proper Orthogonal Decomposition \\
+PS & Pressure Side \\
+PSD & Power Spectral Density \\
+PVL & Particle Velocity Level \\
+RANS & Reynolds-Averaged Navier-Stokes \\
+RO & Rotating Order \\
+ROI & Region Of Interest \\
+RPM & Revolutions Per Minute \\
+TCN & Tip Clearance Noise \\
+TMM & Two Microphone Method \\
+SIL & Sound Intensity Level \\
+SLS & Selective Laser Sintering \\
+SPL & Sound Pressure Level \\
+SST & Shear Stress Transport \\
+SS & Suction Side \\
+SVD & Singular Value Decomposition \\
+VGT & Variable Geometry Turbine \\
 \end{tabular}
+\normalsize

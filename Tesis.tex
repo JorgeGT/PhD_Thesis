@@ -10,13 +10,14 @@
 \usepackage{graphicx}
 \usepackage{subfigure}
 \usepackage{booktabs}
-\usepackage{units}
+\usepackage{siunitx}
 \usepackage{multirow}
 \usepackage{pdfpages}
 \usepackage{placeins}
 \usepackage{titlesec}
 \usepackage{microtype}
 \usepackage{doi}
+\usepackage{units}
 \usepackage[defaultlines=3,all]{nowidow}
 \usepackage[bottom]{footmisc}
 \usepackage{marvosym}
@@ -96,13 +97,13 @@
 \pagestyle{plain}
 
 % Clear double page style
-% \makeatletter
-%   \def\cleardoublepage{\clearpage\if@twoside \ifodd\c@page\else
-%   \hbox{}
-%   \thispagestyle{empty}
-%   \newpage
-%   \if@twocolumn\hbox{}\newpage\fi\fi\fi}
-% \makeatother
+\makeatletter
+  \def\cleardoublepage{\clearpage\if@twoside \ifodd\c@page\else
+  \hbox{}
+  \thispagestyle{empty}
+  \newpage
+  \if@twocolumn\hbox{}\newpage\fi\fi\fi}
+\makeatother
 
 % Solve a problem with transparent PDF figures
 \pdfpageattr{/Group << /S /Transparency /I true /CS /DeviceRGB>>}
@@ -112,7 +113,7 @@
 \renewcommand{\labelitemii}{\textcolor{tema}{\scriptsize\raisebox{0.4mm}{\Squaresteel}}}
 
 % Select only a chapter for faster compilation
-% \includeonly{cap_result}
+% \includeonly{listofsymbols}
 
 \begin{document}
 
@@ -207,13 +208,13 @@ This thesis aims to investigate these issues, proposing methodologies to charact
 
 A literature review is carried out in order to assess the state of the art regarding specially experimental techniques related to this issue but also including the latest developments in terms of understanding the flow characteristics through numerical simulations. Different methodologies are consequently proposed and implemented into a custom flow rig inside an anechoic chamber as to experimentally measure and post-process the acoustic output of the compressor.
 
-From this measurement campaign a characterization of the noise spectral content across the compressor map is obtained and described, identifying different acoustical phenomena such as blade passing tonal noise, low frequency content associated to deep surge, and a sub-synchronous broadband noise known as ``whoosh'' in the literature, of special concern for automotive manufacturers. This particular phenomenon is detected even at more stable conditions at higher flow rate, and rising in level as flow rate is diminished to the point of being masked by lower frequency content.
+From this measurement campaign a characterization of the noise spectral content across the compressor map is obtained and described, identifying different acoustical phenomena such as blade passing tonal noise, low frequency content associated to deep surge, higher frequency broadband ascribed to tip clearance interaction, and broadband noise in the plane wave range known as ``whoosh'' in the literature, of special concern for automotive manufacturers. This particular phenomenon is detected even at more stable conditions at higher flow rate, and rising in level as flow rate is diminished to the point of being masked by lower frequency content.
 
 After a validation of the selected procedure in realistic engine conditions, experimental data is compared against a numerical model of the compressor developed in a parallel work to assess its validity and propose different post-processing techniques to extract additional insights about the behaviour of the flow at different conditions, hinting at the main generation mechanism for ``whoosh'' being located at the compressor diffuser.
 
 Since numerical simulations predict a reduced amount of reversed unstable flow at conditions where ``whoosh'' noise is still measured, an experimental campaign is performed were detailed measures of local temperature near the compressor wheel are used to determine the evolution of reversed flow, with supplemental readings through pressure probes in the inducer and diffuser being used to link this evolution with the fluctuation of spectral content. Temperature measurements are also correlated with measurements of the velocity field through particle imaging. Results show that even inducer content being highly affected by the onset of reversed flow, ``whoosh'' noise is detected at all tested conditions
 
-Different experimental campaigns are then described were modifications of the inlet geometry immediately upstream the compressor are performed in order to assess how the air flow presentation can influence acoustic performance. Geometries featuring reservoirs, nozzles and guide vanes are shown to potentially reduce noise levels. A 90º elbow parametric study is performed, demonstrating how the inner radius of the elbow influences circumferential temperature differences and noise levels, leading to the hypothesis of geometry influence on ``whoosh'' noise being related to air presentation changes that promote lower or higher growth of reversed backflow, which in turns carries upstream the spectral content being generated in the compressor diffuser. 
+Different experimental campaigns are then described were modifications of the inlet geometry immediately upstream the compressor are performed in order to assess how the air flow presentation can influence acoustic performance. Geometries featuring reservoirs, nozzles and guide vanes are shown to potentially reduce noise levels. A 90º elbow parametric study is performed, demonstrating how the inner radius of the elbow influences circumferential temperature differences and noise levels, leading to the hypothesis of geometry influence on ``whoosh'' noise being related to air presentation changes that promote lower or higher growth of reversed backflow, which in turns carries upstream the spectral content being generated in the compressor diffuser.
 
 Lastly, additional experimental and numerical studies are proposed to further explore these issues, in order to provide a better understanding of how inlet designs may delay and mitigate the appearance and transmission of these adverse acoustical phenomena.
 
@@ -330,6 +331,7 @@ this thesis is based, with author signatures being in order of seniority in the 
 % Section mark
 \renewcommand{\sectionmark}[1]{\markright{\color{tema}{\thesection.\color{black}\itshape\ #1}}}
 
+% Hypersetup color
 \hypersetup{
   linkcolor = tema
 }
@@ -357,7 +359,7 @@ this thesis is based, with author signatures being in order of seniority in the 
 
 %-------------------------------------------------------------------%
 % BACK MATTER
-\backmatter 
+\backmatter
 
 % References
 % Title format

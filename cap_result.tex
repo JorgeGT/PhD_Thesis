@@ -116,7 +116,7 @@ In contrast, the opposite-travelling wave presents lower amplitudes, specially b
 \label{fig:result_spectra_LugLine_DOPA}
 \end{figure}
 
-Fig. \ref{fig:result_spectra_LugLine_DOPA} shows the PSD of this decomposed pressure signal. In the case of the top plot that contains the information from the inlet duct, PSD from the backward travelling wave is presented, since it is the one coming from the compressor. Conversely, the forward travelling wave PSD is plotted in the case of the bottom plot depicting outlet duct data.
+Fig. \ref{fig:result_spectra_LugLine_DOPA} shows the PSD of this decomposed pressure signal. In the case of the top plot that contains the information from the inlet duct, PSD from the backward travelling wave is presented, since it is the one coming from the compressor. Conversely, the forward travelling wave PSD is plotted in the case of the bottom plot depicting outlet duct data. Note the spurious aliasing peaks as the spatial Nyquist limit is reached.
 
 It can thus be seen in Fig. \ref{fig:result_spectra_LugLine_DOPA} that the decomposition algorithm allows a clearer representation of the signal, since it is not affected by the buzz-saw effect at lower frequencies (lower than 3 kHz), specially visible in the inlet spectra (see also Fig.~\ref{fig:result_spectra_DOPA_tot_comp} for a comparison).
 
@@ -127,9 +127,10 @@ It can thus be seen in Fig. \ref{fig:result_spectra_LugLine_DOPA} that the decom
 \label{fig:result_spectra_160_DOPA}
 \end{figure}
 
-A similar result can be seen in Fig. \ref{fig:result_spectra_160_DOPA}, where the decomposed pressure waves are plotted for the data points in the 160 krpm, from higher to lower air mass flows. It shows a clear identification of the ``whoosh'' broadband phenomenon between 1 kHz and 3 kHz and how it becomes masked by the rise in lower and higher content as air mass flow diminishes.
+A similar result can be seen in Fig. \ref{fig:result_spectra_160_DOPA}, where the decomposed pressure waves are plotted for the data points in the 160 krpm, from higher to lower air mass flows. It shows a clear identification of the ``whoosh'' broadband phenomenon between 1 kHz and 3 kHz and how it becomes masked by the rise in lower and higher content as air mass flow diminishes. A rotation order tone at 160\,krpm/60\,s = 2.66 kHz is also noticeable in both ducts.
 
 \subsubsection{Higher frequencies}
+\label{sub:result_high_freq}
 
 Beyond the previously mentioned cut-off frequencies, the propagation of acoustic modes invalidates the plane wave assumption that it is made in the wave decomposition process, thereby rendering this treatment unusable. It is however interesting to consider at least the raw pressure PSD as it contains relevant acoustic content.
 
@@ -140,9 +141,9 @@ Beyond the previously mentioned cut-off frequencies, the propagation of acoustic
 \label{fig:result_spectra_LugLine}
 \end{figure}
 
-In Fig. \ref{fig:result_spectra_LugLine} the PSD of the pressure signals recorded by one sensor of the array is presented, for both inlet and outlet ducts. It can be seen how, in the case of the inlet pressure spectra, amplitude increases with shaft speed along the whole frequency range. Inlet spectra also feature a broadband elevation between approximately the upper limit of the plane wave range at \hl{4 kHz} and 12 kHz.
+In Fig. \ref{fig:result_spectra_LugLine} the PSD of the pressure signals recorded by one sensor of the array is presented, for both inlet and outlet ducts. It can be seen how, in the case of the inlet pressure spectra, amplitude increases with shaft speed along the whole frequency range. Inlet spectra also feature a broadband  elevation that starts at 12 kHz and collapses with plane wave propagation at 5 kHz, which could be related to the TCN mentioned in the literature as described in chapter \ref{cap:liter}.
 
-Characteristic Blade Passing Frequency (BPF) peaks associated with each shaft speed are also visible in the inlet spectra, \hl{although only for some speeds such as 160 krpm or 170 krpm}. 
+Characteristic Blade Passing Frequency (BPF) peaks associated with each shaft speed are also visible in the inlet spectra, although only for some speeds such as 160 krpm or 170 krpm.
 
 \begin{figure}[tbh!]
 \centering
@@ -151,7 +152,7 @@ Characteristic Blade Passing Frequency (BPF) peaks associated with each shaft sp
 \label{fig:result_spectra_160}
 \end{figure}
 
-Evolution of the spectral content in the outlet pressure signal shows also the previously discussed increase at plane wave frequencies, \hl{followed by a broadband at higher frequencies}. BPF peaks including some harmonics are visible in the outlet spectra, even for conditions where they were not apparent in the inlet spectra.
+Evolution of the spectral content in the outlet pressure signal shows also the previously discussed increase at plane wave frequencies, followed by a broadband at higher frequencies which again could be related to the so-called TCN. BPF peaks including some harmonics are visible in the outlet spectra, even for conditions where they were not apparent in the inlet spectra.
 
 Similar evolution can be observed in Fig. \ref{fig:result_spectra_160} which tracks the spectral content of the raw pressure signal along the 160 krpm shaft speed line. Again, BPF peaks are much more visible in the outlet spectra. The plane wave broadband between is also noticeable in the outlet, along with other higher frequency broadbands after the first mode cut-off frequency.
 
@@ -162,15 +163,15 @@ Further insight into the spectral content of the signal can be obtained through 
 In this way, non-dimensional power spectral density of the pressure signal $S(f)$ can be written \cite{mongeau1993sound,choi1994aerodynamic} as being the product of two functions: 
 
 \begin{equation}\label{eq:non-dim_spectra}
-	\frac{\sqrt{S(f)}}{\rho_0 V^2_\text{tip}\sqrt{D/V_\text{tip}}}=
+	\frac{\sqrt{S(f)}}{\rho V^2_\text{tip}\sqrt{D/V_\text{tip}}}=
 	G(He,\varphi)\cdot F(St,\varphi)
 \end{equation}
 
-On the left hand side, $\rho_0$ is the mean density of the flow, $D$ is the outer diameter of the rotor and $V_\text{tip}$ is the velocity of the blade tips. On the right hand side, $G(He,\varphi)$ is an acoustic frequency response function that depends on the Helmholtz number and comprises the influence of propagation effects such as duct resonances and directivity \cite{mongeau1993sound,wolfram2009detection}. 
+On the left hand side, $\rho$ is the mean density of the flow, $D$ is the outer diameter of the rotor and $V_\text{tip}$ is the velocity of the blade tips. On the right hand side, $G(He,\varphi)$ is an acoustic frequency response function that depends on the Helmholtz number and comprises the influence of propagation effects such as duct resonances and directivity \cite{mongeau1993sound,wolfram2009detection}. 
 
 The source spectral distribution $F(St,\varphi)$ depends on the Strouhal number and comprises the phenomena related to flow-induced acoustic generation such as flow fluctuations and near field acoustic interactions \cite{mongeau1995method}.
 
-Both functions depend of the operating conditions of the system, as remarked by their dependence on the flow coefficient $\varphi$. They are however assumed to be independent of Reynolds number. Definitions of the non-dimensional parameters can be found in table \ref{tab:nondim_numbers}. 
+Both functions depend of the operating conditions of the system, as remarked by their dependence on the flow coefficient $\varphi$. They are however assumed to be independent of $Re$ (Reynolds number). Definitions of the non-dimensional parameters can be found in table \ref{tab:nondim_numbers}. 
 
 Two Strouhal numbers have been considered: one is related to the tip speed $V_\text{tip}$ and is adjusted so that the blade passing frequency (BPF) has $St=1$. The other takes into account the mean flow velocity $U$. Finally, the Helmholtz number takes into account the speed of sound $a$ that is affected by temperature at each operating condition. All three are normalized with the outer diameter $D$ of the rotor.
 
@@ -206,7 +207,7 @@ Two Strouhal numbers have been considered: one is related to the tip speed $V_\t
 \begin{tabular}{lcc}
 \toprule
 \textbf{Name} & \textbf{Symbol} & \textbf{Definition}\\\midrule
-Strouhal (tip speed)& $St(V_\text{tip})$ & $\cfrac{f D}{V_\text{tip}}\cfrac{\pi}{n}=\cfrac{f}{BPF}$ \\[4mm]
+Strouhal (tip speed)& $St(V_\text{tip})$ & $\cfrac{f D}{V_\text{tip}}\cfrac{\pi}{N}=\cfrac{f}{BPF}$ \\[4mm]
 Strouhal (mean flow) & $St(U)$ & $\cfrac{f D}{U}$ \\[4mm]
 Helmholtz & He & $\cfrac{f D}{a}$ \\[2mm] \bottomrule
 \end{tabular}
@@ -225,7 +226,7 @@ In Fig. \ref{fig:result_norm_all_LL} a similar analysis is carried out consideri
 
 Again, the broadband hump in the plane wave range that is typically identified with ``whoosh'' appears to collapse when considering the mean flow Strouhal, albeit in this figure tracking of this effect is more complicated due to the simultaneous change in both shaft speed and mass flow rate. 
 
-In the case of the non-decomposed spectral information, it can be seen how the higher frequency broadband only is collapsing now when the Helmholtz normalization is performed, whereas for both Strouhal normalizations clear differences can be seen between lower and higher shaft speeds. This could point to this broadband being highly influenced by the speed of sound, rather than by the flow mechanisms.
+In the case of the non-decomposed spectral information, it can be seen how the higher frequency TCN-like broadband is now only collapsing when the Helmholtz normalization is performed, whereas for both Strouhal normalizations clear differences can be seen between lower and higher shaft speeds. This could point to this broadband frequency being highly influenced by the speed of sound rather than by the flow mechanisms.
 
 \subsection{Interpolation}
 
@@ -270,7 +271,7 @@ In order to paint a general picture of the global sound emission of the compress
 
 For instance, Fig. \ref{fig:maps_induct_10-3400} shows global in-duct Sound Intensity Level (SIL) contours for both inlet and outlet in the frequency range where the plane wave assumption holds true for both ducts ($f<3400$ Hz). 
 
-It can be seen that, as previously observed when analysing the pressure spectra, sound intensity levels are generally higher in the outlet duct than in the inlet duct \hl{as pressure fluctuations are amplified?}. 
+It can be seen that, as previously observed when analysing the pressure spectra, sound intensity levels are generally higher in the outlet duct than in the inlet duct as pressure fluctuations are amplified. 
 
 Distribution of SIL across the different conditions of the compressor map holds some similarities between both ducts, with SIL increasing towards the surge limit and with higher shaft speeds. However, the outlet seems to feature an abrupt increase in levels at the lower allowable air mass flow conditions, whereas the increase in the case of the inlet appears smoother. 
 
@@ -312,12 +313,11 @@ Beside noise maps, an alternative way of analysing the spectral content across d
 \label{fig:result_iso160krpm_SG}
 \end{figure}
 
+Figure \ref{fig:result_LugLine_SG} shows how the spectral content of the sound intensity changes along the path of the working line first shown in Fig. \ref{fig:result_map_comp}. This figure shows how, specially in the outlet, a certain, typical ``whoosh'' content (1--2.5 kHz) is present along the line. Intensity levels present a sudden step after 160 krpm of shaft speed.
 
-Figure \ref{fig:result_LugLine_SG} shows how the spectral content of the sound intensity changes along the path of the working line first shown in Fig. \ref{fig:result_map_comp}. \hl{This figure shows how a certain low frequency content (less than 1 kHz) is present along the line. Intensity levels present a sudden step after 130 krpm of shaft speed.}
+In a similar manner, Fig. \ref{fig:result_iso160krpm_SG} shows the evolution of the intensity spectral content as air mass flow is reduced, while keeping a constant corrected shaft speed of 160 krpm. In this case, and again specially in the outlet duct, broadband content between 1 and 3 kHz consistent with ``whoosh'' noise is evident even at the highest considered mass flows which should be quite stable. This broadband then becomes masked by the rise in levels as mass flow rate is reduced.
 
-In a similar manner, Fig. \ref{fig:result_iso160krpm_SG} \hl{[X range?]} shows the evolution of the intensity spectral content as air mass flow is reduced, while keeping a constant corrected shaft speed of 160 krpm. In this case, and specially in the outlet duct, a broadband between 1 and 3 kHz consistent with ``whoosh'' noise is evident even at the highest considered mass flows which should be quite stable. This broadband then becomes masked by the rise in levels as mass flow rate is reduced.
-
-It can also be seen in this figure how very low frequency content appears as operating conditions get close to the deep surge limit. In the inlet case this content under 1 kHz is dominant at these unstable conditions, whereas in the case of the outlet the content is more broadband. 
+It can also be seen in this figure how very low frequency content appears as operating conditions get close to the deep surge limit. In the inlet case this content under 1 kHz is dominant at these unstable conditions, whereas in the case of the outlet the content is more broadband. As for higher frequency content in the inlet duct, in both Figs. \ref{fig:result_LugLine_SG} and \ref{fig:result_iso160krpm_SG} spectral content is not as consistent as in the outlet duct.
 
 \section{External noise}
 \label{sec:external_results}
@@ -383,11 +383,13 @@ Analysis was first performed by considering the spectral signature of the pressu
 
 Pressure wave decomposition was shown to be a helpful technique to enhance the spectral information coming from the compressor and filter out the reflections coming from the opposite ends of the pipes, thereby aiding to eliminate standing waves and offering  cleaner spectral information.
 
-In these improved results it became easier to identify relevant features such as the Blade Passing Frequency and its harmonics, along with a broadband hump between 1 and 3 kHz that is consistent with a sub-synchronous phenomenon known in the literature as ``whoosh noise'', being of special concern due to its negative perception in automotive applications.
+In these improved results it became easier to identify relevant features such as the Blade Pass Frequency and its harmonics, along with a broadband hump between 1 and 3 kHz that is consistent with a super-synchronous phenomenon known in the literature as ``whoosh noise'', being of special concern due to its negative perception in automotive applications.
 
 This particular noise phenomenon was more easily detected in the acoustic signature of the outlet duct, being more prominent at higher shaft speeds. At these higher speeds the hump was noticeable even at the more stable higher mass flow rate conditions. As flow rate was diminished, rising levels of lower and higher frequency phenomena masked the presence of this hump. 
 
-Non-dimensional analysis showed that the hump identified with ``whoosh'' was sensible to the mean velocity of the flow, rather than to the shaft speed or the sound speed, thus pointing to a flow-related generation rather than to a transmission-related one.
+Non-dimensional analysis showed that the hump identified with ``whoosh'' was sensible to the mean velocity of the flow, rather than to the shaft speed or the sound speed, thus pointing to a flow-related generation rather than to a transmission-related one. The higher frequency TCN-like broadband on the other hand, seems to be heavily dependent of transmission factors such as the sound speed. 
+
+Furthermore, this later phenomenon shows an abrupt collapse at frequencies of plane wave transmission at all the considered points, suggesting that its source mechanism cannot propagate in this condition. This would confirm that this TCN-like phenomenon is indeed different from ``whoosh'', which is a broadband noise that, on the other hand, does appear at the plane wave range.
 
 Noise maps were also constructed from the interpolation of in-duct acoustic intensity across the different operating conditions considered in the study. In this way it was shown how onset of low frequency (<100 Hz) phenomena was parallel to the surge limit, whereas content on the ``whoosh'' band followed a different distribution, with its onset appearing more closely related to the null slope point of the characteristic line rather than to proximity of deep surge.
 

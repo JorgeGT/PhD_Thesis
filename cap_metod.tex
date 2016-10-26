@@ -25,7 +25,7 @@ Apart from the purely experimental implementation, the step-by-step signal proce
 
 Special care will be put in considering the different theoretical and practical limitations and restrictions of experimental measurements and processing techniques, to ensure that results are significant and robust.
 
-\section{Facilities} % Descripción instalaciones
+\section{Facilities}
 
 Most of the experimental work presented in this thesis has been carried out at laboratory 5K of Universitat Politècnica de València. This facility is equipped with two main installations.
 
@@ -68,7 +68,7 @@ As for the flow control, another reservoir equipped with a discharging valve can
 
 If cold flow is desired, a water intercooler can be used to lower the temperature produced by the compression process. This temperature, along with the rest of flow properties like mass flows, pressures and other temperatures, are recorded through a dedicated control system.
 
-Engine and brake are controlled though their own independent instrumentation, while the instantaneous turbocharger variables, including those needed for acoustical characterization, are recorded through the dedicated high speed Yokogawa DL716 DAQ.
+Engine and brake are controlled though their own independent instrumentation, while the instantaneous turbocharger variables, including those needed for acoustical characterization, are recorded through the dedicated high speed Yokogawa DL716 DAQ system.
 
 \subsection{Anechoic chamber} \label{sub:anec_chamber}
 
@@ -93,7 +93,7 @@ In order to allow the operation of the turbocharger, compressed air flow is fed 
 
 Meanwhile, the compressor takes ambient air from the chamber, while its exhaust is redirected to the adjacent auxiliary room for discharging, as seen in Fig \ref{fig:floorplan}. A closed-loop lubricating oil system is also present. Water is also provided to the cooling jackets of the sensors that require it, specially those located on the turbine pipes and the compressor outlet.
 
-A control system similar to that of the flow rig monitors the operation of the system and gathers operational data (pipe temperatures, pressures, mass flow, compressor speed, etc.), allowing regulation of oil temperature, and compressor operation settings (speed and mass flow). Scientific data (mainly dynamic pressure) is recorded with a Yokogawa DL716 DAQ.
+A control system similar to that of the flow rig monitors the operation of the system and gathers operational data (pipe temperatures, pressures, mass flow, compressor speed, etc.), allowing regulation of oil temperature, and compressor operation settings (speed and mass flow). Scientific data (mainly dynamic pressure) is recorded with a Yokogawa DL716 DAQ system.
 
 \subsection{Engine test cell} \label{sub:engine_cell}
 
@@ -105,7 +105,7 @@ Access and online control of the engine ECU is also available, and a special pne
 
 This air injection reduces the air that the compressor ingests, thus lowering compressor air flow and allowing the control of this relevant parameter independently of the engine necessities. The system was used to bring the compressor to surge and near-surge conditions during our research.
 
-In order to implement and validate the in-duct acoustical measurement methodology presented in this chapter, additional sensors and equipment were fitted into the test cell, including a Yokogawa DL716 high speed DAQ and a Brüel \& Kjær PULSE\textsuperscript{TM} DAQ system with a type 4197 pressure-pressure sound intensity probe used as reference.
+In order to implement and validate the in-duct acoustical measurement methodology presented in this chapter, additional sensors and equipment were fitted into the test cell, including a Yokogawa DL716 high speed DAQ system and a Brüel \& Kjær PULSE\textsuperscript{TM} DAQ system with a type 4197 pressure-pressure sound intensity probe used as reference.
 
 \begin{figure}[b!]
 \centering
@@ -116,7 +116,7 @@ In order to implement and validate the in-duct acoustical measurement methodolog
 
 \section{Tested turbochargers}
 
-Different turbochargers have been used in the development of the investigation, as dictated by the requirements of the different projects and facilities that this thesis comprises. All of them are however similar, small to medium sized automotive turbochargers. The most relevant model is the \hl{Garrett GT17} model that was used in chapters \ref{cap:metod}, \ref{cap:results}, \ref{cap:cfd} and part of chapter \ref{cap:geom}. 
+Different turbochargers have been used in the development of the investigation, as dictated by the requirements of the different projects and facilities that this thesis comprises. All of them are however similar, small to medium sized automotive turbochargers. The most relevant model is the \hl{Garrett GT17} model that was used in chapters \ref{cap:metod}, \ref{cap:results}, \ref{cap:cfd} and section \ref{sec:geom_simple}. 
 
 \begin{figure}[h!]
 \centering
@@ -125,7 +125,7 @@ Different turbochargers have been used in the development of the investigation, 
 \label{fig:comp_dimens}
 \end{figure}
 
-This particular model was digitized to obtain its detailed geometry, which is shown in Fig.~\ref{fig:comp_dimens} along with the most relevant dimensions. \hl{[More data]}
+This particular model, featuring six main blades and six splitter blades, was digitized to obtain its detailed geometry, which is shown in Fig.~\ref{fig:comp_dimens} along with its most relevant dimensions. \hl{A similar turbocharger} was used for engine tests on chapter \ref{cap:engine} and section \ref{sec:geom_motor} and another for chapter \ref{cap:inlet} and section \ref{sec:geom_elbows}, both modified in order to fit different inlet geometries.
 
 \section{In-duct noise measurement} % Articulo methodology
 \label{sec:method_induct}
@@ -138,12 +138,12 @@ Reviewing the existing literature on turbocompressor noise a variety of very dif
 
 However, these works focus on the research of different phenomena (transmission loss \cite{tiikoja2011inves}, effect of flow incidence angle \cite{figurella2012noise}, sound generation by rotating stall \cite{mongeau1993sound}, source characterization \cite{mongeau1995method}, etc.), not on the acoustical methodology itself nor on the particular setup considerations and restrictions that each measurement technique imposes.
 
-This work wishes to address these shortcomings of the existing literature by proposing an experimental methodology and discussing the details of its theoretical background, its implementation, its range of application, and the  processing required to produce standardized results.
-
-In order to provide some illustrative results, the methodology proposed in this paper has been applied to a series of experimental tests in a flow bench where a small automotive turbocharging group has been installed.
+In this chapter these shortcomings in existing literature are addressed by proposing a suitable experimental methodology and discussing the details of its theoretical background, its implementation, restrictions and processing required to produce useful results.
 
 \subsection{Theoretical background}
 \label{sec:theory}
+
+The first step is thus to review the theoretical background of the determination of acoustic output in the specific situation of ducts with mean flow, and decide techniques to experimentally obtain the required data for their implementation.
 
 \subsubsection{Sound intensity in flow ducts}
 \label{sub:sound_intensity_in_flow_ducts}
@@ -218,6 +218,8 @@ Further information on its application, including a comparison of various of the
 \subsection{Experimental procedure}
 \label{sec:experimental_procedure}
 
+Once that a suitable in-duct noise measurement technique was  selected, it is necessary to analyze how to implement the procedure in the experimental setup, perform the measurements, and process the resulting data.
+
 \subsubsection{Turbocharger instrumentation}
 \label{sub:turbocharger_instrumentation}
 
@@ -234,7 +236,7 @@ Ideally, the sensors should be mounted flush (with water-cooled adapters if nece
 
 As a further measure, enough straight clearance should be left before and after the array (as shown on figure \ref{fig:setup_schem}), to ensure essentially plane wave flow at the measurement section \cite{holland2000measurement}. There should be a minimum of 6 diameters upstream of the array and a further 4 diameters downstream, as recommended in \cite{torregrosa2005exp}.
 
-When placing the transducers, it is important that the 1/5 and 1/3 nodes of the established standing wave pattern are avoided \cite{dowling1983sound}. Also, a compromise in the spacing $d_s$ between them must be reached, taking into consideration errors in the  low-frequency \cite{aabom1988error} and high-frequency \cite{seybert1988two} bands.
+When placing the transducers, it is important that the \nicefrac{1}{5} and \nicefrac{1}{3} nodes of the established standing wave pattern are avoided \cite{dowling1983sound}. Also, a compromise in the spacing $d_s$ between them must be reached, taking into consideration errors in the  low-frequency \cite{aabom1988error} and high-frequency \cite{seybert1988two} bands.
 
 Specially, it should be noted that spatial aliasing effects will occur above the Nyquist frequency imposed by the spacing $d_s$. The time of arrival of a wave with DOA $\theta$ and speed $a$ to two consecutive sensors spaced by a distance $d_s$ is:
 \begin{equation}
@@ -297,7 +299,7 @@ Several reference conditions can be selected when correcting the speed and the a
 
 Here, $p_{T}$ and $T_{T}$ refer to the compressor inlet total pressure and temperature, respectively. These are calculated with the air mass flow and the cross sectional area of the inlet duct, using the continuity and ideal gas relations and assuming adiabatic flow:
 
-\begin{figure}[bth!]
+\begin{figure}[bthp!]
 \centering
 \includegraphics[width=0.85\textwidth]{figures/cap_metod/datapoints_surge.pdf}
 \caption{Operating conditions for each measured data point (right plot), including the precise determination of the deep surge limit: top plot on the left shows the temporal evolution of the raw relative pressure recorded by one piezoelectric sensor; bottom plot on the left depicts the correlation between the frequency content in the 0-20 Hz band and deep surge onset.}
@@ -306,12 +308,12 @@ Here, $p_{T}$ and $T_{T}$ refer to the compressor inlet total pressure and tempe
 
 \begin{equation}
     \rho =\cfrac{p}{RT} \quad
-    V =\cfrac{\dot m}{\rho A} \quad
-    T_{T}=T+\cfrac{V^2}{2c_p} \quad
+    U =\cfrac{\dot m}{\rho A} \quad
+    T_{T}=T+\cfrac{U^2}{2c_p} \quad
     p_{T}=p\left(\cfrac{T_{T}}{T}\right)^\frac{\gamma}{\gamma-1}
 \end{equation}
 
-In this case $R$ denotes the air-specific ideal gas constant and $\rho,P,T$ and $V$ the density, pressure, temperature and flow speed in the duct, respectively. Also, $A$ denotes the cross sectional area, and $c_p$ the air-specific heat capacity.
+In this case $R$ denotes the air-specific ideal gas constant and $\rho,p,T$ and $U$ the density, pressure, temperature and flow speed in the duct, respectively. Also, $A$ denotes the cross sectional area, and $c_p$ the air-specific heat capacity.
 
 Figure \ref{fig:surge_datapoints} (bottom) shows the recorded data points of the compressor map, after computing the total-to-total pressure ratio and
 applying the standard day correction.
@@ -323,17 +325,17 @@ When measuring a turbocharger operation map, it is particularly important to  ch
 
 In order to measure different mass flows, the back-pressure valve is usually closed slowly until a certain surge criterion is met, and then opened to avoid damaging the turbocharger. Several surge criteria for centrifugal turbomachinery have been proposed in the literature, for tests on flow benches \cite{galindo2006surge} and on engine test rigs \cite{galindo2013engine}.
 
-An average of power spectrum of a single pressure sensor in the 0 to 20 Hz range, shown by Galindo et al \cite{galindo2006surge} to be a good surge indicator, was computed once for discrete time steps $T$ of 0.5 seconds, providing a clear indication of deep surge onset, as marked in figure \ref{fig:surge_datapoints} (top) with a solid line.
+An average of power spectrum of a single pressure sensor in the 0 to 20 Hz range, shown by Galindo et al \cite{galindo2006surge} to be a good surge indicator, was computed once for discrete time steps $k$ of 0.5 seconds, providing a clear indication of deep surge onset, as marked in figure \ref{fig:surge_datapoints} (top) with a solid line.
 
 \begin{equation}
- \mathbf X_T=\left|\mathcal F\{x(t)\}\right|^2,\; t\in[t_T,t_{T+1}]
+ \mathbf X_k=\left|\mathcal F\{x(t)\}\right|^2,\; t\in[t_k,t_{k+1}]
 \end{equation}
 
 To obtain the required near-surge data points to be displayed on the map, represented by $\blacksquare$ in the bottom plot of figure \ref{fig:surge_datapoints}, a 1 second average of all recorded data was computed 1 second before surge as indicated by the dashed lines of the left plot, in order to calculate the map coordinates of the point.
 
-\begin{figure*}[t!]
+\begin{figure*}[tp!]
 \centering
-\includegraphics[width=0.85\textwidth]{figures/cap_metod/gr_mapa_ruido_dB_1000-3000.pdf}
+\includegraphics[width=0.88\textwidth]{figures/cap_metod/gr_mapa_ruido_dB_1000-3000.pdf}
 \caption{Sample of noise level in the 1 -- 3 kHz band obtained through the processing described in subsection \ref{sub:noise_maps_and_spectrograms}, including the measured data points $(\circ)$ and the paths later expanded as spectrograms shown in figure \ref{fig:spec50-5k}. The left hand side map represents the inlet duct, whereas the right hand side map represents the outlet duct. }
 \label{fig:map1k-3k}
 \end{figure*}
@@ -394,7 +396,7 @@ The variables needed in order to characterize the map point (mass flow, speed, t
 
 Pressure signals on recorded points (shown in figure \ref{fig:surge_datapoints}) were then processed according to the proposed methodology. Samples of the final results are presented in figures \ref{fig:map1k-3k} and \ref{fig:spec50-5k}.
 
-Figure \ref{fig:map1k-3k} shows the 1 -- 3 kHz sound intensity level distribution across selected operating conditions, approximately between maximum efficiency and the measured surge limit. As shown in chapter \ref{cap:liter}, noise in this subsynchronous frquency is often known as ``whoosh''.
+Figure \ref{fig:map1k-3k} shows the 1 -- 3 kHz sound intensity level distribution across selected operating conditions, approximately between maximum efficiency and the measured surge limit. As shown in chapter \ref{cap:liter}, noise in this super-synchronous frequency is often known as ``whoosh''.
 
 Another point of concern that has been identified in the results is that the relevance of this particular phenomenon extends far from the surge region and well into the expected engine operation region.
 
@@ -435,7 +437,7 @@ However, when measuring external noise care should be taken to avoid reflections
 \centering
 \vspace{6mm}
 \includegraphics[width=0.4\textwidth]{figures/cap_metod/mics_photo}
-\caption{Image of the two free-field microphones placed at 10 mm (mic 1) and 20 mm (mic 2) from the orifice of the compressor inlet duct.}
+\caption{Image of the two free-field microphones placed at 10 mm (Mic 1) and 20 mm (Mic 2) from the orifice of the compressor inlet duct.}
 \label{fig:mics_photo}
 \end{wrapfigure}
 
@@ -467,14 +469,20 @@ To obtain a better estimation of the sound field, four free-field microphones of
 
 Data from all microphones was captured using a Brüel \& Kjær PULSE\textsuperscript{TM} DAQ system, composed by types 3560 D, 7536, 2826 and $2\times 3032$A (hardware) and types 7700, 7702, 7705 and 7755 B (software). In order to provide a global metric to compare against orifice noise, results for the four far-field microphones were averaged to compute the overall sound pressure level radiated by the turbocharger system.
 
-\subsection{Near field}
+\subsection{Near field} % Particle Velocity
 
-\hl{[Informacion sobre velocidad de particula?]}
+While useful to characterize the far field sound information emitted by the turbocharger, successful measurement through free-field microphones depend on the acoustic characteristics of the test ambient being suitable. As standard turbocharger test rigs and engine test cells are usually not acoustically conditioned, reflections and interferences make measurements of external noise difficult. 
+
+These issues increase when the objective is to analyze the acoustic field near the tested turbochargers, as near-field measurements can be adversely impacted by diffuse background noise and reactive sound fields \cite{jacobsen1989active,elliot1981errors}. 
+
+A technique that could be useful in order to address these issues is the direct measurement of acoustic particle velocity level (PVL). A probe featuring a MEMS sensor\footnote{MEMS refers in general to Micro Electro-Mechanical Systems, in this particular case consisting of two thin parallel used as micro hot-wire anemometers.} enabling these kind of measurements in air has been made commercially available by Microflown \cite{debree1992micro}. 
+
+This probe has been used to perform acoustic intensity measurements, demonstrating some advantages against pressure-based probes \cite{jacobsen2005comparison}. Applications include acoustic holography for near-field situations \cite{comesana2013scan} and panel-based noise evaluation in automotive cabins \cite{Wolff2009PU}. In chapter \ref{cap:engine} one of these probes will be used to perform a test in a standard engine cell in order to assess its usefulness in identifying the near-field acoustic signature generated by the turbocharger.
 
 \section{Conclusions}
 \label{sec:conclusions}
 
-In this chapter a detailed experimental methodology for the noise evaluation of turbocharger compressors in flow benches or engine test cells has been proposed. It includes a description of the tested turbocharger\hl{s} and the facilities where the experimental work has been developed.
+In this chapter a detailed experimental methodology for the noise evaluation of turbocharger compressors in flow benches or engine test cells has been proposed. It includes a description of the kind of turbochargers tested in this thesis and the facilities where the experimental work has been developed.
 
 The characterization method is based on a robust in-duct acoustical beamforming technique that resolves the plane wave range sound intensity, by decomposing the total pressure signal into its upstream and downstream components.
 
@@ -488,12 +496,12 @@ The examples presented above illustrate how this technique allows detecting know
 
 In addition to offering the detailed measurement and signal processing steps, this chapter stresses the importance of taking into account restrictive factors such as calibration, sensor setup clearances and locations, frequency aliasing effects and ranges in which theoretical assumptions hold in order to obtain robust and reproducible results.
 
-Additionally, and taking advantage of the anechoic chamber where the turbocharger was installed, the instrumentation that was added to measure external noise (both orifice noise and the noise radiated to the far field by the system surfaces) is described. \hl{[near field?]}
+Additionally, and taking advantage of the anechoic chamber where the turbocharger was installed, instrumentation added to measure external noise (both orifice noise and the noise radiated to the far field by the system surfaces) is described. Finally, the application of an acoustic particle velocity probe to measure the near-field emission of a turbocharger in engine conditions is proposed.
 
 \subsection{Appendix: LCMV beamforming procedure}
 \label{ann:beamformer}
 
-\hl{[Donde poner esto?]}
+\hl{[Donde poner esto? O quitarlo?]}
 
 This appendix proposes a step by step guide to compute the desired $\mathbf X^+$ and $\mathbf X^-$ decomposed pressure spectra required in equation \ref{eq:metod_intensity}, using a LCMV (Linearly Restricted Minimum Covariance) strategy as presented by Verdú \cite{verdu2003contribucion}.
 

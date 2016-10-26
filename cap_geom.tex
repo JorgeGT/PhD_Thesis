@@ -6,26 +6,27 @@ As discussed in the literature review performed in chapter \ref{cap:liter}, diff
 
 While mainly aimed at obtaining a more stable flow to delay deep surge onset to enhance the usable zone of the map and keep compressor thermodynamic efficiency even at low air mass flow operating conditions, the impact of these solutions in the generated and transmitted noise must be also considered.
 
-In this chapter different experimental measurement campaigns are described, where some of the geometries most commonly proposed in the literature were tested both on the continuous flow test rig and in real engine conditions. 
+In this chapter different experimental measurement campaigns are described, where some of the geometries most commonly proposed in the literature were tested both in the continuous flow test rig and in real engine conditions. 
 
 \section{Simple geometries}
+\label{sec:geom_simple}
 
 The first of these experimental campaigns was carried by manufacturing a sample of each one of the simplest proposed geometries: a 90º sharp elbow, a tapered duct, and a reservoir. In addition, a short straight pipe was also used as a reference. All of these four geometries can be seen in Fig. \ref{fig:image_simple_geom}.
 
 These simple geometries were installed on the anechoic chamber flow test rig described in chapter \ref{cap:metod}. Both the orifice noise measurement free-field microphone and the radiated noise setup with four equally distributed free-field microphones were kept in order to evaluate the acoustic emission in this preliminary investigation.
 
-In order to simulate more realistic inlet conditions a short straight pipe was added after each of the tested geometries. This short pipe included a three piezoelectric sensor array in order to obtain  validation pressure data for CFD simulations, but no acoustic intensimetry could be performed as the pipes were too short for proper flow development.
+In order to simulate more realistic inlet conditions a short straight pipe was added upstream of each tested geometry. This short pipe included a three piezoelectric sensor array in order to obtain  validation pressure data for CFD simulations, but no acoustic intensimetry could be performed as the pipes were too short for proper flow development.
 
 \begin{figure}[tb!]
 \centering
 \includegraphics[width=\textwidth]{figures/cap_geom/geom_anechoic}
-\caption{Drawing of the selected simple geometries during the manufacturing process. The straight pipe at the top was used standalone as a reference and also attached upstream of each geometry in order to measure the instantaneous pressure.}
+\caption{Drawing of the selected simple geometries during the manufacturing process. The straight pipe at the top was used standalone as a reference and also attached upstream of each geometry in order to measure the instantaneous pressure except for the tapered duct that used a wider pipe.}
 \label{fig:image_simple_geom}
 \end{figure}
 
 \subsection{Surge margin}
 
-Furthermore, raw pressure data from one of these fast sensors was used to characterize with high precision the air mass flow at which the compressor entered into deep surge conditions. This way not only the acoustic output of each geometry could be measured but also their influence regarding the stability of the flow and thus the enlargement of the usable operating conditions.
+Furthermore, raw pressure data from one of these fast sensors was used to characterize with high precision the air mass flow at which the compressor entered into deep surge conditions. In this way not only the acoustic output of each geometry could be measured but also their influence regarding the stability of the flow and thus the enlargement of the usable operating conditions.
 
 As in the previously described experimental campaigns, this fast pressure data was recorded by a Yokogawa digital oscilloscope, along with the mass flow and shaft speed data. The rest of the ancillary information about the turbocharger operation was recorded by the in-house DAQ system.
 
@@ -43,10 +44,10 @@ When conditions were judged to be close enough to deep surge, a continuous recor
 \label{fig:autosurge_simple_geom}
 \end{figure}
 
-This pressure recording was then post-processed following a procedure similar to that described in chapter \ref{cap:metod}. In steps of 0.5 s, FFT was applied to obtain the pressure spectra and then a ratio $R$ was computed between the power at 0-50 Hz and the power at 50-100 Hz:
+This pressure recording was then post-processed following a procedure similar to that described in chapter \ref{cap:metod}. In steps of 0.5 s, FFT was applied to obtain the pressure spectra and then a frequency ratio $R_f$ was computed between the power at 0--50 Hz and the power at 50--100 Hz:
 
 \begin{equation}
-	R=\frac{\sum_{f=0}^{50}|\mathbf{P}(f)|^2}{\sum_{f=50}^{100}|\mathbf{P}(f)|^2}
+	R_f=\frac{\sum_{f=0}^{50}|\mathbf{P}(f)|^2}{\sum_{f=50}^{100}|\mathbf{P}(f)|^2}
 	%, \quad \mathbf{P}(f) = \mathcal{F}}\{p(t_i,t_i+0.5)\}
 \end{equation}
 
@@ -69,7 +70,7 @@ To capture the orifice noise, one free-field omnidirectional microphone was situ
 
 The second system for measuring externally radiated noise, consisting in the four equispaced free-field microphones placed at 1 m distance form the center of the inlet assembly was kept in the same place for all the tested geometries. 
 
-In both cases the microphones were calibrated using a Brüel \& Kj\ae r pistonphone prior to the measurements and data was captured using a Pulse DAQ. Fig. \ref{fig:Radiated_Orifice_SPL_simple_geom} shows the result of both measurements at the stable operating point most close to surge as characterized by the aforementioned procedure, since it is the point of maximum noise emission.
+In both cases the microphones were calibrated using a Brüel \& Kj\ae r pistonphone prior to the measurements and data was captured using a PULSE\textsuperscript{TM} DAQ system. Fig. \ref{fig:Radiated_Orifice_SPL_simple_geom} shows the result of both measurements at the stable operating point most close to surge as characterized by the aforementioned procedure, since it is the point of maximum noise emission.
 
 \begin{figure}[htb!]
 \centering
@@ -93,9 +94,10 @@ In Fig. \ref{fig:GeomComp_OrificeSpectra_ann} the different spectra recorded by 
 \label{fig:GeomComp_OrificeSpectra_ann}
 \end{figure}
 
-The most noticeable difference however, is the resonator effect of the reservoir, that provides an important attenuation at frequencies in the plane wave region of the spectrum. Finally, a small peak can be noticed at 16 kHz, correspondent to the Blade Passing Frequency  associated to the 160 krpm shaft speed that was used during these measurements.
+The most noticeable difference however, is the resonator effect of the reservoir, that provides an important attenuation at frequencies in the plane wave region of the spectrum. Compare this against the tapered duct spectrum which raises levels over the whole spectrum. Finally, a small peak can be noticed at 16 kHz, correspondent to the Blade Passing Frequency  associated to the 160 krpm shaft speed that was used during these measurements.
 
 \section{On-engine tests}
+\label{sec:geom_motor}
 
 In the scope of the on-engine tests described in chapter \ref{cap:engine}, a follow-up experimental campaign was carried out in order to characterize the effect that different geometric variations of the turbocharger inlet line had in performance, surge margin and noise emission.
 
@@ -114,7 +116,7 @@ Similarly, elbow inlets were not tested as they would require to re-route the in
 
 Figure \ref{fig:geom_engine} shows the selected geometry variations based on these selection criteria. On top of the figure the reference geometry is depicted. The turbocharger inducer was milled and substituted by an adaptor to which a straight duct was coupled. At the end of this duct a pipe of the original diameter was then affixed with a tapered transition.
 
-The simplest inlet geometry tested consisted in a tapered duct situated as close as possible to the compressor impeller leading edge. This can be seen at the center left in the figure. Below, it is shown how this tapered duct was complemented with an inlet guide vane (IGV) device.
+The simplest inlet geometry tested consisted in a tapered duct situated as close as possible to the compressor impeller leading edge. This can be seen at the center left in the figure. Below, it is shown how this tapered duct was complemented with an inlet guide vanes (IGV) device.
 
 \begin{wrapfigure}{o}[7mm]{0.4\textwidth}
 %\begin{figure}[htb!]
@@ -133,11 +135,11 @@ Lastly, two nozzles were tested (right column of Fig. \ref{fig:geom_engine}): a 
 
 In order to evaluate the influence of these geometric variation on the noise output of the compressor, the acoustic measurement setup used in chapter \ref{cap:engine} was maintained, consisting in the straight inlet extension featuring the pressure decomposition array for in-duct intensimetry and the intensity probe aligned with the inlet orifice.
 
-Measurement operating conditions for the noise characterization campaign were chosen \hl{as to be representative of the most common real-life conditions that the engine would experiment in a commercial vehicle, in order to test if these simple inlet modifications could modify the noise output not only on the most extreme conditions but in more conservative settings.}
+Measurement operating conditions for the noise characterization campaign were chosen as to be representative of the most common real-life conditions. This was done in order to test if these simple inlet variations could modify the noise output not only on the most extreme conditions but also when more conservative settings are applied.
 
 \subsection{Results}
 
-\hl{Since the objective of this experimental campaign is the comparison between geometries, in this subsection only the results from the orifice intensity probe will be presented for the sake of brevity.}
+Since the objective of this experimental campaign is the comparison between geometries, in this subsection only the results from the orifice intensity probe will be presented for the sake of brevity, as it was shown in section \ref{sec:motor_method_valid} that they were well correlated with in-duct noise.
 
 In Fig. \ref{fig:geom_mot_comparison_map1} the interpolated intensity level map is presented, indicating the points at which each measurement was made. The interpolation of sound intensity was performed between frequencies of 1 and 3 kHz, which are specially relevant regarding the aforementioned ``whoosh'' issue.
 
@@ -150,7 +152,7 @@ In Fig. \ref{fig:geom_mot_comparison_map1} the interpolated intensity level map 
 
 Note as well that because of the particular regulation mechanism of the facility based on the injection of compressed air into the inlet line, the depicted operating conditions do not represent constant shaft speed lines, so no judgement about the slope of these lines should be made.
 
-However, it can be seen in this figure that the noise levels in the selected band behave as results of presented in previous chapters led to expect. Noise levels increase as pressure ratio increases and air mass flow diminishes, with the dependency on air mass flow being much more noticeable at higher pressure ratios that at lower ones.
+However, it can be seen in this figure that the noise levels in the selected band behave as expected, based on results described in previous chapters. Noise levels increase as pressure ratio increases and air mass flow diminishes, with the dependency on air mass flow being much more noticeable at higher pressure ratios that at lower ones.
 
 \begin{figure}[htb!]
 \centering
@@ -164,7 +166,7 @@ However, it can be seen in this figure that the noise levels in the selected ban
 \label{fig:geom_mot_comparison_maps}
 \end{figure}
 
-Figure \ref{fig:geom_mot_comparison_maps} shows the results for the same frequency band when the reference straight duct was substituted by each of the variants described in Fig. \ref{fig:geom_engine}. 
+Figure \ref{fig:geom_mot_comparison_maps} shows the results for the same frequency band when the reference straight duct was substituted by each of the variants described in Fig.~\ref{fig:geom_engine}. 
 
 It is apparent from the figure that different operating conditions were measured in each one of the tests, as the goals in this campaign were to characterize the sound emission across the selected map region and to test how each geometry impacted the performance in regards of surge margin and maximum ingested air mass flow.
 
@@ -172,7 +174,7 @@ In this regard, the figure shows how the geometry changes have an impact on surg
 
 Impact of the geometry variation on air mass flow was also tested in regards of maximum flow at 160 krpm, as it is not only important to increase surge margin but also to maintain the possibility of operating the turbocharger at high mass flow levels. 
 
-\begin{figure}[htb!]
+\begin{figure}[t!]
 \centering
 \includegraphics[width=0.95\textwidth]{figures/cap_geom/geom_mot_comparison_AMF}
 \caption{Comparison of mean sound intensity level for each of the inlet geometries across the normal operating range of the engine.}
@@ -181,7 +183,7 @@ Impact of the geometry variation on air mass flow was also tested in regards of 
 
 A comparison of the performance of each geometry in both aspects is presented in Fig. \ref{fig:geom_mot_comparison_AMF} where the percentages of improvement from the straight duct reference inlet are plotted. An inverse correlation between maximum flow and surge margin is apparent, only the tapered duct at 52 mm from the impeller improving both factors at the same time and only the tapered duct closer to the impeller and featuring an IGV worsening both.
 
-Largest amount of surge margin improvement was found with the convergent nozzle, but at the cost of an equally large air mass flow reduction at $PR = 2$ and 160 krpm of shaft speed, so in order to implement this solution in real-life applications it should be necessary to mechanically open the nozzle throat at these high flow conditions.
+Largest amount of surge margin improvement was found with the convergent nozzle, but at the cost of an equally large air mass flow reduction at $\Pi = 2$ and 160 krpm of shaft speed, so in order to implement this solution in real-life applications it should be necessary to mechanically open the nozzle throat at these high flow conditions.
 
 To similarly quantify the influence of the geometries in noise emission at the selected frequency band, in Fig. \ref{fig:geom_mot_comparison_meanSIL} an average sound intensity level (SIL) is presented, as measured by the Brüel \& Kj\ae r intensity probe located pointing directly to the inlet orifice.
 
@@ -197,16 +199,23 @@ Intensity level of the tapered duct is very similar to that of the reference str
 Regarding the nozzle configurations, it can be seen that the convergent-divergent nozzle reduces noise output in the selected frequency band by 1 dB, whereas the convergent nozzle features a notable reduction of approximately 3 dB compared to the reference.
 
 \section{Elbow parametric study}
+\label{sec:geom_elbows}
 
 Having attested the influence of the inlet geometries not only in surge margin and maximum flow but also regarding acoustic performance, it was decided to use the turbocharger test rig used for the inlet local flow measurements described in chapter \ref{cap:inlet} to study the effect of these geometric variations not only in the global aspects of sound intensity and air mass flow but also regarding local aspects like temperature distribution, skewness, etc.
 
-\hl{The gathering of local flow experimental data will also be useful if CFD simulations of these kind of inlet modifications are undertaken, in order to provide a validation reference to check for the correct solving of not only global values but also local flow field characteristics.}
+The gathering of local flow experimental data will also be useful if CFD simulations of these kind of inlet modifications are undertaken, in order to provide a validation reference to check for the correct solving of not only global values but also local flow field characteristics.
 
 Since neither during the previously described on-engine experimental campaign nor during the preliminary testing described at the beginning of the present chapter was it possible to properly measure the sound intensity caused by elbow geometries, it was decided that the study should start with this kind of geometry variation.
 
-Another reason to consider this geometry is that it introduces non-uniformities in the flow field that completely axisymmetric geometries such as tapered ducts and nozzles do not, so it would provide a good contrast to check the influence on circumferential temperature distribution skewness and correlation with noise generation.
+Another reason to consider this geometry is that it introduces non-unifor\-mi\-ties in the flow field that completely axisymmetric geometries such as tapered ducts and nozzles do not, so it would provide a good contrast to check the influence on circumferential temperature distribution skewness and correlation with noise generation.
 
 In order to increase the available data on the relation between inlet-induced flow distortion, temperature skewness and noise output, it was decided that a parametric campaign should be carried out where three 90º elbows of different radius would be designed, manufactured and tested.
+
+\subsection{Geometry design}
+
+Requirements for the design of the elbow inlets were such that they could be easily installed into the existing setup used for local measurements, coupling to the adaptor piece and existent measurement pipe featuring the in-duct intensity sensor array.
+
+In addition, they needed to house the available linear thermocouple arrays in order to measure the high temperature reversed flow (it should be noted that the circumferential thermocouple array was installed into the adaptor piece) approximately keeping the distance that was selected for the straight pipe study.
 
 \begin{figure}[htb!]
 \centering
@@ -215,30 +224,24 @@ In order to increase the available data on the relation between inlet-induced fl
 \label{fig:codo075D}
 \end{figure}
 
-\subsection{Geometry design}
-
-Requirements for the design of the elbow inlets were such that they could be easily installed into the existing setup used for local measurements, coupling to the adaptor piece and existent measurement pipe featuring the in-duct intensity sensor array.
-
-In addition, they needed to house the available linear thermocouple arrays in order to measure the high temperature reversed flow (it should be noted that the circumferential thermocouple array was installed into the adaptor piece) approximately keeping the distance that was selected for the straight pipe study.
-
-Finally, to assess the influence of the flow distortion, the three selected variants were as follows: a very tight elbow with a central radius of 0.75 inlet diameters, a medium elbow with 1 inlet diameter of radius and finally an elbow with a central radius of 1.5 inlet diameters that would provide a smoother transition and less distorted flow.
+Finally, to assess the influence of the flow distortion, the three selected variants were as follows: a very tight elbow with a central radius of 0.75 compressor inlet diameters (marked as D in Fig.~\ref{fig:codo075D}), a medium elbow with 1D of radius and finally an elbow with a central radius of 1.5D that would provide a smoother transition and less distorted flow.
 
 To fulfil these design requirements, a decision was made to manufacture the elbow prototypes using 3D printing instead of traditional workshop means. This way, the guiding slots for the thermocouples and retention screws could be directly embedded in the piece, along with the slots for the sealing O-rings. Fig. \ref{fig:codo075D} shows the mechanical drawing of the most abrupt elbow with 0.75D of radius.
 
-\begin{figure}[b!]
+This design was implemented in a parametric CAD model to easily modify the central radius. Also, a locking system was put into place so the elbow could be affixed tightly to the compressor adaptor using a flange and a set of threaded rods, similarly to the procedure performed for the local flow characterization. The three prototypes generated in this way are shown in Fig. \ref{fig:Comp_codos}.
+
+Once that the three CAD models were generated, they were sent to a commercial partner for verification and manufacturing. It should be noted that the elbow prototypes were expected to withstand the high temperature backflow coming from the compressor in unstable operating conditions close to deep surge, without undertaking deformations that would have misaligned the thermocouple array.
+
+Taking into account these concerns, it was decided to manufacture the elbow prototypes using an aluminium-filled polyamide through a process known as Selective Laser Sintering (SLS), a technique in which a laser beam is focused onto the surface of a tray containing the powdered material, binding it together in layers to create the desired shape. 
+
+\begin{figure}[t!]
 \centering
 \includegraphics[width=0.95\textwidth]{figures/cap_geom/Comp_codos}
 \caption{CAD model of the compressor assembly featuring the 0.75D elbow inlet attached to the common adaptor, including the pressure and temperature instrumentation and the mounting system.}
 \label{fig:Comp_codos}
 \end{figure}
 
-This design was implemented in a parametric CAD model to easily modify the central radius. Also, a locking system was put into place so the elbow could be affixed tightly to the compressor adaptor using a flange and a set of threaded rods, similarly to the procedure performed for the local flow characterization. The three prototypes generated in this way are shown in Fig. \ref{fig:Comp_codos}.
-
-Once that the the three CAD models were generated, they were sent to a commercial partner for verification and manufacturing. It should be noted that the elbow prototypes were expected to withstand the high temperature backflow coming from the compressor in unstable operating conditions close to deep surge, without undertaking deformations that would have misaligned the thermocouple array.
-
-Taking into account these concerns, it was decided to manufacture the elbow prototypes using an aluminium-filled polyamide through a process known as Selective Laser Sintering (SLS), a technique in which a laser beam is focused onto the surface of a tray containing the powdered material, binding it together in layers to create the desired shape. 
-
-\begin{table}[htbp]
+\begin{table}[b!]
   \centering
   \caption{Specifications of the aluminium-filled polyamide used for the laser-sintering of the elbow inlet prototypes.}
   	\footnotesize
@@ -269,9 +272,9 @@ Specifications of the selected material can be found in table \ref{tab:alumide_d
 
 After SLS manufacturing and delivery, the prototype elbows were instrumented with thermocouples and installed into the anechoic chamber test rig. Fig. \ref{fig:elbow_075D_assembled} shows the assembly of the narrower elbow variant.
 
-\begin{figure}[htb!]
+\begin{figure}[b!]
 \centering
-\includegraphics[width=0.95\textwidth]{figures/cap_geom/elbow_075D_assembled}
+\includegraphics[width=0.9\textwidth]{figures/cap_geom/elbow_075D_assembled}
 \caption{CAD model of the compressor assembly featuring the 0.75D elbow inlet attached to the common adaptor, including the pressure and temperature instrumentation and the mounting system.}
 \label{fig:elbow_075D_assembled}
 \end{figure}
@@ -286,18 +289,18 @@ During this experimental campaign, operating conditions were selected to mirror 
 
 \begin{figure}[bht!]
 \centering
-\includegraphics[width=0.6\textwidth]{figures/cap_geom/map_elbows}
-\caption{Operating conditions at which data was recorded during the inlet flow characterization tests with a straight duct (as reference) and during the parametric elbow campaign.}
+\includegraphics[width=0.7\textwidth]{figures/cap_geom/map_elbows}
+\caption{Operating conditions at which data was recorded during the inlet flow characterization tests with a straight duct (as reference) and during the parametric elbow campaign. This data points will be used in the present section for every map.}
 \label{fig:map_elbows}
 \end{figure}
 
-Fig. \ref{fig:map_elbows} shows the operating conditions of each measured data point, for both the straight inlet pipe used as reference, and for the three described elbow prototypes. It can be seen that repeatability was achieved in most conditions up to a few g/s of air mass flow and 100's of corrected rpm. 
+Fig. \ref{fig:map_elbows} shows the operating conditions of each measured data point, for both the straight inlet pipe used as reference, and for the three described elbow prototypes. It can be seen that repeatability was achieved in most conditions up to a few g/s of air mass flow and $\sim$100 corrected rpm. 
 
 The most adverse conditions were those of maximum allowable flow, specially at higher pressure ratios where the flow distortion and pressure loss caused by the elbows made difficult to achieve exactly the same conditions.
 
 \subsubsection{Sound intensity}
 
-Using the in-duct piezoelectric sensor arrays, sound intensity level was computed through the wave decomposition method outlined in chapter \ref{cap:metod} for each operating conditions. In order to focus into the previously described ``whoosh'' noise problem sound intensity level was averaged between 0.7 and 3 kHz. and then the interpolating procedure was used in order to reconstruct noise maps for each geometry.
+Using the in-duct piezoelectric sensor arrays, sound intensity level was computed through the wave decomposition method outlined in chapter \ref{cap:metod} for each operating conditions. In order to focus into the previously described ``whoosh'' noise problem, sound intensity level was averaged between 0.7 and 3 kHz. and then the interpolating procedure was used in order to reconstruct noise maps for each geometry.
 
 \begin{figure}[thb!]
 \centering
@@ -321,7 +324,7 @@ It should be remarked that this subtraction procedure was not performed between 
 
 The results of this procedure can be seen in Fig. \ref{fig:map_diff_in_out}, where the difference maps for the three elbow configurations regarding inlet and outlet in-duct intensity are presented. Color scale has been kept constant in order to allow a meaningful comparison between each map.
 
-Regarding the issue of the small differences at higher air mass flow and higher shaft speed settings it can be seen in the maps, examining for instance the highest mass flow point of the second to last higher shaft speed (160 krpm), that some information is missing around the black dot that indicated the original reference measurement point. 
+It can be seen in the maps, examining for instance some of the highest mass flow rate points, that some information is missing around the black dot that indicates the original measurement point before interpolation. This missing data comes from slight differences in measurements between geometries, as the subtraction process is only performed where data exists for both of them.
 
 As for the evolution of level difference with the variation of the elbow radius, the figure shows how in the case of the inlet sound intensity differences appear to be higher than in the case of the outlet. This increase is specially evident at lower flow conditions and medium-low shaft speeds, reaching up to 6 dB in level increase. 
 
@@ -343,7 +346,7 @@ It can be seen in the figure how the different elbow configurations affect the d
 
 The distribution of the most narrow elbow (0.75D) appears to feature a marked skewness towards positive differences of up to 6 dB that correspond with the low flow, medium-low speed region identified in the aforementioned intensity maps. These points shift the mean up to approximately 0.2 dB of increased level.
 
-Regarding the outlet difference distributions, the situation appears to reverse, with the narrower elbow now featuring the most symmetric distribution and the other two variations presenting a marked skewness towards intensity reduction values, again up to a mean of around 2 dB in the most favorable case (1.5D elbow).
+Regarding the outlet difference distributions, the situation appears to reverse, with the narrower elbow now featuring the most symmetric distribution and the other two variations presenting a marked skewness towards intensity reduction values, again up to a mean of around 2 dB in the most favourable case (1.5D elbow).
 
 \begin{figure}[htb!]
 \centering
@@ -352,7 +355,7 @@ Regarding the outlet difference distributions, the situation appears to reverse,
 \label{fig:elbow_comp_1sens}
 \end{figure}
 
-Focusing now into the detailed aspects of the sound level variation, it is possible to compare the pressure spectra in different points to assess the frequency distribution of the level variation. For instance in Fig. \ref{fig:elbow_comp_1sens} the PSD in the plane wave region recorded by inlet and outlet piezoelectric sensors is shown for the different inlet geometries at an opearting condition with high differences.
+Focusing now into the detailed aspects of the sound level variation, it is possible to compare the pressure spectra in different points to assess the frequency distribution of the level variation. For instance in Fig. \ref{fig:elbow_comp_1sens} the PSD in the plane wave region recorded by inlet and outlet piezoelectric sensors is shown for the different inlet geometries at an operating condition with high differences.
 
 In the case of the outlet duct, spectra are very similar up to a cut-off point at approximately 1.3 kHz, below which the straight duct presents higher levels than all of the elbows.
 
@@ -415,7 +418,7 @@ In Fig. \ref{fig:map_diff_backL} the estimated length along the exterior edge of
 \label{fig:map_diff_backL}
 \end{figure}
 
-In this case differences range from minus half a diameter up to plus a diameter when compared with the reference straight pipe. The patters of these differences along the compressor map appears to be similar for the three geometric variations: a slight reduction at lower mass flow conditions and a slight increase at higher mass flow conditions for all shaft speeds.
+In this case, differences range from minus half a diameter up to plus a diameter when compared with the reference straight pipe. The patterns of these differences along the compressor map appears to be similar for the three geometric variations: a slight reduction at lower mass flow conditions and a slight increase at higher mass flow conditions for all shaft speeds.
 
 Exceptions to this pattern are some of the lowest air mass flow data points at 100 and 120 krpm for the two narrower elbows (0.75D and 1D), where the backflow length appears to feature a large increase. However it is possible that those are spurious results from the interpolation procedure, since the increase region is very small.
 
@@ -428,41 +431,41 @@ Exceptions to this pattern are some of the lowest air mass flow data points at 1
 
 These low count extreme points are best shown when the data is put into histogram form as seen in Fig. \ref{fig:distribution_diff_backL}. In this figure it can be seen how the three backflow length difference distributions are quite similar in shape and values.
 
-The three distributions feature approximately the same mean (around 0.1 diameters or of backflow length reduction from the straight inlet case) although for the higher number of the points (that is, the mode) the difference is practically zero.
+The three distributions feature approximately the same mean, around 0.1 diameters of backflow length reduction from the straight inlet case. However, the most usual difference (that is, the mode) the difference is practically zero. It must be also considered that estimation of backflow is only performed along the outer edge of the elbow, while the modified flow pattern could mean that a very non-symmetric backflow is propagating upstream.
 
 \subsubsection{Correlations between SIL and temperature}
 
 In Fig.~\ref{fig:comp_corrs_skew_sil} the correlation between sound intensity level and circumferential temperature skewness has been performed again for the three elbow inlet cases as it was made in chapter \ref{cap:inlet} for the case of the straight pipe, which has been included as a reference keeping the same axis limits of the elbow cases.
 
-It can be seen in this figure how for the straight pipe and the more straight elbow (that with an inner radius equal to 1.5 diameters), both pictured on the top plots, a clear separation is mantained between higher flow rate conditions (indicated as blue circles) which exhibit higher noise levels even when no skewness is detected, and those of lower flow rate where skewness is well correlated with the increase in noise levels.
+It can be seen in this figure how for the straight pipe and the more straight elbow (that with an central radius equal to 1.5D), both pictured on the top plots, a clear separation is maintained between higher flow rate conditions (indicated as blue circles) which exhibit higher noise levels even when no skewness is detected, and those of lower flow rate where skewness is well correlated with the increase in noise levels.
 
-\begin{figure}[htb!]
+\begin{figure}[t!]
 \centering
 \includegraphics[width=0.45\textwidth]{figures/cap_geom/corr_int_skew_elbow0}\hspace{4mm}
 \includegraphics[width=0.45\textwidth]{figures/cap_geom/corr_int_skew_elbow3}\\[4mm]
 \includegraphics[width=0.45\textwidth]{figures/cap_geom/corr_int_skew_elbow2}\hspace{4mm}
 \includegraphics[width=0.45\textwidth]{figures/cap_geom/corr_int_skew_elbow1}
-\caption{Correlations between standard deviation $\sigma$ at the circumferential thermocouple array and inlet sound intensity level in the 1--3 kHz band for the straight pipe and the three elbow inlets. Size indicates shaft speed from low to high and color indicates mass flow from higher (blues) to lower (reds).}
+\caption{Correlations between standard deviation at the circumferential thermocouple array and inlet sound intensity level in the 1--3 kHz band for the straight pipe and the three elbow inlets. Size indicates shaft speed from low to high and color indicates mass flow from higher (blues) to lower (reds).}
 \label{fig:comp_corrs_skew_sil}
 \end{figure}
 
 In the case of the more narrow elbows, pictured in the bottom plots of the figure, the difference between the higher and lower flow rate cases becomes blurred, as even points of the higher flow rate demonstrate measurable temperature skewness as the elbow radius decreases. 
 
-By comparing the four plots of the figure. it can also be seen how the maximum values of temperature skewness increase as the radius of the pipe decreases, with the same trend being followed by the sound intensity level in the selected frequency band, as was clearly seen previously in Fig.~\ref{fig:elbow_intens_histog} where the characteristic ``hump'' of whoosh noise becomes more pronounced as the radius of the elbow gets narrower (while a similar influence is not observed in the outlet spectra).
+By comparing the four plots of the figure, it can also be seen how the maximum values of temperature skewness increase as the radius of the pipe decreases, with the same trend being followed by the sound intensity level in the selected frequency band, as was clearly seen previously in Fig.~\ref{fig:elbow_intens_histog} where the characteristic ``hump'' of whoosh noise becomes more pronounced as the radius of the elbow gets narrower (while a similar influence is not observed in the outlet spectra).
 
 \section{Conclusions}
 
 Through this chapter, three different experimental campaigns aimed at assessing the influence of the inlet geometry in the turbocharger acoustic output have been presented. While different in scope and means, the results shown in this chapter allow some global conclusions to be drawn.
 
-First, a series of tests was carried out where simple geometric variants were added to the compressor inlet, with a straight duct of the same diameter than the compressor inducer being as a reference. This reference was maintained for the three experimental campaign described. Both orifice noise recorded with a free-field microphone and orifice noise averaged between four microphones were recorded.
+First, a series of tests was carried out where simple geometric variants were added to the compressor inlet, with a straight duct of the same diameter than the compressor inducer being as a reference. This reference was maintained for the three described experimental campaigns. Both orifice noise recorded with a free-field microphone and orifice noise averaged between four microphones were recorded.
 
-Results of this first test series showed that, apart from an effect in the turbocharger surge margin that had been previously pointed out by Galindo et al. \cite{galindo2007potential}\hl{[more]}, influence of the geometries on both orifice and radiated noise could be found. The tapered duct appeared to increase the orifice noise, while the reservoir acted as a resonator and not only increased surge margin but lowered both orifice (2 dB) and radiated noise (3 dB). Meanwhile, the elbow increased kept the same orifice noise levels.
+Results of this first test series showed that, apart from an effect in the turbocharger surge margin that had been previously pointed out by Galindo et al. \cite{galindo2007potential}, influence of the geometries on both orifice and radiated noise could be found. The tapered duct appeared to increase the orifice noise, while the reservoir acted as a resonator and not only increased surge margin but lowered both orifice (2 dB) and radiated noise (3 dB). Meanwhile, the elbow increased kept the same orifice noise levels.
 
 Another series of geometry tests were carried out in an engine cell and introduced more complex geometry combinations, with tapered ducts featuring an IGV device and the addition of two nozzles to the inlet line, besides the reference straight pipe. In this case noise output was measured by a commercial intensity probe aligned with the inlet orifice and with the in-duct intensimetry method based on beamforming wave decomposition described in chapter \ref{cap:metod}.
 
-Acoustic data from this on-engine campaign confirmed that the selected tapered duct, while demonstrating an improvement in surge margin and maximum flow when located at a certain distance from the impeller, did not demonstrate a significant effect in orifice noise intensity and in any case these differences were harmful with a slight increase in levels, albeit of less than 0.5 dB.
+Acoustic data from this on-engine campaign confirmed that the selected tapered duct, while revealing an improvement in surge margin and maximum flow when located at a certain distance from the impeller, did not evidence a significant effect in orifice noise intensity and in any case these differences were harmful with a slight increase in levels, albeit of less than 0.5 dB.
 
-The addition of an IGV device to boost incoming flow swirl proved interesting as it decreased the acoustic intensity recorded by the orifice probe by 3-4 dB depending on the position of the tapered duct. However this device negatively impacted the maximum flow and, depending in the position of the downstream tapered section, surge margin. 
+The addition of an IGV device to boost incoming flow swirl proved interesting as it decreased the acoustic intensity recorded by the orifice probe by 3-4 dB depending on the position of the tapered duct. However this device negatively impacted the maximum flow and, depending on the position of the downstream tapered section, also the surge margin. 
 
 In the case of the inlet geometries equipped with a nozzle, a decrease of orifice noise was found ranging from 1 dB (converge-divergent nozzle) to 3 dB (convergent nozzle). These nozzles also improved surge margin up to 20\%, but, specially the convergent one, decreased the maximum available air mass flow.
 
@@ -472,8 +475,8 @@ Results from this campaign provided higher in-depth insight into the influence o
 
 Regarding the influence of the inlet elbow variants on the temperature distribution, a similar pattern of circumferential skewness increase towards the lowest allowable flow conditions for each shaft speed could be reconstructed. However, reversed flow length appears similar in all cases, with differences of less than 0.5 inlet diameters.
 
-Correlations of whoosh noise content and temperature skewness demonstrated and increase of both variables as the elbow radius became narrower. Reasons for these correlated increases could be related to the uneven presentation of the air flow caused by the progressively narrow 90º elbows\footnote{See the work of Kalpakli et al. \cite{kalpakli2013vortical,kalpakli2013turbulent} for an in-depth numerical analysis of the particular flow field caused by these kind of 90º elbows, including its POD decomposition.}, which could create a region of lower pressure that facilitated the upstream propagation of reversed flow and thus enhanced the convection of whoosh noise content from the diffuser to the inlet duct, while also increasing the differences in temperature across the different zones.
+Correlations of whoosh noise content and temperature skewness indicated an increase of both variables as the elbow radius became narrower. Reasons for these correlated increases could be related to the uneven presentation of the air flow caused by the progressively narrow 90º elbows\footnote{See the work of Kalpakli et al. \cite{kalpakli2013vortical,kalpakli2013turbulent} for an in-depth numerical analysis of the particular flow field caused by these kind of 90º elbows, including its POD decomposition.}, which could create a region of lower pressure that facilitated the upstream propagation of reversed flow and thus enhanced the convection of whoosh noise content from the diffuser to the inlet duct, while also increasing the differences in temperature across the different zones.
 
 This would explain why elbow radius shows a clear effect on the whoosh noise content in the inlet spectra shown in Fig.~\ref{fig:elbow_comp_1sens} but not in the outlet, and also why this effect is restricted to the lower mass flow rate zones of the compressor map (see Fig.~\ref{fig:map_diff_in_out} for the effect on sound intensity and Fig.~\ref{fig:map_diff_std} for the effect on temperature skewness) where reversed flow is more prominent, as instabilities grow while inflow momentum diminishes. 
 
-%In any case, further research, specially if performed together with CFD simulations, is needed to characterize the effect of the inlet flow field at unstable conditions and its relation to coherent flow structures acting as noise sources.
+In any case, further research, specially if performed together with CFD simulations, is needed to characterize the effect of the inlet flow field at unstable conditions and its relation to coherent flow structures acting as noise sources.
