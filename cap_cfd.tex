@@ -239,13 +239,13 @@ Regarding the plane wave frequency range where the agreement between CFD and exp
 
 Data from the decomposed signals is shown both at the highest frequency resolution available in the CFD calculation ($\sim$16 Hz) and smoothed through a moving average filter in order to better show the shape of the spectra. As the experimental data is decomposed though the beamforming procedure described in chapter~\ref{cap:metod}, frequency is limited not only by the onset of the first acoustic mode but also by the spatial Nyquist-like criterion.
 
-In can be seen in this figure that the match between simulated and measured pressure waves coming back through the inlet from the compressor is not so good. While the experimental signal features an approximately plane spectra with only a slight ``hump'' of $\sim$4 dB at the ``whoosh'' noise frequency between 1.5 and 2.5 kHz, the simulated pressure wave features an oscillatory behaviour.
+In can be seen in this figure that the match between simulated and measured pressure waves coming back through the inlet from the compressor is not so good. While the experimental signal features an approximately plane spectra with only a slight ``hump'' of $\sim$4 dB at the \emph{whoosh} noise frequency between 1.5 and 2.5 kHz, the simulated pressure wave features an oscillatory behaviour.
 
-In the case of the outlet spectra however, a better agreement between the numerical prediction and the experimental data is found. The CFD simulation result appears to accurately follow the trend of the measurements, including the broadband between 1 and 2.5 kHz that is commonly associated with the ``whoosh'' noise phenomenon.
+In the case of the outlet spectra however, a better agreement between the numerical prediction and the experimental data is found. The CFD simulation result appears to accurately follow the trend of the measurements, including the broadband between 1 and 2.5 kHz that is commonly associated with the \emph{whoosh} noise phenomenon.
 
-This ability of the numerical model to predict the whoosh noise phenomenon in the outlet duct while not completely matching the experimental inlet results seems to point to the primary source of ``whoosh'' noise not being located in the inlet flow structures but rather in a downstream point where simulations are more accurate.
+This ability of the numerical model to predict the \emph{whoosh} noise phenomenon in the outlet duct while not completely matching the experimental inlet results seems to point to the primary source of \emph{whoosh} noise not being located in the inlet flow structures but rather in a downstream point where simulations are more accurate.
 
-Nevertheless, it is shown in Fig.~\ref{fig:cfd_Spec_PlaneW_Dec} that the CFD model appears to contain a source of broadband noise between 1 and 2.5 kHz that matches the experimental results. Thereby, post-processing of the CFD simulation data could be useful to locate the source mechanism of this phenomenon and, furthermore, the effect on whoosh noise of mitigating solutions could be simulated using this model before its physical implementation. 
+Nevertheless, it is shown in Fig.~\ref{fig:cfd_Spec_PlaneW_Dec} that the CFD model appears to contain a source of broadband noise between 1 and 2.5 kHz that matches the experimental results. Thereby, post-processing of the CFD simulation data could be useful to locate the source mechanism of this phenomenon and, furthermore, the effect on \emph{whoosh} noise of mitigating solutions could be simulated using this model before its physical implementation. 
 
 \section{Operating conditions study} %.... Art. op. conditions CFD
 
@@ -353,7 +353,7 @@ Analysis of these last two figures shows that the prediction capability of the m
 
 Inspecting the plane wave range seen in Fig.~\ref{fig:cfd_ops_spec_all_decT} it is apparent that in the case of the inlet, while still not a perfect match the trends of each flow rate operating point feature good agreement to the experimental data. 
 
-In the case of the outlet results, while the trend at the lowest flow condition is well predicted, for the two higher flow points of 77 and 109 g/s the simulated spectral content captured by the wall monitor does not reproduce correctly the ``whoosh'' noise hump between 1 and 2.5 kHz, over-predicting the level of the lowest frequencies.
+In the case of the outlet results, while the trend at the lowest flow condition is well predicted, for the two higher flow points of 77 and 109 g/s the simulated spectral content captured by the wall monitor does not reproduce correctly the \emph{whoosh} noise hump between 1 and 2.5 kHz, over-predicting the level of the lowest frequencies.
 
 \subsection{Selected CFD results}
 
@@ -370,7 +370,7 @@ The kind of results that can be extracted from the CFD simulation are exemplifie
 
 Pressure information is presented in two planes, at the top of the inducer and at the leading edge plane. 3D isosurfaces of $P = 85$ kPa are also shown, forming ``bubbles'' that move from one channel to the next at a frequency lower than that imposed by the wheel rotation. These recirculation ``bubbles'' have been sometimes linked to broadband acoustic phenomena of half rotating order (RO) \cite{sundstrom2015centrifugal,sundstrom2014assessment}.
 
-The radial velocity field is shown in the diffuser and the volute, revealing an asymmetrical field and the presence of a higher speed zone near the volute tongue. Frequency signature of the monitor is shown in the figure, \hl{peaking at 2.9 kHz} ($\sim$10\% over RO) and presenting two sidelobes. These pulsations could also be related to ``whoosh'' noise generation.
+The radial velocity field is shown in the diffuser and the volute, revealing an asymmetrical field and the presence of a higher speed zone near the volute tongue. Frequency signature of the monitor is shown in the figure, \hl{peaking at 2.9 kHz} ($\sim$10\% over RO) and presenting two sidelobes. These pulsations could also be related to \emph{whoosh} noise generation.
 
 Taking advantage of the three simulated flow rate conditions. in Fig.~\ref{fig:cfd_isospan_all} the meridional velocity magnitude across the compressor wheel has been plotted into an extended isospan surface. Data to build this surface has been extracted from the inducer, the wheel, the diffuser and the volute, as shown in the accompanying graphic. 
 
@@ -385,7 +385,7 @@ This allows to compare how the velocity field changes across the compressor in a
 
 In the 109 g/s simulation the velocity field is more axisymmetric, with all blades and channels presenting a similar distribution. Flow in the inducer is very regular, being attached to the blades in all cases. Flow distribution in the diffuser and volute is no longer axisymmetric, featuring instead a wake trail for each blade. Also, vortex shedding can be appreciated even in these conditions close to the maximum efficiency point.
 
-As mass flow rate of the CFD boundary condition was reduced to 77 g/s, a more irregular velocity field is shown in the middle plot of the figure. Flow in the inducer is not so regular as before, with some main blades featuring reversed flow at the suction side near the leading edge creating flow detachment. In the diffuser, a zone featuring increased velocity can be seen near the tongue, where the volute is smaller, with the wake of the blades not being so apparent as before.
+As mass flow rate of the CFD boundary condition was reduced to 77 g/s, a more irregular velocity field is shown in the middle plot of the figure. Flow in the inducer is not so regular as before, with some main blades featuring reversed flow at the suction side (SS) near the leading edge creating flow detachment. In the diffuser, a zone featuring increased velocity can be seen near the tongue, where the volute is smaller, with the wake of the blades not being so apparent as before.
 
 For the lowest flow rate condition at 60 g/s, the flow field in the inducer became highly irregular, featuring some zone with reversed flow. Severe detachment of the flow can be appreciated in most of the blades, accompanied by a similar high velocity zone in the diffuser near the volute tongue. 
 
@@ -440,7 +440,7 @@ A way to explore the spatial distribution of the acoustic sources for different 
 \label{fig:pressure_fft_walls}
 \end{figure}
 
-These kind of results are shown in Fig.~\ref{fig:pressure_fft_walls} for some selected wall boundaries of the numerical domain. Simulated operating conditions are those of the medium flow rate point at 77 g/s. The chosen frequency component has been 3 kHz, as it is relevant in the phenomenon of whoosh noise.
+These kind of results are shown in Fig.~\ref{fig:pressure_fft_walls} for some selected wall boundaries of the numerical domain. Simulated operating conditions are those of the medium flow rate point at 77 g/s. The chosen frequency component has been 3 kHz, as it is relevant in the phenomenon of \emph{whoosh} noise.
 
 From the figure it can be surmised that the pressure signal exhibits its stronger 3 kHz component at the diffuser and the downstream half of the blade chords, towards the trailing edges. Color scale needs to be magnified in order to appreciate the distribution in the volute, which is stronger at its narrower part near the tongue. The scale needs to be restricted again to see the pattern at the inlet and outlet ducts, in the form of a standing wave.
 
@@ -587,11 +587,11 @@ It has been shown how the definition of the domain and boundary conditions has a
 
 To address this issue while keeping the CFD domain and mesh within the limits of usual computational capacity the use of pressure wave decomposition has been shown both in numerical and experimental results, allowing enhanced isolation and recovery of the spectral information coming from the compressor and filtering spurious interferences.
 
-Selection of the monitor type and location is also crucial from the acoustic point of view, as it is taking into account the propagation of higher order modes that may render results that are dissimilar from experimental reference data. Wall-flush pressure monitors demonstrated better agreement overall with the experimental measurements, although the area-averaged type of monitor showed better agreement in the outlet at plane wave frequencies, specially regarding the prediction of a ``whoosh'' frequency broadband at the operating condition of higher pressure ratio which signals the onset of marginal surge conditions and the appearance of reversed flow.
+Selection of the monitor type and location is also crucial from the acoustic point of view, as it is taking into account the propagation of higher order modes that may render results that are dissimilar from experimental reference data. Wall-flush pressure monitors demonstrated better agreement overall with the experimental measurements, although the area-averaged type of monitor showed better agreement in the outlet at plane wave frequencies, specially regarding the prediction of a \emph{whoosh} frequency broadband at the operating condition of higher pressure ratio which signals the onset of marginal surge conditions and the appearance of reversed flow.
 
 Analysis of the pressure and velocity fields simulated by the CFD models has been shown, in order to identify flow phenomena that may be related to the increased acoustic output at these unstable operating conditions. Contours of velocity and pressure at selected planes and surfaces show rotating low pressure ``bubbles'' that are linked to the zone of reversed flow, visualized through null axial velocity isosurfaces.
 
-Inspection of these velocity isosurfaces offers a way of predicting the evolution of the backflow as operating conditions change. The point of maximum pressure ratio shows the inception of these backflows in the periphery of the wheel. At the same time, velocity information from a 50\% isospan surface shows areas of increased velocity in the diffuser near the volute tongue, except for the case of the higher mass flow case. PSD from the velocity signal in the diffuser shows a peak at 2.9 kHz accompanied by two side peaks, which may be related to the ``whoosh'' phenomenon.
+Inspection of these velocity isosurfaces offers a way of predicting the evolution of the backflow as operating conditions change. The point of maximum pressure ratio shows the inception of these backflows in the periphery of the wheel. At the same time, velocity information from a 50\% isospan surface shows areas of increased velocity in the diffuser near the volute tongue, except for the case of the higher mass flow case. PSD from the velocity signal in the diffuser shows a peak at 2.9 kHz accompanied by two side peaks, which may be related to the \emph{whoosh} phenomenon.
 
 Moreover, vortex shedding from the compressor blades however is detected in the three simulated conditions, which may be linked to the acoustic emission as they induce a pressure fluctuation in the channels that is rotating with the shaft speed.
 

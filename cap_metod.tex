@@ -116,16 +116,16 @@ In order to implement and validate the in-duct acoustical measurement methodolog
 
 \section{Tested turbochargers}
 
-Different turbochargers have been used in the development of the investigation, as dictated by the requirements of the different projects and facilities that this thesis comprises. All of them are however similar, small to medium sized automotive turbochargers. The most relevant model is the \hl{Garrett GT17} model that was used in chapters \ref{cap:metod}, \ref{cap:results}, \ref{cap:cfd} and section \ref{sec:geom_simple}. 
+Different turbochargers have been used in the development of the investigation, as dictated by the requirements of the different projects and facilities that this thesis comprises. All of them are however similar, small to medium sized automotive turbochargers. The most relevant model is the Garrett GT17 model that was used in chapters \ref{cap:metod}, \ref{cap:results}, \ref{cap:cfd} and section \ref{sec:geom_simple}. 
 
 \begin{figure}[h!]
 \centering
-\includegraphics[width=0.95\textwidth]{figures/cap_metod/comp_dimensions}
+\includegraphics[width=0.92\textwidth]{figures/cap_metod/comp_dimensions}
 \caption{Dimensional drawing of the compressor used in [most] of the development of the investigation, marking some relevant dimensions.}
 \label{fig:comp_dimens}
 \end{figure}
 
-This particular model, featuring six main blades and six splitter blades, was digitized to obtain its detailed geometry, which is shown in Fig.~\ref{fig:comp_dimens} along with its most relevant dimensions. \hl{A similar turbocharger} was used for engine tests on chapter \ref{cap:engine} and section \ref{sec:geom_motor} and another for chapter \ref{cap:inlet} and section \ref{sec:geom_elbows}, both modified in order to fit different inlet geometries.
+This particular model, featuring six main and six splitter blades, with a vaneless diffuser, was digitized to obtain its detailed geometry, which is shown in Fig.~\ref{fig:comp_dimens} along with its most relevant dimensions. Similar turbochargers were used for engine tests on chapter \ref{cap:engine} and section \ref{sec:geom_motor} and another for chapter \ref{cap:inlet} and section \ref{sec:geom_elbows}, both modified in order to fit different inlet geometries.
 
 \section{In-duct noise measurement} % Articulo methodology
 \label{sec:method_induct}
@@ -379,43 +379,28 @@ Thus the sound intensity level value $\mathbf S$ for each $\dot m^*$ and each fr
 \begin{figure*}[t!]
 \centering
 \includegraphics[width=0.85\textwidth]{figures/cap_metod/gr_spec_ruido_dB_50-5000.pdf}
-\caption{Sample of spectrograms calculated using the procedure outlined in subsection \ref{sub:noise_maps_and_spectrograms}, following the 160 krpm paths marked in figure \ref{fig:map1k-3k}. The 1--3 kHz band selected for the maps in figure \ref{fig:map1k-3k} is highlighted, along with some particular flow phenomena discussed in section \ref{sec:results_and_discussion}.}
+\caption{Sample of spectrograms calculated using the procedure outlined in subsection \ref{sub:noise_maps_and_spectrograms}, following the 160 krpm paths marked in figure \ref{fig:map1k-3k}. The 1--3 kHz band selected for the maps in figure \ref{fig:map1k-3k} is highlighted, along with some particular flow phenomena discussed in section \ref{sec:sample_meas}.}
 \label{fig:spec50-5k}
 \end{figure*}
 
-\subsection{Sample results}
-\label{sec:results_and_discussion}
+\subsection{Measurement of the sample results}
+\label{sec:sample_meas}
 
-\hl{[Quitar?]}
-
-In order to illustrate the methodology presented in this section, a measurement of the tested turbocharger was first carried out in the flow bench that is used to provide flow to the anechoic chamber, configured as shown in figure \ref{fig:setup_schem}. Since in this case the only concern was the validation of the in-duct methodology, installation in the anechoic was not required. 
+In order to illustrate the presented methodology along this section, experimental data was obtained by performing a measurement of the selected turbocharger in the flow bench that is used to provide flow to the anechoic chamber, configured as shown in figure \ref{fig:setup_schem}. Since in this case the only concern was the validation of the in-duct methodology, installation in the anechoic chamber was not required. 
 
 Kistler type 7031 piezoelectric transducers were used for the inlet duct; the outlet duct was fit with type 6031 transducers due to available stock. An array spacing $d_s=32$ mm for the outlet and $d_s=50$ mm for the inlet was selected, allowing for a safe upper limit in terms of the spatial Nyquist criterion $f_n$ of $\sim$6000 and $\sim$3500 Hz respectively (precise values depend on the conditions of each point).
 
-The variables needed in order to characterize the map point (mass flow, speed, temperatures and pressures) were averaged during 30 seconds using the in-house DAQ system, while the six piezoelectric sensors acquired $10^5$ pressure samples during 1 second using a Yokogawa digital recorder.
+The variables needed in order to characterize the operating condition (mass flow, speed, temperatures and pressures) were averaged during 30 seconds using the in-house DAQ system, while the six piezoelectric sensors acquired $10^5$ pressure samples during 1 second using the Yokogawa DAQ system.
 
 Pressure signals on recorded points (shown in figure \ref{fig:surge_datapoints}) were then processed according to the proposed methodology. Samples of the final results are presented in figures \ref{fig:map1k-3k} and \ref{fig:spec50-5k}.
 
-Figure \ref{fig:map1k-3k} shows the 1 -- 3 kHz sound intensity level distribution across selected operating conditions, approximately between maximum efficiency and the measured surge limit. As shown in chapter \ref{cap:liter}, noise in this super-synchronous frequency is often known as ``whoosh''.
+Figure \ref{fig:map1k-3k} shows the 1 -- 3 kHz sound intensity level distribution across selected operating conditions, approximately between maximum efficiency and the measured surge limit. As shown in chapter \ref{cap:liter}, noise in this frequency is often known as \emph{whoosh}.
 
 Another point of concern that has been identified in the results is that the relevance of this particular phenomenon extends far from the surge region and well into the expected engine operation region.
 
-Looking at either the 160 krpm line on figure \ref{fig:map1k-3k} or at the expanded spectrograms of this line in figure \ref{fig:spec50-5k} where this band has been marked, there is a local maximum in this band between 60 and 70 g/s. For the 180 krpm points on the map of figure \ref{fig:map1k-3k}, the ``whoosh'' noise may be heard even for up to 80 g/s mass flow rate.
+Looking at either the 160 krpm line on figure \ref{fig:map1k-3k} or at the expanded spectrograms of this line in figure \ref{fig:spec50-5k} where this band has been marked, there is a local maximum in this band between 60 and 70 g/s. For the 180 krpm points on the map of figure \ref{fig:map1k-3k}, the \emph{whoosh} noise may be heard even for up to 80 g/s mass flow rate.
 
-Apart from ``whoosh'', both spectrograms show a clear rise in low frequency content when the mass flow is reduced and surge conditions start to appear, even if deep surge conditions have not yet been reached. This is consistent with spectrograms measured experimentally by Galindo et al \cite{galindo2009effect}.
-
-% \begin{wrapfigure}[36]{O}[1.6cm]{0.41\textwidth}
-% \vspace{-5mm}
-% \includegraphics[width=0.42\textwidth,trim={1cm 0 5mm 0},clip]{figures/cap_metod/mapas_comp}
-% \caption{\null\\Outlet maps computed at different frequency ranges. From top to bottom: a general view of the plane wave range global intensity; the characteristic band of the ``whoosh noise'', and a narrow low frequency band that indicates surge onset.}
-% \label{fig:mapas_comp}
-% \end{wrapfigure}
-
-% Furthermore, this kind of low frequency band may be plotted and its distribution compared with other bands, as shown in figure \ref{fig:mapas_comp} where three different frequency limits have been applied to equation \ref{eq:point_level} during signal processing.
-
-% Compared with the global distribution of sound intensity in the plane wave range (left plot), the ``whoosh noise'' band (central plot) appears to be more prevalent at higher pressure ratios, while the low frequency content (right plot) is characteristic of surge onset.
-
-% These observations match the trends observed in the literature \cite{evans2005minimizing,evans2006reduction,sevginer2007investigation}. Other frequency bands could be mapped in a similar manner, and spectrograms estimated for different map paths with no need to repeat the experimental measurements, in order to investigate other phenomena of interest or to test several candidates for actual engine operating lines.
+Apart from \emph{whoosh}, both spectrograms show a clear rise in low frequency content when the mass flow is reduced and surge conditions start to appear, even if deep surge conditions have not yet been reached. This is consistent with spectrograms measured experimentally by Galindo et al \cite{galindo2009effect} and indicates that the methodology proposed in this section provides results that are consistent with previous literature. These results will be expanded upon in the following chapter.
 
 \section{External noise measurements}
 \label{sec:method_external}
@@ -426,20 +411,22 @@ To that extent, different external measurements have been carried out as part of
 
 This section will describe how these measurement were made, while results and discussion will be presented in section \ref{sec:external_results} of chapter \ref{cap:results}, including a correlation of orifice noise and in-duct results and the discussion on the contribution to the overall noise produced by each part of the system.
 
+This section also includes a brief description of an acoustic particle velocity measurement procedure that was tested during the development of this thesis and could be of interest for the characterization of near-field sound emission even in non-anechoic test cells. A sample of the results that this method can achieve will be shown in chapter \ref{cap:engine}, which deals with measurements in these conditions.
+
 \subsection{Orifice noise}
 \label{sub:metod_orifice_noise}
 
-The noise emitted by the open end of the compressor inlet duct is of special concern, as it is the point where the internal sound field meets the exterior ambient. Furthermore, the compressor may not act as the only source of noise in this case, as the noise produced by the flow interaction with the duct orifice during the aspiration process can be relevant as well.
-
-However, when measuring external noise care should be taken to avoid reflections and perturbations that may interfere with the results. This is why it was decided to install the turbocharger inside the anechoic chamber, so that free-field conditions could be recreated and external noise measurements could be taken and compared against in-duct results.
-
-\begin{wrapfigure}[22]{r}[1.5cm]{0.4\textwidth}
+\begin{wrapfigure}[19]{r}[1.5cm]{0.4\textwidth}
 \centering
-\vspace{6mm}
+\vspace{-4mm}
 \includegraphics[width=0.4\textwidth]{figures/cap_metod/mics_photo}
 \caption{Image of the two free-field microphones placed at 10 mm (Mic 1) and 20 mm (Mic 2) from the orifice of the compressor inlet duct.}
 \label{fig:mics_photo}
 \end{wrapfigure}
+
+The noise emitted by the open end of the compressor inlet duct is of special concern, as it is the point where the internal sound field meets the exterior ambient. Furthermore, the compressor may not act as the only source of noise in this case, as the noise produced by the flow interaction with the duct orifice during the aspiration process can be relevant as well.
+
+However, when measuring external noise care should be taken to avoid reflections and perturbations that may interfere with the results. This is why it was decided to install the turbocharger inside the anechoic chamber, so that free-field conditions could be recreated and external noise measurements could be taken and compared against in-duct results.
 
 In this chamber, instrumentation consisted of two \nicefrac{1}{2}'' Brüel \& Kjær type 4190 free-field microphones, fitted with type 2669C pre-amplifiers and placed next to the compressor inlet orifice, separated 10 cm and 20 cm, respectively. These are shown as ``Mic 1'' and ``Mic 2'' in Fig.~\ref{fig:mics_photo}.
 
@@ -460,12 +447,12 @@ Taking advantage of the free-field conditions of the chamber, additional microph
 
 To obtain a better estimation of the sound field, four free-field microphones of the same type 4190 were distributed around the the central point of the installation, at a radial distance of 1 m from it, as Fig.~\ref{fig:radiated_jag} shows.
 
-\begin{figure*}[tb!]
+\begin{figure}[b!]
 \centering
 \includegraphics[width=0.95\textwidth]{figures/cap_metod/radiated_jag}
 \caption{Radiated noise microphones installed around a commercial set of compressor inlet and outlet pipes that will be sequentially insulated.}
 \label{fig:radiated_jag}
-\end{figure*}
+\end{figure}
 
 Data from all microphones was captured using a Brüel \& Kjær PULSE\textsuperscript{TM} DAQ system, composed by types 3560 D, 7536, 2826 and $2\times 3032$A (hardware) and types 7700, 7702, 7705 and 7755 B (software). In order to provide a global metric to compare against orifice noise, results for the four far-field microphones were averaged to compute the overall sound pressure level radiated by the turbocharger system.
 
@@ -492,7 +479,7 @@ This isolated pressure information is also useful to validate or initialize CFD 
 
 When used to evaluate the acoustic intensity of the noise generated by the compressor, the proposed signal processing allows to easily  understand visual representations in the form of noise maps of selected frequency bands of interest and estimated spectrograms of operating paths. This can provide guidelines for the evaluation of strategies to counter or avoid certain adverse noise phenomena.
 
-The examples presented above illustrate how this technique allows detecting known acoustical phenomena of a centrifugal compressor, such as medium frequency ``whoosh noise'' and low frequency surge onset, as well as mapping its distribution and relevance across different operating conditions of the turbocharger.
+The examples presented above illustrate how this technique allows detecting known acoustical phenomena of a centrifugal compressor, such as medium frequency \emph{whoosh} noise and low frequency surge onset, as well as mapping its distribution and relevance across different operating conditions of the turbocharger.
 
 In addition to offering the detailed measurement and signal processing steps, this chapter stresses the importance of taking into account restrictive factors such as calibration, sensor setup clearances and locations, frequency aliasing effects and ranges in which theoretical assumptions hold in order to obtain robust and reproducible results.
 
