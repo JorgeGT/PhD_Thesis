@@ -8,7 +8,7 @@
 \usepackage{color}
 \usepackage[hyperindex]{hyperref}
 \usepackage{graphicx}
-\usepackage{subfigure}
+%\usepackage{subfigure}
 \usepackage{booktabs}
 \usepackage{siunitx}
 \usepackage{multirow}
@@ -26,15 +26,56 @@
 \usepackage{wrapfig}
 \usepackage{soul}
 \usepackage{bm}
-\usepackage{bookmark}
+\usepackage[titles]{tocloft}
+\usepackage{setspace}
+\usepackage[backend=biber,style=numeric-comp,defernumbers=true]{biblatex}
+%\usepackage[superscript,biblabel]{cite}
 
-% Serif font
+% Bibliography
+\bibliography{biblio.bib}
+\ExecuteBibliographyOptions{
+  backref      = true,
+  bibencoding  = utf8,
+  date         = year,
+  giveninits   = true,
+  minnames     = 4,
+  maxnames     = 4,
+  isbn         = false,
+  sorting      = none,
+  sortcites    = true
+}
+\DefineBibliographyStrings{english}{%
+  backrefpage  = {see p.}, % for single page number
+  backrefpages = {see pp.} % for multiple page numbers
+}
+\renewbibmacro{in:}{%
+  \ifentrytype{article}{}{\printtext{\bibstring{in}\intitlepunct}}}
+% \DeclareCiteCommand{\cite}[\mkbibsuperscript]{
+%     % \iffieldundef{prenote}
+%     % {}
+%     % {\BibliographyWarning{Ignoring prenote argument}}%
+%     % \iffieldundef{postnote}
+%     % {}
+%     % {}
+%   }
+%   {\bibopenbracket%
+%    \usebibmacro{citeindex}%
+%    \usebibmacro{cite}%
+%    \usebibmacro{postnote}%
+%    \bibclosebracket
+%    }
+%   {\supercitedelim}
+%   {}
+
+% % Serif font
 \usepackage[bitstream-charter]{mathdesign}
+%\usepackage[charter,expert]{mathdesign}
+%\usepackage[scaled=.96]{XCharter}
 
-% Monospaced font
+% % Monospaced font
 \usepackage[scaled]{beramono}
 
-% Sans serif font
+% % Sans serif font
 \usepackage[type1,scaled=1.02,condensed]{cabin}
 
 % Caption format
@@ -198,19 +239,18 @@ Dr. D. \hl{John Doe}\\[1cm]
 \end{flushright}
 \cleardoublepage
 
+% Abstract ENG
+
 % \begin{center}
 % {\cabincondensed\LARGE\bfseries Experiments on Turbocharger Compressor Acoustics}\\[5mm]
-
 % {\itshape Jorge García Tíscar}\\[10mm]
 % \end{center}
-
 % {\cabincondensed\Large\bfseries\noindent Abstract}\\[-1mm]
 
-% Abstract ENG
 \titleformat{\chapter}[hang]{}{}{0mm}{\large\bfseries\sffamily\Huge}
 \chapter*{Abstract}
 
-\noindent As turbocharging requirements raise to face an increasingly stricter environmental regulation of internal combustion engines, concerns regarding their acoustic emission become more pressing. Since downsized engines require higher boost pressures and lower mass flow rates, the turbocharger compressor is forced to work at more unstable regimes, where flow patterns become more complex and noise levels rise.
+\noindent As turbocharging requirements raise to face an increasingly stricter environmental regulation of internal combustion engines, concerns regarding their acoustic emission become more pressing. Since downsized engines require higher boost pressures and lower mass flow rates, the turbocharger compressor is forced to work at more unstable regimes, where flow patterns become more complex and noise levels rise. 
 
 This thesis aims to investigate these issues, proposing methodologies to characterize the acoustic emission of turbocharger compressors and implementing them in different experiments with a special focus on the the link between acoustic emission and flow behaviour at unstable conditions.
 
@@ -237,30 +277,23 @@ Lastly, additional experimental and numerical studies are proposed to further ex
 \chapter*{Resum}
 
 \cleardoublepage
-
+% 
 % List of publications
 \chapter*{List of publications}
 
 The following papers have been published following the work performed in the framework of this doctoral thesis and its associated projects:
 
-\begin{itemize}
-
-  \item \nocite{broatch2014methodology}
-  A.~Broatch, J.~Galindo, R.~Navarro, J.~Garc{\'\i}a-T{\'\i}scar, \emph{Methodology for experimental validation of a CFD model for predicting noise generation in centrifugal compressors}, International Journal of Heat and Fluid Flow 50  (2014) 134 -- 144. \newblock \href {http://dx.doi.org/10.1016/j.ijheatfluidflow.2014.06.006}{\path{doi:10.1016/j.ijheatfluidflow.2014.06.006}}.
-
-  \item \nocite{broatch2015simulations}
-  A.~Broatch, J.~Galindo, R.~Navarro, J.~Garc{\'\i}a-T{\'\i}scar, A.~Daglish, R.~Sharma, \emph{Simulations and measurements of automotive turbocharger compressor whoosh noise}, Engineering Applications of Computational Fluid Mechanics 9~(1) (2015) 12--20. \newblock \href {http://dx.doi.org/10.1080/19942060.2015.1004788}{\path{doi:10.1080/19942060.2015.1004788}}.
-
-  \item \nocite{torregrosa2014aco}
-  A.~Torregrosa, A.~Broatch, R.~Navarro, J.~Garc{\'\i}a-T{\'\i}scar, \emph{Acoustic characterization of automotive turbocompressors}, International Journal of Engine Research 16~(1) (2015) 31--37. \newblock \href {http://dx.doi.org/10.1177/1468087414562866}{\path{doi:10.1177/1468087414562866}}.
-
-  \item \nocite{broatch2016numerical}
-  A.~Broatch, J.~Galindo, R.~Navarro, J.~Garc{\'\i}a-T{\'\i}scar, \emph{Numerical and experimental analysis of automotive turbocharger compressor aeroacoustics at different operating conditions}, International Journal of Heat and Fluid Flow (In Press). \newblock \href {http://dx.doi.org/10.1016/j.ijheatfluidflow.2016.04.003}{\path{doi:10.1016/j.ijheatfluidflow.2016.04.003}}.
-
-  \item \nocite{torregrosa2016experimental}
-  A.~J. Torregrosa, A.~Broatch, X.~Margot, J.~Garc{\'\i}a-T{\'\i}scar, \emph{Experimental methodology for turbocompressor in-duct noise evaluation based on beamforming wave decomposition}, Journal of Sound and Vibration 376 (2016) 60--71. \newblock \href {http://dx.doi.org/10.1016/j.jsv.2016.04.035}{\path{doi:10.1016/j.jsv.2016.04.035}}.
-
-\end{itemize}
+% \begin{refsection}
+% \nocite{broatch2014methodology,broatch2015simulations,torregrosa2014aco,broatch2016numerical,torregrosa2016experimental}
+% \printbibliography[heading=none]
+% \end{refsection}
+\renewcommand*{\bibfont}{\small}
+\renewcommand*{\mkbibacro}[1]{#1}
+\begingroup
+\renewbibmacro{pageref}{}
+\nocite{broatch2014methodology,broatch2015simulations,torregrosa2014aco,broatch2016numerical,torregrosa2016experimental}
+\printbibliography[keyword=MyOwn,heading=none]
+\endgroup
 
 \hl{[Additional papers are under preparation]}
 
@@ -269,7 +302,7 @@ The following papers have been published following the work performed in the fra
 {\bfseries\sffamily\Large\noindent Division of work between authors}\\[-1mm]
 
 The work leading up to this thesis was done in collaboration with other researchers. The respondent is the co-author of all papers on which
-this thesis is based, with author signatures being in order of seniority in the Institute. The respondent implemented the proposed methodology into the different experimental setups, performed the measurements, processed the experimental results and extracted the presented conclusions. Discussions were also performed in collaboration with supervisor Prof. Broatch and the rest of the co-authors. CFD model setup and CFD postprocessing, with the exception of Dynamic Mode Decomposition, were not performed by the respondent, and are thus gratefully acknowledged.
+this thesis is based, with author signatures being in order of seniority in the Institute. The respondent implemented the proposed methodology into the different experimental setups, performed the measurements, processed the experimental results and extracted the presented conclusions. Discussions were also performed in collaboration with supervisor Prof. Broatch and the rest of the co-authors. CFD model setup and CFD post-processing, with the exception of Dynamic Mode Decomposition, were not performed by the respondent, and are thus gratefully acknowledged.
 
 \cleardoublepage
 
@@ -303,12 +336,20 @@ this thesis is based, with author signatures being in order of seniority in the 
 \cleardoublepage
 
 % List of figures
+\begingroup
+\setstretch{0.95}
+\setlength{\cftbeforefigskip}{2mm}
+\setlength{\cftbeforetabskip}{2mm}
+\renewcommand{\cftfigfont}{\small}
+\renewcommand{\cfttabfont}{\small}
+\renewcommand*{\addvspace}[1]{}
 \listoffigures
 \cleardoublepage
 
 % List of tables
 \listoftables
 \cleardoublepage
+\endgroup
 
 % List of symbols
 \input{listofsymbols}
@@ -321,21 +362,25 @@ this thesis is based, with author signatures being in order of seniority in the 
 
 % Chapter
 \titleformat{\chapter}[hang]{}{}{0mm}{\large\bfseries\cabincondensed\textcolor{tema}{\hspace{0mm}CHAPTER \thechapter}\\[-1mm]\Huge}
+
 % Section
 \titleformat{\section}[hang]{}{}{0mm}{\bfseries\sffamily\Large\textcolor{tema}{\arabic{chapter}.\arabic{section}. }}[\vspace{-1mm}]
+
 % Subsection
 \titleformat{\subsection}[hang]{}{}{0mm}{\bfseries\large\sffamily\textcolor{tema}{\arabic{chapter}.\arabic{section}.\arabic{subsection}. }}[\vspace{1mm}]
+
 % Subsubsection
 \titleformat{\subsubsection}[hang]{}{}{0mm}{\bfseries\sffamily\textcolor{tema}{\arabic{chapter}.\arabic{section}.\arabic{subsection}.\arabic{subsubsection}. }}[\vspace{1mm}]
 
 % Main pagestyle
 \fancyhf{}
-% \fancyhead[RO]{\small\cabincondensed\bfseries \rightmark\quad|\quad\color{black}\thepage}
-% \fancyhead[LE]{\small\cabincondensed\bfseries \thepage\quad\textcolor{tema}{|}\quad\leftmark}
-% \pagestyle{fancy}
+\fancyhead[RO]{\small\cabincondensed\bfseries \rightmark\quad|\quad\color{black}\thepage}
+\fancyhead[LE]{\small\cabincondensed\bfseries \thepage\quad\textcolor{tema}{|}\quad\leftmark}
+\pagestyle{fancy}
 
 % Chapter mark
 \renewcommand{\chaptermark}[1]{\markboth{\chaptername\ \color{tema}{\thechapter. \color{black}\itshape\ #1}}{}}
+
 % Section mark
 \renewcommand{\sectionmark}[1]{\markright{\color{tema}{\thesection.\color{black}\itshape\ #1}}}
 
@@ -374,8 +419,10 @@ this thesis is based, with author signatures being in order of seniority in the 
 \titleformat{\chapter}[hang]{}{}{0mm}{\bfseries\sffamily\Huge}
 % Print bibliography
 \small
-\bibliographystyle{elsarticle-num}
-\bibliography{biblioTesis}
+%\bibliographystyle{unsrturl}
+%\bibliography{biblioTesis}
+\renewcommand*{\bibfont}{\small}
+\printbibliography
 
 % Back cover
 % \includepdf{../test_portada3_back}

@@ -68,7 +68,7 @@ As for the flow control, another reservoir equipped with a discharging valve can
 
 If cold flow is desired, a water intercooler can be used to lower the temperature produced by the compression process. This temperature, along with the rest of flow properties like mass flows, pressures and other temperatures, are recorded through a dedicated control system.
 
-Engine and brake are controlled though their own independent instrumentation, while the instantaneous turbocharger variables, including those needed for acoustical characterization, are recorded through the dedicated high speed Yokogawa DL716 DAQ system.
+Engine and dyno are controlled though their own independent instrumentation, while the instantaneous turbocharger variables, including those needed for acoustical characterization, are recorded through the dedicated high speed Yokogawa DL716 DAQ system.
 
 \subsection{Anechoic chamber} \label{sub:anec_chamber}
 
@@ -99,7 +99,7 @@ A control system similar to that of the flow rig monitors the operation of the s
 
 As mentioned early in the chapter, while most of the experimental work was carried out using the two facilities described already, the measurement methodology was later put to the test on an engine test cell to verify its reliability on real engine conditions.
 
-The test cell is equipped with an asynchronous electromagnetic brake that allows both steady and transient automatic testing. Operative parameters and control for the engine and brake are integrated into a custom system, including gravimetric fuel consumption sensors, hot plate anemometers, emission measurements and temperature and pressure control of the air pipes and coolant flows.
+The test cell is equipped with an asynchronous electromagnetic dyno that allows both steady and transient automatic testing. Operative parameters and control for the engine and dyno are integrated into a custom system, including gravimetric fuel consumption sensors, hot plate anemometers, emission measurements and temperature and pressure control of the air pipes and coolant flows.
 
 Access and online control of the engine ECU is also available, and a special pneumatic system can be used to inject compressed air into the inlet manifold downstream of the compressor.
 
@@ -388,7 +388,7 @@ Thus the sound intensity level value $\mathbf S$ for each $\dot m^*$ and each fr
 
 In order to illustrate the presented methodology along this section, experimental data was obtained by performing a measurement of the selected turbocharger in the flow bench that is used to provide flow to the anechoic chamber, configured as shown in figure \ref{fig:setup_schem}. Since in this case the only concern was the validation of the in-duct methodology, installation in the anechoic chamber was not required. 
 
-Kistler type 7031 piezoelectric transducers were used for the inlet duct; the outlet duct was fit with type 6031 transducers due to available stock. An array spacing $d_s=32$ mm for the outlet and $d_s=50$ mm for the inlet was selected, allowing for a safe upper limit in terms of the spatial Nyquist criterion $f_n$ of $\sim$6000 and $\sim$3500 Hz respectively (precise values depend on the conditions of each point).
+Kistler type 7031 piezoelectric transducers were used for the inlet duct; the outlet duct was fit with type 6031 transducers due to available stock. An array spacing $d_s=32$ mm for the outlet and $d_s=50$ mm for the inlet was selected, allowing for a safe upper limit in terms of the spatial Nyquist criterion $f_n$ of $\sim$6 and $\sim$3.5 kHz respectively (precise values depend on the conditions of each point).
 
 The variables needed in order to characterize the operating condition (mass flow, speed, temperatures and pressures) were averaged during 30 seconds using the in-house DAQ system, while the six piezoelectric sensors acquired $10^5$ pressure samples during 1 second using the Yokogawa DAQ system.
 
@@ -449,7 +449,7 @@ To obtain a better estimation of the sound field, four free-field microphones of
 
 \begin{figure}[b!]
 \centering
-\includegraphics[width=0.95\textwidth]{figures/cap_metod/radiated_jag}
+\includegraphics[width=1\textwidth]{figures/cap_metod/radiated_jag}
 \caption{Radiated noise microphones installed around a commercial set of compressor inlet and outlet pipes that will be sequentially insulated.}
 \label{fig:radiated_jag}
 \end{figure}
