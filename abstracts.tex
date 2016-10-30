@@ -1,0 +1,67 @@
+%!TEX root = Tesis.tex
+
+% \begin{center}
+% {\cabincondensed\LARGE\bfseries Experiments on Turbocharger Compressor Acoustics}\\[5mm]
+% {\itshape Jorge García Tíscar}\\[10mm]
+% \end{center}
+% {\cabincondensed\Large\bfseries\noindent Abstract}\\[-1mm]
+
+\titleformat{\chapter}[hang]{}{}{0mm}{\large\bfseries\sffamily\Huge}
+\chapter*{Abstract}
+
+\noindent As turbocharging requirements raise to face an increasingly stricter environmental regulation of internal combustion engines, concerns regarding their acoustic emission become more pressing. Since downsized engines require higher boost pressures and lower mass flow rates, the turbocharger compressor is forced to work at more unstable regimes, where flow patterns become more complex and noise levels rise. 
+
+This thesis aims to thus to investigate these issues, proposing methodologies to characterize the acoustic emission of turbocharger compressors and implementing them in different experiments with a special focus on the link between acoustic emission and flow behaviour at unstable conditions.
+
+A literature review is carried out in order to assess the state of the art principally regarding experimental techniques related to this issue but also including the latest developments in terms of understanding the flow characteristics through numerical simulations. Different methodologies are consequently proposed and implemented into a custom test rig inside an anechoic chamber as to experimentally measure and analyze the acoustic output of the compressor.
+
+From this measurement campaign a characterization of the noise spectral content across the compressor map is obtained and described, identifying different acoustical phenomena such as blade passing tonal noise, low frequency content associated to deep surge, higher frequency broadband ascribed to tip clearance interaction, and broadband noise in the plane wave range known as \emph{whoosh} in the literature, of special concern for automotive manufacturers. This particular phenomenon is detected even at more stable conditions at higher flow rate, and rising in level as flow rate is diminished to the point of being masked by lower frequency content.
+
+After a validation of the selected procedure in realistic engine conditions, experimental data is compared against a numerical model of the compressor developed in a parallel work to assess its validity and propose different post-processing techniques to extract additional insights about the behaviour of the flow at different conditions, hinting at the main generation mechanism for \emph{whoosh} being located at the compressor diffuser.
+
+Since numerical simulations predict a reduced amount of reversed unstable flow at conditions where \emph{whoosh} noise is still measured, an experimental campaign is performed where detailed measures of local temperature near the compressor wheel are used to determine the evolution of reversed flow, with supplemental readings through pressure probes in the inducer and diffuser being used to link this evolution with the fluctuation of spectral content. Temperature results are also correlated with measurements of the velocity field through particle imaging, demonstrating a clear link between the reversed flow field and temperature readings.
+
+Different experimental campaigns are then described where modifications of the inlet geometry immediately upstream the compressor are performed in order to assess how the air flow presentation can influence acoustic performance. Geometries featuring reservoirs, nozzles and guide vanes are shown to potentially reduce noise levels. A 90º elbow parametric study is performed, demonstrating how the inner radius of the elbow influences circumferential temperature differences and noise levels, leading to the hypothesis of geometry influence on \emph{whoosh} noise being related to air presentation changes that promote lower or higher growth of reversed backflow, which in turns carries upstream the spectral content being generated in the compressor diffuser.
+
+Lastly, additional experimental and numerical studies are proposed to further explore these issues, in order to provide a better understanding of how inlet designs may delay and mitigate the appearance and transmission of these adverse acoustical phenomena.
+
+\cleardoublepage
+
+% Abstract ESP
+\chapter*{Resumen}
+A medida que los requerimientos de turbocompresión aumentan para afrontar una regulación de los motores de combustión interna cada vez más estricta, la preocupación respecto a su emisión acústica se hace más acuciante. Debido a que motores de menor tamaño requieren mayores aumentos de presión y menores gastos másicos, el compresor del turbogrupo se ve forzado a trabajar en regímenes más inestables, los patrones de flujo se hacen más complejos y los niveles de ruido aumentan.
+
+Esta tesis tiene como objetivo investigar estas cuestiones, proponiendo metodologías para caracterizar la emisión acústica de compresores de turbogrupos, e implementándolas en diferentes experimentos enfocados especialmente en la relación entre emisión acústica y comportamiento del flujo en condiciones inestables.
+
+Por tanto, se lleva a cabo una revisión bibliográfica para evaluar el estado del arte, especialmente en lo concerniente a técnicas experimentales relacionadas con el problema, pero incluyendo también los últimos desarrollos en términos de comprensión de las características del flujo mediante simulaciones numéricas. Como resultado, diferentes metodologías se proponen e implementan en un banco de ensayo hecho a medida dentro de una cámara anecoica para medir y analizar la producción sonora del compresor.
+
+Mediante esta campaña de medida se obtiene y describe una caracterización acústica del contenido espectral del ruido a lo largo del mapa del compresor, identificando diferentes fenómenos sonoros tales como ruido tonal debido al paso de álabe, contenido de baja frecuencia asociado al bombeo profundo, contenido de banda ancha a alta frecuencia atribuido a la interacción del flujo en la holgura de punta de pala y ruido de banda ancha en el rango de onda plana, conocido como \emph{whoosh} en la literatura y de especial interés para los fabricantes automovilísticos. Este fenómeno en concreto se detecta incluso a condiciones más estables de alto gasto másico, y aumenta de nivel a medida que el gasto disminuye hasta llegar a ser enmascarado por el aumento del contenido de baja frecuencia.
+
+Después de validar los procedimientos seleccionados en condiciones realistas de motor, se comparan los datos experimentales con un modelo numérico del compresor desarrollado en un trabajo paralelo a fin de evaluar su validez y proponer diferentes técnicas de post-procesado, con el objetivo de extraer información adicional acerca del comportamiento del flujo en diferentes condiciones, que sugieren que el mecanismo principal de generación de \emph{whoosh} se encuentra localizado en el difusor del compresor.
+
+Debido a que numerosas simulaciones predicen una cantidad reducida de inestable flujo inverso en condiciones donde el \emph{whoosh} aparece en las  medidas, se lleva a cabo una campaña experimental en la cual medidas detalladas de temperatura local cerca del rotor se usan para determinar la longitud del flujo inverso, con medidas suplementarias a través de sondas de presión usadas para relacionar esta evolución con la fluctuación de contenido espectral. Los resultados de temperatura se correlacionan también con medidas del campo de velocidad por imágenes de partículas, demostrando una clara relación entre el campo de flujo inverso y las medidas de temperatura.
+
+Se describen a continuación diferentes campañas experimentales en las cuales se llevaron a cabo modificaciones de la geometría de entrada inmediatamente aguas arriba del compresor con el fin de evaluar cómo la presentación del flujo puede influenciar el rendimiento acústico. Geometrías incluyendo remansos, toberas y álabes guía demuestran una reducción de los niveles de ruido. Se ha realizado un estudio paramétrico de un codo de 90º, mostrando que el radio del codo influye en la distribución circunferencial de temperatura y los niveles de ruido, llevando a la hipótesis de que la influencia de la geometría en el ruido de \emph{whoosh} está relacionada con cambios en la presentación del aire que promueven menor o mayor reflujo, que a su vez convecta aguas arriba el contenido espectral generado en el difusor del compresor.
+
+Por último, se proponen estudios adicionales tanto experimentales como numéricos para explorar en profundidad estas cuestiones, a fin de proporcionar una mejor comprensión acerca de cómo el diseño de la entrada del compresor puede retrasas y mitigar la aparición y transmisión de estos fenómenos acústicos adversos.
+
+\cleardoublepage
+
+% Abstract CAT
+\chapter*{Resum}
+
+A mesura que els requeriments de turbocompressió augmenten a fi d'afrontar una regulació dels motors de combustió interna cada vegada més estricta, la preocupació respecte a la seva emissió acústica es fa més urgent. Com que motors de dimensions més reduïdes requereixen majors augments de pressió i menors cabals màssics, el compressor del turbogrup es veu forçat a treballar a règims més inestables, els patrons de flux es fan més complexos, i els nivells de soroll augmenten.
+
+Aquesta tesi té com a objectiu investigar aquestes qüestions, proposant metodologies per a caracteritzar l'emissió acústica de compressors de turbogrups, implementant-les en diferents experiments enfocats especialment a la relació entre emissió acústica i comportament del flux en condicions inestables.
+
+Per tant, es duu a terme una revisió bibliogràfica per avaluar l'estat de l'art, especialment pel que fa a tècniques experimentals relacionades amb el problema, però incloent també els últims desenvolupaments en termes de comprensió de les característiques del flux mitjançant simulacions numèriques. Com a resultat, diferents metodologies es proposen i implementen en un banc d'assaig fet a mida dins d'una cambra anecoica per mesurar i analitzar la producció sonora del compressor.
+
+Mitjançant aquesta campanya de mesura s'obté i descriu una caracterització acústica del contingut espectral del soroll al llarg del mapa del compressor, identificant diferents fenòmens sonors com ara soroll tonal a causa del pas d'àlep, contingut de baixa freqüència associat al bombeig profund, contingut de banda ampla a alta freqüència atribuït a la interacció del flux en la folgança de punta de pala i soroll de banda ampla en el rang d'ona plana, conegut com a \emph{whoosh} en la literatura i d'especial interès per als fabricants automobilístics. Aquest fenomen en concret es detecta fins i tot a condicions més estables d'alt cabal màssic, i augmenta de nivell a mesura que el cabal disminueix fins arribar a ser emmascarat per l'augment del contingut de baixa freqüència.
+
+Després de validar els procediments seleccionats en condicions realistes de motor, es comparen les dades experimentals amb un model numèric del compressor desenvolupat en un treball paral·lel a fi d'avaluar la seva validesa i proposar diferents tècniques de post-processat, amb l'objectiu d'extraure informació addicional sobre el comportament del flux en diferents condicions, que suggereixen que el mecanisme principal de generació de \emph{whoosh} es troba localitzat al difusor del compressor.
+
+Pel fet que nombroses simulacions prediuen una quantitat reduïda d'inestable flux invers en condicions on el \emph{whoosh} apareix en les mesures, es duu a terme una campanya experimental en la qual mesures detallades de temperatura local prop del rotor s'utilitzen per a determinar la longitud del flux invers, amb mesures suplementàries mitjançant sondes de pressió emprades per a relacionar aquesta evolució amb la fluctuació de contingut espectral. Els resultats de temperatura es correlacionen també amb mesures del camp de velocitat per imatges de partícules, demostrant una clara relació entre el camp de flux invers i les mesures de temperatura.
+
+Es descriuen a continuació diferents campanyes experimentals en les quals es van realitzar modificacions de la geometria d'entrada immediatament aigües dalt del compressor a fi d'avaluar com la presentació del flux pot influenciar el rendiment acústic. Geometries incloent volums, toveres i àleps guia demostren una reducció dels nivells de soroll. S'ha realitzat un estudi paramètric d'un colze de 90º, mostrant que el ràdio del colze influïx en la distribució circumferencial de temperatura i els nivells de soroll, donant suport a la hipòtesi de que la influència de la geometria en el soroll de \emph{whoosh} està relacionada amb canvis en la presentació de l'aire que promouen menor o major reflux, que aleshores convecta aigües dalt el contingut espectral generat en el difusor del compressor.
+
+\cleardoublepage

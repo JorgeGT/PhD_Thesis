@@ -8,7 +8,6 @@
 \usepackage{color}
 \usepackage[hyperindex]{hyperref}
 \usepackage{graphicx}
-%\usepackage{subfigure}
 \usepackage{booktabs}
 \usepackage{siunitx}
 \usepackage{multirow}
@@ -16,10 +15,10 @@
 \usepackage{placeins}
 \usepackage{titlesec}
 \usepackage{microtype}
+\usepackage{longtable}
 \usepackage{doi}
 \usepackage{units}
 \usepackage[defaultlines=3,all]{nowidow}
-\usepackage[bottom]{footmisc}
 \usepackage{marvosym}
 \usepackage{rotating}
 \usepackage{changepage}
@@ -29,7 +28,7 @@
 \usepackage[titles]{tocloft}
 \usepackage{setspace}
 \usepackage[backend=biber,style=numeric-comp,defernumbers=true]{biblatex}
-%\usepackage[superscript,biblabel]{cite}
+\usepackage[bottom]{footmisc}
 
 % Bibliography
 \bibliography{biblio.bib}
@@ -50,22 +49,6 @@
 }
 \renewbibmacro{in:}{%
   \ifentrytype{article}{}{\printtext{\bibstring{in}\intitlepunct}}}
-% \DeclareCiteCommand{\cite}[\mkbibsuperscript]{
-%     % \iffieldundef{prenote}
-%     % {}
-%     % {\BibliographyWarning{Ignoring prenote argument}}%
-%     % \iffieldundef{postnote}
-%     % {}
-%     % {}
-%   }
-%   {\bibopenbracket%
-%    \usebibmacro{citeindex}%
-%    \usebibmacro{cite}%
-%    \usebibmacro{postnote}%
-%    \bibclosebracket
-%    }
-%   {\supercitedelim}
-%   {}
 
 % % Serif font
 \usepackage[bitstream-charter]{mathdesign}
@@ -112,9 +95,16 @@
   \endgroup
 }
 
+% Footnote spacing 
+\makeatletter
+\def\footnoterule{\kern-6\p@
+  \hrule \@width 2in \kern 5.6\p@} % the \hrule is .4pt high
+\makeatother
+\setlength{\skip\footins}{5mm}
+
 % Page geometry
 \usepackage[papersize={17cm,24cm}]{geometry}
-%\usepackage[cam,center,a4]{crop} % To test on A4 paper
+\usepackage[cam,center,a4]{crop} % To test on A4 paper
 % Horizontal
 \setlength{\textwidth}{12cm}
 \setlength{\parindent}{3mm}
@@ -154,7 +144,7 @@
 \renewcommand{\labelitemii}{\textcolor{tema}{\scriptsize\raisebox{0.4mm}{\Squaresteel}}}
 
 % Select only a chapter for faster compilation
-% \includeonly{listofsymbols}
+% \includeonly{abstracts}
 
 \begin{document}
 
@@ -239,45 +229,9 @@ Dr. D. \hl{John Doe}\\[1cm]
 \end{flushright}
 \cleardoublepage
 
-% Abstract ENG
+% Abstracts
+\include{abstracts}
 
-% \begin{center}
-% {\cabincondensed\LARGE\bfseries Experiments on Turbocharger Compressor Acoustics}\\[5mm]
-% {\itshape Jorge García Tíscar}\\[10mm]
-% \end{center}
-% {\cabincondensed\Large\bfseries\noindent Abstract}\\[-1mm]
-
-\titleformat{\chapter}[hang]{}{}{0mm}{\large\bfseries\sffamily\Huge}
-\chapter*{Abstract}
-
-\noindent As turbocharging requirements raise to face an increasingly stricter environmental regulation of internal combustion engines, concerns regarding their acoustic emission become more pressing. Since downsized engines require higher boost pressures and lower mass flow rates, the turbocharger compressor is forced to work at more unstable regimes, where flow patterns become more complex and noise levels rise. 
-
-This thesis aims to investigate these issues, proposing methodologies to characterize the acoustic emission of turbocharger compressors and implementing them in different experiments with a special focus on the the link between acoustic emission and flow behaviour at unstable conditions.
-
-A literature review is carried out in order to assess the state of the art regarding specially experimental techniques related to this issue but also including the latest developments in terms of understanding the flow characteristics through numerical simulations. Different methodologies are consequently proposed and implemented into a custom flow rig inside an anechoic chamber as to experimentally measure and post-process the acoustic output of the compressor.
-
-From this measurement campaign a characterization of the noise spectral content across the compressor map is obtained and described, identifying different acoustical phenomena such as blade passing tonal noise, low frequency content associated to deep surge, higher frequency broadband ascribed to tip clearance interaction, and broadband noise in the plane wave range known as \emph{whoosh} in the literature, of special concern for automotive manufacturers. This particular phenomenon is detected even at more stable conditions at higher flow rate, and rising in level as flow rate is diminished to the point of being masked by lower frequency content.
-
-After a validation of the selected procedure in realistic engine conditions, experimental data is compared against a numerical model of the compressor developed in a parallel work to assess its validity and propose different post-processing techniques to extract additional insights about the behaviour of the flow at different conditions, hinting at the main generation mechanism for \emph{whoosh} being located at the compressor diffuser.
-
-Since numerical simulations predict a reduced amount of reversed unstable flow at conditions where \emph{whoosh} noise is still measured, an experimental campaign is performed were detailed measures of local temperature near the compressor wheel are used to determine the evolution of reversed flow, with supplemental readings through pressure probes in the inducer and diffuser being used to link this evolution with the fluctuation of spectral content. Temperature measurements are also correlated with measurements of the velocity field through particle imaging. Results show that even inducer content being highly affected by the onset of reversed flow, \emph{whoosh} noise is detected at all tested conditions
-
-Different experimental campaigns are then described were modifications of the inlet geometry immediately upstream the compressor are performed in order to assess how the air flow presentation can influence acoustic performance. Geometries featuring reservoirs, nozzles and guide vanes are shown to potentially reduce noise levels. A 90º elbow parametric study is performed, demonstrating how the inner radius of the elbow influences circumferential temperature differences and noise levels, leading to the hypothesis of geometry influence on \emph{whoosh} noise being related to air presentation changes that promote lower or higher growth of reversed backflow, which in turns carries upstream the spectral content being generated in the compressor diffuser.
-
-Lastly, additional experimental and numerical studies are proposed to further explore these issues, in order to provide a better understanding of how inlet designs may delay and mitigate the appearance and transmission of these adverse acoustical phenomena.
-
-\cleardoublepage
-
-% Abstract ESP
-\chapter*{Resumen}
-
-\cleardoublepage
-
-% Abstract CAT
-\chapter*{Resum}
-
-\cleardoublepage
-% 
 % List of publications
 \chapter*{List of publications}
 
@@ -308,7 +262,24 @@ this thesis is based, with author signatures being in order of seniority in the 
 
 % Acknowledgements
 \chapter*{Acknowledgements}
-\hl{[Acknowledgements]}
+\enlargethispage{15mm}
+\textit{``Good company in a journey makes the way to seem the shorter''}, wrote Isaak Walton back in 1653, and certainly I could not have wished for a better company in this journey. I would like to express my gratitude, first and foremost, to my advisor Prof. Alberto Broatch for his guidance and support in the pursuit of this research.
+
+A gratitude that I also must extend to Prof. Galindo and Dr. Navarro, not only for the development of the numerical model but for the many insightful discussions held along the development of this work.
+
+Included in this gratitude are certainly the people of the Noise Control research line, specially Prof. Torregrosa, Bernardo Planells and Josep Gómez. My sincere appreciation also goes to my colleagues in CMT -- Motores Térmicos, starting with Profs. Payri and Desantes and including the professors, researchers, technicians, students, etc., with whom I shared so many good times. Special thanks as well to the administrative staff, Teresa, Amparo, Julia, for their help navigating the fearsome seas of paperwork.
+
+I also wish to thank Profs. Mats Åbom, Susann Boij and Inés López for welcoming me as a visiting researcher in The Marcus Wallenberg Laboratory at the KTH -- Royal Institute of Technology, and of course to Luck, Juán Pablo, Romain, Luca, Mathieu, and the many others who offered me their hospitality in Stockholm. I am also indebted to the people at Jaguar Land Rover with whom we made so many fruitful collaborations.
+
+Last but not least, I wish to thank my friends and family for their everlasting support, specially my parents from whom I inherited the appreciation for mathematics and science. And finally, thank you, Paula, for sharing this journey, and those that will come.\\[-1mm]
+
+\hspace{0.7\textwidth}
+\begin{minipage}[t]{0.3\textwidth}
+\includegraphics[width=5cm]{logos/firma2}\\[-0.5mm]
+\centering
+\cabin\small Jorge García Tíscar
+\end{minipage}
+
 \cleardoublepage
 
 % Quotes
@@ -323,7 +294,7 @@ this thesis is based, with author signatures being in order of seniority in the 
 % {\cabincondensed\small\hfill \textbf{Milan Kundera}, \emph{The Curtain.}}\\[10mm]
 
 \linespread{0.97}\selectfont
-{\itshape\small``Hundreds of noises wove themselves into a wiry texture of sound with barbs protruding here and there, smart edges running along it and subsiding again, with clear notes splintering off and dissipating. By this noise alone, whose special quality cannot be captured in words, a man returning after years of absence would have been able to tell with his eyes shut that he was back in the Imperial Capital and Royal City of Vienna.''}\\[-3mm]
+{\itshape\small``Hundreds of noises wove themselves into a wiry texture of sound with barbs protruding here and there, smart edges running along it and subsiding again, with clear notes splintering off and dissipating. By this noise alone, whose special quality cannot be captured in words, a man returning after years of absence would have been able to tell with his eyes shut that he was back in the Imperial Capital and Royal City of Vienna.''}\\[-0mm]
 
 {\cabincondensed\small\hfill \textbf{Robert Musil}, \emph{The Man Without Qualities.}}
 \end{minipage}
@@ -337,7 +308,7 @@ this thesis is based, with author signatures being in order of seniority in the 
 
 % List of figures
 \begingroup
-\setstretch{0.95}
+\setstretch{0.9}
 \setlength{\cftbeforefigskip}{2mm}
 \setlength{\cftbeforetabskip}{2mm}
 \renewcommand{\cftfigfont}{\small}
