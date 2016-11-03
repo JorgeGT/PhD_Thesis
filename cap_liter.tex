@@ -119,14 +119,12 @@ An interesting introduction is provided by Gaudé et al.  whose work collects a 
     \textbf{Name} & \textbf{Spectrum} & \textbf{Frequency range} & \textbf{Source mechanism} \\
     \midrule
     Oil whirl & Tone  & 0 -- 1000 Hz
-(function of oil temp.) & Rotor-dynamics vibration of rotating group caused by oil film. \\
-    Synchronous vibration & Tone synchronous to turbocharger speed & 0 -- 4000 Hz & Rotor-dynamics
-- Residual unbalance of  the rotor. \\
-    Synchronous pulsation & Tone synchronous to turbocharger speed & 1000 -- 4000 Hz
-(Depends on wheel outer diameter) & Aerodynamics: Pressure fluctuations induced by lack of symmetry of compressor wheel. \\
-    Harmonics & Tone = number of irregularities $\times$ speed & 0 -- 20 kHz & Rotor-dynamics or aerodynamics due to irregularities. \\
-    Turbine BPF & Tone = number of blades $\times$ speed & $\rightarrow$ 20 kHz & Aerodynamics. \\
-    Compressor BPF & Tone = number of full blades $\times$ speed & $\rightarrow$ 20 kHz & Aerodynamics. \\
+(function of oil temp.) & Rotor-dynamics vibration of rotating group caused by oil film. \\[2mm]
+    Synchronous vibration & Tone synchronous to turbocharger speed & 0 -- 4000 Hz & Rotor-dynamics - Residual unbalance of  the rotor. \\[2mm]
+    Synchronous pulsation & Tone synchronous to turbocharger speed & 1000 -- 4000 Hz (Depends on wheel outer diameter) & Aerodynamics: Pressure fluctuations induced by lack of symmetry of compressor wheel. \\[2mm]
+    Harmonics & Tone = number of irregularities $\times$ speed & 0 -- 20 kHz & Rotor-dynamics or aerodynamics due to irregularities. \\[2mm]
+    Turbine BPF & Tone = number of blades $\times$ speed & $\rightarrow$ 20 kHz & Aerodynamics. \\[2mm]
+    Compressor BPF & Tone = number of full blades $\times$ speed & $\rightarrow$ 20 kHz & Aerodynamics. \\[2mm]
     Hiss  & broadband noise & 0 -- 20 kHz & Aerodynamics due to turbulence in the compressor stage. \\
     \bottomrule
     \end{tabular}
@@ -142,7 +140,7 @@ Evans and Ward \cite{evans2005minimizing} address explicitly the issue of a so-c
 
 Raitor and Neise \cite{raitor2008sound} mention instead the so-called ``tip clearance noise'' (TCN), referring to a noise with broadband spectral content below the blade passing frequency (BPF). A similarity is drawn with the work of Kameier and Neise \cite{kameier1997rotating} regarding axial turbo compressors, where a rotating instability linked to stall cell propagation is discussed. This TCN is marked in Fig. 8 of the reference as located between 3 kHz and 5.5 kHz in the inlet duct. 
 
-BPF is also marked in the figure, including its harmonics. An intense ``buzz-saw'' multi-tonal noise is apparent at higher speeds in the inlet, but not so in the outlet (see Fig. 10 of the reference). TCN appears in the outlet duct as well. Mach number at the impeller tip is also highlighted as signalling the transition between TCN vs. BPF dominance. Furthermore, broadband content seems to appear between 1.2 --2 kHz, with a smaller one at 2 -- 2.8 kHz, both being similar to the aforementioned \emph{whoosh} noise.
+BPF is also marked in the figure, including its harmonics. An intense ``buzz-saw'' multi-tonal noise is apparent at higher speeds in the inlet, but not so in the outlet (see Fig. 10 of the reference). TCN appears in the outlet duct as well. Mach number at the impeller tip is also highlighted as signalling the transition between TCN vs. BPF dominance. Furthermore, broadband content seems to appear between 1.2 -- 2 kHz, with a smaller one at 2 -- 2.8 kHz, both being similar to the aforementioned \emph{whoosh} noise.
 
 Following the work of Evans and Ward, Teng and Homco \cite{teng2009investigation} obtained further insight on the precise location of the \emph{whoosh} noise for their setup. Especially, in Fig. 5 of the reference the authors identify \emph{whoosh} noise as appearing in the 4.5 to 7 kHz band. BPF tone is not seen on the figure, which is limited to a maximum frequency of 10 kHz. However, amplitude and frequency of this band, and its abrupt lower frequency cut-off, could suggest that it is more related to the TCN identified by other authors. 
 
@@ -154,6 +152,8 @@ Lee et al. \cite{lee2011control} focus their work on ``pulsation noise'', assert
 
 Tiikoja et al. \cite{tiikoja2011inves} revisit the topic making again a distinction between two contributing phenomena. Stationary distortions are identified as leading to periodic tones. Given an absence of inflow disturbances these tones are referred to as rotor-alone tonal noise. Fluctuating pressure fields caused by the interaction of inlet and outlet guide vanes and the rotor is regarded as a secondary source which will introduce tonal noise at harmonics of the BPF. 
 
+On the other hand, a ``wide band noise'' is ascribed to non-stationary disturbances (turbulence), but its importance for turbochargers is dismissed. Denomination of ``buzz-saw noise'' for the tonal phenomena is used and attributed to rotating shock waves attached to the blades whose tips reach supersonic conditions. TCN is also named and marked as such in the results, appearing in this case between 5 and 10 kHz in the outlet and between 4 and 7.5 kHz in the inlet. 
+
 \begin{wrapfigure}{o}[1.5cm]{0.4\textwidth}
 \centering
 \vspace{2mm}
@@ -162,7 +162,7 @@ Tiikoja et al. \cite{tiikoja2011inves} revisit the topic making again a distinct
 \label{fig:freq_whoosh_lit}
 \end{wrapfigure}
 
-On the other hand, a ``wide band noise'' is ascribed to non-stationary disturbances (turbulence), but its importance for turbochargers is dismissed. Denomination of ``buzz-saw noise'' for the tonal phenomena is used and attributed to rotating shock waves attached to the blades whose tips reach supersonic conditions. TCN is also named and marked as such in the results, appearing in this case between 5 and 10 kHz in the outlet and between 4 and 7.5 kHz in the inlet. A smaller broadband is visible but not marked by the authors. This broadband is located between 0.6 and 2.5 kHz, in a way more consistent with the aforementioned reports of \emph{whoosh} noise at these lower frequencies.
+A smaller broadband is visible but not marked by the authors. This broadband is located between 0.6 and 2.5 kHz, in a way more consistent with the aforementioned reports of \emph{whoosh} noise at these lower frequencies.
 
 Similar results were obtained by Figurella et al. \cite{figurella2012noise}. Discrete sound peaks (tones) were cited as the dominant phenomena, located at synchronous (rotor) speed and blade pass frequencies (rotor speed times number of main blades). A ``broadband flow noise'' is named as ``\emph{whoosh} or blow noise''. Results were presented aggregating this content between 4 and 12 kHz. However, inlet sound pressure level spectra presented on Figs. 4 and 5 of the reference seem to indicate a more broadband elevation, only between 5 and 7 kHz. 
 
@@ -224,23 +224,31 @@ However, it must be noted that in real world automotive applications the compres
 \section{Influence of inlet geometry}
 \label{sec:liter_influence}
 
-Besides the aforementioned investigation of Lang \cite{lang2011contribucion}, this influence of the inlet geometry modification immediately upstream of the compressor wheel (and thus, air presentation) on the performance and surge margin has been established on the literature, as seen for example in Galindo et al. \cite{galindo2007potential}, Serrano et al. \cite{serrano2013optimization} and Wang et al. \cite{wang2013cha}.
+Besides the aforementioned investigation of Lang \cite{lang2011contribucion}, this influence of the inlet geometry modification immediately upstream of the compressor wheel (and thus, air presentation) on the performance and surge margin has been demonstrated on the literature, as seen for example in Galindo et al. \cite{galindo2007potential}, Serrano et al. \cite{serrano2013optimization} and Wang et al. \cite{wang2013cha}.
 
-Nonetheless, research has been focused on the improvement of surge margin and efficiency, while information about the influence of air presentation on turbocharger compressor noise is scarce, if existent at all. Consequently, one of the objectives of the present work is to experimentally assess this acoustical influence and analyze the features of the flow field that may be related to this acoustic emission.
+Nonetheless, research has been focused on the improvement of surge margin and efficiency, while information about the influence of air presentation on turbocharger compressor noise is scarce, with  studies often centered only in the analysis of deep surge dynamics  \cite{greitzer1976surge,hansen1981experimental}.
+
+Consequently, one of the objectives of the present work is to experimentally assess this acoustical influence and analyze the features of the flow field that may be related to this acoustic emission. 
 
 This assessment must consider inlet modifications that are relevant to recent industry developments and requirements, while at the same time being simple enough to allow the establishment of general guidelines instead of conclusions limited to very specific devices.
 
 Reviewing published works, one of the most simple modifications consists of the installation of an elbow upstream of the compressor inlet. These elbows are used sometimes to overcome packaging limitations. However, they cause pressure loss \cite{engeda2003inlet,li2012numerical} and flow distortion \cite{serrano2013optimization} that have adverse impact on compressor efficiency.
 
-Concerning the acoustical influence, Li et al. \cite{li2012numerical} do consider the influence of the elbow over pressure spectral content at various locations. Of special interest is the analysis of BPF amplitude variation, which is attested experimentally (see Figs. 16 and 18 of the reference). The authors concluded that some interaction between elbow-induced flow non-uniformity and the volute tongue was indeed affecting acoustic output, at least regarding tonal BPF noise, but also that more research was needed.
+Concerning the acoustical influence, Li et al. \cite{li2012numerical} do consider the influence of the elbow over pressure spectral content at various locations. Of special interest is the analysis of BPF amplitude variation, which is attested experimentally (see Figs. 16 and 18 of the reference). 
 
-Other geometries of interest that have been tested in the literature are tapered ducts \cite{galindo2011measurement,lang2011contribucion} and reservoirs \cite{lang2011contribucion}. As mentioned earlier, Lang appreciated up to 15\% improvement in surge margin optimizing reservoir volume, a figure similar to that reported by Galindo et al. \cite{galindo2011measurement} regarding improvement achieved by tapered ducts. Similarly, a convergent-divergent nozzle was proposed by Desantes et al. \cite{desantes2011potential}, improving surge margin up to 25\% at the cost of decreased maximum air flow. However, impact of these solutions on noise output was not considered.
+The authors concluded that some interaction between elbow-induced flow non-uniformity and the volute tongue was indeed affecting acoustic output, at least regarding tonal BPF noise, but also that more research was needed.
+
+Other geometries of interest that have been tested in the literature are tapered ducts \cite{galindo2011measurement,lang2011contribucion} and reservoirs \cite{lang2011contribucion}. As mentioned earlier, Lang appreciated up to 15\% improvement in surge margin optimizing reservoir volume, a figure similar to that reported by Galindo et al. \cite{galindo2011measurement} regarding improvement achieved by tapered ducts. 
+
+Similarly, a convergent-divergent nozzle was proposed by Desantes et al. \cite{desantes2011potential}, improving surge margin up to 25\% at the cost of decreased maximum air flow. However, impact of these solutions on noise output was not considered.
 
 More sophisticated options to enhance surge margin have been also proposed. For instance, a large amount of authors have researched the use of swirl generator devices placed upstream of the compressor inlet \cite{kyrtatos1980application,coppinger2000performance}. 
 
 The aforementioned work by Karim et al. \cite{karim2013computational} showed how a certain combination of swirl vanes could diminish overall SPL over the 6--12 kHz band. Furthermore, Galindo et al. \cite{galindo2007potential} considered both positive and negative rotation devices, assessing their impact on surge margin and efficiency. Still, acoustic output was not taken into account.
 
-Addition of a ported shroud has also been reported as an effective method of improving surge margin \cite{guillou2010characterization,semlitsch2014numerical}. In this solution, flow bleed slots are introduced on the impeller wall, connecting with the compressor inlet. The objective is that reversed flow should recirculate through these slots that present lower pressures due to Venturi effect, instead of causing the usual flow disturbance reversing across the tip clearance. At high mass flow, these slots act as bypasses, improving choke limits. 
+Addition of a ported shroud has also been reported as an effective method of improving surge margin \cite{guillou2010characterization,semlitsch2014numerical}. In this solution, flow bleed slots are introduced on the impeller wall, connecting with the compressor inlet. 
+
+The objective of this approach is that reversed flow should recirculate through the slots as they present lower pressures due to the Venturi effect, instead of causing the usual flow disturbance by reversing across the tip clearance. At high mass flow rate these slots act as bypasses, thereby improving the choke limit. 
 
 Regarding the acoustical influence of these solutions, Chen and Yin \cite{chen2006turboc} evaluated the influence of different ported shroud geometrical aspects, including the effect of splitter blades on the compressor wheel. The authors reported that full bladed compressors (as opposed of those with full and splitter blades) equipped with a ported shroud exhibited a decrease in both BPF (tonal) and overall noise.
 

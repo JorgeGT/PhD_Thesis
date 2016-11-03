@@ -1,6 +1,6 @@
 %!TEX root = Tesis.tex
 
-\chapter*{List of symbols}
+\chapter*{List of Symbols}
 \small
 
 %\vspace{-1cm}
@@ -11,6 +11,7 @@ $A$ & Area & \si{m^2} \\
 $a$ & Speed of sound & \si{m.s^{-1}} \\
 $c_p$ & Specific heat capacity at constant pressure & \si{J.kg^{-1}.K^{-1}} \\
 $D$ & Duct diameter & m \\
+$D_o$ & Compressor outer diameter & m \\
 $d_s$ & Sensor separation & m \\
 $f$ & Frequency & Hz \\
 \textit{Re} & Helmholtz number & $-$\\
@@ -22,12 +23,19 @@ $M$ & Mach number & $-$ \\
 $N$ & Compressor rotational speed & rpm \\
 $p$ & Pressure & Pa \\
 $R$ & Specific gas constant & \si{J.kg^{-1}.K^{-1}} \\
+$r$ & Duct radius & m \\
 \textit{Re} & Reynolds number & $-$ \\
 \textit{St} & Strouhal number & $-$ \\
-$t$ & Time & s \\
 $T$ & Temperature & K \\
+$T_d$ & Spatial time interval & s\\
+$t$ & Time & s \\
 $U$ & Mean velocity & \si{im.s^{-1}} \\
-$W_u$ & Compressor specific work & \si{m^2.s^{-2}} \\[5mm]
+$w_n^*$ & Beamformer weight factor of sensor $n$ & $-$\\
+$W_u$ & Compressor specific work & \si{m^2.s^{-2}} \\
+$x_n$ & Pressure signal of transducer $n$ & Pa\\
+$X_n$ & Pressure signal of transducer $n$ in the frequency domain & Pa\\
+$y^+$ & Adimensional boundary layer distance & $-$\\
+\newpage
 \multicolumn{2}{l} {\sffamily\bfseries\Large {Greek}} \\[3mm]
 $\Delta f,t$& Frequency or time step & Hz or s\\
 $\gamma$& Ratio of specific heats & $-$ \\
@@ -42,33 +50,35 @@ $\Phi$ & DMD mode & $-$\\
 $\varphi$ & Flow coefficient & $-$ \\
 $\psi$ & Generic variable & $-$ \\ 
 $\Omega$ & Rotational speed & \si{rad.s^{-1}} \\
-$\omega$ & Specific turbulence dissipation rate & \si{s^{-1}} \\[5mm]
+$\omega$ & Specific turbulence dissipation rate & \si{s^{-1}} \\[8mm]
 \multicolumn{2}{l} {\sffamily\bfseries\Large {Sub- and superscripts}} \\[3mm]
 ${+}$ & Forward-travelling variable  \\
 ${-}$ & Backward-travelling variable   \\
 ${*}$ & Corrected variable  \\
 ${1,2,3}$ & Related to $1\textsuperscript{st}, 2\textsuperscript{nd}$ or $3\textsuperscript{rd}$ downstream sensor\\
-a & (Freq.) related to an asymmetric acoustic mode\\
-back & Backward travelling wave\\
-CFD & Variable simulated through CFD\\
-c & (Freq.) related to a circular acoustic mode\\
-d & Related to sensor spacing \\
-exp & Variable measured experimentally \\
-in & Related to the inlet duct \\
-k & Discrete time step \\
-forw & Forward-travelling wave\\
-n & (Freq.) related to the spatial Nyquist criterion\\
-out & Related to the outlet duct \\
-s & Isentropic\\
-ref & Reference value \\
-rms & Root mean squared \\
-T & Total (or stagnation) variable \\
-TT & Total to total ratio \\
-tip & Related to the blade tip \\
-W, A, S & Wall, axis or cross-section monitor, respectively\\[5mm]
+\emph{a} & (Freq.) related to an asymmetric acoustic mode\\
+\emph{back} & Backward travelling wave\\
+\emph{CFD} & Variable simulated through CFD\\
+\emph{c} & (Freq.) related to a circular acoustic mode\\
+\emph{d} & Related to sensor spacing \\
+\emph{exp} & Variable measured experimentally \\
+\emph{H} & Hermitian transpose \\
+\emph{in} & Related to the inlet duct \\
+\emph{k} & Discrete time step \\
+\emph{forw} & Forward-travelling wave\\
+\emph{n} & (Freq.) related to the spatial Nyquist criterion\\
+\emph{out} & Related to the outlet duct \\
+\emph{s} & Isentropic\\
+\emph{ref} & Reference value \\
+\emph{rms} & Root mean squared \\
+\emph{T} & (Sub.) Total or stagnation variable | (Sup.) Transposed\\
+\emph{TT} & Total to total ratio \\
+\emph{tip} & Related to the blade tip \\
+\emph{W, A, S} & Wall, axis or cross-section monitor, respectively\\[5mm]
+\newpage
 \multicolumn{2}{l} {\sffamily\bfseries\Large {Acronyms}} \\[3mm]
-2D & Two-dimensional \\
-3D & Three-dimensional \\
+%2D & Two-dimensional \\
+%3D & Three-dimensional \\
 AMF & Air Mass FLow \\
 BPF & Blade Passing Frequency\\
 CAD & Computer-Aided Design \\

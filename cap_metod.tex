@@ -29,7 +29,7 @@ Special care will be put in considering the different theoretical and practical 
 
 Most of the experimental work presented in this thesis has been carried out at laboratory 5K of Universitat Politècnica de València. This facility is equipped with two main installations.
 
-The first one is a flow bench powered by a Diesel engine linked to an asynchronous \hl{dyno} and a screw compressor. This flow bench can be configured to function as a turbocharger test stand or to provide air flow to other facilities. Subsection \ref{sub:flow_bench} will be dedicated to an extended description of this installation.
+The first one is a flow bench powered by a Diesel engine linked to an asynchronous dynamometer and a screw compressor. This flow bench can be configured to function as a turbocharger test stand or to provide air flow to other facilities. Subsection \ref{sub:flow_bench} will be dedicated to an extended description of this installation.
 
 Next to the flow bench, there is a large anechoic chamber that can be configured to either receive external air flow from the flow bench or to host a standalone engine by itself. For this project, air was provided by the flow bench when the turbocharger test stand was installed inside the chamber. This arrangement is illustrated by Fig. \ref{fig:floorplan}, while subsection \ref{sub:anec_chamber} will describe in detail this particular chamber.
 
@@ -48,12 +48,12 @@ Other facilities included an impulse test bench that was used for sensor calibra
 
 The flow test rig has been used as flow provider to power the turbocharger turbine both directly, with the turbocharger installed in the flow rig cell itself and, as shown in Fig. \ref{fig:floorplan}, with the turbocharger mounted in a supporting frame inside the anechoic chamber.
 
-At the core of the rig there is a heavy duty MIDR 06.20.45 Diesel engine able to provide up to 260 kW of power. This engine is linked to an asynchronous dyno and, through a coupling gear, to an Atlas Copco ZA 110-3.5 volumetric screw compressor. An overview of the whole installation can be seen in Fig. \ref{fig:flowrig_render}.
+At the core of the rig there is a heavy duty MIDR 06.20.45 Diesel engine able to provide up to 260 kW of power. This engine is linked to an asynchronous dynamometer and, through a coupling gear, to an Atlas Copco ZA 110-3.5 volumetric screw compressor. An overview of the whole installation can be seen in Fig. \ref{fig:flowrig_render}.
 
 \begin{figure}[b!]
 \centering
 \includegraphics[width=\textwidth]{figures/cap_metod/flow_rig2}
-\caption{Render of the flow rig showing the engine core, asynchronous dyno with its support cabinet, screw compressor and air distribution system, including control valves and reservoirs.}
+\caption{Render of the flow rig showing the engine core, asynchronous dynomometer with its support cabinet, screw compressor and air distribution system, including control valves and reservoirs.}
 \label{fig:flowrig_render}
 \end{figure}
 
@@ -68,7 +68,7 @@ As for the flow control, another reservoir equipped with a discharging valve can
 
 If cold flow is desired, a water intercooler can be used to lower the temperature produced by the compression process. This temperature, along with the rest of flow properties like mass flows, pressures and other temperatures, are recorded through a dedicated control system.
 
-Engine and dyno are controlled though their own independent instrumentation, while the instantaneous turbocharger variables, including those needed for acoustical characterization, are recorded through the dedicated high speed Yokogawa DL716 DAQ system.
+Engine and dynamometer are controlled though their own independent instrumentation, while the instantaneous turbocharger variables, including those needed for acoustical characterization, are recorded through the dedicated high speed Yokogawa DL716 DAQ system.
 
 \subsection{Anechoic chamber} \label{sub:anec_chamber}
 
@@ -99,7 +99,7 @@ A control system similar to that of the flow rig monitors the operation of the s
 
 As mentioned early in the chapter, while most of the experimental work was carried out using the two facilities described already, the measurement methodology was later put to the test on an engine test cell to verify its reliability on real engine conditions.
 
-The test cell is equipped with an asynchronous electromagnetic dyno that allows both steady and transient automatic testing. Operative parameters and control for the engine and dyno are integrated into a custom system, including gravimetric fuel consumption sensors, hot plate anemometers, emission measurements and temperature and pressure control of the air pipes and coolant flows.
+The test cell is equipped with an asynchronous electromagnetic dynamometer that allows both steady and transient automatic testing. Operative parameters and control for the engine and dyno are integrated into a custom system, including gravimetric fuel consumption sensors, hot plate anemometers, emission measurements and temperature and pressure control of the air pipes and coolant flows.
 
 Access and online control of the engine ECU is also available, and a special pneumatic system can be used to inject compressed air into the inlet manifold downstream of the compressor.
 
@@ -125,7 +125,7 @@ Different turbochargers have been used in the development of the investigation, 
 \label{fig:comp_dimens}
 \end{figure}
 
-This particular model, featuring six main and six splitter blades, with a vaneless diffuser, was digitized to obtain its detailed geometry, which is shown in Fig.~\ref{fig:comp_dimens} along with its most relevant dimensions. Similar turbochargers were used for engine tests on chapter \ref{cap:engine} and section \ref{sec:geom_motor} and another for chapter \ref{cap:inlet} and section \ref{sec:geom_elbows}, both modified in order to fit different inlet geometries.
+This particular model, featuring six main and six splitter blades, with a vaneless diffuser, was digitized to obtain its detailed geometry, which is shown in Fig.~\ref{fig:comp_dimens} along with its most relevant dimensions. Similar turbochargers were used for engine tests on chapter \ref{cap:engine} and section \ref{sec:geom_motor} and another for chapter \ref{cap:inlet} and section \ref{sec:geom_elbows}, both of them modified in order to fit different inlet geometries.
 
 \section{In-duct noise measurement} % Articulo methodology
 \label{sec:method_induct}
@@ -191,7 +191,7 @@ The approach in this caase is the inverse: by tuning the weights $w_n^*$ that mu
 \begin{figure}[t!]
 %\centering
 \includegraphics[width=0.90\textwidth]{figures/cap_metod/Spectra}
-\caption{Sample of raw inlet and outlet pressure power spectral densities (at 160 krpm and 60 g/s), including frequency limitations described in equations \ref{eq:f_nyquist} and \ref{eq:f_modes}. The characteristic blade pass frequency can also be identified, specially in the outlet spectra.}
+\caption{Sample of raw inlet and outlet pressure power spectral densities (at 160 krpm and 60 g/s), including frequency limitations described in equations \ref{eq:f_nyquist} and \ref{eq:f_modes}. The characteristic Blade Passing Frequency (BPF) can also be identified, specially in the outlet spectra.}
 \label{fig:spectra}
 \end{figure}
 
@@ -225,7 +225,7 @@ Once that a suitable in-duct noise measurement technique was  selected, it is ne
 
 The correct design and installation of the fast pressure sensor arrays is a critical part of the experimental setup.
 
-Ideally, the sensors should be mounted flush (with water-cooled adapters if necessary) in straight pipes, with diameters adjusted to preserve the cross sectional area of the adjacent duct in order to avoid complex structures caused by singularities.
+Ideally, the sensors should be mounted flush (with water-cooled adapters if necessary) in straight pipes, with diameters adjusted to preserve the cross sectional area of the adjacent duct in order to avoid complex structures caused by singularities. A sample of the expected pressure spectra results can be seen in Fig.~\ref{fig:spectra}.
 
 \begin{figure}[b!]
 \centering
@@ -234,7 +234,7 @@ Ideally, the sensors should be mounted flush (with water-cooled adapters if nece
 \label{fig:setup_schem}
 \end{figure}
 
-As a further measure, enough straight clearance should be left before and after the array (as shown on figure \ref{fig:setup_schem}), to ensure essentially plane wave flow at the measurement section \cite{holland2000measurement}. There should be a minimum of 6 diameters upstream of the array and a further 4 diameters downstream, as recommended in \cite{torregrosa2005exp}.
+As a further measure, enough straight clearance should be left before and after the array (as shown on figure \ref{fig:setup_schem}), to ensure essentially plane wave flow at the measurement section \cite{holland2000measurement}. There should be a minimum of 6 diameters upstream of the array and a further 4 diameters downstream, as recommended by Torregrosa et al. \cite{torregrosa2005exp}.
 
 When placing the transducers, it is important that the \nicefrac{1}{5} and \nicefrac{1}{3} nodes of the established standing wave pattern are avoided \cite{dowling1983sound}. Also, a compromise in the spacing $d_s$ between them must be reached, taking into consideration errors in the  low-frequency \cite{aabom1988error} and high-frequency \cite{seybert1988two} bands.
 
@@ -273,7 +273,7 @@ It is also important to note that the closer the sensors are mounted together fo
 
 Finally, it is essential to ensure that the response of the three sensors of each array is coherent. Before mounting the sensors in the final linear array form, they should be mounted radially in the same section of a duct and individually calibrated, to ensure that the difference between sensors is not due to individual transducer differences, but only to wave propagation.
 
-In this case, the calibration is performed in an impulse test rig (described in detail in \cite{payri2000modified}) so as to obtain a clear reference pressure wave in all sensors. Both the time and frequency responses are observed, and both the amplifier offset and gain are adjusted to find the best match. An example can be seen on figure \ref{fig:6031_calibration}.
+In this case, the calibration is performed in an impulse test rig (described in detail in Payri et al. \cite{payri2000modified}) so as to obtain a clear reference pressure wave in all sensors. Both the time and frequency responses are observed, and both the amplifier offset and gain are adjusted to find the best match. An example can be seen on figure \ref{fig:6031_calibration}.
 
 \begin{figure}[t!]
 \centering
@@ -443,7 +443,7 @@ Here, $p^2_\text{rms,i}$ is the root mean squared pressure recorded by microphon
 \subsection{Far field}
 \label{sub:metod_far_field}
 
-Taking advantage of the free-field conditions of the chamber, additional microphones were installed around the turbocharger group to estimate the far field sound radiation, in a manner similar of the setup used by Teng and Homco \cite{teng2009investigation} for engine measurements.
+Taking advantage of the free-field conditions of the chamber, additional microphones were installed around the turbocharger group to estimate the far field sound radiation, in a manner similar of the setup used by Teng and Homco for measurements of the whole \cite{teng2009investigation} engine.
 
 To obtain a better estimation of the sound field, four free-field microphones of the same type 4190 were distributed around the the central point of the installation, at a radial distance of 1 m from it, as Fig.~\ref{fig:radiated_jag} shows.
 
@@ -454,7 +454,7 @@ To obtain a better estimation of the sound field, four free-field microphones of
 \label{fig:radiated_jag}
 \end{figure}
 
-Data from all microphones was captured using a Brüel \& Kjær PULSE\textsuperscript{TM} DAQ system, composed by types 3560 D, 7536, 2826 and $2\times 3032$A (hardware) and types 7700, 7702, 7705 and 7755 B (software). In order to provide a global metric to compare against orifice noise, results for the four far-field microphones were averaged to compute the overall sound pressure level radiated by the turbocharger system.
+Data from all microphones was captured using a Brüel \& Kjær PULSE\textsuperscript{TM} DAQ system, composed by types 3560D, 7536, 2826 and $2\times 3032$A (hardware) and types 7700, 7702, 7705 and 7755 B (software). In order to provide a global metric to compare against orifice noise, results for the four far-field microphones were averaged to compute the overall sound pressure level radiated by the turbocharger system.
 
 \subsection{Near field} % Particle Velocity
 
@@ -485,33 +485,34 @@ In addition to offering the detailed measurement and signal processing steps, th
 
 Additionally, and taking advantage of the anechoic chamber where the turbocharger was installed, instrumentation added to measure external noise (both orifice noise and the noise radiated to the far field by the system surfaces) is described. Finally, the application of an acoustic particle velocity probe to measure the near-field emission of a turbocharger in engine conditions is proposed.
 
-\subsection{Appendix: LCMV beamforming procedure}
+\newpage
+\begin{subappendices}
+\begingroup
+\titleformat{\section}[hang]{}{}{0mm}{\bfseries\sffamily\Large\textcolor{tema}{\arabic{chapter}.\Alph{section}. }}[\vspace{-1mm}]
+\section{Appendix: LCMV beamforming procedure}
+\endgroup
 \label{ann:beamformer}
 
-\hl{[Donde poner esto? O quitarlo?]}
-
-This appendix proposes a step by step guide to compute the desired $\mathbf X^+$ and $\mathbf X^-$ decomposed pressure spectra required in equation \ref{eq:metod_intensity}, using a LCMV (Linearly Restricted Minimum Covariance) strategy as presented by Verdú \cite{verdu2003contribucion}.
-
-Recall that decomposed signals for each frequency $f_k$ are obtained by weighting the transformed measurement matrix $\mathbf X(f_k)=[X_1 X_2 X_3]=\mathcal F\{[x_1 x_2 x_3]\}$ as follows:
+This appendix to chapter \ref{cap:metod} shows a short step by step guide to compute the desired $\mathbf X^+$ and $\mathbf X^-$ decomposed spectra required in equation \ref{eq:metod_intensity}, using a LCMV (Linearly Restricted Minimum Covariance) strategy as presented by Verdú \cite{verdu2003contribucion}. Recall that decomposed signals for each frequency $f_k$ are obtained by weighting the transformed measurement matrix $\mathbf X(f_k)=[X_1 X_2 X_3]=\mathcal F\{[x_1 x_2 x_3]\}$ as follows:
 \begin{align}
-    \mathbf X^+(f_k)&=\mathbf {w^+}^H\mathbf X(f_k)\\
+    \mathbf X^+(f_k)&=\mathbf {w^+}^H\mathbf X(f_k)\\\nonumber
     \mathbf X^-(f_k)&=\mathbf {w^-}^H\mathbf X(f_k)
 \end{align}
 
-It can be shown that the corresponding weights for filtering the downstream and upstream signals are obtained for each frequency $f_k$ by:
+It can be shown that the corresponding weights for filtering the forward and backward signals are obtained for each frequency $f_k$ by:
 \begin{align}
-    \mathbf w^+ &=\mathbf g^+\left[ \Sigma^{-1}_x\; \mathbf A^H(\Theta)\left[\mathbf A^H(\Theta)\; \Sigma^{-1}_x\; \mathbf A^H(\Theta)\right]^{-1}\right]\\
+    \mathbf w^+ &=\mathbf g^+\left[ \Sigma^{-1}_x\; \mathbf A^H(\Theta)\left[\mathbf A^H(\Theta)\; \Sigma^{-1}_x\; \mathbf A^H(\Theta)\right]^{-1}\right]\\\nonumber
     \mathbf w^- &=\mathbf g^-\left[ \Sigma^{-1}_x \mathbf A^H(\Theta)\left[\mathbf A^H(\Theta)\; \Sigma^{-1}_x\; \mathbf A^H(\Theta)\right]^{-1}\right]
 \end{align}
 
-Where $g^+=[1\;0]^T$ and $g^-=[0\;1]^T$ are the desired response vectors (unitary gain in one direction and zero gain in the opposite). $\Sigma_x$ denotes the covariance matrix. For a certain discrete frequency $f_k$, using the expected value $E$:
+Where $g^+=[1\;0]^T$ and $g^-=[0\;1]^T$ are the desired response vectors (unitary gain in one direction and zero gain in the opposite). $\Sigma_x$ denotes the covariance matrix. For certain discrete frequencies $f_k$ it can be reduced to:
 \begin{equation}
-  \Sigma_x(f_k)=E[\mathbf X(f_k)\;\mathbf X^H(f_k)]
+  \Sigma_x(f_k)=[\mathbf X(f_k)\;\mathbf X^H(f_k)]
 \end{equation}
 
 The constraints matrix $\mathbf A(\Theta)=[\mathbf a^+(\theta)\; \mathbf a^-(\theta)]^T$ contains the beamformer response array (signal lags) in both directions:
 \begin{align}
-    \mathbf a^+(\theta) &= \mathbf a(-90^\circ)=\left[1,\exp(j\beta^+d_s),\exp(j\beta^+2d_s)\right]^T\\
+    \mathbf a^+(\theta) &= \mathbf a(-90^\circ)=\left[1,\exp(j\beta^+d_s),\exp(j\beta^+2d_s)\right]^T\\\nonumber
     \mathbf a^-(\theta) &= \mathbf a(90^\circ)=\left[1,\exp(-j\beta^-d_s),\exp(-j\beta^-2d_s)\right]^T
 \end{align}
 
@@ -522,7 +523,8 @@ Here $d_s$ is the distance between sensors and $\beta^\pm$ are complex wave numb
 
 $M$ represents the Mach number, $k=\omega/c$ the acoustic wave number and $\alpha$ the viscothermal attenuation coefficient, which can be computed as:
 \begin{equation}
-  \alpha=\frac{1}{r\,a}\left(\frac{\nu\,\omega}{2}\right)^{1/2}\left[1-(\gamma-1)P_r^{-0.5}\right]
+  \alpha=\frac{1}{r\,a}\left(\frac{\nu\,\omega}{2}\right)^{1/2}\left[1-(\gamma-1)\text{\itshape Pr}^{-0.5}\right]
 \end{equation}
 
-The radius of the duct is denoted by $r$, $a$ is the speed of sound, $\nu$ the cinematic viscosity, $\omega=2\pi f_k$ the angular frequency and $P_r$ is the Prandtl number.
+Duct radius is denoted here by $r$, $a$ is the speed of sound, $\nu$ the cinematic viscosity, $\omega=2\pi f_k$ the angular frequency and \textit{Pr} is the Prandtl number.
+\end{subappendices}
