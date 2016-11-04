@@ -172,7 +172,7 @@ Here $\mathbf X^+$ and $\mathbf X^-$ are, respectively, the complex spectra of t
 For a more intuitive comprehension of the beamformer, one can consider its transmitting equivalent: a phased array emitter where the same signal $x(t)$, with its phase shifted by a quantity $w_n^*$, is fed to an $n$-element linear array of fixed transmitters, forming a plane wave emitted in the $\theta$ direction which can be steered at will adjusting each $w_n^*$.
 The beamforming method provides a way to mathematically tune the sensitivity of the overall system in order to isolate the downstream and upstream information of the acquired signal. A scheme for a narrowband beamformer can be found in Fig. \ref{fig:schematic}.
 
-\begin{figure}[b!]
+\begin{figure}[t!]
 \centering
 \includegraphics[scale=0.85]{figures/cap_metod/NB_Beamformer}
 \caption[Diagram of a narrowband beamformer]{Diagram of a narrowband beamformer with three elements tuned to a Direction of Arrival (DOA) of $\theta$.}
@@ -211,7 +211,7 @@ Here, $\mathbf X(f_k)$ is the $k \times n$ matrix of transformed signals and $\m
 
 For this study a Linearly Constrained Minimum Variance (LCMV) beamformer was  used, a well established procedure, which aims at minimizing the overall output power (variance) of the signal, while maintaining unitary gain in the precise desired direction.
 
-While several beamforming strategies and implementations are available, \ref{ann:beamformer} offers a simple guide on how to compute $\mathbf w^H(f_k)$ and thus $\mathbf X^+$ and $\mathbf X^-$ using this particular approach. Figure \ref{fig:decomposition} shows the result of this decomposition in the time domain.
+While several beamforming strategies and implementations are available, annex \hyperref[ann:beamformer]{3.A} offers a simple guide on how to compute $\mathbf w^H(f_k)$ and thus $\mathbf X^+$ and $\mathbf X^-$ using this particular approach. Figure \ref{fig:decomposition} shows the result of this decomposition in the time domain.
 
 Further information on its application, including a comparison of various of these schemes against simulated and experimental data is available in the work of Piñero et al. \cite{pinero2000estimation}.
 
@@ -374,12 +374,12 @@ An estimation of the spectrogram $\mathbf S$ that would be obtained in a quasi-s
   \end{bmatrix}
 \end{equation}
 
-Thus the sound intensity level value $\mathbf S$ for each $\dot m^*$ and each frequency band $j$ can be plotted. An example of this processing for frequencies between 50 and 5000 Hz binned with $\Delta f = 50$ Hz is presented on figure \ref{fig:spec50-5k}, where coordinates $(\bm{\dot{m}^*},\bm{\Pi_\text{TT}})$ correspond to the 160 krpm iso-speed line highlighted in figure \ref{fig:map1k-3k}.
+Thus the sound intensity level value $\mathbf S$ for each $\dot m^*$ and each frequency band $j$ can be plotted. An example of this processing for frequencies between 50 and 5000 Hz binned with $\Delta f = 50$ Hz is presented on figure \ref{fig:spec50-5k}, where coordinates $(\bm{\dot{m}^*},\bm{\Pi_\text{TT}})$ correspond to the 160 krpm iso-speed line highlighted in Fig.~\ref{fig:map1k-3k}.
 
 \begin{figure*}[t!]
 \centering
 \includegraphics[width=0.85\textwidth]{figures/cap_metod/gr_spec_ruido_dB_50-5000.pdf}
-\caption[Sample of spectrograms following the 160 krpm line]{Sample of spectrograms calculated using the procedure outlined in subsection \ref{sub:noise_maps_and_spectrograms}, following the 160 krpm paths marked in figure \ref{fig:map1k-3k}. The 1--3 kHz band selected for the maps in figure \ref{fig:map1k-3k} is highlighted, along with some particular flow phenomena discussed in section \ref{sec:sample_meas}.}
+\caption[Sample of spectrograms following the 160 krpm line]{Sample of spectrograms calculated using the procedure outlined in subsection \ref{sub:noise_maps_and_spectrograms}, following the 160 krpm paths marked in figure \ref{fig:map1k-3k}. The 1 -- 3 kHz band selected for the maps in figure \ref{fig:map1k-3k} is highlighted, along with some particular flow phenomena discussed in section \ref{sec:sample_meas}.}
 \label{fig:spec50-5k}
 \end{figure*}
 
