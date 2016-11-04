@@ -4,9 +4,10 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{amsthm}
+\usepackage[bottom]{footmisc}
+\usepackage{setspace}
 \usepackage{amsmath}
 \usepackage{color}
-\usepackage[hyperindex]{hyperref}
 \usepackage{graphicx}
 \usepackage{booktabs}
 \usepackage{siunitx}
@@ -21,15 +22,21 @@
 \usepackage[defaultlines=3,all]{nowidow}
 \usepackage{marvosym}
 \usepackage{rotating}
+\usepackage[bitstream-charter]{mathdesign}
+\usepackage[scaled=.96]{XCharter}
+\usepackage[scaled]{beramono}
+\usepackage[type1,scaled=1.02,condensed]{cabin}
+\usepackage{caption}
 \usepackage{changepage}
 \usepackage{wrapfig}
 \usepackage{soul}
 \usepackage{appendix}
+\usepackage[papersize={17cm,24cm}]{geometry}
 \usepackage{bm}
 \usepackage[titles]{tocloft}
-\usepackage{setspace}
 \usepackage[backend=biber,style=numeric-comp,defernumbers=true]{biblatex}
-\usepackage[bottom]{footmisc}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
 
 % Bibliography
 \bibliography{biblio.bib}
@@ -60,37 +67,22 @@
 % Redefine volume + number
 \renewbibmacro*{volume+number+eid}{%
   \printfield{volume}%
-%  \setunit*{\adddot}% DELETED
-  \setunit*{\addnbspace}% NEW (optional); there's also \addnbthinspace
+  \setunit*{\addnbspace}%
   \printfield{number}%
   \setunit{\addcomma\space}%
   \printfield{eid}}
 \DeclareFieldFormat[article]{number}{\mkbibparens{#1}}
 % Redefine year
 \renewbibmacro*{issue+date}{%
-  \setunit{\addcomma\space}% NEW
-%  \printtext[parens]{% DELETED
+  \setunit{\addcomma\space}%
     \iffieldundef{issue}
       {\usebibmacro{date}}
       {\printfield{issue}%
        \setunit*{\addspace}%
-%       \usebibmacro{date}}}% DELETED
-       \usebibmacro{date}}% NEW
+       \usebibmacro{date}}%
   \newunit}
 
-% % Serif font
-\usepackage[bitstream-charter]{mathdesign}
-%\usepackage[charter,expert]{mathdesign}
-\usepackage[scaled=.96]{XCharter}
-
-% % Monospaced font
-\usepackage[scaled]{beramono}
-
-% % Sans serif font
-\usepackage[type1,scaled=1.02,condensed]{cabin}
-
 % Caption format
-\usepackage{caption}
 \DeclareCaptionFont{cabin}{\cabin\raggedleft}
 \captionsetup{margin=12pt,font={small,sl},labelfont={cabin,bf},parskip=5mm}
 
@@ -131,7 +123,6 @@
 \setlength{\skip\footins}{5mm}
 
 % Page geometry
-\usepackage[papersize={17cm,24cm}]{geometry}
 %\usepackage[cam,center,a4]{crop} % To test on A4 paper
 % Horizontal
 \setlength{\textwidth}{12cm}
@@ -143,7 +134,6 @@
 \raggedbottom
 
 % Headers
-\usepackage{fancyhdr}
 \renewcommand{\footrulewidth}{0pt}
 \renewcommand{\headrulewidth}{0pt}
 \fancypagestyle{plain}{
@@ -233,16 +223,16 @@
 \end{tabular}
 
 {\normalsize\bfseries\cabincondensed THESIS EXAMINERS}\\[4mm]
-Dr. D. \hl{John Doe}\\
-Dr. D. \hl{John Doe}\\
-Dr. D. \hl{John Doe}\\[1cm]
+Dr. D. Hans Rämmal\\
+Dr. D. Richard Burke\\
+Dr. D. Pedro A. Rodríguez Aumente\\[1cm]
 
 
 {\normalsize\bfseries\cabincondensed DEFENSE COMITEE}\\[4mm]
 \begin{tabular}{rl}
-{\cabincondensed Chairman:} & Dr. D. \hl{John Doe}\\
-{\cabincondensed Secretary:} & Dr. D. \hl{John Doe}\\
-{\cabincondensed Member:} & Dr. D. \hl{John Doe}\\[1.5cm]
+{\cabincondensed Chairman:} & Dr. D. José Ramón Serrano Cruz\\
+{\cabincondensed Secretary:} & Dr. D. Gregorio López Juste\\
+{\cabincondensed Member:} & Dr. D. Hans Rämmal\\[1.5cm]
 \end{tabular}
 
 {\cabincondensed Valencia, \hl{January 2017}}
@@ -253,7 +243,7 @@ Dr. D. \hl{John Doe}\\[1cm]
 % Dedication
 \null\vspace{5cm}
 \begin{flushright}
-{\itshape \hl{Dedicatoria}}
+{\itshape A Paula}
 \end{flushright}
 \cleardoublepage
 
@@ -323,14 +313,14 @@ Last but not least, I wish to thank my friends and family for their everlasting 
 \cleardoublepage
 
 % Table of contents
+\renewcommand{\cftdotsep}{2}
 \tableofcontents
 \cleardoublepage
 
 % List of figures
 \begingroup
-\setstretch{0.9}
-\setlength{\cftbeforefigskip}{2mm}
-\setlength{\cftbeforetabskip}{2mm}
+\setlength{\cftbeforefigskip}{1mm}
+\setlength{\cftbeforetabskip}{1mm}
 \renewcommand{\cftfigfont}{\small}
 \renewcommand{\cfttabfont}{\small}
 \renewcommand*{\addvspace}[1]{}

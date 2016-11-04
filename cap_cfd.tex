@@ -41,7 +41,7 @@ In consequence, in this section only a brief description of the numerical model 
 \raggedleft
 \vspace{-4mm}
 \includegraphics[width=0.4\textwidth]{figures/cap_cfd/mesh4.pdf}
-\caption{Polyhedral mesh of the rotor walls (grey) and the surrounding fluid (blue) used in the CFD model.}
+\caption[Sample of the mesh in the CFD model]{Polyhedral mesh of the rotor walls (grey) and the surrounding fluid (blue) used in the CFD model.}
 \label{fig:cfd_mesh}
 \end{wrapfigure}
 
@@ -58,7 +58,7 @@ Once that the turbocharger compressor fluid volumes were obtained and meshed, in
 \begin{figure}
 \centering
 \includegraphics[width=1\textwidth]{figures/cap_cfd/piping_plan_2}
-\caption{Dimensional drawing of the real compressor inlet and outlet pipes, including the piezoelectric sensor arrays for the experimental wave decomposition and highlighting the CFD simulation domain.}
+\caption[Dimensional drawing of the compressor inlet and outlet pipes]{Dimensional drawing of the real compressor inlet and outlet pipes, including the piezoelectric sensor arrays for the experimental wave decomposition and highlighting the CFD simulation domain.}
 \label{fig:cfd_piping_plan}
 \end{figure}
 
@@ -74,7 +74,7 @@ Outlet pressure and inlet mass flow rate were chosen as boundary conditions for 
 
 \begin{table}
 \centering
-\caption{Boundary conditions of the CFD simulation as taken from the experimental data measured in the anechoic chamber test rig.}
+\caption[Boundary conditions of the CFD simulation]{Boundary conditions of the CFD simulation as taken from the experimental data measured in the anechoic chamber test rig.}
 \footnotesize
 \begin{tabular}{rl}
 \toprule
@@ -102,7 +102,7 @@ As cross section area-averaged pressure monitors should produce the same results
 \begin{figure}
 \centering
 \includegraphics[width=0.65\textwidth]{figures/cap_cfd/cfd_monitors}
-\caption{Dimensional drawing of the real compressor inlet and outlet pipes, including the piezoelectric sensor arrays for the experimental wave decomposition and highlighting the CFD simulation domain.}
+\caption[Image of the CFD domain with different monitors]{Image of the CFD domain, highlighting the compressor wheel and including the three different kind of pressure monitors selected during th setup, at three different sections of the inlet and outlet ducts.}
 \label{fig:cfd_monitors}
 \end{figure}
 
@@ -135,7 +135,7 @@ To avoid small variations in time, both experimental and CFD simulation variable
 
 \begin{table}[htb]
 \centering
-\caption{Comparison between compressor global variables as measured in the experimental test rig and as predicted by the CFD solution.}
+\caption[Validation of global variables]{Comparison between compressor global variables as measured in the experimental test rig and as predicted by the CFD solution.}
 \footnotesize
 	\begin{tabular}{rccc}
 	\toprule
@@ -165,7 +165,7 @@ First, comparison between experimental and numerical results was performed using
 \centering
 \includegraphics[width=0.88\textwidth]{figures/cap_cfd/Spec_Inlet_Tot}\\[5mm]
 \includegraphics[width=0.88\textwidth]{figures/cap_cfd/Spec_Outlet_Tot}
-\caption{Comparison of total spectral content between the experimental data recorded by one piezoelectric sensor and the simulation results for each type of monitor.}
+\caption[Comparison of spectral content (CFD vs. Exp.)]{Comparison of total spectral content between the experimental data recorded by one piezoelectric sensor and the simulation results for each type of monitor.}
 \label{fig:cfd_Spec_Inlet_Tot}
 \end{figure}
 
@@ -180,7 +180,7 @@ Explanation of how these different kind of monitors are affected by these two hi
 \begin{figure}[htb!]
 \centering
 \includegraphics[width=\textwidth]{figures/cap_cfd/modes_monitors}
-\caption{Schematic of modal lines of the two relevant acoustic modes in relation to the different types of CFD monitors considered in the model.}
+\caption[Schematic of acoustic modes modal lines]{Schematic of modal lines of the two relevant acoustic modes in relation to the different types of CFD monitors considered in the model.}
 \label{fig:cfd_modes_monitors}
 \end{figure}
 
@@ -207,7 +207,7 @@ Here, advantage is taken of the CFD ability to obtain instantaneous local values
 \begin{figure}[htb!]
 \centering
 \includegraphics[width=0.88\textwidth]{figures/cap_cfd/Spec_Outlet_Tot_MoC_Wall}
-\caption{Comparison of experimental and simulated total pressure against simulated decomposed pressure in the outlet case, using the Method of Characteristics and the wall monitor. Black lines indicate mode onset.}
+\caption[Comparison of decomposed CFD spectrum (wall)]{Comparison of experimental and simulated total pressure against simulated decomposed pressure in the outlet case, using the Method of Characteristics and the wall monitor. Black lines indicate mode onset.}
 \label{fig:cfd_Spec_Outlet_Tot_Moc_Wall}
 \end{figure}
 
@@ -218,7 +218,7 @@ While the numerically simulated spectra is able to capture the characteristic pe
 \begin{figure}[htb!]
 \centering
 \includegraphics[width=0.88\textwidth]{figures/cap_cfd/Spec_Outlet_Tot_MoC_Area}
-\caption{Comparison of experimental and simulated total pressure against simulated decomposed pressure in the outlet case, using the Method of Characteristics and the section monitor. Black lines indicate mode onset.}
+\caption[Comparison of decomposed CFD spectrum (section)]{Comparison of experimental and simulated total pressure against simulated decomposed pressure in the outlet case, using the Method of Characteristics and the section monitor. Black lines indicate mode onset.}
 \label{fig:cfd_Spec_Outlet_Tot_Moc_Area}
 \end{figure}
 
@@ -234,7 +234,7 @@ Regarding the plane wave frequency range where the agreement between CFD and exp
 \centering
 \includegraphics[width=0.88\textwidth]{figures/cap_cfd/Spec_Inlet_Dec}\\[5mm]
 \includegraphics[width=0.88\textwidth]{figures/cap_cfd/Spec_Outlet_Dec}
-\caption{Comparison of decomposed pressure spectral content between the experimental data (through beamforming) and the simulation results using the surface monitor (through the method of characteristics).}
+\caption[Comparison of decomposed plane wave CFD spectrum (wall)]{Comparison of decomposed pressure spectral content between the experimental data (through beamforming) and the simulation results using the surface monitor (through the method of characteristics).}
 \label{fig:cfd_Spec_PlaneW_Dec}
 \end{figure}
 
@@ -258,7 +258,7 @@ After performing the validation and optimization of the CFD model at the referen
 \includegraphics[width=0.45\textwidth]{figures/cap_cfd/cfd_ops_globalPressureRatio}\\[4mm]
 \includegraphics[width=0.45\textwidth]{figures/cap_cfd/cfd_ops_globalSpecificWork}\\[4mm]
 \includegraphics[width=0.44\textwidth]{figures/cap_cfd/cfd_ops_globalEfficiency}\\[2mm]
-\caption{Global compressor variables as measured experimentally and as simulated by CFD in the three selected operating conditions.}
+\caption[Validation of global compressor variables]{Global compressor variables as measured experimentally and as simulated by CFD in the three selected operating conditions.}
 \label{fig:cfd_ops_globals}
 \end{wrapfigure}
 
@@ -284,7 +284,7 @@ This last difference between the two models is large enough so that it changes t
 
 \begin{table}[htb!]
 \centering
-\caption{Relative error between the compressor global variables measured in the experimental test rig and those predicted by the numerical model.}
+\caption[Validation of global variables for each condition]{Relative error between the compressor global variables measured in the experimental test rig and those predicted by the numerical model.}
 \footnotesize
 \begin{tabular}{lcccc}
 \toprule
@@ -317,7 +317,7 @@ In addition to the validation of global variables, it is necessary to assess if 
 \includegraphics[width=0.48\textwidth]{figures/cap_cfd/spec_ops_77gs_outlet}\\[4mm]
 \includegraphics[width=0.48\textwidth]{figures/cap_cfd/spec_ops_109gs_inlet}
 \includegraphics[width=0.48\textwidth]{figures/cap_cfd/spec_ops_109gs_outlet}
-\caption{Comparison of decomposed spectra in the plane wave range for all three operating conditions and both ducts against experimental results.}
+\caption[Comparison of spectra for three conditions (plane wave)]{Comparison of decomposed spectra in the plane wave range for all three operating conditions and both ducts against experimental results.}
 \label{fig:cfd_ops_spec_all_PW}
 \end{figure}
 
@@ -331,7 +331,7 @@ In Fig.~\ref{fig:cfd_ops_spec_all_PW} a comparison is made in the same fashion a
 \includegraphics[width=0.48\textwidth]{figures/cap_cfd/spec_ops_77gs_outlet_full}\\[4mm]
 \includegraphics[width=0.48\textwidth]{figures/cap_cfd/spec_ops_109gs_inlet_full}
 \includegraphics[width=0.48\textwidth]{figures/cap_cfd/spec_ops_109gs_outlet_full}
-\caption{Comparison of pressure spectra for all three operating conditions and both ducts against experimental results. In this figure, pressure wave decomposition is only performed in the CFD spectra.}
+\caption[Comparison of spectra for three conditions (full range)]{Comparison of pressure spectra for all three operating conditions and both ducts against experimental results. In this figure, pressure wave decomposition is only performed in the CFD spectra.}
 \label{fig:cfd_ops_spec_all_full}
 \end{figure}
 
@@ -345,7 +345,7 @@ Regarding the full audible range of the spectrum, in Fig.~\ref{fig:cfd_ops_spec_
 \includegraphics[width=0.48\textwidth]{figures/cap_cfd/spec_ops_77gs_outlet_decT}\\[4mm]
 \includegraphics[width=0.48\textwidth]{figures/cap_cfd/spec_ops_109gs_inlet_decT}
 \includegraphics[width=0.48\textwidth]{figures/cap_cfd/spec_ops_109gs_outlet_decT}
-\caption{Comparison of pressure spectra for all three operating conditions and both ducts against experimental results in the plane wave range. In this figure, pressure wave
+\caption[Comparison of spectra for the three conditions (plane wave, wall)]{Comparison of pressure spectra for all three operating conditions and both ducts against experimental results in the plane wave range. In this figure, pressure wave
 decomposition is only performed in the CFD spectra.}
 \label{fig:cfd_ops_spec_all_decT}
 \end{figure}
@@ -363,7 +363,7 @@ While the prediction of spectral content is not totally accurate yet, specially 
 \begin{figure}[htb!]
 \centering
 \includegraphics[width=1.04\textwidth]{figures/cap_cfd/vel_spec_diffuser}
-\caption{Combination of selected CFD results for the lowest mass flow rate operating condition (60 g/s), including pressure and velocity field and diffuser frequency spectrum.}
+\caption[CFD results for the lowest mass flow rate condition]{Combination of selected CFD results for the lowest mass flow rate operating condition (60 g/s), including pressure and velocity field and diffuser frequency spectrum.}
 \label{fig:vel_spec_diffuser}
 \end{figure}
 
@@ -380,7 +380,7 @@ This allows to compare how the velocity field changes across the compressor in a
 \begin{figure}[htpb!]
 \centering
 \includegraphics[height=0.9\textheight]{figures/cap_cfd/isospan_all_small2}
-\caption{Comparison of meridional velocity field in a blade-to-blade isospan surface, for the three selected operating conditions of the CFD model.}
+\caption[Comparison of meridional velocity fields]{Comparison of meridional velocity field in a blade-to-blade isospan surface, for the three selected operating conditions of the CFD model.}
 \label{fig:cfd_isospan_all}
 \end{figure}
 
@@ -396,7 +396,7 @@ The presence of this high velocity zone (which by continuity also affects pressu
 \centering
 \includegraphics[width=0.88\textwidth]{figures/cap_cfd/spec_blade_PS_p}\\[5mm]
 %\includegraphics[width=0.88\textwidth]{figures/cap_cfd/spec_blade_SS_p}
-\caption{Comparison of pressure spectral content recorded at the pressure side of the trailing edge of an impeller blade between the three simulated operating conditions.}
+\caption[Pressure spectra of a trailing edge monitor]{Comparison of pressure spectral content recorded at the pressure side of the trailing edge of an impeller blade between the three simulated operating conditions.}
 \label{fig:cfd_spec_blade_p}
 \end{figure}
 
@@ -407,7 +407,7 @@ Of particular interest among the different results that can be extracted from th
 \begin{figure}[htb!]
 \centering
 \includegraphics[width=0.80\textwidth]{figures/cap_cfd/backflow_isosurface}
-\caption{Isosurfaces of null axial velocity in the compressor inducer/inlet showing the reversed flow extent and distribution, including isosurfaces of low pressure ``bubbles'' in the same region.}
+\caption[Isosurfaces of null axial velocity]{Isosurfaces of null axial velocity in the compressor inducer/inlet showing the reversed flow extent and distribution, including isosurfaces of low pressure ``bubbles'' in the same region.}
 \label{fig:cfd_backflow_isosurfaces}
 \end{figure}
 
@@ -418,13 +418,6 @@ The same data is also shown in an inset plot for the 77 g/s operating condition,
 This 3D view of the pressure and velocity information shows how the low pressure bubbles extend up to the limit of the reversed flow, in both operating conditions. However, these low pressure zones are much more axisymmetric in the 77 g/s point, whereas in the lower flow rate case they become isolated and elongated. Time data shows also how they rotate inside the backflow-affected area in a tornado-like fashion.
 
 Regarding the backflow itself as characterized by the null vertical velocity in the inlet, the figure shows the drastic evolution from an incipient recirculation at 77 g/s very close to the wheel, to the fully developed backflow at 60 g/s, reaching upstream up to 1.2 inducer diameters. It is also shown in the 77 g/s view how this backflow will start appearing close to the inducer walls, leaving  the core flow still unperturbed.
-
-% \begin{figure}[htb!]
-% \centering
-% \includegraphics[width=0.98\textwidth]{figures/cap_cfd/4M_temp.pdf}
-% \caption{Isosurfaces of null axial velocity in the compressor inducer/inlet showing the reversed flow extent and distribution, including isosurfaces of low pressure ``bubbles'' in the same region.}
-% \label{fig:4M_temp}
-% \end{figure}
 
 \section{Acoustic source location}
 
@@ -437,7 +430,7 @@ A way to explore the spatial distribution of the acoustic sources for different 
 \begin{figure}[htb!]
 \hspace{-0.01\textwidth}
 \includegraphics[width=1.02\textwidth]{figures/cap_cfd/pressure_fft_walls}
-\caption{Selected domain walls colored by the amplitude of the 3 kHz component of the simulated pressure signal at 160 krpm and 77 g/s.}
+\caption[Selected domain walls colored by 3 kHz amplitude]{Selected domain walls colored by the amplitude of the 3 kHz component of the simulated pressure signal at 160 krpm and 77 g/s.}
 \label{fig:pressure_fft_walls}
 \end{figure}
 
@@ -448,7 +441,7 @@ From the figure it can be surmised that the pressure signal exhibits its stronge
 \begin{figure}[h!]
 \centering
 \includegraphics[width=0.95\textwidth]{figures/cap_cfd/pressure_fft_walls_circ}
-\caption{Volute, wheel and diffuser walls colored by the amplitude of the 3 kHz component of the simulated pressure signal at 160 krpm and 77 g/s.}
+\caption[Volute, wheel and diffuser colored by 3 kHz amplitude]{Volute, wheel and diffuser walls colored by the amplitude of the 3 kHz component of the simulated pressure signal at 160 krpm and 77 g/s.}
 \label{fig:pressure_fft_walls_circ}
 \end{figure}
 
@@ -546,7 +539,7 @@ In order to provide an example of application of DMD to the CFD simulation consi
 \begin{figure}[b!]
 \centering
 \includegraphics[width=0.88\textwidth]{figures/cap_cfd/dmd_modes_coher}
-\caption{Normalized coherence of the outlet surface DMD modes, highlighting the top 10 and including normalized magnitude of the average PSD.}
+\caption[Normalized coherence of the outlet surface DMD modes]{Normalized coherence of the outlet surface DMD modes, highlighting the top 10 and including normalized magnitude of the average PSD.}
 \label{fig:dmd_modes_coher}
 \end{figure}
 
@@ -557,7 +550,7 @@ Due to the POD/DMD property that allows the selection of a subdomain instead of 
 \begin{figure}[hb!]
 \centering
 \includegraphics[width=0.98\textwidth]{figures/cap_cfd/dmd_modes}
-\caption{Normalized amplitude (lower values in blue, higher values in red) of some selected outlet surface DMD modes featuring a higher temporal coherence.}
+\caption[Normalized amplitude of selected DMD modes (coherence)]{Normalized amplitude (lower values in blue, higher values in red) of selected outlet surface DMD modes featuring a higher temporal coherence.}
 \label{fig:dmd_modes}
 \end{figure}
 
@@ -574,7 +567,7 @@ In the leftmost plot the mode corresponding to the 0 kHz frequency has been sele
 \begin{figure}[t!]
 \centering
 \includegraphics[width=0.98\textwidth]{figures/cap_cfd/dmd_modes_freqs}
-\caption{Normalized amplitude (lower values in blue, higher values in red) of some selected outlet surface DMD modes showcasing the effect of acoustic mode propagation.}
+\caption[Normalized amplitude of selected DMD modes (propagation)]{Normalized amplitude (lower values in blue, higher values in red) of selected outlet surface DMD modes showcasing the effect of acoustic mode propagation.}
 \label{fig:dmd_modes_freqs}
 \end{figure}
 
@@ -601,22 +594,23 @@ Further postprocessing techniques to inspect the location of acoustically-releva
 Finally, in order to avoid the necessity of guessing which are the relevant frequencies and spatial locations, the use of modal decompositions of the flow field has been proposed, discussing advantages and disadvantages of different techniques. A limited-scope example of the formulation and implementation of the Dynamic Mode Decomposition has been shown, with the coherence of the model identifying relevant frequencies of the flow and their associated spatial distribution on the outlet duct wall cells.
 
 While implementation of the DMD technique over the full numerical domain is outside of the scope of this work, as it requires the implementation of computational tools to link Star-CCM+ snapshots with outside libraries that allow the manipulation of data in the order of gigabytes, it has been shown that further research on this topic could lead to a better identification of the spatial location of the most relevant frequency components of the flow field.
-%------------------------------------------------------------------------------
 
-% % \subsection{Comparison with CFD}
+%------------------------------------------
 
-% % \hl{[To the inlet flow chapter]}
+% \subsection{Comparison with CFD}
 
-% % \begin{figure}[htb!]
-% % \centering
-% % \includegraphics[width=0.88\textwidth]{figures/cap_cfd/cfd_circumf_comparison}
-% % \caption{Isosurfaces of null axial velocity in the compressor inducer/inlet showing the reversed flow extent and distribution, including isosurfaces of low pressure ``bubbles'' in the same region.}
-% % \label{fig:cfd_circumf_comparison}
-% % \end{figure}
+% \hl{[To the inlet flow chapter]}
 
-% % \begin{figure}[htb!]
-% % \centering
-% % \includegraphics[width=0.88\textwidth]{figures/cap_cfd/cfd_longit_temp_comp}
-% % \caption{Isosurfaces of null axial velocity in the compressor inducer/inlet showing the reversed flow extent and distribution, including isosurfaces of low pressure ``bubbles'' in the same region.}
-% % \label{fig:cfd_longit_temp_comp}
-% % \end{figure}
+% \begin{figure}[htb!]
+% \centering
+% \includegraphics[width=0.88\textwidth]{figures/cap_cfd/cfd_circumf_comparison}
+% \caption{Isosurfaces of null axial velocity in the compressor inducer/inlet showing the reversed flow extent and distribution, including isosurfaces of low pressure ``bubbles'' in the same region.}
+% \label{fig:cfd_circumf_comparison}
+% \end{figure}
+
+% \begin{figure}[htb!]
+% \centering
+% \includegraphics[width=0.88\textwidth]{figures/cap_cfd/cfd_longit_temp_comp}
+% \caption{Isosurfaces of null axial velocity in the compressor inducer/inlet showing the reversed flow extent and distribution, including isosurfaces of low pressure ``bubbles'' in the same region.}
+% \label{fig:cfd_longit_temp_comp}
+% \end{figure}
