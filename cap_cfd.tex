@@ -2,18 +2,6 @@
 \chapter{Validation of numerical simulations}
 \label{cap:cfd}
 
-% % Quote
-% \null\vspace{-10mm}
-% \begin{flushright}
-% \begin{minipage}[t]{0.66\textwidth}
-% {\itshape\small``As is evident to all, fire and earth and water and air are bodies. And every sort of body possesses solidity, and every solid must necessarily be contained in planes; and every plane rectilinear figure is composed of triangles.''}\\[-5mm]
-
-% {\cabincondensed\small\hfill \textbf{Plato}, \emph{Timaeus.}}\\[3mm]
-% \end{minipage}
-% \end{flushright}
-
-% More than two millenia ago, Plato expressed in the \textit{Timaeus} the belief that all physical matter was in fact composed by infinitesimal bodies: earth was made of tiny cubes; water, of icosahedrons; air, of octahedrons; fire, the last classical element, of tetrahedrons. This would explain how fire feels like stabbing and how water flows endlessly while earth stays put. Furthermore, all of them could be made of triangles, the simplest polygon.
-
 \noindent As stated in the initial literature review, numerical simulations of physical problems have been demonstrated to be a valuable tool for the analysis and understanding of phenomena that may be difficult to characterize exclusively through experimental means.
 \blfootnote{Work in this chapter has been partly published in the following papers:
 \begin{itemize}
@@ -85,9 +73,7 @@ Rotational speed & $N=158763$ rpm \\ \bottomrule
 \label{tab:operatingConditions}
 \end{table}
 
-Rigid body motion simulation was chosen for the transient setup, with the time step adjusted to so that the impeller mesh turned 1º per time step at the selected shaft speed, which imposed a sufficient maximum frequency according to the Nyquist criterion, well above hearing range.
-
-\hl{Regarding heat transfer, the problem is considered adiabatic}. Surface roughness, coupled mechanical deformations and shaft eccentricity that dynamically affected the tip clearance were also disregarded for simplicity.
+Rigid body motion simulation was chosen for the transient setup, with the time step adjusted to so that the impeller mesh turned 1º per time step at the selected shaft speed, which imposed a sufficient maximum frequency according to the Nyquist criterion, well above hearing range. Regarding heat transfer, the problem is considered adiabatic, as heat transfer is less relevant at high loads \cite{serrano2013importance,serrano2014procedure,serrano2014methodology}. Surface roughness, mechanical deformations and dynamic shaft eccentricity were also disregarded for simplicity.
 
 \subsection{Solution monitors}\label{sub:cfd_sol_monitors}
 
@@ -102,7 +88,7 @@ As cross section area-averaged pressure monitors should produce the same results
 \begin{figure}
 \centering
 \includegraphics[width=0.65\textwidth]{figures/cap_cfd/cfd_monitors}
-\caption[Image of the CFD domain with different monitors]{Image of the CFD domain, highlighting the compressor wheel and including the three different kind of pressure monitors selected during th setup, at three different sections of the inlet and outlet ducts.}
+\caption[Image of the CFD domain with different monitors]{Image of the CFD domain, highlighting the compressor wheel and including the three different kind of pressure monitors selected during the setup, at three different sections of the inlet and outlet ducts.}
 \label{fig:cfd_monitors}
 \end{figure}
 
@@ -252,12 +238,12 @@ Nevertheless, it is shown in Fig.~\ref{fig:cfd_Spec_PlaneW_Dec} that the CFD mod
 
 After performing the validation and optimization of the CFD model at the reference operating conditions (160 krpm of shaft speed and 77 g/s of corrected air mass flow), a further study was performed where two additional operating settings of the compressor were simulated by modifying the boundary conditions according to the experimentally measured data points, keeping the rest of the model parameters unchanged.
 
-\begin{wrapfigure}[27]{l}[0.8cm]{0.45\textwidth}
-\vspace{-4mm}
+\begin{wrapfigure}[28]{o}[0.8cm]{0.45\textwidth}
+\vspace{-5mm}
 \centering
-\includegraphics[width=0.45\textwidth]{figures/cap_cfd/cfd_ops_globalPressureRatio}\\[4mm]
-\includegraphics[width=0.45\textwidth]{figures/cap_cfd/cfd_ops_globalSpecificWork}\\[4mm]
-\includegraphics[width=0.44\textwidth]{figures/cap_cfd/cfd_ops_globalEfficiency}\\[2mm]
+\includegraphics[width=0.45\textwidth]{figures/cap_cfd/cfd_ops_globalPressureRatio_iz}\\[4mm]
+\includegraphics[width=0.45\textwidth]{figures/cap_cfd/cfd_ops_globalSpecificWork_iz}\\[4mm]
+\includegraphics[width=0.44\textwidth]{figures/cap_cfd/cfd_ops_globalEfficiency_iz}\\[2mm]
 \caption[Validation of global compressor variables]{Global compressor variables as measured experimentally and as simulated by CFD in the three selected operating conditions.}
 \label{fig:cfd_ops_globals}
 \end{wrapfigure}
@@ -371,7 +357,7 @@ The kind of results that can be extracted from the CFD simulation are exemplifie
 
 Pressure information is presented in two planes, at the top of the inducer and at the leading edge plane. 3D isosurfaces of $P = 85$ kPa are also shown, forming ``bubbles'' that move from one channel to the next at a frequency lower than that imposed by the wheel rotation. These recirculation ``bubbles'' have been sometimes linked to broadband acoustic phenomena of half rotating order (RO) \cite{sundstrom2015centrifugal,sundstrom2014assessment}.
 
-The radial velocity field is shown in the diffuser and the volute, revealing an asymmetrical field and the presence of a higher speed zone near the volute tongue. Frequency signature of the monitor is shown in the figure, \hl{peaking at 2.9 kHz} ($\sim$10\% over RO) and presenting two sidelobes. These pulsations could also be related to \emph{whoosh} noise generation.
+The radial velocity field is shown in the diffuser and the volute, revealing an asymmetrical field and the presence of a higher speed zone near the volute tongue. Frequency signature of the monitor is shown in the figure, peaking at 2.9 kHz ($\sim$10\% over RO) and presenting two sidelobes. These pulsations could also be related to \emph{whoosh} noise generation.
 
 Taking advantage of the three simulated flow rate conditions. in Fig.~\ref{fig:cfd_isospan_all} the meridional velocity magnitude across the compressor wheel has been plotted into an extended isospan surface. Data to build this surface has been extracted from the inducer, the wheel, the diffuser and the volute, as shown in the accompanying graphic. 
 

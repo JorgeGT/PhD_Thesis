@@ -34,13 +34,14 @@
 \usepackage[papersize={17cm,24cm}]{geometry}
 \usepackage{bm}
 \usepackage[titles]{tocloft}
-\usepackage[backend=biber,style=numeric-comp,defernumbers=true]{biblatex}
+\usepackage[backend=biber,style=numeric-comp]{biblatex}
 \usepackage{fancyhdr}
 \usepackage{hyperref}
 
 % Bibliography
 \bibliography{biblio.bib}
 \ExecuteBibliographyOptions{
+  defernumbers = true,
   backref      = true,
   bibencoding  = utf8,
   date         = year,
@@ -49,7 +50,9 @@
   maxnames     = 6,
   isbn         = false,
   sorting      = none,
-  sortcites    = true
+  sortcites    = true,
+  doi          = false,
+  url          = false
 }
 % Cited in X page texts
 \DefineBibliographyStrings{english}{%
@@ -61,9 +64,12 @@
   \ifentrytype{article}{}{\printtext{\bibstring{in}\intitlepunct}}}
 % Names in small capitals
 \renewcommand{\mkbibnamefamily}[1]{\textsc{#1}}
+\renewcommand{\mkbibnamegiven}[1]{\textsc{#1}}
+
 % Remove quotation marks
 \DeclareFieldFormat[article,inbook,incollection,inproceedings,patent,thesis,unpublished]{citetitle}{#1}
 \DeclareFieldFormat[article,inbook,incollection,inproceedings,patent,thesis,unpublished]{title}{#1}
+
 % Redefine volume + number
 \renewbibmacro*{volume+number+eid}{%
   \printfield{volume}%
@@ -72,6 +78,7 @@
   \setunit{\addcomma\space}%
   \printfield{eid}}
 \DeclareFieldFormat[article]{number}{\mkbibparens{#1}}
+
 % Redefine year
 \renewbibmacro*{issue+date}{%
   \setunit{\addcomma\space}%
@@ -81,6 +88,30 @@
        \setunit*{\addspace}%
        \usebibmacro{date}}%
   \newunit}
+
+% Title hyperlinks
+\newbibmacro{string+doiurlisbn}[1]{%
+  \iffieldundef{doi}{%
+    \iffieldundef{url}{%
+      \iffieldundef{isbn}{%
+        \iffieldundef{issn}{%
+          #1%
+        }{%
+          \href{http://books.google.com/books?vid=ISSN\thefield{issn}}{#1}%
+        }%
+      }{%
+        \href{http://books.google.com/books?vid=ISBN\thefield{isbn}}{#1}%
+      }%
+    }{%
+      \href{\thefield{url}}{#1}%
+    }%
+  }{%
+    \href{http://dx.doi.org/\thefield{doi}}{#1}%
+  }%
+}
+\DeclareFieldFormat{title}{\usebibmacro{string+doiurlisbn}{\mkbibemph{#1}}}
+\DeclareFieldFormat[article,inbook,incollection,inproceedings,patent,thesis,unpublished]{title}%
+    {\usebibmacro{string+doiurlisbn}{\mkbibquote{#1}}}
 
 % Caption format
 \DeclareCaptionFont{cabin}{\cabin\raggedleft}
@@ -167,11 +198,13 @@
 \begin{document}
 
 %-------------------------------------------------------------------%
+
 % FRONT MATTER
 \frontmatter
 
 % Fancy cover page
 \includepdf[pagecommand={\thispagestyle{empty}}]{figures/misc/portada}
+%\includepdf[pagecommand={\thispagestyle{empty}}]{figures/misc/portada_simp}
 %\cleardoublepage
 
 % Inside cover
@@ -315,8 +348,8 @@ Last but not least, I wish to thank my friends and family for their everlasting 
 
 % List of figures
 \begingroup
-\setlength{\cftbeforefigskip}{1mm}
-\setlength{\cftbeforetabskip}{1mm}
+% \setlength{\cftbeforefigskip}{0mm}
+% \setlength{\cftbeforetabskip}{0mm}
 \renewcommand{\cftfigfont}{\small}
 \renewcommand{\cfttabfont}{\small}
 \renewcommand*{\addvspace}[1]{}
@@ -334,6 +367,7 @@ Last but not least, I wish to thank my friends and family for their everlasting 
 \cleardoublepage
 
 %-------------------------------------------------------------------%
+
 % MAIN MATTER (style)
 \mainmatter
 
