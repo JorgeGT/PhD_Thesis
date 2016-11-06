@@ -12,18 +12,14 @@
 % \end{flushright}
 
 % Chapter text
-\noindent As stated in the prior chapter, one of the main objectives of the present work has been to develop and implement robust measurement methodologies for the acoustical characterization of turbocharger compressors.
+\noindent As stated in the prior chapter, one of the main objectives of the present work has been to develop and implement robust measurement methodologies for the acoustical characterization of turbocharger compressors. In this chapter the theoretical background of these methodologies will be presented, along with the details of their practical implementation and a brief review of the facilities at where they have been implemented.
 \blfootnote{Work on this chapter has been partly published in the following paper:
 \begin{itemize}
 \item \emph{Experimental methodology for turbocompressor in-duct noise evaluation based on beamforming wave decomposition} \cite{torregrosa2016experimental}
 \end{itemize}
 }
 
-In this chapter the theoretical background of these methodologies will be presented, along with the details of their practical implementation and a brief review of the facilities at where they have been implemented.
-
-Apart from the purely experimental implementation, the step-by-step signal processing required to produce final, compiled results will be introduced as well, including sample results in order to illustrate each step.
-
-Special care will be put in considering the different theoretical and practical limitations and restrictions of experimental measurements and processing techniques, to ensure that results are significant and robust.
+Apart from the purely experimental implementation, the step-by-step signal processing required to produce final, compiled results will be introduced as well, including sample results in order to illustrate each step. Special care will be put in considering the different theoretical and practical limitations and restrictions of experimental measurements and processing techniques, to ensure that results are significant and robust.
 
 \section{Facilities}
 
@@ -33,9 +29,9 @@ The first one is a flow bench powered by a Diesel engine linked to an asynchrono
 
 Next to the flow bench, there is a large anechoic chamber that can be configured to either receive external air flow from the flow bench or to host a standalone engine by itself. For this project, air was provided by the flow bench when the turbocharger test stand was installed inside the chamber. This arrangement is illustrated by Fig. \ref{fig:floorplan}, while subsection \ref{sub:anec_chamber} will describe in detail this particular chamber.
 
-Additionally, an engine test cell located on laboratory 6D has been used for the on-engine validation tests described on chapter \ref{cap:engine}, where the inlet intake of a commercial engine was modified to measure the compressor acoustic emission.
+Additionally, an engine test cell located on laboratory 6D has been used for the on-engine validation tests described on chapter \ref{cap:engine}, where the inlet intake of a commercial engine was modified to measure the compressor acoustic emission. This installation is described in subsection \ref{sub:engine_cell}.
 
-Other facilities included an impulse test bench that was used for sensor calibration, and a workshop were the required customized parts for measuring and instrumenting were manufactured.
+Other relevant facilities that were used in this work include an impulse test bench that was used for piezoelectric sensor calibration, and a workshop were the required customized parts for measuring and instrumenting were manufactured.
 
 \begin{figure}[t!]
 \centering
@@ -125,7 +121,7 @@ Different turbochargers have been used in the development of the investigation, 
 \label{fig:comp_dimens}
 \end{figure}
 
-This particular model, featuring six main and six splitter blades, with a vaneless diffuser, was digitized to obtain its detailed geometry, which is shown in Fig.~\ref{fig:comp_dimens} along with its most relevant dimensions. Similar turbochargers were used for engine tests on chapter \ref{cap:engine} and section \ref{sec:geom_motor} and another for chapter \ref{cap:inlet} and section \ref{sec:geom_elbows}, both of them modified in order to fit different inlet geometries.
+This particular model, featuring six main and six splitter blades, with a vaneless diffuser, was digitized to obtain its detailed geometry, which is shown in Fig.~\ref{fig:comp_dimens} along with its most relevant dimensions. A similar turbocharger was used for engine tests on chapter \ref{cap:engine} and section \ref{sec:geom_motor} and another for chapter \ref{cap:inlet} and section \ref{sec:geom_elbows}, both of them modified in order to fit different inlet geometries.
 
 \section{In-duct noise measurement} % Articulo methodology
 \label{sec:method_induct}
@@ -134,9 +130,9 @@ In this section, a methodology is proposed to evaluate the noise emission of the
 
 Although compressor manufacturers sometimes provide these kind of ``noise maps'' \cite{gaude2008experimental}, they usually refrain from providing an adequately referenced and step-by-step methodology to reproduce them.
 
-Reviewing the existing literature on turbocompressor noise a variety of very different measurement techniques can be found, from the two-sensor, in-duct approach of Tiikoja et al \cite{tiikoja2011inves} to simple single-sensor pressure levels and external commercial noise-meters \cite{figurella2012noise}.
+Reviewing the existing literature on turbocompressor noise a variety of very different measurement techniques can be found, from the two-sensor, in-duct approach of Tiikoja et al \cite{tiikoja2011inves} to simple single-sensor pressure levels and external commercial noise-meters \cite{figurella2014noise}.
 
-However, these works focus on the research of different phenomena (transmission loss \cite{tiikoja2011inves}, effect of flow incidence angle \cite{figurella2012noise}, sound generation by rotating stall \cite{mongeau1993sound}, source characterization \cite{mongeau1995method}, etc.), not on the acoustical methodology itself nor on the particular setup considerations and restrictions that each measurement technique imposes.
+However, these works focus on the research of different phenomena (transmission loss \cite{tiikoja2011inves}, effect of flow incidence angle \cite{figurella2014noise}, sound generation by rotating stall \cite{mongeau1993sound}, source characterization \cite{mongeau1995method}, etc.), not on the acoustical methodology itself nor on the particular setup considerations and restrictions that each measurement technique imposes.
 
 In this chapter these shortcomings in existing literature are addressed by proposing a suitable experimental methodology and discussing the details of its theoretical background, its implementation, restrictions and processing required to produce useful results.
 
@@ -148,7 +144,7 @@ The first step is thus to review the theoretical background of the determination
 \subsubsection{Sound intensity in flow ducts}
 \label{sub:sound_intensity_in_flow_ducts}
 
-While it is possible \cite{figurella2012noise} to rely on a single sensor to measure the scalar \emph{sound pressure level} (SPL) of the flow at a certain location of a duct, more sophisticated approaches are needed to estimate the \emph{sound intensity level} (SIL) that is propagating through the duct.
+While it is possible \cite{figurella2014noise} to rely on a single sensor to measure the scalar \emph{sound pressure level} (SPL) of the flow at a certain location of a duct, more sophisticated approaches are needed to estimate the \emph{sound intensity level} (SIL) that is propagating through the duct.
 
 It is important to consider that the scalar magnitude of sound pressure level at a point can be influenced by the precise geometry of that section and by nodes and reflections that may occur in the duct, whereas sound intensity is a vectorial magnitude that remains almost constant along the duct (except for small dissipation losses), making it a more robust indicator of noise emission.
 
@@ -223,9 +219,7 @@ Once that a suitable in-duct noise measurement technique was  selected, it is ne
 \subsubsection{Turbocharger instrumentation}
 \label{sub:turbocharger_instrumentation}
 
-The correct design and installation of the fast pressure sensor arrays is a critical part of the experimental setup.
-
-Ideally, the sensors should be mounted flush (with water-cooled adapters if necessary) in straight pipes, with diameters adjusted to preserve the cross sectional area of the adjacent duct in order to avoid complex structures caused by singularities. A sample of the expected pressure spectra results can be seen in Fig.~\ref{fig:spectra}.
+The correct design and installation of the fast pressure sensor arrays is a critical part of the experimental setup. Ideally, the sensors should be mounted flush (with water-cooled adapters if necessary) in straight pipes, with diameters adjusted to preserve the cross sectional area of the adjacent duct in order to avoid complex structures caused by singularities. A sample of the expected pressure spectra results can be seen in Fig.~\ref{fig:spectra}.
 
 \begin{figure}[b!]
 \centering
@@ -390,7 +384,7 @@ In order to illustrate the presented methodology along this section, experimenta
 
 Kistler type 7031 piezoelectric transducers were used for the inlet duct; the outlet duct was fit with type 6031 transducers due to available stock. An array spacing $d_s=32$ mm for the outlet and $d_s=50$ mm for the inlet was selected, allowing for a safe upper limit in terms of the spatial Nyquist criterion $f_n$ of $\sim$6 and $\sim$3.5 kHz respectively (precise values depend on the conditions of each point).
 
-The variables needed in order to characterize the operating condition (mass flow, speed, temperatures and pressures) were averaged during 30 seconds using the in-house DAQ system, while the six piezoelectric sensors acquired $10^5$ pressure samples during 1 second using the Yokogawa DAQ system.
+The variables needed in order to characterize the operating condition (mass flow, speed, temperatures and pressures) were averaged during 30 seconds using the in-house DAQ system, while the six piezoelectric sensors acquired $10^5$ pressure samples during 1 second using the Yokogawa DAQ system. This acquisition settings were kept for the rest of the work.
 
 Pressure signals on recorded points (shown in figure \ref{fig:surge_datapoints}) were then processed according to the proposed methodology. Samples of the final results are presented in figures \ref{fig:map1k-3k} and \ref{fig:spec50-5k}.
 

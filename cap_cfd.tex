@@ -19,7 +19,7 @@ In this chapter the use of experimental data and signal processing techniques to
 
 \section{CFD simulation setup}
 
-The development of this numerical model, including the assessment of the influence of spatial and temporal discretization, turbulence models, boundary conditions, tip clearance, etc. was performed in the framework of the doctoral thesis of R. Navarro \cite{navarro2014numerical}, where full details about the model can be found.
+The development of this numerical model, including the assessment of the influence of spatial and temporal discretization, turbulence models, boundary conditions, tip clearance, etc. was performed in parallel of this thesis, in the framework of the doctoral thesis of R. Navarro \cite{navarro2014numerical}, where full details about the model can be found.
 
 In consequence, in this section only a brief description of the numerical model will be provided, covering only the most relevant details for the validation discussion and the use of simulation results in the analysis of the physical problem.
 
@@ -58,7 +58,7 @@ There was also a change in diameter in the inlet pipe mandated by the available 
 
 Once that the mesh was built, the case was solved using a segregated solver in the commercial CFD software package Star-CCM+ \cite{starccm}. A DES (Detached Eddy Simulation) simulation was performed, using an SST $k-\omega$ turbulence model. This hybrid strategy \cite{shur2008hybrid} uses a combination of sub-grid-scale where possible taking into account grid size, and Reynolds-averaged equations where not \cite{travin2000detached}, and should be helpful to resolve the finer flow structures that may be involved in noise generation. A similar solution was used by Mendonça et al. \cite{baris2011automotive,mendonca2012simulation}.
 
-Outlet pressure and inlet mass flow rate were chosen as boundary conditions for the simulations, with values for them taken from the experimental campaign described in previous chapters. Specific operating conditions for the reference simulation can be found in table~\ref{tab:operatingConditions}.
+Outlet pressure and inlet mass flow rate were chosen as boundary conditions for the simulations, with values for them taken from the experimental campaign described in previous chapters of this thesis. Specific operating conditions for the reference simulation can be found in table~\ref{tab:operatingConditions}.
 
 \begin{table}
 \centering
@@ -92,7 +92,7 @@ As cross section area-averaged pressure monitors should produce the same results
 \label{fig:cfd_monitors}
 \end{figure}
 
-The monitors can be seen in Fig.~\ref{fig:cfd_monitors}. It can be seen that all three types of monitors were replicated at three different cross sections in both inlet and outlet duct, in order to mimic the array installed in the real setup and also to assess the influence of the longitudinal distance to the compressor on the results. 
+The selected monitors can be seen in Fig.~\ref{fig:cfd_monitors}. It can be seen that all three types of monitors were replicated at three different cross sections in both inlet and outlet duct, in order to mimic the array installed in the real setup and also to assess the influence of the longitudinal distance to the compressor on the results. Full results of this assessment can be found in \cite{broatch2014methodology} and \cite{navarro2014numerical}, but in essence the axial position demonstrated small influence. 
 
 \section{Validation methodology}
 
@@ -238,8 +238,8 @@ Nevertheless, it is shown in Fig.~\ref{fig:cfd_Spec_PlaneW_Dec} that the CFD mod
 
 After performing the validation and optimization of the CFD model at the reference operating conditions (160 krpm of shaft speed and 77 g/s of corrected air mass flow), a further study was performed where two additional operating settings of the compressor were simulated by modifying the boundary conditions according to the experimentally measured data points, keeping the rest of the model parameters unchanged.
 
-\begin{wrapfigure}[28]{o}[0.8cm]{0.45\textwidth}
-\vspace{-5mm}
+\begin{wrapfigure}[29]{o}[0.8cm]{0.45\textwidth}
+\vspace{-3mm}
 \centering
 \includegraphics[width=0.45\textwidth]{figures/cap_cfd/cfd_ops_globalPressureRatio_iz}\\[4mm]
 \includegraphics[width=0.45\textwidth]{figures/cap_cfd/cfd_ops_globalSpecificWork_iz}\\[4mm]
@@ -256,9 +256,7 @@ While the original operating condition selected for the CFD study was chosen so 
 
 This would enable a comparison between the flow field of a stable point, the flow field at the point of the instability inception, and that of a point in which the unstable flow structures such as the inlet backflow would be already well developed. 
 
-Simulations carried out in this campaign were also performed using an unsteady RANS turbulence model in addition to the DES model that was considered for the reference study, to assess the influence that the turbulence model could have in the numerical results.
-
-Again, the first step of the validation process involved checking the same global parameters of the compressor performance that were analyzed for the reference case. In Fig.~\ref{fig:cfd_ops_globals} the comparison of the numerical predictions for these parameters is shown against the previously measured experimental values.  
+Simulations carried out in this campaign were also performed using an unsteady RANS turbulence model in addition to the DES model that was considered for the reference study, to assess the influence that the turbulence model could have in the numerical results. Again, the first step of the validation process involved checking the same global parameters of the compressor performance that were analyzed for the reference case. In Fig.~\ref{fig:cfd_ops_globals} the comparison of the numerical predictions for these parameters is shown against the previously measured experimental values.  
 
 It can be seen in this figure that while the prediction of isentropic efficiency (bottom plot) and specific work (middle plot) is in good agreement with the experimental data, in the case of the total-to-total pressure ratio (top plot) the agreement is not so good.
 
@@ -441,7 +439,7 @@ Among them is the need to manually select both the surfaces and the frequencies 
 
 \subsubsection{Proper Orthogonal Decomposition}
 
-In order to address these limitations, more sophisticated analysis can be carried out in the form of modal decomposition of the flow field. One of the most used among these is probably the Proper Orthogonal Decomposition (POD) or Karhunen--Loève expansion, which originated in the field of probability theory and was first applied to the analysis of turbulent flow in 1967 \cite{lumley1967structure} . As (rather poetically) put by Aubry in the aptly named paper \emph{``On the Hidden Beauty of the Proper Orthogonal Decomposition''} \cite{aubry1991hidden}, the objective of this technique is that:\\
+In order to address these limitations, more sophisticated analysis can be carried out in the form of modal decomposition of the flow field. One of the most used among these is probably the Proper Orthogonal Decomposition (POD) or Karhunen--Loève expansion, which originated in the field of probability theory and was first applied to the analysis of turbulent flow in 1967 \cite{lumley1967structure}. As (rather poetically) put by Aubry in the aptly named paper \emph{``On the Hidden Beauty of the Proper Orthogonal Decomposition''} \cite{aubry1991hidden}, the objective of this technique is that:\\
 
 \emph{``The flow is decomposed into both spatial and temporal orthogonal modes which are coupled: each space component is associated with a time component partner. The latter is the time evolution of the former and the former is the spatial configuration of the latter.''}\\
 
@@ -542,7 +540,7 @@ Due to the POD/DMD property that allows the selection of a subdomain instead of 
 
 In Fig.~\ref{fig:dmd_modes_coher} the normalized coherence $E_i/E_\text{max}$ of each DMD mode $\Phi_i$ has been plotted, highlighting the top 10 modes with the higher coherence. An average PSD of the pressure content is also presented, showing a good agreement with the mode coherence. In both cases the maximum is located at a frequency $f_i\sim 16$ kHz, which in the computed modal space corresponds to mode $\Phi_{323}$ and is related to the blade passing frequency (BPF).
 
-Besides the BPF tonal noise, another relevant DMD mode appears at approximately half of this frequency (7.6 kHz). Coincidentally, this specific frequency is similar to the onset frequency of the first asymmetric acoustic mode (7.4 kHz). At lower frequency (<3kHz) several coherent modes appear, demonstrating the relevance of this particular frequency band, typical of \emph{whoosh} noise. However, it appears that content in this band is not dominated by a particular mode.
+Besides the BPF tonal noise, another relevant DMD mode appears at approximately half of this frequency (7.6 kHz). Coincidentally, this specific frequency is similar to the onset frequency of the first asymmetric acoustic mode (7.4 kHz). At lower frequency (<3kHz) several coherent modes appear, demonstrating the relevance of this particular frequency band, typical of \emph{whoosh} noise. However, it appears that content in this band is not dominated by a particular mode. Finally, modes related to the TCN-like broadband noise seem to be less spatially coherent than those related to \emph{whoosh} and BPF tonal noise.
 
 The spatial distribution of some DMD modes is plotted in Fig.~\ref{fig:dmd_modes}. It can be seen in this figure how the content of the spatial modes is distributed along the outlet duct. The first three modes of lower frequency ($\Phi_\text{0.8 kHz}$, $\Phi_\text{1.6 kHz}$ and $\Phi_\text{2.1 kHz}$) feature a distribution that is related to the plane wave propagation, with the modes at higher frequency showing a more complex distribution as a result of the onset of the different acoustic modes.
 
@@ -577,7 +575,7 @@ Moreover, vortex shedding from the compressor blades however is detected in the 
 
 Further postprocessing techniques to inspect the location of acoustically-relevant flow features includes the use of the FFT of the pressure signal at selected spatial locations and frequencies of interest. An example has been presented regarding the 3 kHz frequency, showing special prominence of this frequency at the compressor wheel and diffuser.
 
-Finally, in order to avoid the necessity of guessing which are the relevant frequencies and spatial locations, the use of modal decompositions of the flow field has been proposed, discussing advantages and disadvantages of different techniques. A limited-scope example of the formulation and implementation of the Dynamic Mode Decomposition has been shown, with the coherence of the model identifying relevant frequencies of the flow and their associated spatial distribution on the outlet duct wall cells.
+Finally, in order to avoid the necessity of guessing which are the relevant frequencies and spatial locations, the use of modal decompositions of the flow field has been proposed, discussing advantages and disadvantages of different techniques. A limited-scope example of the formulation and implementation of the Dynamic Mode Decomposition has been shown, with the coherence of the model identifying relevant frequencies of the flow and their associated spatial distribution on the outlet duct wall cells, particularly related to \emph{whoosh} and BPF tonal noise.
 
 While implementation of the DMD technique over the full numerical domain is outside of the scope of this work, as it requires the implementation of computational tools to link Star-CCM+ snapshots with outside libraries that allow the manipulation of data in the order of gigabytes, it has been shown that further research on this topic could lead to a better identification of the spatial location of the most relevant frequency components of the flow field.
 

@@ -12,7 +12,7 @@
 % \end{flushright}
 
 % Chapter text
-\noindent In this chapter, the results of applying the described acoustic measurement methodology to the main turbocharger selected in this investigation will be presented and analyzed. A first section of the chapter will deal with in-duct results, regarding both the full spectrum of the turbocharger noise output and the plane wave frequency range, the later being  analyzed in detail with the help of the wave decomposition technique described in the previous chapter.\blfootnote{Work on this chapter has been partly published in the following paper:
+\noindent This chapter is devoted to the results of applying the described acoustic measurement methodology to the selected turbocharger compressor. A first section of the chapter will deal with in-duct results, regarding both the full spectrum of the turbocharger noise output and the plane wave frequency range, the later being analyzed in detail with the help of the wave decomposition technique described in the previous chapter.\blfootnote{Work on this chapter has been partly published in the following paper:
 \begin{itemize}
 \item\emph{Simulations and measurements of automotive turbocharger compressor \emph{whoosh} noise}~\cite{broatch2015simulations}
 \end{itemize}
@@ -58,7 +58,7 @@ A second subset forms a distribution of data points following the working line o
 
 \subsubsection{Plane wave range}
 
-Though dependent on pipe diameter, flow temperature and velocity, typical automotive turbocharger compressor setups can maintain plane wave conditions up to 5--7 kHz \cite{gaude2008experimental}. It is specially relevant because it comprises the frequencies of relevant acoustic phenomena such as \emph{whoosh} noise, tonal noise induced by BPF harmonics, deep surge, etc.
+Though dependent on pipe diameter, flow temperature and velocity, typical automotive turbocharger compressor setups can maintain plane wave conditions up to 5 -- 7 kHz \cite{gaude2008experimental}. It is specially relevant because it comprises the frequencies of relevant acoustic phenomena such as \emph{whoosh} noise, tonal noise induced by BPF harmonics, deep surge, etc.
 
 From the research point of view, this frequency range is interesting because considering the pressure change constant along each pipe section allows for easier analytical and numerical modelling. 
 
@@ -68,7 +68,7 @@ From chapter \ref{cap:metod} it can be recalled that in a circular duct with mea
 
 In the case of the pipes considered in this study, evaluation of this expression led to cut-off frequencies of approximately 4.7 kHz for the inlet duct and 7.4 kHz in the case of the outlet duct, due to differences in flow conditions and pipe diameter. Also, it must be taken into account that this limit varied slightly because of changes in velocity and temperature at different operating conditions.
 
-However, the spatial Nyquist-like criterion related to the separation of the sensors of the decomposition array described by equation \ref{eq:f_nyquist} was more restrictive than the asymmetric mode limit, leading to cut-off frequencies for plane wave decomposition to 3.4 kHz for the inlet and 6.4 kHz for the outlet.
+The spatial Nyquist-like criterion related to the separation of the sensors of the decomposition array described by equation \ref{eq:f_nyquist} was more restrictive than the first asymmetric mode limit, leading to maximum cut-off frequencies for plane wave propagation of 3.4 kHz for the inlet and 6.4 kHz for the outlet. This limit is marked as a dashed line in the following figures.
 
 \begin{figure}[tbh!]
 \centering
@@ -116,7 +116,7 @@ In contrast, the opposite-travelling wave presents lower amplitudes, specially b
 \label{fig:result_spectra_LugLine_DOPA}
 \end{figure}
 
-Fig. \ref{fig:result_spectra_LugLine_DOPA} shows the PSD of this decomposed pressure signal. In the case of the top plot that contains the information from the inlet duct, PSD from the backward travelling wave is presented, since it is the one coming from the compressor. Conversely, the forward travelling wave PSD is plotted in the case of the bottom plot depicting outlet duct data. Note the spurious aliasing peaks as the spatial Nyquist limit is reached.
+Fig. \ref{fig:result_spectra_LugLine_DOPA} shows the PSD of this decomposed pressure signal. In the case of the top plot that contains the information from the inlet duct, PSD from the backward travelling wave is presented, since it is the one coming from the compressor. Conversely, the forward travelling wave PSD is plotted in the case of the bottom plot depicting outlet duct data. Note the spurious aliasing peaks as the spatial Nyquist limit is reached for each condition.
 
 It can thus be seen in Fig. \ref{fig:result_spectra_LugLine_DOPA} that the decomposition algorithm allows a clearer representation of the signal, since it is not affected by the buzz-saw effect at lower frequencies (lower than 3 kHz), specially visible in the inlet spectra (see also Fig.~\ref{fig:result_spectra_DOPA_tot_comp} for a comparison).
 
@@ -219,7 +219,7 @@ It can be seen in Fig.~\ref{fig:result_norm_all} how when the spectra Strouhal n
 
 However, when the Strouhal number takes into account the blade passing frequency these high frequency features appear more aligned, specially the tonal noise at the BPF and its harmonic at \textit{St}$(V_\text{tip})=1$ and 2. 
 
-Helmholtz normalization appears to be quite similar, with the difference that in this case the BPF tones are not aligned. by inspecting the decomposed spectra on the left however, it can be seen that the spurious peak that limits the range of valid beamforming decomposition is aligned as the spatial Nyquist criterion depends on the speed of sound.
+Helmholtz normalization appears to be quite similar, with the difference that in this case the BPF tones are not aligned. By inspecting the decomposed spectra on the left however, it can be seen that the spurious peak that limits the range of valid beamforming decomposition become aligned, as the spatial Nyquist criterion depends on the speed of sound.
 
 In Fig.~\ref{fig:result_norm_all_LL} a similar analysis is carried out considering the spectral information along the working line instead of along a fixed shaft speed. In this case the the results are similar, although in this case the Strouhal normalization that takes into account the tip velocity is more meaningful, as different shaft speeds are considered.
 
@@ -355,9 +355,9 @@ In this case however, unlike the previously described orifice measurements where
 
 Furthermore, a sequential damping of the different parts of the assembly (inlet duct, outlet duct, the turbocharger group itself and nothing at all) was performed using acoustic insulation blankets wrapped around them in order to isolate the distinct contribution of each part. 
 
-Results from this sequential testing procedure can be seen in Fig.~\ref{fig:result_spl_radiated_comp_bar_LL} considering the operating conditions of the working line. In this case full spectrum RMS SPL averaged between the four encircling microphones are shown. 
+Results from this sequential testing procedure can be seen in Fig.~\ref{fig:result_spl_radiated_comp_bar_LL} considering the operating conditions of the working line. In this case full spectrum RMS SPL averaged between the four encircling microphones is shown in the figure. 
 
-As expected radiated sound increases with shaft speed as predicted by the in-duct measurements. In almost all conditions sound levels radiated by the outlet are higher that those radiated by the inlet, and those are, in turn, higher than those radiated by the turbocharger group itself.
+As expected, radiated sound increases with shaft speed, following the previous in-duct measurements. In almost all conditions sound levels radiated by the outlet are higher that those radiated by the inlet, and those are, in turn, higher than those radiated by the turbocharger group itself.
 
 \begin{figure}[tbh!]
 \centering
@@ -368,7 +368,7 @@ As expected radiated sound increases with shaft speed as predicted by the in-duc
 
 In Fig.~\ref{fig:result_spl_radiated_comp_bar_160} a similar analysis is carried out for four points of the 160 krpm speed line, from a higher flow rate stable point to a lower flow rate at more unstable conditions. In this case it can be seen again how, as expected, noise content rises towards deep surge.
 
-However, at higher mass flow it is now the inlet duct the one exhibiting higher noise levels. As flow rate is reduced, the outlet duct takes against the lead on noise radiation. Between the last two points that are closer to surge, inlet contribution does not increase, only those of the of the outlet and turbocharger group.
+However, at higher mass flow it is now the inlet duct the one exhibiting higher noise levels. As flow rate is reduced, the outlet duct takes against the lead on noise radiation. Between the last two points that are closer to surge, inlet contribution does not increase, only that of the outlet and turbocharger group.
 
 \section{Conclusions}
 
@@ -386,14 +386,14 @@ Non-dimensional analysis showed that the hump identified with \emph{whoosh} was 
 
 Furthermore, this later phenomenon shows an abrupt collapse at frequencies of plane wave transmission at all the considered points, suggesting that its source mechanism cannot propagate in this condition. This would confirm that this TCN-like phenomenon is indeed different from \emph{whoosh}, which is a broadband noise that, on the other hand, does appear at the plane wave range.
 
-Noise maps were also constructed from the interpolation of in-duct acoustic intensity across the different operating conditions considered in the study. In this way it was shown how onset of low frequency (<100 Hz) phenomena was parallel to the surge limit, whereas content on the \emph{whoosh} band followed a different distribution, with its onset appearing more closely related to the null slope point of the characteristic line rather than to proximity of deep surge.
+Noise maps were also constructed from the interpolation of in-duct acoustic intensity across the different operating conditions considered in the study. In this way it was shown how onset of low frequency (<100 Hz) phenomena was parallel to the surge limit, whereas content on the \emph{whoosh} band followed a different distribution, with its onset appearing more closely related to the null slope point of the characteristic line rather than to proximity of deep surge, indicating a difference between the two phenomena.
 
 Analysis of the higher frequency maps became more difficult as pressure wave decomposition could not be performed due to the propagation of higher order acoustic modes that nullify the plane wave assumption required by the procedure. It was observed that while inlet PSD maps were similar for the three sensors of the array, distribution of the levels in the outlet presented important differences even considering the relatively small distance between each sensor, including in some cases spurious readings. 
 
-This reinforces the notion that PSD measurements with a single sensor, specially in the outlet duct where the flow is less uniform and features a high swirl, should be avoided if possible, preferring if feasible acoustic intensity measurements.
+This reinforces the notion that PSD measurements with a single sensor, specially in the outlet duct where the flow is less uniform and features a high swirl, should be avoided if possible, preferring if feasible acoustic intensity measurements through wave decomposition.
 
 In order to visualize how frequency content changed through the two different sets of conditions, spectrograms were constructed from the interpolated data of the maps for both inlet and outlet. Specially in the later it can be seen how content in the \emph{whoosh} noise band is present even at lower shaft speeds and higher mass flow rate conditions. 
 
-Taking advantage of the anechoic environment in which the turbocharger was installed, orifice noise measurements performed with free-field microphones near the inlet mouth were used to compute a correlation with the in-duct intensity. In-duct intensity was calculated with both the beamforming procedure and the two microphone method, with the first resulting in better agreement and less dispersion, thereby confirming that the technique is suitable to estimate orifice noise without the need of an anechoic environment.
+Taking advantage of the anechoic environment in which the turbocharger was installed, orifice noise measurements performed with free-field microphones near the inlet mouth were used to compute a correlation with the in-duct intensity. In-duct intensity was calculated with both the beamforming procedure and the two microphone method, with the first resulting in better agreement and less dispersion, thereby confirming that the selected decomposition technique is suitable to estimate orifice noise without the need of an anechoic environment.
 
-Finally, surface radiation was measured in a sequential test in which the different parts were damped: inlet and outlet ducts and turbocharger group. Results from these tests showed that the outlet duct featured generally a higher contribution than the inlet to the radiated noise, except at the higher mass flow rate conditions. It is thereby important to take into account the target operating conditions when deciding which duct design and damping should be prioritized.
+Finally, surface radiation was measured in a sequential test in which the different parts were damped: inlet and outlet ducts and turbocharger group. Results from these tests showed that the outlet duct featured generally a higher contribution than the inlet to the radiated noise, except at the higher mass flow rate conditions. It is worth noting that even if sound is generated in the turbocharger itself, the vibro-acoustic characteristics of the particular ducts can make them act as primary sources of sound radiation to the ambient.

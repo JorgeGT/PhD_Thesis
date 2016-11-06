@@ -54,15 +54,18 @@
   doi          = false,
   url          = false
 }
+
 % Cited in X page texts
 \DefineBibliographyStrings{english}{%
   backrefpage  = {cited in p.}, % for single page number
   backrefpages = {cited in pp.} % for multiple page numbers
 }
+
 % Remove "in:"
 \renewbibmacro{in:}{%
   \ifentrytype{article}{}{\printtext{\bibstring{in}\intitlepunct}}}
-% Names in small capitals
+
+% Names in small caps
 \renewcommand{\mkbibnamefamily}[1]{\textsc{#1}}
 \renewcommand{\mkbibnamegiven}[1]{\textsc{#1}}
 
@@ -122,6 +125,8 @@
 % \definecolor{tema}{rgb}{0.45,0.45,0.45}
 \definecolor{tema}{RGB}{0,50,150}
 \definecolor{BLACK}{RGB}{0,0,0}
+
+% Hyperref settings
 \hypersetup{
     colorlinks,
     citecolor=tema,
@@ -192,7 +197,7 @@
 \renewcommand{\labelitemi}{\textcolor{tema}{\scriptsize\raisebox{0.5mm}{\Circsteel}}}
 \renewcommand{\labelitemii}{\textcolor{tema}{\scriptsize\raisebox{0.4mm}{\Squaresteel}}}
 
-% Select only a chapter for faster compilation
+% (Opt.) select only a chapter for faster compilation
 % \includeonly{abstracts}
 
 \begin{document}
@@ -205,6 +210,7 @@
 % Fancy cover page
 \includepdf[pagecommand={\thispagestyle{empty}}]{figures/misc/portada}
 %\includepdf[pagecommand={\thispagestyle{empty}}]{figures/misc/portada_simp}
+%\includepdf[pagecommand={\thispagestyle{empty}}]{figures/misc/portada_cent}
 %\cleardoublepage
 
 % Inside cover
@@ -275,9 +281,7 @@ Dr. D. Pedro A. Rodríguez Aumente\\[1cm]
 
 % Dedication
 \null\vspace{5cm}
-\begin{flushright}
-{\itshape A Paula}
-\end{flushright}
+\hfill\textit{A Paula}
 \cleardoublepage
 
 % Abstracts
@@ -315,15 +319,15 @@ The work leading up to this thesis was done in collaboration with other research
 
 A gratitude that I also must extend to Prof. Galindo and Dr. Navarro, not only for the development of the numerical model but for the many insightful discussions held along the development of this work.
 
-Also included in this recognition are certainly the people of the Noise Control research line, specially Prof. Torregrosa, Bernardo Planells and Josep Gómez. My sincere appreciation also goes to my colleagues in CMT -- Motores Térmicos, starting with Profs. Payri and Desantes and including the professors, researchers, technicians, students, etc., with whom I shared so many good times. Special thanks as well to the administrative staff, Teresa, Amparo, Julia; for their help navigating the fearsome seas of paperwork.
+Also included in this recognition are certainly the people of the Noise Control research line, specially Prof. Torregrosa, Bernardo Planells and Josep Gómez. My sincere appreciation also goes to my colleagues at CMT -- Motores Térmicos, starting with Profs. Payri and Desantes and including the professors, researchers, technicians, students, etc., with whom I shared so many good times. Special thanks as well to the administrative staff, Teresa, Amparo, Julia; for their help navigating the fearsome seas of paperwork.
 
-I also wish to thank Profs. Mats Åbom, Susann Boij and Inés López for welcoming me as a visiting researcher in The Marcus Wallenberg Laboratory at the KTH -- Royal Institute of Technology, and of course to Luck, Juán Pablo, Romain, Luca, Mathieu, and the many others who offered me their hospitality in Stockholm. I am also indebted to the people at Jaguar Land Rover with whom we made so many fruitful collaborations.
+I also wish to thank Profs. Mats Åbom, Susann Boij and Inés López for welcoming me as a visiting researcher in The Marcus Wallenberg Laboratory at the KTH -- Royal Institute of Technology, and of course to Luck, Juán Pablo, Romain, Luca, Mathieu, and the many others who offered me their hospitality in Stockholm. I am indebted as well to the people at Jaguar Land Rover with whom we made so many fruitful collaborations.
 
-Last but not least, I wish to thank my friends and family for their everlasting support, specially my parents from whom I inherited the appreciation for mathematics and science. And finally, thank you, Paula, for sharing this journey, and those that should follow.\\[0mm]
+Last but not least, I wish to thank my friends and family for their everlasting support, specially my parents from whom I inherited the appreciation for mathematics and science. And finally, thank you, Paula, for sharing this journey, and those to come.\\[0mm]
 
 \hspace{0.7\textwidth}
 \begin{minipage}[t]{0.3\textwidth}
-\includegraphics[width=5cm]{figures/misc/firma2}\\[-0.5mm]
+\includegraphics[width=5cm]{figures/misc/firma}\\[-0.5mm]
 \centering
 \cabin\small Valencia, 2016
 \end{minipage}
@@ -436,6 +440,6 @@ Last but not least, I wish to thank my friends and family for their everlasting 
 \printbibliography
 
 % Back cover
-% \includepdf{../test_portada3_back}
+\includepdf{figures/misc/contraportada}
 
 \end{document}

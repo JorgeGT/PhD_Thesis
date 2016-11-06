@@ -44,7 +44,7 @@ When conditions were judged to be close enough to deep surge, a continuous recor
 \label{fig:autosurge_simple_geom}
 \end{figure}
 
-This pressure recording was then post-processed following a procedure similar to that described in chapter \ref{cap:metod}. In steps of 0.5 s, FFT was applied to obtain the pressure spectra and then a frequency ratio $R_f$ was computed between the power at 0--50 Hz and the power at 50--100 Hz:
+This pressure recording was then post-processed following a procedure similar to that described in chapter \ref{cap:metod}. In steps of 0.5 s, FFT was applied to obtain the pressure spectra and then a frequency ratio $R_f$ was computed between the power at 0 -- 50 Hz and the power at 50 -- 100 Hz:
 
 \begin{equation}
 	R_f=\frac{\sum_{f=0}^{50}|\mathbf{P}(f)|^2}{\sum_{f=50}^{100}|\mathbf{P}(f)|^2}
@@ -118,7 +118,7 @@ Figure \ref{fig:geom_engine} shows the selected geometry variations based on the
 
 The simplest inlet geometry tested consisted in a tapered duct situated as close as possible to the compressor impeller leading edge. This can be seen at the center left in the figure. Below, it is shown how this tapered duct was complemented with an inlet guide vanes (IGV) device.
 
-\begin{wrapfigure}[15]{o}[7mm]{0.4\textwidth}
+\begin{wrapfigure}[15]{i}[7mm]{0.4\textwidth}
 %\begin{figure}[htb!]
 \centering
 \includegraphics[width=0.4\textwidth]{figures/cap_geom/IGV_fitted}
@@ -253,14 +253,14 @@ Taking into account these concerns, it was decided to manufacture the elbow prot
     Tensile Modulus & DIN EN ISO 527 & MPa   & 3800 $\pm$ 150 \\
     Tensile Strength & DIN EN ISO 527 & MPa   & 48 $\pm$ 3 \\
     Elongation at Break & DIN EN ISO 527 & \%    & 3.5 $\pm$ 1 \\
-    Flexural Modulus & DIN EN ISO 178 & N/mm² & 3600 $\pm$ 150 \\
+    Flexural Modulus & DIN EN ISO 178 & N/mm${}^2$ & 3600 $\pm$ 150 \\
     Charpy – Impact strength & DIN EN ISO 179 & MPa   & 29 $\pm$ 2 \\
     Charpy – Notched Impact Strength & DIN EN ISO 179 & MPa   & 4.6 $\pm$ 0.3 \\
     Shore D/ A-hardness & DIN 53505 &   -   & D 76 $\pm$ 2 \\
     Heat Deflection Temp & ASTM D648
 (1.82MPa) & °C    & 130 \\
     Vicat Softening Temperature B/50 & DIN EN ISO 306 & °C    & 169 \\
-    Density &   N/A    & g/cm³ & 1.36 $\pm$ 0.05 \\
+    Density &   N/A    & g/cm${}^3$ & 1.36 $\pm$ 0.05 \\
     \bottomrule
     \end{tabular}
   \label{tab:alumide_data}
@@ -324,7 +324,7 @@ It should be remarked that this subtraction procedure was not performed between 
 
 The results of this procedure can be seen in Fig. \ref{fig:map_diff_in_out}, where the difference maps for the three elbow configurations regarding inlet and outlet in-duct intensity are presented. Color scale has been kept constant in order to allow a meaningful comparison between each map.
 
-It can be seen in the maps, examining for instance some of the highest mass flow rate points, that some information is missing around the black dot that indicates the original measurement point before interpolation. This missing data comes from slight differences in measurements between geometries, as the subtraction process is only performed where data exists for both of them.
+It can be seen in the maps, examining for instance some of the highest mass flow rate points, that some information is missing around the black dot that indicates the original measurement point before interpolation. This missing data comes from slight differences in measurements between the two geometries being compared, as the subtraction process is only performed where data exists for both of them.
 
 As for the evolution of level difference with the variation of the elbow radius, the figure shows how in the case of the inlet sound intensity differences appear to be higher than in the case of the outlet. This increase is specially evident at lower flow conditions and medium-low shaft speeds, reaching up to 6 dB in level increase. 
 
@@ -429,13 +429,13 @@ Exceptions to this pattern are some of the lowest air mass flow data points at 1
 \label{fig:distribution_diff_backL}
 \end{figure}
 
-These low count extreme points are best shown when the data is put into histogram form as seen in Fig. \ref{fig:distribution_diff_backL}. In this figure it can be seen how the three backflow length difference distributions are quite similar in shape and values.
+These low count points are best shown when the data is put into histogram form as seen in Fig.~\ref{fig:distribution_diff_backL}. In this figure it can be seen how the three backflow length difference distributions are quite similar in shape and values.
 
-The three distributions feature approximately the same mean, around 0.1 diameters of backflow length reduction from the straight inlet case. However, the most usual difference (that is, the mode) the difference is practically zero. It must be also considered that estimation of backflow is only performed along the outer edge of the elbow, while the modified flow pattern could mean that a very non-symmetric backflow is propagating upstream.
+The three distributions feature approximately the same mean, around 0.1 diameters of backflow length reduction from the straight inlet case. However, the most usual difference (that is, the statistical mode) is practically zero. It must be also considered that the estimation of backflow is only performed along the outer edge of the elbow, while the modified flow pattern could mean that a very non-symmetric backflow is propagating upstream.
 
 \subsubsection{Correlations between SIL and temperature}
 
-In Fig.~\ref{fig:comp_corrs_skew_sil} the correlation between sound intensity level and circumferential temperature skewness has been performed again for the three elbow inlet cases as it was made in chapter \ref{cap:inlet} for the case of the straight pipe, which has been included as a reference keeping the same axis limits of the elbow cases.
+In Fig.~\ref{fig:comp_corrs_skew_sil} the correlation between sound intensity level and circumferential temperature skewness has been performed again for the three elbow inlet cases as it was already made in chapter \ref{cap:inlet} for the case of the straight pipe. This correlation has been included as a reference, keeping the same axis limits of the elbow cases.
 
 It can be seen in this figure how for the straight pipe and the more straight elbow (that with an central radius equal to 1.5D), both pictured on the top plots, a clear separation is maintained between higher flow rate conditions (indicated as blue circles) which exhibit higher noise levels even when no skewness is detected, and those of lower flow rate where skewness is well correlated with the increase in noise levels.
 
@@ -445,7 +445,7 @@ It can be seen in this figure how for the straight pipe and the more straight el
 \includegraphics[width=0.45\textwidth]{figures/cap_geom/corr_int_skew_elbow3}\\[4mm]
 \includegraphics[width=0.45\textwidth]{figures/cap_geom/corr_int_skew_elbow2}\hspace{4mm}
 \includegraphics[width=0.45\textwidth]{figures/cap_geom/corr_int_skew_elbow1}
-\caption[SIL vs. temp. $\sigma$ correlation for each geometry]{Correlations between standard deviation at the circumferential thermocouple array and inlet sound intensity level in the 1--3 kHz band for the straight pipe and the three elbow inlets. Size indicates shaft speed from low to high and color indicates mass flow from higher (blues) to lower (reds).}
+\caption[SIL vs. temp. $\sigma$ correlation for each geometry]{Correlations between standard deviation at the circumferential thermocouple array and inlet sound intensity level in the 1 -- 3 kHz band for the straight pipe and the three elbow inlets. Size indicates shaft speed from low to high and color indicates mass flow from higher (blues) to lower (reds).}
 \label{fig:comp_corrs_skew_sil}
 \end{figure}
 
