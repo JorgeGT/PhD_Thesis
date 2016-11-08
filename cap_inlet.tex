@@ -86,11 +86,9 @@ Based in these two frames particle position can be determined using cross-correl
 Specifically in this study a standard 2D PIV system by TSI has been used for the measurement of the instantaneous two-dimensional velocity fields. It consists of a double-head 15 Hz Nd:YAG laser with 135 mJ/pulse @ 532 nm, a set of mirrors and lenses to drive the laser into the measurement plane and change the laser output 5 mm circular beam into a laser sheet with around 1 mm thickness at the measurement section, a 4Mpixel, 12-bit straddle CCD camera (PowerView Plus 4MP) and a synchronization device.
 The air flow was seeded with ~1 µm oil droplets from an atomiser using the Laskin nozzle principle (TSI 9306A Six-jet atomizer). Figs. \ref{fig:assembly_piv} and \ref{fig:piv_transv_photo} show the experimental arrangement.
 
-Images were processed with selected algorithms and validation criteria of the TSI Insight 3G software options. Post-processing, graphical output and analysis tools were complemented with new processing routines developed in MATLAB for the specific purposes of this work.
+Images were processed with selected algorithms and validation criteria of the TSI Insight 3G software options. Post-processing, graphical output and analysis tools were complemented with additional processing routines developed in MATLAB for data extraction, comparison and validation.
 
-The magnification of the images taken was around 30 pixel/mm (in fact, between 28 and 32 pixel/mm depending on the arrangement) and the size of the interrogation area for calculation of the cross-correlations was set to $64\times 64$ pixels. This leads to the measurement of velocity fields with vectors separated a distance of 32 pixels, i.e. $\sim$1 mm. Time elapsed between the two laser shots was set to a value between 2 and 10 µs depending on the flow velocities at each test point in the experimental test matrix.
-
-Seeding control was proven to be critical, especially in the case of the longitudinal measurements that were made through the walls of the glass pipe.
+The magnification of the images taken was around 30 pixel/mm (in fact, between 28 and 32 pixel/mm depending on the arrangement) and the size of the interrogation area for calculation of the cross-correlations was set to $64\times 64$ pixels. This leads to the measurement of velocity fields with vectors separated a distance of 32 pixels, i.e. $\sim$1 mm. Time elapsed between the two laser shots was set to a value between 2 and 10 µs depending on the flow velocities at each test point in the experimental test matrix. Seeding control was proven to be critical, especially in the case of the longitudinal measurements that were made through the walls of the glass pipe.
 
 Even during measurements of the longitudinal plane at stable conditions (high mass flow) where the stalled backflow does not reach upstream the leading edge of the blades, oil accumulated in the inner wall of the glass pipe, obstructing the view and enhancing reflections that rendered the measurement impossible through the affected parts.
 
@@ -361,11 +359,11 @@ Once that temperature data was processed to estimate the backflow extent across 
 
 As described in the methodology section, longitudinal plane measurements were the most difficult since the seeding oil particles blocked the line of sight of the camera. However with the right combination of seeding flow, oil dilution and quick operation of the system, valid snapshot pairs were obtained that were suitable for postprocessing.
 
-In order to capture the difference between stable and partially stalled conditions (also called mild surge or marginal surge conditions) two back-pressure valve positions were tested, while maintaining the same shaft speed of 140 krpm, so that high and low flow rate conditions could be attested.
+To capture the difference between stable and partially stalled conditions (also called mild surge or marginal surge conditions) two back-pressure valve positions were tested, while maintaining the same shaft speed of 140 krpm, so that high and low flow rate conditions could be attested.
 
-PIV postprocessing was carried out for 7 snapshot pairs for each condition. This was the maximum snapshots that could be recorded before the oil film ring shown in Fig.~\ref{fig:photos_transversal} started to form at the stagnation zone of the backflow in the unstable condition test, obscuring the images.
+In this particular case PIV postprocessing was carried out for 7 snapshot pairs for each condition. This was the maximum snapshots that could be recorded before the oil film ring shown in Fig.~\ref{fig:photos_transversal} started to form at the stagnation zone of the backflow in the unstable condition test, obscuring the images.
 
-While the lower third of the frames were obscured by a reflection, at least \nicefrac{2}{3} of the longitudinal plane could be resolved in sufficient quality. The two resulting averaged velocity fields can be seen in Fig.~\ref{fig:longitudinal}.
+While the lower third of the frames were obscured by a reflection, at least \nicefrac{2}{3} of the longitudinal plane could be resolved in sufficient quality. The two resulting averaged velocity fields can be seen in Fig.~\ref{fig:longitudinal}. A 50 m/s isoline has been added in both cases for clearer identification.
 
 \begin{figure}[t!]
 \hspace{-0.1\textwidth}
@@ -389,15 +387,13 @@ This apparent reduction in velocity magnitude is probably caused by  the highly 
 
 The reduction in diameter extends to approximately $\sim$55\,mm, this is, approximately half of the transparent glass length. This distance is consistent with the prediction made through temperature measurements as shown in the backflow length map of Fig.~\ref{fig:temp_maps}, which is included for convenience.
 
-It can also be seen in Fig.~\ref{fig:longitudinal} how this reduction in the useful diameter appears to be paired with an increase in the flow velocity. A similar but lower increase can be seen in the work of Fike et al.~\cite{fike2014visualisation} where a single channel of an axial flow fan was tested.
-
-A similar constriction and acceleration of the flow is correctly predicted by the compressor numerical model developed by Lang~\cite{lang2011contribucion}.
+It can also be seen in Fig.~\ref{fig:longitudinal} how this reduction in the useful diameter appears to be paired with an increase in the flow velocity. A similar but lower increase can be seen in the work of Fike et al.~\cite{fike2014visualisation} where a single channel of an axial flow fan was tested. Also, a similar constriction and acceleration of the flow is correctly predicted by the compressor numerical model developed by Lang~\cite{lang2011contribucion}.
 
 To better quantify the increase in speed in the core flow, velocity data along the turbocharger axis line (marked with dashed line in Fig.~\ref{fig:longitudinal}) from each valid snapshot has been plotted in Fig.~\ref{fig:line_comp_long} for both operating conditions. The first invalid snapshot pair has also been plotted (black dots) to show how the oil film accumulating in the pipe wall due to the backflow starts to affect the measurements.
 
 In order to assess if the flow field is stationary enough so that this approximate number of snapshot pairs accurately reflects the velocity profile, in Fig.~\ref{fig:line_comp_long_mov_avg} the profiles shown in Fig.~\ref{fig:line_comp_long} have been recreated for different consecutive snapshot sets taken during the same measurement run. Note that pairs 0 -- 10 are omitted as seeding particles have not yet fully reached the laser sheet in those.
 
-\begin{figure}[thb!]
+\begin{figure}[t!]
 \centering
 \includegraphics[width=1\textwidth]{figures/cap_inlet/profileLong_vel_mov_avg}
 \caption[Velocity magnitude average evolution]{Velocity magnitude averages over the centreline of the longitudinal plane at high and low flow, considering different consecutive sets of snapshots.}
@@ -621,9 +617,7 @@ Finally, a comparison between the PIV results and the previous temperature measu
 
 Comparison of the radial profile was done extracting data from the slice closer to the compressor, and the closer thermocouple was introduced step by step into the flow until the inlet duct axis. A good agreement between the two results was found, reinforcing the conclusion that the high transversal speed profile measured by PIV is caused by the hot reversed flow and it is accurately capturing its velocity distribution.
 
-Comparison in terms of axial velocity profile was also performed. While the non-disturbed upstream flow and the maximum length of the backflow appeared to match, profiles inside the backflow were more different than in the transversal case, probably due to the aforementioned difficulties regarding the PIV measurement through the glass in the presence of confined backflow.
-
-However if the standard deviation of the recorded snapshots is analyzed, a good agreement can be found between the rising in deviation and the raising in temperature.
+Comparison in terms of axial velocity profile was also performed. While the non-disturbed upstream flow and the maximum length of the backflow appeared to match, profiles inside the backflow were more different than in the transversal case, probably due to the aforementioned difficulties regarding the PIV measurement through the glass in the presence of confined backflow. However if the standard deviation of velocity in the recorded snapshots is analyzed, a good agreement can be found between the rising in deviation and the raising in temperature.
 
 In conclusion, it has been shown that PIV measurements can be used to successfully characterize the flow field in the presence of a confined backflow in the compressor inlet, with the added advantage of avoiding the disturbances that thermocouples or other sensors can introduce. Temperature measurements with thermocouple arrays can be used to measure the extent of this backflow and also characterize its circumferential distribution, which presents good correlation with the increase in \emph{whoosh} noise levels.
 

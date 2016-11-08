@@ -196,7 +196,7 @@
 \renewcommand{\labelitemii}{\textcolor{tema}{\scriptsize\raisebox{0.4mm}{\Squaresteel}}}
 
 % (Opt.) select only a chapter for faster compilation
-\includeonly{abstracts}
+% \includeonly{abstracts}
 
 \begin{document}
 
@@ -236,7 +236,6 @@
 \rm\Large D. Jorge García Tíscar\\[6mm]
 {\small\bfseries\cabincondensed SUPERVISED BY}\\[2mm]
 \rm\Large Dr. D. Alberto Broatch Jacobi\\[6mm]
-
 {\small\bfseries\cabincondensed FOR THE DEGREE OF}\\[2mm]
 \it\Large Doctor of Philosophy
 
@@ -277,10 +276,10 @@
 % }
 % \cleardoublepage
 
-% % Dedication
-% \null\vspace{5cm}
-% \hfill\textit{A Paula}
-% \cleardoublepage
+% Dedication
+\null\vspace{5cm}
+\hfill\textit{A Paula}
+\cleardoublepage
 
 % Abstracts
 \include{abstracts}
@@ -288,7 +287,7 @@
 % List of publications
 \chapter*{List of publications}
 
-The following journal papers have been published following the work performed in the framework of this doctoral thesis and its associated projects:
+Following the work performed in the framework of this doctoral thesis and its associated projects, the following journal papers have been published:
 
 \renewcommand*{\bibfont}{\small}
 \renewcommand*{\mkbibacro}[1]{#1}
@@ -298,7 +297,7 @@ The following journal papers have been published following the work performed in
 \printbibliography[keyword=MyOwn,heading=none]
 \endgroup
 
-Additionally, two manuscripts entitled ``Local flow measurements in a turbocharger compressor inlet'' and ``Measuring turbocharger compressor inlet backflow through laser particle image velocimetry'', to be submitted to journal \emph{Experimental Thermal and Fluid Science}, have been prepared and are under review with industry partner Jaguar Land Rover Limited, which has partially supported their development.
+Additionally, two manuscripts entitled ``Local flow measurements in a turbocharger compressor inlet'' and ``Measuring turbocharger compressor inlet backflow through laser particle image velocimetry'', are expected to be submitted to the journal \emph{Experimental Thermal and Fluid Science}. Both have been prepared based on the work developed in chapter \ref{cap:inlet} and are under review with industry partner Jaguar Land Rover Limited, which has partially supported their development.
 
 \newpage
 
@@ -329,7 +328,7 @@ A gratitude that I also must extend to Prof. Galindo and Dr. Navarro, not only f
 
 Also included in this recognition are certainly the people of the Noise Control research line, specially Prof. Torregrosa, Bernardo Planells and Josep Gómez. My sincere appreciation also goes to my colleagues at CMT -- Motores Térmicos, starting with Profs. Payri and Desantes and including the professors, researchers, technicians, students, etc., with whom I shared so many good times. Special thanks as well to the administrative staff, Teresa, Amparo, Julia; for their help navigating the fearsome seas of paperwork.
 
-I also wish to thank Profs. Mats Åbom, Susann Boij and Inés López for welcoming me as a visiting researcher in The Marcus Wallenberg Laboratory at the KTH -- Royal Institute of Technology, and of course to Luck, Juán Pablo, Romain, Luca, Mathieu, and the many others who offered me their hospitality in Stockholm. I am indebted as well to the people at Jaguar Land Rover with whom we have made so many fruitful collaborations.
+I also wish to thank Profs. Mats Åbom, Susann Boij and Inés López for welcoming me as a visiting researcher in The Marcus Wallenberg Laboratory at the KTH -- Royal Institute of Technology, and of course to Luck, Juan Pablo, Romain, Luca, Mathieu, and the many others who offered me their hospitality in Stockholm. I am indebted as well to the people at Jaguar Land Rover with whom we have made so many fruitful collaborations.
 
 Last but not least, I wish to thank my friends and family for their everlasting support, specially my parents from whom I inherited the appreciation for mathematics and science. And finally, thank you, Paula, for sharing this journey, and those that may follow.\\[-1mm]
 
@@ -359,8 +358,8 @@ Last but not least, I wish to thank my friends and family for their everlasting 
 
 % List of figures
 \begingroup
-% \setlength{\cftbeforefigskip}{0mm}
-% \setlength{\cftbeforetabskip}{0mm}
+\setlength{\cftbeforefigskip}{1mm}
+\setlength{\cftbeforetabskip}{1mm}
 \renewcommand{\cftfigfont}{\small}
 \renewcommand{\cfttabfont}{\small}
 \renewcommand*{\addvspace}[1]{}
@@ -384,6 +383,9 @@ Last but not least, I wish to thank my friends and family for their everlasting 
 
 % Chapter
 \titleformat{\chapter}[hang]{}{}{0mm}{\large\bfseries\cabincondensed\textcolor{tema}{\hspace{0mm}CHAPTER \thechapter}\\[-1mm]\Huge}
+
+% Section
+\titleformat{\section}[hang]{}{}{0mm}{\bfseries\sffamily\Large\textcolor{tema}{\arabic{chapter}.\arabic{section}. }}[\vspace{-1mm}]
 
 % Subsection
 \titleformat{\subsection}[hang]{}{}{0mm}{\bfseries\large\sffamily\textcolor{tema}{\arabic{chapter}.\arabic{section}.\arabic{subsection}. }}[\vspace{1mm}]
