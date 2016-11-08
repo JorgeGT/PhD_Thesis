@@ -17,11 +17,9 @@
 \usepackage{titlesec}
 \usepackage{microtype}
 \usepackage{longtable}
-\usepackage{doi}
 \usepackage{units}
 \usepackage[defaultlines=3,all]{nowidow}
 \usepackage{marvosym}
-\usepackage{rotating}
 \usepackage[bitstream-charter]{mathdesign}
 \usepackage[scaled=.965]{XCharter}
 \usepackage[scaled]{beramono}
@@ -198,7 +196,7 @@
 \renewcommand{\labelitemii}{\textcolor{tema}{\scriptsize\raisebox{0.4mm}{\Squaresteel}}}
 
 % (Opt.) select only a chapter for faster compilation
-% \includeonly{abstracts}
+\includeonly{abstracts}
 
 \begin{document}
 
@@ -208,7 +206,7 @@
 \frontmatter
 
 % Fancy cover page
-\includepdf[pagecommand={\thispagestyle{empty}}]{figures/misc/portada}
+% \includepdf[pagecommand={\thispagestyle{empty}}]{figures/misc/portada}
 %\includepdf[pagecommand={\thispagestyle{empty}}]{figures/misc/portada_simp}
 %\includepdf[pagecommand={\thispagestyle{empty}}]{figures/misc/portada_cent}
 %\cleardoublepage
@@ -244,45 +242,45 @@
 
 \vspace{1.8cm}
 
-\footnotesize\rm\cabincondensed{\bfseries JANUARY 2017}
+%\footnotesize\rm\cabincondensed{\bfseries JANUARY 2017}
 \end{center}
 \cleardoublepage
 
-% Thesis details
-\vspace*{0.2\textheight}
-{
+% % Thesis details
+% \vspace*{0.2\textheight}
+% {
 
-\centering
-{\normalsize\bfseries\cabincondensed DOCTORAL THESIS}\\[4mm]
-\textit{\large ``Experiments on turbocharger compressor acoustics''}\\[2cm]
+% \centering
+% {\normalsize\bfseries\cabincondensed DOCTORAL THESIS}\\[4mm]
+% \textit{\large ``Experiments on turbocharger compressor acoustics''}\\[2cm]
 
-\begin{tabular}{rl}
-{\cabincondensed Presented by:} & D. Jorge García Tíscar\\
-{\cabincondensed Supervised by:} & Dr. D. Alberto Broatch Jacobi\\[1cm]
-\end{tabular}
+% \begin{tabular}{rl}
+% {\cabincondensed Presented by:} & D. Jorge García Tíscar\\
+% {\cabincondensed Supervised by:} & Dr. D. Alberto Broatch Jacobi\\[1cm]
+% \end{tabular}
 
-{\normalsize\bfseries\cabincondensed THESIS EXAMINERS}\\[4mm]
-Dr. D. Hans Rämmal\\
-Dr. D. Richard Burke\\
-Dr. D. Pedro A. Rodríguez Aumente\\[1cm]
+% {\normalsize\bfseries\cabincondensed THESIS EXAMINERS}\\[4mm]
+% Dr. D. Hans Rämmal\\
+% Dr. D. Richard Burke\\
+% Dr. D. Pedro A. Rodríguez Aumente\\[1cm]
 
 
-{\normalsize\bfseries\cabincondensed DEFENSE COMITEE}\\[4mm]
-\begin{tabular}{rl}
-{\cabincondensed Chairman:} & Dr. D. José Ramón Serrano Cruz\\
-{\cabincondensed Secretary:} & Dr. D. Gregorio López Juste\\
-{\cabincondensed Member:} & Dr. D. Hans Rämmal\\[1.5cm]
-\end{tabular}
+% {\normalsize\bfseries\cabincondensed DEFENSE COMITEE}\\[4mm]
+% \begin{tabular}{rl}
+% {\cabincondensed Chairman:} & Dr. D. José Ramón Serrano Cruz\\
+% {\cabincondensed Secretary:} & Dr. D. Gregorio López Juste\\
+% {\cabincondensed Member:} & Dr. D. Hans Rämmal\\[1.5cm]
+% \end{tabular}
 
-{\cabincondensed Valencia, \hl{January 2017}}
+% {\cabincondensed Valencia, \hl{January 2017}}
 
-}
-\cleardoublepage
+% }
+% \cleardoublepage
 
-% Dedication
-\null\vspace{5cm}
-\hfill\textit{A Paula}
-\cleardoublepage
+% % Dedication
+% \null\vspace{5cm}
+% \hfill\textit{A Paula}
+% \cleardoublepage
 
 % Abstracts
 \include{abstracts}
@@ -300,15 +298,25 @@ The following journal papers have been published following the work performed in
 \printbibliography[keyword=MyOwn,heading=none]
 \endgroup
 
-\hl{[Additional papers are under preparation]}
+Additionally, two manuscripts entitled ``Local flow measurements in a turbocharger compressor inlet'' and ``Measuring turbocharger compressor inlet backflow through laser particle image velocimetry'', to be submitted to journal \emph{Experimental Thermal and Fluid Science}, have been prepared and are under review with industry partner Jaguar Land Rover Limited, which has partially supported their development.
 
 \newpage
 
 {\bfseries\sffamily\Large\noindent Division of work between authors}\\[-1mm]
 
-The work leading up to this thesis was done in collaboration with other researchers. The respondent is the co-author of all papers on which this thesis is based, with author signatures being in order of seniority in the Institute. The respondent implemented the proposed methodology into the different experimental setups, performed the measurements, processed the experimental results and extracted the presented conclusions. Discussions were also performed in collaboration with supervisor Prof. Broatch and the rest of the co-authors. Numerical simulations were not performed by the respondent, and are thus gratefully acknowledged.
+\noindent The work leading up to this thesis was done in collaboration with other researchers. The respondent is the co-author of all papers on which this thesis is based, with author signatures being in order of seniority in the Institute. The respondent implemented the proposed methodology into the different experimental setups, performed the measurements, processed the experimental results and extracted the presented conclusions. Discussions were also performed in collaboration with supervisor Prof. Broatch and the rest of the co-authors. Numerical simulations were not performed by the respondent, and are thus gratefully acknowledged.\\[2mm]
 
-\hl{[Funding?]}
+{\bfseries\sffamily\Large\noindent Funding acknowledgements}\\[-1mm]
+
+\noindent The respondent wishes to acknowledge the financial support received through contract FPI-S2-2015-1530 of the \emph{Programa de Apoyo para la Investigación y Desarrollo} (PAID) of Universitat Politècnica de València. The equipment used in this work has been partially supported through the following projects:
+
+\begin{itemize}
+  \item Project nº TRA2012-36954 {(RUITUR)} of the Spanish Ministerio de Economía y Competitividad.
+  \item Project nº DPI2015-70464-R {(EMITUR)} of the Spanish Ministerio de Economía y Competitividad.
+  \item FEDER project funds FEDER-ICTS-2012-06: Dotación de infraestructuras científico técnicas para el Centro Integral de Mejora Energética y Medioambiental de Sistemas de Transporte (CiMeT), framed in the operational program of unique scientific and technical infrastructure of the Spanish Ministerio de Economía y Competitividad.
+\end{itemize}
+
+Parts of the work presented in this thesis have been supported by different collaboration agreements with industry partner Jaguar Land Rover Limited, Abbey Road, Whitley, Coventry CV3 4LF, UK. 
 
 \cleardoublepage
 
@@ -321,15 +329,14 @@ A gratitude that I also must extend to Prof. Galindo and Dr. Navarro, not only f
 
 Also included in this recognition are certainly the people of the Noise Control research line, specially Prof. Torregrosa, Bernardo Planells and Josep Gómez. My sincere appreciation also goes to my colleagues at CMT -- Motores Térmicos, starting with Profs. Payri and Desantes and including the professors, researchers, technicians, students, etc., with whom I shared so many good times. Special thanks as well to the administrative staff, Teresa, Amparo, Julia; for their help navigating the fearsome seas of paperwork.
 
-I also wish to thank Profs. Mats Åbom, Susann Boij and Inés López for welcoming me as a visiting researcher in The Marcus Wallenberg Laboratory at the KTH -- Royal Institute of Technology, and of course to Luck, Juán Pablo, Romain, Luca, Mathieu, and the many others who offered me their hospitality in Stockholm. I am indebted as well to the people at Jaguar Land Rover with whom we made so many fruitful collaborations.
+I also wish to thank Profs. Mats Åbom, Susann Boij and Inés López for welcoming me as a visiting researcher in The Marcus Wallenberg Laboratory at the KTH -- Royal Institute of Technology, and of course to Luck, Juán Pablo, Romain, Luca, Mathieu, and the many others who offered me their hospitality in Stockholm. I am indebted as well to the people at Jaguar Land Rover with whom we have made so many fruitful collaborations.
 
-Last but not least, I wish to thank my friends and family for their everlasting support, specially my parents from whom I inherited the appreciation for mathematics and science. And finally, thank you, Paula, for sharing this journey, and those to come.\\[0mm]
+Last but not least, I wish to thank my friends and family for their everlasting support, specially my parents from whom I inherited the appreciation for mathematics and science. And finally, thank you, Paula, for sharing this journey, and those that may follow.\\[-1mm]
 
-\hspace{0.7\textwidth}
+\hspace{0.72\textwidth}
 \begin{minipage}[t]{0.3\textwidth}
-\includegraphics[width=5cm]{figures/misc/firma}\\[-0.5mm]
-\centering
-\cabin\small Valencia, 2016
+\includegraphics[width=4.4cm]{figures/misc/firma.pdf}\\[0mm]
+\null\cabin\itshape\small\hspace{5mm} Valencia, 2016
 \end{minipage}
 
 \cleardoublepage
@@ -377,9 +384,6 @@ Last but not least, I wish to thank my friends and family for their everlasting 
 
 % Chapter
 \titleformat{\chapter}[hang]{}{}{0mm}{\large\bfseries\cabincondensed\textcolor{tema}{\hspace{0mm}CHAPTER \thechapter}\\[-1mm]\Huge}
-
-% Section
-\titleformat{\section}[hang]{}{}{0mm}{\bfseries\sffamily\Large\textcolor{tema}{\arabic{chapter}.\arabic{section}. }}[\vspace{-1mm}]
 
 % Subsection
 \titleformat{\subsection}[hang]{}{}{0mm}{\bfseries\large\sffamily\textcolor{tema}{\arabic{chapter}.\arabic{section}.\arabic{subsection}. }}[\vspace{1mm}]
@@ -440,6 +444,6 @@ Last but not least, I wish to thank my friends and family for their everlasting 
 \printbibliography
 
 % Back cover
-\includepdf{figures/misc/contraportada}
+% \includepdf{figures/misc/contraportada}
 
 \end{document}
