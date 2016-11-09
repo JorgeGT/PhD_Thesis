@@ -1,6 +1,7 @@
 # My PhD Thesis
 This is the manuscript of my doctoral thesis. Even in the surprising case that you're not interested in the fascinating topic of turbocharger acoustic research, it may be possible that the overall style of the LaTeX document could prove useful for the typesetting of your own projects. So here it is.
 <p align="center">
+<br />
 <img src="https://wasic.upv.es/generaClave/img/logo.jpg" width="150">
 <br />
 <br />
