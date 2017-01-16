@@ -142,15 +142,18 @@ Raitor and Neise \cite{raitor2008sound} mention instead the so-called ``tip clea
 
 BPF is also marked in the figure, including its harmonics. An intense ``buzz-saw'' multi-tonal noise is apparent at higher speeds in the inlet, but not so in the outlet (see Fig. 10 of the reference). TCN appears in the outlet duct as well. Mach number at the impeller tip is also highlighted as signalling the transition between TCN vs. BPF dominance. Furthermore, broadband content seems to appear between 1.2 -- 2 kHz, with a smaller one at 2 -- 2.8 kHz, both being similar to the aforementioned \emph{whoosh} noise.
 
+In Fig.~\ref{fig:sample_sil} an idealized representation of the a sample SIL spectrum is offered for reference, showcasing the most relevant acoustic phenomena that have been reported in the literature and will be investigated along this work. \emph{Whoosh} is shown as a smaller broadband effect at plane wave range frequency, TCN as a higher frequency broadband and BPF and its harmonics as tonal noise peaks.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=0.72\textwidth]{./figures/cap_liter/sample_sil}
+\caption[Idealized representation of a characteristic SIL spectrum]{Idealized representation of a characteristic SIL spectrum in a turbocharger compressor outlet, featuring the most commonly identified acoustic phenomena according to the literature.}
+\label{fig:sample_sil}
+\end{figure}
+
 Following the work of Evans and Ward, Teng and Homco \cite{teng2009investigation} obtained further insight on the precise location of the \emph{whoosh} noise for their setup. Especially, in Fig. 5 of the reference the authors identify \emph{whoosh} noise as appearing in the 4.5 to 7 kHz band. BPF tone is not seen on the figure, which is limited to a maximum frequency of 10 kHz. However, amplitude and frequency of this band, and its abrupt lower frequency cut-off, could suggest that it is more related to the TCN identified by other authors. 
 
 Inspection of the spectrogram that the authors present in Fig. 2 appears to show a certain broadband content between 1 -- 2 kHz along all conditions of the full-load test, which would be more consistent with other reports of \emph{whoosh}. In order to confirm the relation between broadband noise and surge inception, a type K thermocouple was affixed very close to the compressor inlet. An apparent correlation between temperature rise and 5 to 7 kHz sound pressure content is found in Fig. 7 of the reference, with the authors suggesting that the presence of hot backflow due blade stall is related to the identified broadband noise.
-
-Guillou et al. \cite{guillou2010characterization} do not directly address the noise spectra in their study. Nonetheless, the authors plot the pressure FFT in the outlet duct for various flow regimes. It can be seen in their Fig. 7, specially in the lower right plot (stable regime), how a clear broadband appears between 2 and 3.5 kHz. This phenomenon continues to be present in both stall and surge regimes, but in those conditions it becomes masked by the strong low frequency signals that are typical of surge.
-
-Lee et al. \cite{lee2011control} focus their work on ``pulsation noise'', asserting that it is caused by unbalance of shaft and blades, and BPF noise, caused by the cyclic motion of the blades. Its harmonics are also observed and mentioned (see Figs. 9 and 10 of the reference). The authors also observe a noticeable ``hump'' in the same figures, but they argue that, since it was not reported by the turbocharger manufacturer, it can be dismissed as caused by the experimental setup. Note that this broadband noise, which could be related to \emph{whoosh}, appeared in this case between 3 and 4.5 kHz. Interestingly, it was also present even when the compressor was running without inlet and outlet ducts (see Fig. 11 of the reference), suggesting an internal source.
-
-Tiikoja et al. \cite{tiikoja2011inves} revisit the topic making again a distinction between two contributing phenomena. Stationary distortions are identified as leading to periodic tones. Given an absence of inflow disturbances these tones are referred to as rotor-alone tonal noise. Fluctuating pressure fields caused by the interaction of inlet and outlet guide vanes and the rotor is regarded as a secondary source which will introduce tonal noise at harmonics of the BPF. 
 
 \begin{wrapfigure}{o}[1.5cm]{0.4\textwidth}
 \centering
@@ -159,6 +162,12 @@ Tiikoja et al. \cite{tiikoja2011inves} revisit the topic making again a distinct
 \caption[Range of some broadband noises found in the literature]{Frequency range of lower frequency broadband noise found in selected turbocharger compressor literature, by principal author. Authors marked with * identify \emph{whoosh} at higher frequencies, apparently conflating the issue with TCN.}
 \label{fig:freq_whoosh_lit}
 \end{wrapfigure}
+
+Guillou et al. \cite{guillou2010characterization} do not directly address the noise spectra in their study. Nonetheless, the authors plot the pressure FFT in the outlet duct for various flow regimes. It can be seen in their Fig. 7, specially in the lower right plot (stable regime), how a clear broadband appears between 2 and 3.5 kHz. This phenomenon continues to be present in both stall and surge regimes, but in those conditions it becomes masked by the strong low frequency signals that are typical of surge.
+
+Lee et al. \cite{lee2011control} focus their work on ``pulsation noise'', asserting that it is caused by unbalance of shaft and blades, and BPF noise, caused by the cyclic motion of the blades. Its harmonics are also observed and mentioned (see Figs. 9 and 10 of the reference). The authors also observe a noticeable ``hump'' in the same figures, but they argue that, since it was not reported by the turbocharger manufacturer, it can be dismissed as caused by the experimental setup. Note that this broadband noise, which could be related to \emph{whoosh}, appeared in this case between 3 and 4.5 kHz. Interestingly, it was also present even when the compressor was running without inlet and outlet ducts (see Fig. 11 of the reference), suggesting an internal source.
+
+Tiikoja et al. \cite{tiikoja2011inves} revisit the topic making again a distinction between two contributing phenomena. Stationary distortions are identified as leading to periodic tones. Given an absence of inflow disturbances these tones are referred to as rotor-alone tonal noise. Fluctuating pressure fields caused by the interaction of inlet and outlet guide vanes and the rotor is regarded as a secondary source which will introduce tonal noise at harmonics of the BPF. 
 
 On the other hand, a ``wide band noise'' is ascribed to non-stationary disturbances (turbulence), but its importance for turbochargers is dismissed. Denomination of ``buzz-saw noise'' for the tonal phenomena is used and attributed to rotating shock waves attached to the blades whose tips reach supersonic conditions. TCN is also named and marked as such in the results, appearing in this case between 5 and 10 kHz in the outlet and between 4 and 7.5 kHz in the inlet. 
 

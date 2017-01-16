@@ -73,7 +73,7 @@ Rotational speed & $N=158763$ rpm \\ \bottomrule
 \label{tab:operatingConditions}
 \end{table}
 
-Rigid body motion simulation was chosen for the transient setup, with the time step adjusted to so that the impeller mesh turned 1º per time step at the selected shaft speed, which imposed a sufficient maximum frequency according to the Nyquist criterion, well above hearing range. Regarding heat transfer, the problem is considered adiabatic, as heat transfer is less relevant at high loads \cite{serrano2013importance,serrano2014procedure,serrano2014methodology}. Surface roughness, mechanical deformations and dynamic shaft eccentricity were also disregarded for simplicity.
+Rigid body motion simulation was chosen for the transient setup, with a time step adjusted to match 1º of rotation, which imposed a maximum frequency according to the Nyquist criterion above hearing range. At least 60 ms after steady state were stored. Regarding heat transfer, the problem is considered adiabatic, as heat transfer is less relevant at high loads \cite{serrano2013importance,serrano2014procedure,serrano2014methodology}. Surface roughness, mechanical deformations and dynamic shaft eccentricity were also disregarded for simplicity.
 
 \subsection{Solution monitors}\label{sub:cfd_sol_monitors}
 
@@ -208,7 +208,7 @@ While the numerically simulated spectra is able to capture the characteristic pe
 \label{fig:cfd_Spec_Outlet_Tot_Moc_Area}
 \end{figure}
 
-In Fig.~\ref{fig:cfd_Spec_Outlet_Tot_Moc_Area} a similar comparison is made, using now time the section monitor (area-averaged pressure). In this case the Method Of Characteristics decomposition procedure allows for a better match between experimental and simulated spectral content at the plane wave range, below the first asymmetric acoustic mode onset at 7.4 kHz.
+In Fig.~\ref{fig:cfd_Spec_Outlet_Tot_Moc_Area} a similar comparison is made, but using instead the section monitor (area-averaged pressure). In this case the Method Of Characteristics decomposition procedure allows for a better match between experimental and simulated spectral content at the plane wave range, below the first asymmetric acoustic mode onset at 7.4 kHz.
 
 However, using this monitor type, higher frequency content after the acoustic modes start propagating does not feature a good agreement with the reference experimental data. Blade Passing Frequency (BPF) tonal noise is not captured as clearly as with the single-point wall monitor, and neither is the broadband centred around 15 kHz. 
 
@@ -351,7 +351,7 @@ While the prediction of spectral content is not totally accurate yet, specially 
 \label{fig:vel_spec_diffuser}
 \end{figure}
 
-The kind of results that can be extracted from the CFD simulation are exemplified in Fig.~\ref{fig:vel_spec_diffuser}, which combines the 3D model of the compressor wheel with plane views of the pressure and velocity fields, and frequency information extracted from the time record of a particular position in the diffuser. Note that in this particular setup the diffuser is rotating along with the wheel so this monitor is not stationary.
+The kind of results that can be extracted from the CFD simulation are exemplified in Fig.~\ref{fig:vel_spec_diffuser}, which combines the 3D model of the compressor wheel with plane views of the pressure and velocity fields, and frequency information extracted from the time record of a particular position in the diffuser. Since the CFD setup is using a rotating mesh approach, the whole diffuser fluid domain is rotating, so this monitor is not stationary.
 
 Pressure information is presented in two planes, at the top of the inducer and at the leading edge plane. 3D isosurfaces of $P = 85$ kPa are also shown, forming ``bubbles'' that move from one channel to the next at a frequency lower than that imposed by the wheel rotation. These recirculation ``bubbles'' have been sometimes linked to broadband acoustic phenomena of half rotating order (RO) \cite{sundstrom2015centrifugal,sundstrom2014assessment}.
 
@@ -447,7 +447,7 @@ In this way, this decomposition allows the identification of which spatial struc
 
 Principal drawbacks of this method include that in some cases energy may not be the most relevant metric in characterizing the relevance of flow structures \cite{schmid2010dynamic}, and that the use of second-order flow statistics can result in a loss of information such as phase \cite{aubry1991hidden}, failing to capture the dynamics of the coherent structures of the flow \cite{schmid2011applications}.
 
-Moreover, while modes resulting from POD exhibit spatial orthogonality, they can contain multi-frequency temporal content \cite{jovanovic2014sparsity,sakowitz2014flow}. This means that a particular flow structure can be excited by different phenomena and at different frequencies, yet remain spatially coherent in time and thus result in a higher frequency POD mode. 
+Moreover, while modes resulting from POD exhibit spatial orthogonality, they can contain multi-frequency temporal content \cite{jovanovic2014sparsity,sakowitz2014flow}. This means that a particular flow structure can be excited by different phenomena and at different frequencies, yet remain spatially coherent in time and thus result in a higher energy POD mode. 
 
 Linking the spatial structures with a specific phenomena requires, as a consequence, some guesswork based on prior knowledge of the excitation mechanisms. A good example of this is the application of POD to the CFD simulation of an engine manifold presented by Sakowitz \cite{sakowitz2014flow}, where it can be seen how the first POD mode contains different frequency content originated from both the engine firing and the valve opening.
 
@@ -478,9 +478,9 @@ Even if the flow field is non-linear, matrix $\mathbf A$ will provide a linear t
 	 \mathbf V_{2}^{N}=\mathbf A \mathbf V_{1}^{N-1}
 \end{equation}
 
-Where $V_{2}^{N}$ contains snapshots 2 to $N$ and $V_{1}^{N-1}$ contains snapshots 1 to $N-1$. As $M$ for CFD simulations is usually in the order of $10^6$ and $N$ must comprise a sensible amount of time steps in order to ensure that the dynamic characteristics are well captured, directly performing the eigendecomposition of $\mathbf A$ is usually too computationally expensive.
+Where $\mathbf V_{2}^{N}$ contains snapshots 2 to $N$ and $\mathbf V_{1}^{N-1}$ contains snapshots 1 to $N-1$. As $M$ for CFD simulations is usually in the order of $10^6$ and $N$ must comprise a sensible amount of time steps in order to ensure that the dynamic characteristics are well captured, directly performing the eigendecomposition of $\mathbf A$ is usually too computationally expensive.
 
-In order to overcome this problem different strategies exist, such as reformulating \ref{eq:dmd_mat} into a companion matrix that can be solved through a QR decomposition \cite{schmid2011applications,rowley2009spectral,bagheri2013koopman}. A more numerically stable method however is to make use of the Singular Value Decomposition (SVD) \cite{schmid2010dynamic,jovanovic2014sparsity,sakowitz2014flow,chen2012variants} to obtain $\mathbf V_1^{N-1} = \mathbf U \Sigma\mathbf W^T$. Then, \ref{eq:dmd_mat} becomes:
+In order to overcome this problem different strategies exist, such as reformulating \ref{eq:dmd_mat} into a companion matrix that can be solved through a QR decomposition \cite{schmid2011applications,rowley2009spectral,bagheri2013koopman}. A more numerically stable method however is to make use of the Singular Value Decomposition (SVD) \cite{schmid2010dynamic,jovanovic2014sparsity,sakowitz2014flow,chen2012variants} to obtain $\mathbf V_1^{N-1} = \mathbf U \bm\Sigma\mathbf W^T$. Then, \ref{eq:dmd_mat} becomes:
 \begin{equation}
 	\mathbf V_2^N = \mathbf A \mathbf U \bm\Sigma \mathbf W^T
 \end{equation}
