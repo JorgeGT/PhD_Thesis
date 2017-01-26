@@ -28,7 +28,7 @@ In consequence, in this section only a brief description of the numerical model 
 \begin{wrapfigure}[16]{I}[0cm]{0.4\textwidth}
 \raggedleft
 \vspace{-4mm}
-\includegraphics[width=0.4\textwidth]{figures/cap_cfd/mesh4.pdf}
+\includegraphics[width=0.4\textwidth]{figures/cap_cfd/mesh4_loRes.pdf}
 \caption[Sample of the mesh in the CFD model]{Polyhedral mesh of the rotor walls (grey) and the surrounding fluid (blue) used in the CFD model.}
 \label{fig:cfd_mesh}
 \end{wrapfigure}
@@ -45,7 +45,7 @@ Once that the turbocharger compressor fluid volumes were obtained and meshed, in
 
 \begin{figure}
 \centering
-\includegraphics[width=1\textwidth]{figures/cap_cfd/piping_plan_2}
+\includegraphics[width=1\textwidth]{figures/cap_cfd/piping_plan_2_bw}
 \caption[Dimensional drawing of the compressor inlet and outlet pipes]{Dimensional drawing of the real compressor inlet and outlet pipes, including the piezoelectric sensor arrays for the experimental wave decomposition and highlighting the CFD simulation domain.}
 \label{fig:cfd_piping_plan}
 \end{figure}
@@ -453,7 +453,7 @@ Linking the spatial structures with a specific phenomena requires, as a conseque
 
 \subsubsection{Dynamic Mode Decomposition}
 
-An alternative decomposition technique known as Dynamic Mode Decomposition (DMD) that addresses this shortcoming is also presented in the same work. A relatively recent technique for modal flow decomposition \cite{rowley2009spectral,schmid2010dynamic,chen2012variants}, DMD is a \textit{data-based} procedure that aims to extract dynamic information from only the snapshots of a non-linear system while avoiding any need for previous knowledge \cite{schmid2010dynamic}. 
+An alternative decomposition technique known as Dynamic Mode Decomposition (DMD) that addresses these shortcomings is also presented in the same work. A relatively recent technique for modal flow decomposition \cite{rowley2009spectral,schmid2010dynamic,chen2012variants}, DMD is a \textit{data-based} procedure that aims to extract dynamic information from only the snapshots of a non-linear system while avoiding any need for previous knowledge \cite{schmid2010dynamic}. 
 
 This is done by computing the eigenvalues and eigenvectors of a linear model which approximates the underlying dynamics of a system, which may not be necessarily linear \cite{chen2012variants}. The DMD modes (eigenvectors) calculated using this technique represent again coherent spatial structures of the flow, in this case not necessarily orthogonal but each one featuring a single temporal frequency \cite{jovanovic2014sparsity}, in contrast with POD modes. DMD eigenvalues represent the rates of decay and growth of these modes, along with their associated frequency.
 

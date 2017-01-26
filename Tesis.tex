@@ -119,18 +119,19 @@
 \captionsetup{margin=12pt,font={small,sl},labelfont={cabin,bf},parskip=5mm}
 
 % Colors
-% \definecolor{tema}{RGB}{80,86,91}
-% \definecolor{tema}{rgb}{0.45,0.45,0.45}
-\definecolor{tema}{RGB}{0,50,150}
+%\definecolor{tema}{RGB}{95,95,95} % UPV-like gray
+%\definecolor{tema}{rgb}{0,0,0} % Black
+%\definecolor{tema}{RGB}{0,50,150} % Blue
 \definecolor{BLACK}{RGB}{0,0,0}
 
 % Hyperref settings
 \hypersetup{
-    colorlinks,
-    citecolor=tema,
-    filecolor=BlueViolet,
-    linkcolor=black,
-    urlcolor=tema,
+    hidelinks,
+    colorlinks = false,
+%    citecolor=black,
+%    filecolor=black,
+%    linkcolor=black,
+%    urlcolor=black,
 %   pdfpagelayout=TwoPageRight,
     pdfauthor={Jorge Garcia Tíscar}
 }
@@ -192,8 +193,8 @@
 \pdfpageattr{/Group << /S /Transparency /I true /CS /DeviceRGB>>}
 
 % Itemize symbols
-\renewcommand{\labelitemi}{\textcolor{tema}{\scriptsize\raisebox{0.5mm}{\Circsteel}}}
-\renewcommand{\labelitemii}{\textcolor{tema}{\scriptsize\raisebox{0.4mm}{\Squaresteel}}}
+\renewcommand{\labelitemi}{\scriptsize\raisebox{0.5mm}{\Circsteel}}
+\renewcommand{\labelitemii}{\scriptsize\raisebox{0.4mm}{\Squaresteel}}
 
 % (Opt.) select only a chapter for faster compilation
 %  \includeonly{cap_intro}
@@ -206,10 +207,10 @@
 \frontmatter
 
 % Fancy cover page
-\includepdf[pagecommand={\thispagestyle{empty}}]{figures/misc/portada}
+%\includepdf[pagecommand={\thispagestyle{empty}}]{figures/misc/portada}
 %\includepdf[pagecommand={\thispagestyle{empty}}]{figures/misc/portada_simp}
 %\includepdf[pagecommand={\thispagestyle{empty}}]{figures/misc/portada_cent}
-\cleardoublepage
+%\cleardoublepage
 
 % Inside cover
 \enlargethispage{5cm}
@@ -261,13 +262,13 @@
 {\normalsize\bfseries\cabincondensed THESIS EXAMINERS}\\[4mm]
 Dr. D. Hans Rämmal\\
 Dr. D. Richard Burke\\
-Dr. D. Pedro A. Rodríguez Aumente\\[1cm]
+Dr. D. Pedro Acisclo Rodríguez Aumente\\[1cm]
 
 
 {\normalsize\bfseries\cabincondensed DEFENSE COMITEE}\\[4mm]
 \begin{tabular}{rl}
 {\cabincondensed Chairman:} & Dr. D. José Ramón Serrano Cruz\\
-{\cabincondensed Secretary:} & Dr. D. Gregorio López Juste\\
+{\cabincondensed Secretary:} & Dr. D. Francisco Javier Martos Ramos\\
 {\cabincondensed Member:} & Dr. D. Hans Rämmal\\[1.5cm]
 \end{tabular}
 
@@ -390,33 +391,33 @@ Last but not least, I wish to thank my friends and family for their everlasting 
 \mainmatter
 
 % Chapter
-\titleformat{\chapter}[hang]{}{}{0mm}{\large\bfseries\cabincondensed\textcolor{tema}{\hspace{0mm}CHAPTER \thechapter}\\[-1mm]\Huge}
+\titleformat{\chapter}[hang]{}{}{0mm}{\large\bfseries\cabincondensed\hspace{0mm}CHAPTER \thechapter\\[-1mm]\Huge}
 
 % Section
-\titleformat{\section}[hang]{}{}{0mm}{\bfseries\sffamily\Large\textcolor{tema}{\arabic{chapter}.\arabic{section}. }}[\vspace{-1mm}]
+\titleformat{\section}[hang]{}{}{0mm}{\bfseries\sffamily\Large\arabic{chapter}.\arabic{section}. }[\vspace{-1mm}]
 
 % Subsection
-\titleformat{\subsection}[hang]{}{}{0mm}{\bfseries\large\sffamily\textcolor{tema}{\arabic{chapter}.\arabic{section}.\arabic{subsection}. }}[\vspace{1mm}]
+\titleformat{\subsection}[hang]{}{}{0mm}{\bfseries\large\sffamily\arabic{chapter}.\arabic{section}.\arabic{subsection}. }[\vspace{1mm}]
 
 % Subsubsection
-\titleformat{\subsubsection}[hang]{}{}{0mm}{\bfseries\sffamily\textcolor{tema}{\arabic{chapter}.\arabic{section}.\arabic{subsection}.\arabic{subsubsection}. }}[\vspace{1mm}]
+\titleformat{\subsubsection}[hang]{}{}{0mm}{\bfseries\sffamily\arabic{chapter}.\arabic{section}.\arabic{subsection}.\arabic{subsubsection}. }[\vspace{1mm}]
 
 % Main pagestyle
 \fancyhf{}
-\fancyhead[RO]{\small\cabincondensed\bfseries \rightmark\quad|\quad\color{black}\thepage}
-\fancyhead[LE]{\small\cabincondensed\bfseries \thepage\quad\textcolor{tema}{|}\quad\leftmark}
+\fancyhead[RO]{\small\cabincondensed\bfseries \rightmark\quad|\quad\thepage}
+\fancyhead[LE]{\small\cabincondensed\bfseries \thepage\quad|\quad\leftmark}
 \pagestyle{fancy}
 
 % Chapter mark
-\renewcommand{\chaptermark}[1]{\markboth{\chaptername\ \color{tema}{\thechapter. \color{black}\ #1}}{}}
+\renewcommand{\chaptermark}[1]{\markboth{\chaptername\ {\thechapter. \ #1}}{}}
 
 % Section mark
-\renewcommand{\sectionmark}[1]{\markright{\color{tema}{\thesection.\color{black}\ #1}}}
+\renewcommand{\sectionmark}[1]{\markright{{\thesection.\ #1}}}
 
 % Hypersetup color
-\hypersetup{
-  linkcolor = tema
-}
+%\hypersetup{
+%  linkcolor = black
+%}
 
 %--------------------------------------------------------------%
 % BODY MATTER (include content)
@@ -452,11 +453,15 @@ Last but not least, I wish to thank my friends and family for their everlasting 
 \addcontentsline{toc}{chapter}{Bibliography}
 \renewcommand*{\bibfont}{\small}
 \printbibliography
-\newpage
-\null
-\newpage
+
+% Blank
+
+%\newpage
+%\null
+%\thispagestyle{empty}
+%\newpage
 
 % Back cover
-\includepdf{figures/misc/contraportada}
+% \includepdf{figures/misc/contraportada}
 
 \end{document}
