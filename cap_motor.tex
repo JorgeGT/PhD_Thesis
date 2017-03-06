@@ -10,9 +10,7 @@ While in the previous chapter results were obtained in an experimental campaign 
 \end{itemize}
 }
 
-Reciprocating engines produce a pulsating flow that carries the spectral content of the different cylinder firing sequence. This not only introduces a tonal noise in the pressure signal that includes the main firings and their harmonics, but also means that power is provided to the turbine according to this pulsation.
-
-In consequence, the operating condition of the compressor becomes affected by this pulsation as available power oscillates, an effect which could affect the different flow phenomena occurring in the compressor such as stall, blade vortex shedding, etc. 
+Reciprocating engines produce a pulsating flow that carries the spectral content of the different cylinder firing sequence. This introduces a tonal noise in the pressure signal that includes the main firings and their harmonics, valve openings,  and so on. It also means that power is provided to the turbine according to this pulsation, although the wheel inertia attenuates this last issue. In consequence, the operation of the compressor could become affected by these pulsations, an effect which could then influence the different flow phenomena occurring in the compressor such as stall, blade vortex shedding, etc.
 
 Another important consideration is that robust methodologies are needed to perform acoustic characterization in the environment of production engine test cells, which are usually neither anechoic nor designed for acoustic measurements. In the previous chapter it was shown how SPL measurements performed with a single sensor in the outlet or inlet duct are vulnerable against reflections, standing waves, and other effects of the transmission and the pipe geometry, while acoustic intensity gives more robust results.
 
@@ -113,8 +111,8 @@ It is also shown how spurious aliasing peaks occur at the frequency predicted by
 
 \begin{figure*}[b!]
 \hspace{-0.06\textwidth}
-\includegraphics[width=1.1\textwidth]{figures/cap_motor/mapasSIL_250-2650_2}
-\caption[SIL maps by each method and their correlation]{In-duct SIL maps of the compressor noise estimated by the beamforming method (top left), two microphone method (top right) and SIL map of orifice noise as measured by the probe (top center), including correlations between the three measurements (bottom).}
+\includegraphics[width=1.1\textwidth]{figures/cap_motor/mapasSIL_250-2650_2.pdf}
+\caption[SIL maps by each method and their correlation]{In-duct SIL maps of the compressor noise estimated by the beamforming method (top left), two microphone method (top right) and SIL map of orifice noise as measured by the probe (top center) at plane wave range, including correlations between the three measurements (bottom).}
 \label{fig:mapasSIL_250-2650}
 \end{figure*}
 
@@ -125,7 +123,7 @@ Fig. \ref{fig:mapasSPL_250-2650} shows a comparison between the SPL computed by 
 \begin{figure*}[tb!]
 \centering
 \includegraphics[width=1\textwidth]{figures/cap_motor/mapasSPL_250-2650_2}
-\caption[Maps and correlation of SPL vs. orifice SIL]{Comparison of compressor sound maps (plane wave region) obtained through interpolation of SPL at the inlet 1\textsuperscript{st} sensor and SIL at the probe, including a correlation between both.}
+\caption[Maps and correlation of SPL vs. orifice SIL]{Comparison of compressor sound maps (plane wave region) obtained through interpolation of SPL at the inlet 1\textsuperscript{st} sensor and SIL at the probe at plane wave range, including a correlation between both.}
 \label{fig:mapasSPL_250-2650}
 \end{figure*}
 
@@ -165,7 +163,7 @@ Fig. \ref{fig:PVL} shows this comparison. SPL (left) and PVL (right) maps of the
 
 The particle velocity technique clearly distinguishes the turbocharger as the source of a 700 -- 2000 Hz broadband noise (at this particular operating condition) consistent with \emph{whoosh}. The pressure method also appears to identify the turbocharger as the source, but the contrast with the surrounding areas is much less pronounced. This can be clearly seen in spectra of Fig.~\ref{fig:PVL_spec_ext}, in which the SPL level (top) of this frequency band is similar in both zones (turbocharger and inlet) while in the case of the PVL spectra (bottom), the turbocharger contribution is visibly higher, exhibiting the typical hump of \emph{whoosh} noise.
 
-However, the pressure method appears to be more sensitive to reflections in the near field and was thus unable to provide a clear identification. It should be noted that if characterization through in-duct techniques of this particular \emph{whoosh} noise is intended, special attention should be placed on the outlet pipe, as this phenomenon is often found exclusively downstream of the turbo-charger.
+The pressure method appears to be more sensitive to reflections in the near field and was thus unable to provide a clear identification. It should be noted that if characterization through in-duct techniques of this particular \emph{whoosh} noise is intended, special attention should be placed on the outlet pipe, as this phenomenon is often found exclusively downstream of the turbo-charger.
 
 \section{Conclusions}
 \label{sec:motor_conclusions}
@@ -178,7 +176,7 @@ In this chapter it has been show that in-duct noise measurements offer a cost-ef
 
 Calculation of in-duct sound intensity can be achieved by using an additional consecutive sensor and decomposing the waves through the two-microphone method. However, the addition of a third sensor and the decomposition through the beamforming method appears to be more reliable along the full plane wave range, and especially in the lower frequencies (250 -- 1000 Hz).
 
-As shown in previous chapters however, the restrictions of these intensity-based methods must be carefully considered, specially the influence of higher order modes and the aliasing frequency limit introduced by the spatial sampling imposed by the sensor spacing. In addition in this on-engine situation, the pulsation intrinsically imposed by the operation of the reciprocating engine must be taken into account as not only its main firing frequency but also its harmonics are present in the lower frequency part of the spectrum of the turbocharger inlet.
+As shown in previous chapters however, the restrictions of these intensity-based methods must be carefully considered, specially the influence of higher order modes and the aliasing frequency limit introduced by the spatial sampling imposed by the sensor spacing. In addition in this on-engine situation, the pulsation intrinsically imposed by the operation of the reciprocating engine must be taken into account as not only its main firing frequency but also its harmonics are present in the lower frequency part of the spectrum of the compressor inlet.
 
 Regarding the external radiated noise, the particle velocity method has been able to provide more contrast than the pressure method and to correctly identify the turbocharger as the source of noise radiation at the particular \emph{whoosh} noise band, in accordance with previous results.
 

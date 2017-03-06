@@ -70,12 +70,12 @@ To capture the orifice noise, one free-field omnidirectional microphone was situ
 
 The second system for measuring externally radiated noise, consisting in the four equispaced free-field microphones placed at 1 m distance form the center of the inlet assembly was kept in the same place for all the tested geometries. 
 
-In both cases the microphones were calibrated using a Brüel \& Kj\ae r pistonphone prior to the measurements and data was captured using a PULSE\textsuperscript{TM} DAQ system. Fig. \ref{fig:Radiated_Orifice_SPL_simple_geom} shows the result of both measurements at the stable operating point most close to surge as characterized by the aforementioned procedure, since it is the point of maximum noise emission.
+In both cases the microphones were calibrated using a Brüel \& Kj\ae r pistonphone prior to the measurements and data was captured using a PULSE\textsuperscript{TM} DAQ system. Fig. \ref{fig:Radiated_Orifice_SPL_simple_geom} shows the result of both measurements at the stable operating point closer to surge as characterized by the aforementioned procedure, since it is the point of maximum noise emission.
 
 \begin{figure}[htb!]
 \centering
 \includegraphics[width=0.75\textwidth]{figures/cap_geom/GeomComp_Radiated_Orifice_SPL}
-\caption[Comparison of orifice and radiated noise (simple geom.)]{Comparison of orifice noise and averaged radiated noise measured in the anechoic chamber for each of the simple inlet geometries at the stable operating point most close to surge.}
+\caption[Comparison of orifice and radiated noise (simple geom.)]{Comparison of orifice noise and averaged radiated noise measured in the anechoic chamber for each of the simple inlet geometries at the stable operating point closer to surge.}
 \label{fig:Radiated_Orifice_SPL_simple_geom}
 \end{figure}
 
@@ -90,7 +90,7 @@ In Fig. \ref{fig:GeomComp_OrificeSpectra_ann} the different spectra recorded by 
 \begin{figure}[htb!]
 \centering
 \includegraphics[width=0.75\textwidth]{figures/cap_geom/GeomComp_OrificeSpectra_ann}
-\caption[Comparison of orifice noise spectra (simple geom.)]{Comparison of orifice noise spectra for each of the simple inlet geometries at the stable operating point most close to surge.}
+\caption[Comparison of orifice noise spectra (simple geom.)]{Comparison of orifice noise spectra for each of the simple inlet geometries at the stable operating point closer to surge.}
 \label{fig:GeomComp_OrificeSpectra_ann}
 \end{figure}
 
@@ -351,11 +351,11 @@ Regarding the outlet difference distributions, the situation appears to reverse,
 \begin{figure}[htb!]
 \centering
 \includegraphics[width=0.88\textwidth]{figures/cap_geom/elbow_comp_1sens}
-\caption[Comparison of plane wave range spectra]{Comparison of plane wave range spectra from both inlet and outlet, highlighting the differences between the straight reference duct and each elbow configuration.}
+\caption[Comparison of plane wave range spectra]{Comparison of plane wave range spectra from both inlet and outlet, highlighting the differences between the straight reference duct and each elbow configuration at 140 krpm and 45 g/s.}
 \label{fig:elbow_comp_1sens}
 \end{figure}
 
-Focusing now into the detailed aspects of the sound level variation, it is possible to compare the pressure spectra in different points to assess the frequency distribution of the level variation. For instance in Fig. \ref{fig:elbow_comp_1sens} the PSD in the plane wave region recorded by inlet and outlet piezoelectric sensors is shown for the different inlet geometries at an operating condition where differences where high.
+Focusing now into the detailed aspects of the sound level variation, it is possible to compare the pressure spectra in different points to assess the frequency distribution of the level variation. For instance in Fig. \ref{fig:elbow_comp_1sens} the PSD in the plane wave region recorded by inlet and outlet piezoelectric sensors is shown for the different inlet geometries at an operating condition where differences were high (140 krpm, 45 g/s).
 
 In the case of the outlet duct, spectra are very similar up to a cut-off point at approximately 1.3 kHz, below which the straight duct presents higher levels than all of the elbows.
 
@@ -373,7 +373,7 @@ Besides the described differences in terms of acoustic intensity produced by the
 
 As in the previous experimental campaign, data from the two thermocouple arrays (longitudinal and circumferential) was processed in order to compile maps of the backflow length and flow temperature skewness, respectively.
 
-These maps were then compared with the original reference map measured with a straight inlet duct, and difference maps were produced for each elbow variant. The resulting difference maps can be seen in Fig. \ref{fig:map_diff_std}. The same color scale has been kept in all of them to provide a suitable comparison.
+These maps were then compared with the original reference map measured with a straight inlet duct, and difference maps were produced for each elbow variant. The resulting difference (elbow minus straight) maps  can be seen in Fig. \ref{fig:map_diff_std}. The same color scale has been kept in all of them to provide a suitable comparison.
 
 \begin{figure}[tb!]
 \centering
@@ -475,7 +475,7 @@ Results from this campaign provided higher in-depth insight into the influence o
 
 Regarding the influence of the inlet elbow variants on the temperature distribution, a similar pattern of circumferential skewness increase towards the lowest allowable flow conditions for each shaft speed could be reconstructed. However, reversed flow length appears similar in all cases, with differences of less than 0.5 inlet diameters.
 
-Correlations of \emph{whoosh} noise content and temperature skewness indicated an increase of both variables as the elbow radius became narrower. Reasons for these correlated increases could be related to the uneven presentation of the air flow caused by the progressively narrow 90º elbows\footnote{See the work of Kalpakli et al. \cite{kalpakli2013vortical,kalpakli2013turbulent} for an in-depth numerical analysis of the particular flow field caused by these kind of 90º elbows, including its POD decomposition.}, which could create a region of lower pressure that facilitated the upstream propagation of reversed flow and thus enhanced the convection of \emph{whoosh} noise content from the diffuser to the inlet duct, while also increasing the differences in temperature across the different zones.
+Correlations of \emph{whoosh} noise content and temperature skewness indicated an increase of both variables as the elbow radius became narrower. Reasons for these correlated increases could be related to the uneven presentation of the air flow caused by the progressively narrow 90º elbows\footnote{See the work of Kalpakli et al. \cite{kalpakli2013vortical,kalpakli2013turbulent} for an in-depth numerical analysis of the particular flow field caused by these kind of 90º elbows, including its POD decomposition.}. These created a region of lower pressure that facilitated the upstream propagation of reversed flow and thus enhanced the convection of \emph{whoosh} noise content from the diffuser to the inlet duct, while also increasing the differences in temperature across the different zones.
 
 This would explain why elbow radius shows a clear effect on the \emph{whoosh} noise content in the inlet spectra shown in Fig.~\ref{fig:elbow_comp_1sens} but not in the outlet, and also why this effect is restricted to the lower mass flow rate zones of the compressor map (see Fig.~\ref{fig:map_diff_in_out} for the effect on sound intensity and Fig.~\ref{fig:map_diff_std} for the effect on temperature skewness) where reversed flow is more prominent, as instabilities grow while inflow momentum diminishes. 
 

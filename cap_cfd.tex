@@ -96,7 +96,7 @@ The selected monitors can be seen in Fig.~\ref{fig:cfd_monitors}. It can be seen
 
 \section{Validation methodology}
 
-Once that enough iterations of the simulation solution were performed so that frequency resolution of the simulated pressure signal spectra was suitable for comparison, a validation effort was carried out in order to ascertain if the numerical model reproduced the compressor behaviour with enough accuracy as to use the simulation results to obtain extract information about flow features that are difficult to visualize experimentally.   
+Once that enough iterations of the simulation solution were performed so that frequency resolution of the simulated pressure signal spectra was suitable for comparison, a validation effort was carried out in order to ascertain if the numerical model reproduced the compressor behaviour with enough accuracy as to use the simulation results to obtain exact information about flow features that are difficult to visualize experimentally.   
 
 \subsection{Global variables}
 
@@ -232,9 +232,9 @@ In the case of the outlet spectra however, a better agreement between the numeri
 
 This ability of the numerical model to predict the \emph{whoosh} noise phenomenon in the outlet duct while not completely matching the experimental inlet results seems to point to the primary source of \emph{whoosh} noise not being located in the inlet flow structures but rather in a downstream point where simulations are more accurate.
 
-Nevertheless, it is shown in Fig.~\ref{fig:cfd_Spec_PlaneW_Dec} that the CFD model appears to contain a source of broadband noise between 1 and 2.5 kHz that matches the experimental results. Thereby, post-processing of the CFD simulation data could be useful to locate the source mechanism of this phenomenon and, furthermore, the effect on \emph{whoosh} noise of mitigating solutions could be simulated using this model before its physical implementation. 
+Nevertheless, it is shown in Fig.~\ref{fig:cfd_Spec_PlaneW_Dec} that the CFD model appears to contain a source of outlet broadband noise between 1 and 2.5 kHz that matches the experimental results. Thereby, post-processing of the CFD simulation data could be useful to locate the source mechanism of this phenomenon and, furthermore, the effect on \emph{whoosh} noise of mitigating solutions could be simulated using this model before its physical implementation. 
 
-\section{Operating conditions study} %.... Art. op. conditions CFD
+\section{Operating conditions study}
 
 After performing the validation and optimization of the CFD model at the reference operating conditions (160 krpm of shaft speed and 77 g/s of corrected air mass flow), a further study was performed where two additional operating settings of the compressor were simulated by modifying the boundary conditions according to the experimentally measured data points, keeping the rest of the model parameters unchanged.
 
@@ -409,7 +409,7 @@ While the analysis of raw pressure and velocity monitors can shed light into the
 
 \subsection{Fourier analysis}
 
-A way to explore the spatial distribution of the acoustic sources for different frequencies of interest is to perform the Fourier transform at each cell of different surfaces like walls and planes. Then, the amplitude of the transformed signal at the frequency of interest is used to color each cell the selected surfaces, be it directly or through a smoothing interpolation.
+A way to explore the spatial distribution of the acoustic sources for different frequencies of interest is to perform the Fourier transform at each cell of different surfaces like walls and planes. Then, the amplitude of the transformed signal at the frequency of interest is used to color each cell of the selected surfaces, be it directly or through a smoothing interpolation.
 
 \begin{figure}[htb!]
 \hspace{-0.01\textwidth}
@@ -555,7 +555,7 @@ In the leftmost plot the mode corresponding to the 0 kHz frequency has been sele
 \label{fig:dmd_modes_freqs}
 \end{figure}
 
-When higher order acoustic modes start propagating in the CFD simulation, the pattern changes. DMD mode $\Phi_\text{11.5 kHz}$ shows the effect of the first asymmetrical mode, denoted as (0,1) in Eriksson's notation \cite{eriksson1980higher}, as the content is no longer homogeneous in each section but dependant on the angle as well. Finally, mode $\Phi_\text{11.5 kHz}$ features a very complex pattern as modes (0,1), (0,2), (0,3), (1,0) and (1,1) are propagating at these higher frequencies.
+When higher order acoustic modes start propagating in the CFD simulation, the pattern changes. DMD mode $\Phi_\text{11.5 kHz}$ shows the effect of the first asymmetrical mode, denoted as (0,1) in Eriksson's notation \cite{eriksson1980higher}, as the content is no longer homogeneous in each section but dependant on the angle as well. Finally, mode $\Phi_\text{25 kHz}$ features a very complex pattern as modes (0,1), (0,2), (0,3), (1,0) and (1,1) are propagating at these higher frequencies.
 
 \section{Conclusions}
 

@@ -153,13 +153,13 @@ Different measurements of temperature were performed in this study: a radial pro
 \label{fig:barrido_temp}
 \end{figure}
 
-Before the measurement of the whole map, a sweep of temperature measurements along the inlet radius was performed for both the thermocouple located at 14 mm and the thermocouple located at 84 mm. For these measurements, the turbocharger compressor was brought to conditions close to deep surge at 80 krpm.
+Before the measurement of the whole map, a sweep of temperature measurements along the inlet radius was performed for both the thermocouple located at 14 mm and the thermocouple located at 84 mm. For these measurements, the turbocharger compressor was brought to conditions close to deep surge at 80 krpm and 30 g/s.
 
-The results can be seen in Fig.~\ref{fig:barrido_temp}. As expected, overall temperature profile is higher at 14 mm from the leading edge plane than at 84 mm. Temperature seems to be approximately constant up to a distance of 5 mm from the internal wall, then decaying up to a distance of approximately 10 mm from the centreline (which is at 21 mm from the wall). From there onwards, temperature is again approximately constant.
+The results can be seen in Fig.~\ref{fig:barrido_temp}. As expected, overall temperature profile is higher at 14 mm (red) from the leading edge plane than at 84 mm (blue). Temperature seems to be approximately constant up to a distance of 0.2 radius from the internal wall, then decaying up to a distance of approximately 0.5 radius from the centreline (which is at 21 mm from the wall). From there onwards, temperature is again approximately constant.
 
 Ambient temperature and surface temperature of the adaptor piece (seen in Figs. \ref{fig:metod_local_meas} and \ref{fig:metod_local_meas_dimen} in red) can also be seen in Fig.~\ref{fig:barrido_temp}. As expected, centreline temperature at the most upstream point is almost coincident with the ambient, while fluid temperatures near the wall at the most downstream point (at just 14 mm from the wheel) are almost equal to those of the adaptor piece external wall, save for a small initial difference due to thermal loss.
 
-From this results it is apparent that measuring the fluid temperature near the wall is not practical due to the thermal transfer from the wall to the thermocouple. Standardized procedures for characterization of flow temperature call for measurements at $r$/2 and $r$/3 where $r$ is the duct radius. It can be seen in Fig.~\ref{fig:barrido_temp} that those distances show indeed a depart from wall-influenced temperatures. Ultimately, the distance of $r$/2 (10.5 mm in this case) was chosen for this study in accordance with the work of Andersen et al.~\cite{andersen2009surge}.
+From this results it is apparent that measuring the fluid temperature near the wall is not practical due to the thermal transfer from the wall (which accumulates heat between measurements) to the thermocouple. Standardized procedures for characterization of flow temperature call for measurements at $r$/2 and $r$/3 where $r$ is the duct radius. It can be seen in Fig.~\ref{fig:barrido_temp} that those distances show indeed a depart from wall-influenced temperatures. Ultimately, the distance of $r$/2 (10.5 mm in this case) was chosen for this study in accordance with the work of Andersen et al.~\cite{andersen2009surge}.
 
 Figure \ref{fig:barrido_temp} also shows how even at the core of the flow there is a rise of temperature of about 8 degrees. It is expected that, even while the hot backflow is expelled near the walls, its high rotational speed contributes to the mixing with the cold core flow and the diffusion of the heat, causing the increase along all the profile.
 
@@ -206,7 +206,7 @@ These snapshots were synchronized with the operating conditions at which flow te
 
 Considering first the higher flow operating condition (blue lines) where there is no backflow exiting the compressor, it is apparent that while the wall temperature follows a typical heat diffusion process where the external wall temperature profile (dotted line) is continuously decaying, the flow temperature measured by the thermocouples (solid line) remains constant through the pipe.
 
-When the flow is restricted (orange lines) the backflow can be clearly seen as the internal thermocouples register a temperature increase up to 1 -- 1.5 diameters upstream. Further upstream of this point the flow temperature remain equal to the most upstream point, whereas the external wall profile shows no such clear turning point.
+When the flow is restricted (orange lines) the backflow can be clearly seen as the internal thermocouples register a temperature increase up to one diameter upstream. Further upstream of this point the flow temperature remain equal to the most upstream point, whereas the external wall profile shows no such clear turning point.
 
 As for the lowest flow condition (red lines) the temperature increase as measured by the internal thermocouples is higher that the temperature registered by the thermographic camera, so in this case heat would transfer from the hot backflow to the walls and not the other way around.
 
@@ -246,11 +246,11 @@ In order to visualize how the previously presented temperature results varied wi
 \label{fig:temp_maps}
 \end{figure}
 
-The leftmost map shows how the skewness of the circumferential temperature distribution varies along the different operating conditions. Standard deviation has been chosen as a metric to quantify the magnitude of the skewness. It can be shown in the leftmost map of Fig.~\ref{fig:temp_maps} how skewness rises with higher shaft speed and instability caused by lower air mass flows.
+The top-left map shows how the skewness of the circumferential temperature distribution varies along the different operating conditions. Standard deviation has been chosen as a metric to quantify the magnitude of the skewness. It can be shown in the leftmost map of Fig.~\ref{fig:temp_maps} how skewness rises with higher shaft speed and instability caused by lower air mass flows.
 
-Center map of Fig.~\ref{fig:temp_maps} shows the overall maximum temperature measured by the thermocouples. The distribution along the map is similar to that of the skewness albeit less pronounced at higher speeds. Temperatures remain close to the ambient temperature ($\sim$20ºC) at higher mass flow and increase after the isospeed slope approaches zero. This increased temperature can reach up to 80ºC at 160 krpm and conditions close to surge.
+Top-right map of Fig.~\ref{fig:temp_maps} shows the overall maximum temperature measured by the thermocouples. The distribution along the map is similar to that of the skewness albeit less pronounced at higher speeds. Temperatures remain close to the ambient temperature ($\sim$20ºC) at higher mass flow and increase after the isospeed slope approaches zero. This increased temperature can reach up to 80ºC at 160 krpm and conditions close to surge.
 
-Lastly, an estimation of the backflow upstream extent is provided in the rightmost map of Fig.~\ref{fig:temp_maps}. This was done postprocessing the raw data from the linear array displayed in Fig.~\ref{fig:temp_line_linear}. The temperature profile for each measurement point (shaft speed and air mas flow) was automatically processed with the following algorithm:
+Lastly, an estimation of the backflow upstream extent is provided in the bottom map of Fig.~\ref{fig:temp_maps}. This was done postprocessing the raw data from the linear array displayed in Fig.~\ref{fig:temp_line_linear}. The temperature profile for each measurement point (shaft speed and air mas flow) was automatically processed with the following algorithm:
 
 Starting from the thermocouple closer to the impeller, each thermocouple reading of the linear array is compared with the ambient temperature; the first that reads less than 3ºC above is selected as the backflow extent.
 

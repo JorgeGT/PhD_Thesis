@@ -77,7 +77,7 @@ The spatial Nyquist-like criterion related to the separation of the sensors of t
 \label{fig:result_spectra_LugLine_PW}
 \end{figure}
 
-In Fig. \ref{fig:result_spectra_LugLine_PW} the Power Spectral Density (PSD) of the raw pressure signals captured by one piezoelectric sensor of each array is shown. For both inlet and outlet ducts, spectra are plotted at different shaft speeds along the working line depicted in Fig. \ref{fig:result_map_comp}. It can be seen in this figure how, generally, spectra on the plane wave range feature higher levels at lower frequencies. Higher speed points in the outlet feature a distinctive broadband between 1 and 2.5 kHz, described as \emph{whoosh} noise in the literature.
+In Fig. \ref{fig:result_spectra_LugLine_PW} the Power Spectral Density (PSD, referenced to 20 $\mu$Pa as in the case of SPL) of the raw pressure signals captured by one piezoelectric sensor of each array is shown. For both inlet and outlet ducts, spectra are plotted at different shaft speeds along the working line depicted in Fig. \ref{fig:result_map_comp}. It can be seen in this figure how, generally, spectra on the plane wave range feature higher levels at lower frequencies. Higher speed points in the outlet feature a distinctive broadband between 1 and 2.5 kHz, described as \emph{whoosh} noise in the literature.
 
 \begin{figure}[tbh!]
 \centering
@@ -171,7 +171,7 @@ On the left hand side, $\rho$ is the mean density of the flow, $D_o$ is the oute
 
 The source spectral distribution $F(St,\varphi)$ depends on the Strouhal number and comprises the phenomena related to flow-induced acoustic generation such as flow fluctuations and near field acoustic interactions \cite{mongeau1995method}.
 
-Both functions depend of the operating conditions of the system, as remarked by their dependence on the flow coefficient $\varphi$. They are however assumed to be independent of $Re$ (Reynolds number). Definitions of the non-dimensional parameters can be found in table \ref{tab:nondim_numbers}. 
+Both functions depend of the operating conditions of the system, as remarked by their dependence on the flow coefficient $\varphi$ (flow rate divided by diameter, blade width and tip speed). They are however assumed to be independent of $Re$ (Reynolds number). Definitions of the non-dimensional parameters can be found in table \ref{tab:nondim_numbers}. 
 
 Two Strouhal numbers have been considered: one is related to the tip speed $V_\text{tip}$ and is adjusted so that the blade passing frequency (BPF) has \textit{St}~$=1$. The other takes into account the mean flow velocity $U$. Finally, the Helmholtz number takes into account the speed of sound $a$ that is affected by temperature at each operating condition. All three are normalized with the outer diameter $D_o$ of the rotor.
 
@@ -183,7 +183,7 @@ Two Strouhal numbers have been considered: one is related to the tip speed $V_\t
 \includegraphics[width=0.46\textwidth]{figures/cap_result/PlotsNormMini_st_Map_Anec_ST51_Straight_160_outlet_sensor1}\\[4mm]
 \includegraphics[width=0.46\textwidth]{figures/cap_result/PlotsNormMiniDOPA_he_Map_Anec_ST51_Straight_160_outlet_sensor1}\hspace{3mm}
 \includegraphics[width=0.46\textwidth]{figures/cap_result/PlotsNormMini_he_Map_Anec_ST51_Straight_160_outlet_sensor1}
-\caption[Non-dimensional analysis for the 160 krpm line]{Relationship of decomposed non-dimensional spectral density (NSD) in the plane wave range (left) and higher frequency spectra (right) with selected non-dimensional numbers for the different operating conditions of the 160 krpm speed line.}
+\caption[Non-dimensional analysis for the 160 krpm line]{Relationship of decomposed non-dimensional spectral density (NSD) in the plane wave range (left) and higher frequency spectra (right) with selected non-dimensional numbers for the different operating conditions of the 160 krpm speed line (outlet duct).}
 \label{fig:result_norm_all}
 \end{figure}
 
@@ -195,7 +195,7 @@ Two Strouhal numbers have been considered: one is related to the tip speed $V_\t
 \includegraphics[width=0.46\textwidth]{figures/cap_result/PlotsNormMini_st_Map_Anec_ST51_Straight_LugLine_outlet_sensor1}\\[4mm]
 \includegraphics[width=0.46\textwidth]{figures/cap_result/PlotsNormMiniDOPA_he_Map_Anec_ST51_Straight_LugLine_outlet_sensor1}\hspace{3mm}
 \includegraphics[width=0.46\textwidth]{figures/cap_result/PlotsNormMini_he_Map_Anec_ST51_Straight_LugLine_outlet_sensor1}
-\caption[Non-dimensional analysis for the working line]{Relationship of decomposed non-dimensional spectral density (NSD) in the plane wave range (left) and higher frequency spectra (right) with selected non-dimensional numbers for the different operating conditions of the engine working line.}
+\caption[Non-dimensional analysis for the working line]{Relationship of decomposed non-dimensional spectral density (NSD) in the plane wave range (left) and higher frequency spectra (right) with selected non-dimensional numbers for the different operating conditions of the engine working line (outlet duct).}
 \label{fig:result_norm_all_LL}
 \end{figure}
 
@@ -264,7 +264,7 @@ In order to paint a general picture of the global sound emission of the compress
 \includegraphics[width=0.89\textwidth]{figures/cap_result/maps_induct_pres_5000-21000_sens1}\\[4mm]
 \includegraphics[width=0.89\textwidth]{figures/cap_result/maps_induct_pres_5000-21000_sens2}\\[4mm]
 \includegraphics[width=0.89\textwidth]{figures/cap_result/maps_induct_pres_5000-21000_sens3}
-\caption[In-duct SPL maps between 5 and 21 kHz]{In-duct Sound Pressure Level maps for inlet (left) and outlet (right) ducts between 5 and 21 kHz Hz, obtained through the interpolation procedure and considering the three sensors.}
+\caption[In-duct SPL maps between 5 and 21 kHz]{In-duct Sound Pressure Level maps for the inlet (left) and outlet (right) ducts between 5 and 21 kHz, obtained through the interpolation procedure and considering the three sensors of each array.}
 \label{fig:maps_induct_SPL_3sens}
 \end{figure}
 
@@ -282,7 +282,7 @@ On the other hand, outlet intensity distribution is very similar between the two
 
 In order to analyze the distribution of \emph{whoosh} noise which, albeit still in the plane wave range, does not comprise so low frequency content, maps for intensity between 1 and 3 kHz have been plotted in Fig. \ref{fig:maps_induct_1000-3000}.
 
-Differences in the outlet in-duct SIL between between this range and those shown previously in Figs \ref{fig:maps_induct_10-100} and \ref{fig:maps_induct_10-3400} are noticeable. The slope of the SIL contours has changed, showing that the increase in this frequency band is more gradual with shaft speed, whereas in the two previous figures it rose abruptly for the 160 krpm line marked in the plots with dashes.
+Differences in the outlet in-duct SIL between this range and those shown previously in Figs \ref{fig:maps_induct_10-100} and \ref{fig:maps_induct_10-3400} are noticeable. The slope of the SIL contours has changed, showing that the increase in this frequency band is more gradual with shaft speed, whereas in the two previous figures it rose abruptly for the 160 krpm line marked in the plots with dashes.
 
 Finally, data from higher frequencies (above plane wave range) has been plotted in Fig. \ref{fig:maps_induct_SPL_3sens}, showing the differences between the pressure levels recorded by each one of the three sensors of the arrays. This data shows a different pattern in the inlet duct: while still increasing with shaft speed, highest levels are located at medium mass flow settings, not at the lower ones.
 
@@ -353,11 +353,11 @@ In this case however, unlike the previously described orifice measurements where
 \label{fig:result_spl_radiated_comp_bar_LL}
 \end{figure}
 
-Furthermore, a sequential damping of the different parts of the assembly (inlet duct, outlet duct, the turbocharger group itself and nothing at all) was performed using acoustic insulation blankets wrapped around them in order to isolate the distinct contribution of each part. 
+Furthermore, a sequential damping of the different parts of the assembly (inlet duct, outlet duct and nothing at all) was performed using acoustic insulation blankets wrapped around them in order to isolate the distinct contribution of each part. 
 
-Results from this sequential testing procedure can be seen in Fig.~\ref{fig:result_spl_radiated_comp_bar_LL} considering the operating conditions of the working line. In this case full spectrum RMS SPL averaged between the four encircling microphones is shown in the figure. 
+Results from this sequential testing procedure can be seen in Fig.~\ref{fig:result_spl_radiated_comp_bar_LL} considering the operating conditions of the working line. In this case full spectrum SPL averaged between the four encircling microphones is shown in the figure. 
 
-As expected, radiated sound increases with shaft speed, following the previous in-duct measurements. In almost all conditions sound levels radiated by the outlet are higher that those radiated by the inlet, and those are, in turn, higher than those radiated by the turbocharger group itself.
+As expected, radiated sound increases with shaft speed, following the previous in-duct measurements. In almost all conditions sound levels radiated by the outlet duct are higher that those radiated by the inlet duct.
 
 \begin{figure}[tbh!]
 \centering
@@ -368,7 +368,7 @@ As expected, radiated sound increases with shaft speed, following the previous i
 
 In Fig.~\ref{fig:result_spl_radiated_comp_bar_160} a similar analysis is carried out for four points of the 160 krpm speed line, from a higher flow rate stable point to a lower flow rate at more unstable conditions. In this case it can be seen again how, as expected, noise content rises towards deep surge.
 
-However, at higher mass flow it is now the inlet duct the one exhibiting higher noise levels. As flow rate is reduced, the outlet duct takes against the lead on noise radiation. Between the last two points that are closer to surge, inlet contribution does not increase, only that of the outlet and turbocharger group.
+However, at higher mass flow it is now the inlet duct the one exhibiting higher noise levels. As flow rate is reduced, the outlet duct takes again the lead on noise radiation. Between the last two points that are closer to surge, inlet duct, contribution does not increase, only that of the outlet duct.
 
 \section{Conclusions}
 
