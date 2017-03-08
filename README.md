@@ -1,5 +1,5 @@
 # My PhD Thesis
-This is the manuscript of my doctoral thesis. Even in the surprising case that you're not interested in the fascinating topic of turbocharger acoustic research, it may be possible that the overall style of the LaTeX document could prove useful for the typesetting of your own projects. So here it is.
+This is the manuscript of my doctoral thesis. Even in the surprising case that you're not interested in the fascinating topic of turbocharger acoustic research, it may be possible that the overall style of the LaTeX document could prove useful for the typesetting of your own projects. So I switched this repo that I used for tracking changes to public; see the final PDF document in release v3.0 [here](https://github.com/JorgeGT/PhD_Thesis/releases/download/v3.0/Tesis.pdf).
 <p align="center">
 <br />
 <img src="https://wasic.upv.es/generaClave/img/logo.jpg" width="150">
