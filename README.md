@@ -2,7 +2,7 @@
 This is the manuscript of my doctoral thesis. Even in the surprising case that you're not interested in the fascinating topic of turbocharger acoustic research, it may be possible that the overall style of the LaTeX document could prove useful for the typesetting of your own projects. So I switched this repo that I used for tracking changes to public; see the final PDF document in release v3.0 [here](https://github.com/JorgeGT/PhD_Thesis/releases/download/v3.0/Tesis.pdf).
 <p align="center">
 <br />
-<img src="https://wasic.upv.es/generaClave/img/logo.jpg" width="150">
+<img src="http://www.i3b.upv.es/img/logo-upv.png" width="150">
 <br />
 <br />
 <span><b>Experiments on turbochager compressor acoustics</b></span>
